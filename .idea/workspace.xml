@@ -4,30 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/JOB_PORTAL.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/static/landing_page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/templates/landing_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobsite/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobsite/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobsite/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobsite/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobsite/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="project started and home page is added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/landing_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/landing_page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/landing_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/landing_page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,9 +25,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2cgCF4pSo31SW0QPbiryD2AiRu6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -56,16 +36,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -82,9 +62,20 @@
       <option name="presentableId" value="Default" />
       <updated>1708523728017</updated>
     </task>
+    <task id="LOCAL-00001" summary="project started and home page is added">
+      <option name="closed" value="true" />
+      <created>1708528878937</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708528878937</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="project started and home page is added" />
+    <option name="LAST_COMMIT_MESSAGE" value="project started and home page is added" />
   </component>
 </project>
