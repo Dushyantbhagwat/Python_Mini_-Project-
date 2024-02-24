@@ -12,6 +12,22 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C600"/>
   <link rel="stylesheet" href="./styles/desktop-1.css"/>
   <link rel="stylesheet" href="{% static 'style/landing_page.css' %}">
+  <script>
+      function scrollToContact() {
+        // Get the position of the contact section relative to the top of the document
+        var contactSection = document.getElementById("contact-us-section");
+        var contactSectionPosition = contactSection.offsetTop;
+
+        // Smoothly scroll to the contact section
+        window.scrollTo({
+          top: contactSectionPosition,
+          behavior: 'smooth'
+        });
+      }
+  </script>
+
+
+
 </head>
 <body>
 
@@ -35,7 +51,7 @@
       </div>
     </div>
 
-    <button class="fremp">
+    <button class="fremp" onclick="scrollToContact()">
       Contact Us
     </button>
 
@@ -65,7 +81,7 @@
 
   <img class="rectangle-21-DY3" src="{% static 'images/c4.jpg' %}"/>
 
-  <div class="rectangle-22-wD9"></div>
+  <div class="rectangle-22-wD9" id="contact-us-section"></div>
 
 </div>
 
@@ -81,6 +97,9 @@
   </script>
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 </body>
 </html>
