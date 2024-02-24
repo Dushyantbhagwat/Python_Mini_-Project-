@@ -11,13 +11,13 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abhaya+Libre%3A700"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C600"/>
   <link rel="stylesheet" href="./styles/desktop-1.css"/>
-  <link rel="stylesheet" href="{% static 'landing_page.css' %}">
+  <link rel="stylesheet" href="{% static 'style/landing_page.css' %}">
 </head>
 <body>
 
 <div class="desktop-1-5TD">
   <nav class="nav">
-    <img class="naukrimg" src="https://static.naukimg.com/s/4/100/i/naukri_Logo.png" alt="">
+    <img class="naukrimg"  src="https://static.naukimg.com/s/4/100/i/naukri_Logo.png" alt="">
 
     <div class="menu">
       <button class="jobs">Jobs</button>
@@ -26,7 +26,13 @@
     </div>
 
     <button class="login">Login</button>
-    <button class="register">Register</button>
+    <div class="dropdown">
+      <button class="dropbtn">Register</button>
+      <div class="dropdown-content">
+        <a href="#">User</a>
+        <a href="#">Recruiter</a>
+      </div>
+    </div>
 
     <button class="fremp">
       Contact Us
@@ -51,12 +57,12 @@
   <div class="rectangle-16-CjR"></div>
   <div class="rectangle-17-kF9"></div>
 
-  <img class="rectangle-18-tcF" src=""/>
+  <img class="rectangle-18-tcF" src="{% static 'images/c1.jpg' %}"/>
 
-  <div class="rectangle-19-1wm"></div>
+  <div class="rectangle-19-1wm" ></div>
   <div class="rectangle-20-iLP"></div>
 
-  <img class="rectangle-21-DY3" src=""/>
+  <img class="rectangle-21-DY3" src="{% static 'images/c4.jpg' %}"/>
 
   <div class="rectangle-22-wD9"></div>
 

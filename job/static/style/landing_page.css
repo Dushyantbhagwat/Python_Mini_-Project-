@@ -32,7 +32,7 @@ body {
 }
 
 .naukrimg{
-  height: 25px;
+  height: 29px;
   width: 147px;
   position: relative;
   top: 27px;
@@ -394,7 +394,7 @@ body {
   top: 52.2rem;
   background-size: 100% 138.168%;
   background-position: 0 -0.6rem;
-  background-image: url('');
+  background-image: url('job/static/images/c2.jpg');
 }
 
 .desktop-1-5TD .rectangle-19-1wm:hover{
@@ -597,9 +597,75 @@ body {
   white-space: nowrap;
 }
 
+
+
 #google_translate_element {
             position: absolute;
             top: 10px;
             right: 10px;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  left: 762px;
+  bottom: -20px
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover {
+  background-color: #3e8e41;
+  color: white;
+}
+
+.dropbtn {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: none;
+  border-radius: 50px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  outline: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  top: -57px;
+  left: 762px;
+  color: #275df5;
+  position: relative
+
+}
+
+.dropbtn{
+  background-color: rgb(235, 87, 33);
+  color: white;
+
+}
