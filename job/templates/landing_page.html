@@ -28,12 +28,14 @@
 
 
 
+
+
 </head>
 <body>
 
 <div class="desktop-1-5TD">
   <nav class="nav">
-    <img class="naukrimg"  src="https://static.naukimg.com/s/4/100/i/naukri_Logo.png" alt="">
+    <img class="naukrimg"  src="{% static  'images/logo_1.png' %}" alt="">
 
     <div class="menu">
       <button class="jobs">Jobs</button>
@@ -46,8 +48,8 @@
     <div class="dropdown">
       <button class="dropdown-btn">Register</button>
       <div class="dropdown-content">
-      <a href="#">User</a>
-      <a href="#">Register</a>
+      <a href="#"><img src="{% static 'images/user.png' %}" alt="Image1">User</a>
+      <a href="#"><img src="{% static 'images/recruiter.jpg'%}" alt="Image1">Recruiter</a>
       </div>
     </div>
 
@@ -76,8 +78,8 @@
 
   <img class="rectangle-18-tcF" src="{% static 'images/c1.jpg' %}"/>
 
-  <div class="rectangle-19-1wm" ></div>
-  <div class="rectangle-20-iLP"></div>
+  <img class="rectangle-19-1wm" src="{% static 'images/c2.jpg' %}" />
+  <img class="rectangle-20-iLP" src="{% static 'images/c3.jpg' %}"/>
 
   <img class="rectangle-21-DY3" src="{% static 'images/c4.jpg' %}"/>
 
