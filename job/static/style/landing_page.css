@@ -261,7 +261,7 @@ body {
 .desktop-1-5TD .if-opportunity-doesnt-knock-build-a-door-LFy {
   width: 40.5rem;
   height: 2.5rem;
-  position: relative;
+  position: absolute;
   left: 51.2rem;
   top: 25.7rem;
   font-size: 2rem;
@@ -591,11 +591,45 @@ body {
   white-space: nowrap;
 }
 
-#google_translate_element {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-}
+
+    /* Custom styling for the translation box */
+    #google_translate_element {
+        position: absolute;
+        top: 10px;
+        right: 31px;
+
+
+    }
+
+    /* Custom styling for the language dropdown */
+    .goog-te-combo {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    /* Custom styling for the translate button */
+    .goog-te-button {
+        background-color: #4CAF50;
+        color: #fff;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    /* Custom styling for the translated text */
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+
+    .goog-te-menu-value span {
+        color: #4CAF50; /* Change color of the selected language */
+    }
+
+
 
 /* Style the dropdown button */
   .dropdown-btn {
