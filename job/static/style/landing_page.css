@@ -281,6 +281,10 @@ body {
   border-radius: 5rem;
   box-shadow: 2px 4px 31px -6px #000000;
 }
+
+
+
+
 .desktop-1-5TD .rectangle-11-LQP {
   width: 82.9rem;
   height: 5.6rem;
@@ -706,3 +710,74 @@ body {
   }
 
 
+    /* search bar style*/
+    .rectangular-bar {
+      width: 70rem;
+      height: 7.6rem;
+      display: flex;
+      align-items: center;
+      border-radius: 34px;
+      position: absolute;
+      top: 32.6rem;
+      left: 38.7rem;
+      background-color: #ffffff;
+      box-shadow: 2px 4px 31px -6px #000000;
+    }
+
+    .left-image {
+      width: 4rem;
+      height: 3.6rem;
+      margin-right: 25px; /* Adjust margin as needed */
+      object-fit: contain;
+      position: relative;
+      left: 15.3px;
+    }
+
+    .dropdown {
+      margin-right: 10px;
+    }
+
+    .dropdown select {
+      width: 150px;
+      height: 30px;
+      padding: 5px;
+      border: none;
+      background-color: transparent;
+      position: relative;
+      right: -6.5px;
+    }
+
+    .separator {
+      margin: 0 5px;
+      color: #000000;
+    }
+
+    .right-button {
+      width: 8rem;
+      height: 3.5rem;
+      text-align: center;
+      color: #ffffff;
+      font-family: Inter, 'Source Sans Pro';
+      white-space: nowrap;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      border: 1px solid var(--P100,#275df5);
+      border-radius: 50px;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 20px;
+      outline: none;
+      text-decoration: none;
+      color: #275df5;
+      background-color: rgb(33, 87, 235); /* Blue color */
+      justify-content: center; /* Center aligns the text horizontally */
+      color: white;
+      float: right;
+      position: absolute;
+      right: 29px;
+    }

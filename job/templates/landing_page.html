@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C600"/>
   <link rel="stylesheet" href="./styles/desktop-1.css"/>
   <link rel="stylesheet" href="{% static 'style/landing_page.css' %}">
+
   <script>
       function scrollToContact() {
         // Get the position of the contact section relative to the top of the document
@@ -25,11 +26,6 @@
         });
       }
   </script>
-
-
-
-
-
 </head>
 <body>
 
@@ -65,9 +61,40 @@
   <p class="find-your-job-now-qa7">Find your job now</p>
   <p class="if-opportunity-doesnt-knock-build-a-door-LFy">“If opportunity doesn't knock, build a door”</p>
 
-  <div class="rectangle-10-D4s"></div>
+  <div class="rectangular-bar">
+    <img src="{% static 'images/search-555.png' %}" alt="Image" class="left-image">
+    <div class="dropdown">
+      <select>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+      </select>
+    </div>
 
-  <img class="search-1mR" src="./assets/search.png"/>
+    <span class="separator">|</span>
+
+    <div class="dropdown">
+      <select>
+        <option value="option1">Option A</option>
+        <option value="option2">Option B</option>
+        <option value="option3">Option C</option>
+      </select>
+    </div>
+
+    <span class="separator">|</span>
+
+    <div class="dropdown">
+      <select>
+        <option value="option1">Option X</option>
+        <option value="option2">Option Y</option>
+        <option value="option3">Option Z</option>
+      </select>
+    </div>
+
+    <button class="right-button">Search</button>
+  </div>
+
+
 
   <p class="selected-candidates-QYf">Selected Candidates</p>
 
