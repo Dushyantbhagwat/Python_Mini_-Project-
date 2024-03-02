@@ -28,19 +28,17 @@
   </script>
 </head>
 <body>
-
 <div class="desktop-1-5TD">
   <nav class="nav">
-    <img class="naukrimg"  src="{% static  'images/logo_1.png' %}" alt="">
+    <a href="{% url 'landing_page' %}"><img class="naukrimg"  src="{% static  'images/logo_1.png' %}" alt=""></a>
 
     <div class="menu">
-      <button class="jobs">Jobs</button>
+      <a href="{% url 'j1' %}"><button class="jobs">Jobs</button>
       <button class="companies">Companies</button>
       <button class="services">Services</button>
     </div>
 
-    <button class="login">Login</button>
-
+    <a href="{% url 'login' %}"><button class="login" >Login</button></a>
     <div class="dropdown">
       <button class="dropdown-btn">Register</button>
       <div class="dropdown-content">
@@ -113,6 +111,8 @@
   <div class="rectangle-22-wD9" id="contact-us-section"></div>
 
 </div>
+
+
 
   <div id="google_translate_element"></div>
 

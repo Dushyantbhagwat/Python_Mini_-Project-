@@ -49,10 +49,14 @@ body {
   background-color: white;
 }
 
+
+
 .jobs,.companies,.services{
   background-color: white;
   font-size: large;
-  border-color: transparent;
+  border: none;
+  padding: 14px 12px;
+  color: black;
 }
 
 .login {
@@ -89,6 +93,14 @@ body {
 .jobs:hover,.companies:hover,.services:hover{
   border-bottom: solid orange;
 }
+
+
+/* Apply hover effect to anchor tags */
+.button-link:hover {
+  border-bottom: solid orange;
+}
+
+
 
 .fremp{
   height: 22px;
@@ -713,10 +725,10 @@ body {
     /* search bar style*/
     .rectangular-bar {
       width: 70rem;
-      height: 7.6rem;
+      height: 6.2rem;
       display: flex;
       align-items: center;
-      border-radius: 34px;
+      border-radius: 44px;
       position: absolute;
       top: 32.6rem;
       left: 38.7rem;

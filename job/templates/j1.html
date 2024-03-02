@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .login-prompt {
+            border: 1px solid #ccc; /* Add border */
+            padding: 10px; /* Add padding */
+            background-color: #f9f9f9; /* Add background color */
+        }
+    </style>
+</head>
+<body>
+{% if request.user.is_authenticated %}
+    <p>Welcome to the jobs page!</p>
+{% else %}
+    <div class="login-prompt">
+        <p>Please log in <a href="{% url 'login' %}">here</a>.</p>
+    </div>
+{% endif %}
+</body>
+</html>
