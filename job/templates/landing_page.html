@@ -63,29 +63,40 @@
     <img src="{% static 'images/search-555.png' %}" alt="Image" class="left-image">
     <div class="dropdown">
       <select>
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
+<!--        <option value="" selected disabled>Select experience</option>-->
+        <option value="option1">Fresher (less than 1 year)</option>
+        <option value="option2">1 Years</option>
+        <option value="option2">2 Years</option>
+        <option value="option2">3 Years</option>
+        <option value="option2">4 Years</option>
+        <option value="option2">5 Years</option>
+        <option value="option2">6 Years</option>
       </select>
     </div>
+
 
     <span class="separator">|</span>
 
     <div class="dropdown">
       <select>
-        <option value="option1">Option A</option>
-        <option value="option2">Option B</option>
-        <option value="option3">Option C</option>
+        <option value="option1">Full-time</option>
+        <option value="option2">Part-time</option>
+        <option value="option3">Permanent</option>
+        <option value="option3">Internship</option>
+        <option value="option3">Temporary</option>
+        <option value="option3">Freelance</option>
+        <option value="option3">Volunteer</option>
       </select>
     </div>
 
+
     <span class="separator">|</span>
 
-    <div class="dropdown">
+     <div class="dropdown">
       <select>
-        <option value="option1">Option X</option>
-        <option value="option2">Option Y</option>
-        <option value="option3">Option Z</option>
+          {% for option in options %}
+              <option value="{{ option }}">{{ option }}</option>
+          {% endfor %}
       </select>
     </div>
 

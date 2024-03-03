@@ -1,3 +1,5 @@
+import re
+
 from django.contrib.auth.hashers import make_password
 from django.shortcuts import render, redirect
 from django.views import generic, View
@@ -23,6 +25,9 @@ class UserSignupView(View):
             password = request.POST.get('password')
             location = request.POST.get('location')
 
+            name = name.title()
+            location = location.title()
+
             # Check password strength
             if not is_password_strong(password):
                 messages.warning(request, "Password does not meet strength requirements.")
@@ -34,6 +39,14 @@ class UserSignupView(View):
                 if word.lower() in password.lower():
                     messages.warning(request, "Password contains forbidden word(s).")
                     return render(request, self.template_name)
+
+            # Define a regular expression pattern to match only digits
+            pattern = r'^\d{10,11}$'
+
+            # Check if the mobile number matches the pattern
+            if not re.match(pattern, mobile) or len(mobile) > 10 or len(mobile) < 10:
+                messages.warning(request, "Mobile number should contain only digits and be 10 or 11 digits long.")
+                return render(request, self.template_name)
 
             if JobSeeker.objects.filter(email_id=email).exists():
                 messages.warning(request, "User with this email already exists.")
