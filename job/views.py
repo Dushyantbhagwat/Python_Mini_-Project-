@@ -1,9 +1,13 @@
+from django.contrib.auth.hashers import make_password
 from django.shortcuts import render, redirect
-from django.urls import reverse
-from django.views import generic
+from django.views import generic, View
+from .models import JobSeeker
+from .utils import *
+from django.contrib import messages
+from django.core.exceptions import ValidationError
 
-# Create your views here.
 
+# Create your Views here.
 
 class LandingPage(generic.TemplateView):
     template_name = 'landing_page.html'

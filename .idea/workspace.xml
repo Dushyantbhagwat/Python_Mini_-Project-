@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="project started and home page is added">
-      <change afterPath="$PROJECT_DIR$/job/middleware.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/templates/j1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/templates/u1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/templates/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/static/style/landing_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/landing_page.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/landing_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/landing_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/views.py" afterDir="false" />
@@ -25,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -66,11 +64,12 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/templates&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\static\images" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\static\style" />
@@ -191,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709114730181</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="project started and home page is added">
+      <option name="closed" value="true" />
+      <created>1709380867334</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1709380867334</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
