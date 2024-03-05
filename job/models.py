@@ -20,10 +20,10 @@ class Recruiter(models.Model):
 class JobSeeker(models.Model):
     full_name = models.CharField(max_length=200)
     email_id = models.CharField(unique=True, max_length=200)
-    password = models.CharField(unique=True, max_length=200)
+    password = models.CharField(max_length=200)
     mobile_no = models.CharField(max_length=10)
     location = models.CharField(max_length=200)
-    resume = models.CharField(max_length=45, blank=True, null=True)
+    resume = models.FileField(upload_to='resumes/', max_length=100, blank=True, null=True)
     type = models.CharField(max_length=45, null=True, default='seeker')
     image = models.ImageField(null=True)
 

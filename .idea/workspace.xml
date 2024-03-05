@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="project started and home page is added">
-      <change afterPath="$PROJECT_DIR$/job/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/migrations/0002_jobseeker_image_recruiter_image_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/migrations/0003_alter_jobseeker_password_alter_jobseeker_resume.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/sign_up.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/sign_up.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/landing_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/landing_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobsite/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709458986660</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="project started and home page is added">
+      <option name="closed" value="true" />
+      <created>1709485914486</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1709485914486</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

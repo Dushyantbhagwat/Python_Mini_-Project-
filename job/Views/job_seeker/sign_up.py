@@ -1,6 +1,7 @@
 import re
 
 from django.contrib.auth.hashers import make_password
+from django.core.mail import EmailMessage
 from django.shortcuts import render, redirect
 from django.views import generic, View
 from job.models import JobSeeker
@@ -56,6 +57,10 @@ class UserSignupView(View):
 
                 new_job_seeker = JobSeeker(full_name=name, email_id=email, mobile_no=mobile, password=hashed_password,
                                            location=location)
+
+                message_body = f"A new job Application was submitted. Thank You, {name}."
+                email_message = EmailMessage("Form Submission Confirmation", message_body, to=[email])
+                email_message.send()
 
                 # Save the new user to the database
                 new_job_seeker.save()
