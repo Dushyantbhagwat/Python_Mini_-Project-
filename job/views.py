@@ -16,7 +16,8 @@ class LandingPage(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # Retrieve data from the database
-        options = JobSeeker.objects.values_list('location', flat=True).distinct()
+        options = JobSeeker.objects.order_by('location').values_list('location', flat=True).distinct()
+        print(f"{options}")
         context['options'] = options
         return context
 
@@ -35,13 +36,10 @@ class LoginView(View):
             user = JobSeeker.objects.filter(email_id=email).first()
 
             if user and check_password(password, user.password):
-                messages.success(request, "successfull")
                 request.session['logged_in_user_id'] = user.id
                 print(f"JobSeeker details - Name: {user.full_name}, Email: {user.email_id}, Mobile: {user.mobile_no}, "
                       f"Location: {user.location}")
                 return redirect('u1')
-
-            print(user.full_name)
 
         except ValidationError as e:
             messages.warning(request, f"Fail: {str(e)}")
