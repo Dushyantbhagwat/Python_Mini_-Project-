@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="project started and home page is added">
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="stored the login_user session">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/migrations/0002_jobseeker_image_recruiter_image_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/migrations/0003_alter_jobseeker_password_alter_jobseeker_resume.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -224,12 +228,21 @@
       <option name="project" value="LOCAL" />
       <updated>1709615217341</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="stored the login_user session">
+      <option name="closed" value="true" />
+      <created>1709615890176</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1709615890176</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="project started and home page is added" />
-    <option name="LAST_COMMIT_MESSAGE" value="project started and home page is added" />
+    <MESSAGE value="stored the login_user session" />
+    <option name="LAST_COMMIT_MESSAGE" value="stored the login_user session" />
   </component>
 </project>

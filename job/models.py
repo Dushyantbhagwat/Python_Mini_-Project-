@@ -4,10 +4,12 @@ from django.db import models
 
 
 class Recruiter(models.Model):
-    full_name = models.CharField(max_length=200)
-    email_id = models.CharField(max_length=200)
-    company_name = models.CharField(max_length=200)
-    mobile = models.CharField(max_length=10)
+    id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
+    full_name = models.CharField(max_length=200, null=False)
+    email_id = models.CharField(max_length=200, null=False)
+    password = models.CharField(max_length=200, null=False)
+    company_name = models.CharField(max_length=200, null=False)
+    mobile = models.CharField(max_length=10, null=False)
     website = models.CharField(max_length=200, blank=True, null=True)
     past_activity = models.CharField(max_length=200, blank=True, null=True)
     skills = models.CharField(max_length=200, blank=True, null=True)
@@ -18,29 +20,32 @@ class Recruiter(models.Model):
 
 
 class JobSeeker(models.Model):
-    full_name = models.CharField(max_length=200)
-    email_id = models.CharField(unique=True, max_length=200)
-    password = models.CharField(max_length=200)
-    mobile_no = models.CharField(max_length=10)
-    location = models.CharField(max_length=200)
+    id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
+    full_name = models.CharField(max_length=200, null=False)
+    email_id = models.CharField(unique=True, max_length=200, null=False)
+    password = models.CharField(max_length=200, null=False)
+    mobile_no = models.CharField(max_length=10, null=False)
+    location = models.CharField(max_length=200, null=False)
     resume = models.FileField(upload_to='resumes/', max_length=100, blank=True, null=True)
     type = models.CharField(max_length=45, null=True, default='seeker')
     image = models.ImageField(null=True)
 
 
 class Job(models.Model):
-    title = models.CharField(max_length=45)
-    salary = models.CharField(max_length=45)
-    skills = models.CharField(max_length=45)
-    job_type = models.CharField(max_length=45)
-    location = models.CharField(max_length=45)
-    description = models.CharField(max_length=45)
-    start_date = models.CharField(max_length=45)
-    deadline = models.CharField(max_length=45)
+    id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
+    title = models.CharField(max_length=45, null=False)
+    salary = models.CharField(max_length=45, null=True, default='Not Disclosed')
+    skills = models.CharField(max_length=45, null=False)
+    job_type = models.CharField(max_length=45, null=False)
+    location = models.CharField(max_length=45, null=False)
+    description = models.CharField(max_length=45, null=False)
+    start_date = models.CharField(max_length=45, null=False)
+    deadline = models.CharField(max_length=45, null=False)
     recruiter = models.ForeignKey('Recruiter', models.CASCADE)
 
 
 class Application(models.Model):
+    id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
     date = models.DateField(auto_now_add=True)
     user = models.ForeignKey('JobSeeker', models.CASCADE)
     job = models.ForeignKey('Job', models.CASCADE)

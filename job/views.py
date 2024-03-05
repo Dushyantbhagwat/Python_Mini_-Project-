@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.hashers import make_password, check_password
 from django.shortcuts import render, redirect
 from django.views import generic, View
-from .models import JobSeeker
+from .models import JobSeeker, Recruiter
 from .utils import *
 from django.contrib import messages
 from django.core.exceptions import ValidationError
@@ -33,12 +33,21 @@ class LoginView(View):
         password = request.POST.get('password')
 
         try:
+            # check if the user is in the JobSeeker table
             user = JobSeeker.objects.filter(email_id=email).first()
 
             if user and check_password(password, user.password):
                 request.session['logged_in_user_id'] = user.id
                 print(f"JobSeeker details - Name: {user.full_name}, Email: {user.email_id}, Mobile: {user.mobile_no}, "
                       f"Location: {user.location}")
+                return redirect('u1')
+
+            # check if the user is in the Recruiter table
+            recruiter = Recruiter.objects.filter(email_id=email).first()
+
+            if user and check_password(password, recruiter.password):
+                request.session['logged_in_user_id'] = recruiter.id
+                print(f"{recruiter.full_name}")
                 return redirect('u1')
 
         except ValidationError as e:
