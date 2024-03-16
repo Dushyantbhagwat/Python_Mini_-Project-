@@ -1,0 +1,34 @@
+<!-- chat.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Chat with {{ receiver.username }}</h2>
+        <div class="messages">
+            {% for message in messages %}
+                {% if message.sender == request.user %}
+                    <div class="message outgoing">
+                        <p>{{ message.content }}</p>
+                    </div>
+                {% else %}
+                    <div class="message incoming">
+                        <p>{{ message.content }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <textarea name="content" class="form-control" placeholder="Type your message here..."></textarea>
+            <button type="submit" class="btn btn-primary mt-2">Send</button>
+        </form>
+    </div>
+</body>
+</html>

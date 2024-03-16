@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -17,6 +18,7 @@ class Recruiter(models.Model):
     status = models.CharField(max_length=45, blank=True, null=True, default='request pending')
     type = models.CharField(max_length=45, blank=True, null=True, default='recruiter')
     image = models.ImageField(null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class JobSeeker(models.Model):
@@ -25,10 +27,12 @@ class JobSeeker(models.Model):
     email_id = models.CharField(unique=True, max_length=200, null=False)
     password = models.CharField(max_length=200, null=False)
     mobile_no = models.CharField(max_length=10, null=False)
-    location = models.CharField(max_length=200, null=False)
-    resume = models.FileField(upload_to='resumes/', max_length=100, blank=True, null=True)
+    city = models.CharField(max_length=100, null=False)
+    address = models.CharField(max_length=200, null=False)
+    resume = models.FileField(upload_to='', max_length=100, blank=True, null=True)
     type = models.CharField(max_length=45, null=True, default='seeker')
-    image = models.ImageField(null=True)
+    image = models.ImageField(upload_to='user', null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class Job(models.Model):

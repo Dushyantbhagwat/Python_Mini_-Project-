@@ -1,6 +1,7 @@
 import re
 
 from django.contrib.auth.hashers import make_password
+from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
 from django.shortcuts import render, redirect
 from django.views import generic, View
@@ -25,9 +26,11 @@ class UserSignupView(View):
             mobile = request.POST.get('mobile')
             password = request.POST.get('password')
             location = request.POST.get('location')
+            city = request.POST.get('city')
+            image = request.FILES['image']
 
             name = name.title()
-            location = location.title()
+            city = city.title()
 
             # Check password strength
             if not is_password_strong(password):
@@ -52,11 +55,14 @@ class UserSignupView(View):
             if JobSeeker.objects.filter(email_id=email).exists():
                 messages.warning(request, "User with this email already exists.")
             else:
+
+                user = User.objects.create_user(password=password, username=email)
+
                 # Hash the password before storing it
                 hashed_password = make_password(password)
 
-                new_job_seeker = JobSeeker(full_name=name, email_id=email, mobile_no=mobile, password=hashed_password,
-                                           location=location)
+                new_job_seeker = JobSeeker(user=user, full_name=name, email_id=email, mobile_no=mobile,
+                                           password=hashed_password, address=location, city=city, image=image)
 
                 # message_body = f"A new job Application was submitted. Thank You, {name}."
                 # email_message = EmailMessage("Form Submission Confirmation", message_body, to=[email])
@@ -70,3 +76,5 @@ class UserSignupView(View):
             messages.warning(request, f"Fail: {str(e)}")
 
         return render(request, self.template_name)
+
+

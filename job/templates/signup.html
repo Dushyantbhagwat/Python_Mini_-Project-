@@ -28,7 +28,7 @@
 </head>
 <body>
     <h2>Sign Up</h2>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" required><br>
@@ -41,8 +41,13 @@
             <input type="password" id="password" name="password" onkeyup="checkPasswordStrength()" required><br>
             <div id="password-strength"></div>
         </div>
+
+        <label for="city">City:</label><br>
+        <input type="text" id="city" name="city" required><br><br>
         <label for="location">Location:</label><br>
         <input type="text" id="location" name="location" required><br><br>
+        <label for="image">Image:</label><br>
+        <input type="file" id="image" name="image" accept="image/*" required><br>
         <input type="submit" value="Sign Up">
 
         <script>
