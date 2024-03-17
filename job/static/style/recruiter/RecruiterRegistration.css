@@ -1,0 +1,416 @@
+.desktop-1-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-white);
+    width: 1440px;
+    height: 70px;
+  }
+  .desktop-1-item {
+    position: absolute;
+    top: 15px;
+    left: 86px;
+    width: 180px;
+    height: 40px;
+    object-fit: contain;
+  }
+  .desktop-1-inner {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: rgba(226, 236, 248, 0.59);
+    width: 1540px;
+    height: 954px;
+  }
+  .span {
+    font-weight: 600;
+    color: var(--color-cornflowerblue);
+  }
+  .already-registered-login-container {
+    position: absolute;
+    top: 26px;
+    left: 980px;
+    font-size: var(--font-size-base);
+    display: inline-block;
+    width: 370px;
+  }
+  .desktop-1-child1,
+  .desktop-1-child2 {
+    position: absolute;
+    background-color: var(--color-white);
+  }
+  .desktop-1-child1 {
+    top: 103px;
+    left: 328px;
+    border-radius: 10px;
+    width: 840px;
+    height: 835px;
+  }
+
+  ::placeholder{
+    color: black;
+    text-align: left;
+    opacity: 0.5;
+  }
+
+  .what-is-your, .tell-us-your {
+    top: 225px;
+    left: 366px;
+    border-radius: var(--br-xl);
+    border: 1px solid var(--color-gainsboro-200);
+    box-sizing: border-box;
+    width: 568px;
+    height: 45px;
+  }
+  .full-name,
+  .what-is-your,.tell-us-your {
+    position: absolute;
+    display: inline-block;
+  }
+  .what-is-your,.tell-us-your {
+    top: 230px;
+    left: 366px;
+    color: rgb(0 0 0);
+    text-align: left;
+    width: 566px;
+    padding: 15px;
+  }
+  .full-name{
+    top: 202px;
+    left: 340px;
+    font-weight: 600;
+    width: 130px;
+    height: 20px;
+  }
+
+  .companys-name,
+  .mobile-number2 {
+    position: absolute;
+    top: 311px;
+    left: 371px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gainsboro-200);
+    box-sizing: border-box;
+    width: 568px;
+    height: 45px;
+    padding: 15px;
+  }
+
+
+.password-name {
+    position: absolute;
+    top: 311px;
+    left: 371px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gainsboro-200);
+    box-sizing: border-box;
+    width: 568px;
+    height: 45px;
+    padding: 15px;
+  }
+
+
+.password-container {
+    position: relative;
+    display: inline-block;
+    top: 679px;
+    left: -100px;
+    width: 587px;
+
+}
+
+.password-input {
+    width: calc(100% - 30px); /* Adjusted width to accommodate the toggle button */
+    height: 45px;
+    padding: 15px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gainsboro-200);
+    box-sizing: border-box;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 30px; /* Adjust the width as needed */
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gainsboro-200); /* Set color for the eye icon */
+}
+
+
+
+
+
+
+  .companys-name {
+    position: absolute;
+    top: 311px;
+    left: 368px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gainsboro-200);
+    box-sizing: border-box;
+    width: 568px;
+    height: 45px;
+    padding: 15px;
+  }
+
+  .companys-name{
+    top: 410px;
+  }
+
+
+  .mobile-number2,
+  .password-name
+     {
+    top: 695px;
+  }
+  .mobile-number2 {
+    top: 491px;
+    height: 46px;
+  }
+  .email-id2,
+  .tell-us-your {
+    position: absolute;
+    display: inline-block;
+  }
+  .email-id2 {
+    top: 288px;
+    left: 331.7px;
+    font-weight: 600;
+    width: 130px;
+    height: 20px;
+  }
+  .tell-us-your {
+    top: 316px;
+    left: 369px;
+    color: rgb(0 0 0);
+    text-align: left;
+    width: 565px;
+  }
+  .mobile-number,
+  .your-companys-name{
+    position: absolute;
+    top: 380px;
+    left: 342px;
+    font-weight: 600;
+    display: inline-block;
+    width: 198px;
+  }
+
+  .your-password {
+    position: absolute;
+    top: 664px;
+    left: 336px;
+    font-weight: 600;
+    display: inline-block;
+    width: 198px;
+  }
+
+  .mobile-number {
+    top: 467px;
+    left: 352px;
+    width: 130px;
+    height: 24px;
+  }
+  .mobile-number2 {
+    color: black;
+  }
+  .mobile-number1 {
+    position: absolute;
+    top: 505px;
+    left: 388px;
+    text-align: left;
+    display: inline-block;
+    width: 289px;
+  }
+  .terms-and-conditions {
+    color: var(--color-cornflowerblue);
+  }
+  .by-clicking-register-container {
+    position: absolute;
+    top: 767px;
+    left: 372px;
+    text-align: left;
+    display: inline-block;
+    width: 649px;
+    height: 23px;
+    color: var(--color-gray-600);
+  }
+
+.register-now:hover{
+  background-color: rgb(15, 95, 255);
+}
+  .register-now {
+    position: absolute;
+    top: 800px;
+    left: 366px;
+    font-size: var(--font-size-base);
+    display: inline-block;
+    color: var(--color-white);
+
+    box-sizing: border-box;
+    border-radius: var(--br-31xl);
+    width: 125px;
+    height: 40px;
+    background-color: rgb(82, 169, 255);
+  }
+  .about-us,
+  .contact-us,
+  .privacy-policy1,
+  .report-a-problem,
+  .terms-and-conditions1 {
+    position: absolute;
+    top: 906px;
+    left: 394px;
+    font-size: var(--font-size-2xs);
+    color: var(--color-cornflowerblue);
+    display: inline-block;
+    width: 113px;
+  }
+  .contact-us,
+  .privacy-policy1,
+  .report-a-problem,
+  .terms-and-conditions1 {
+    top: 908px;
+    left: 494px;
+  }
+  .privacy-policy1,
+  .report-a-problem,
+  .terms-and-conditions1 {
+    top: 906px;
+    left: 624px;
+    width: 127px;
+  }
+  .privacy-policy1,
+  .report-a-problem {
+    top: 908px;
+    left: 769px;
+    width: 113px;
+  }
+  .report-a-problem {
+    top: 906px;
+    left: 888px;
+  }
+  .employer-registration {
+    position: absolute;
+    top: 143px;
+    left: 362px;
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    display: inline-block;
+    width: 220px;
+  }
+  .for-account-management {
+    position: absolute;
+    top: 540px;
+    left: 385px;
+    font-size: var(--font-size-2xs);
+    color: var(--color-gray-700);
+    text-align: left;
+    display: inline-block;
+    width: 466px;
+  }
+  .enter-url-here {
+    position: absolute;
+    top: 584px;
+    left: 366px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gainsboro-200);
+    box-sizing: border-box;
+    width: 568px;
+    height: 45px;
+  }
+  .companys-official-website {
+    position: absolute;
+    top: 570px;
+    left: 345.7px;
+    font-weight: 600;
+    display: inline-block;
+    width: 213px;
+    height: 24px;
+  }
+  .enter-url-here
+   {
+    position: absolute;
+    top: 597px;
+    left: 372px;
+    color: black;
+    text-align: left;
+    display: inline-block;
+    width: 565px;
+    padding: 15px;
+  }
+  .optional {
+    top: 559px;
+    left: 557px;
+  }
+  .desktop-11 {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    height: 1024px;
+    overflow: hidden;
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--color-black);
+    font-family: var(--font-inter);
+  }
+
+.show {
+    position: relative;
+    top: 707px;
+    right: -130px;
+    z-index: 1;
+    border-radius: 10px;
+
+    border-color: #c2c2c28a;
+
+
+}
+
+/* Custom styling for the translation box */
+    #google_translate_element {
+        position: absolute;
+        top: 10px;
+        right: 31px;
+
+
+    }
+
+    /* Custom styling for the language dropdown */
+    .goog-te-combo {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    /* Custom styling for the translate button */
+    .goog-te-button {
+        background-color: #4CAF50;
+        color: #fff;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    /* Custom styling for the translated text */
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+
+    .goog-te-menu-value span {
+        color: #4CAF50; /* Change color of the selected language */
+    }

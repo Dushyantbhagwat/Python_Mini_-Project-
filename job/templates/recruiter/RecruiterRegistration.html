@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="{% static 'style/recruiter/Global.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-BsjE6bqjCTlrj7SAif7h9JvYLNge3JeFlIspZJtXrJ+fMcDJpl2hiPMMlKC5hvc2" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{% static 'style/recruiter/RecruiterRegistration.css' %}" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+
+  <style>
+    #password-strength {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .alert {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    }
+
+    .alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    }
+
+
+    .full-name span {
+      color: red; /* Set the color of the asterisk */
+    }
+
+    .email-id2 span {
+      color: red; /* Set the color of the asterisk */
+    }
+
+    .your-companys-name span {
+      color: red; /* Set the color of the asterisk */
+    }
+
+    .mobile-number span {
+      color: red; /* Set the color of the asterisk */
+    }
+
+    .your-password span{
+       color: red; /* Set the color of the asterisk */
+    }
+
+  </style>
+
+</head>
+
+<body>
+<div class="desktop-11">
+  <div class="desktop-1-child"></div>
+  <a href="{% url 'landing_page' %}">
+    <img class="desktop-1-item"  src="{% static  'images/logo_1.png' %}" alt="">
+  </a>
+
+
+  <div class="desktop-1-inner"></div>
+  <div class="already-registered-login-container">
+    <span>
+      <span>Already Registered?</span>
+      <span class="span"> </span>
+    </span>
+    <span class="span">
+      <a href="">Login</a>
+    </span>
+    <span>
+      <span> </span>
+    </span>
+    <span>
+      <span>here</span>
+    </span>
+  </div>
+
+  <form action="{% url 'r_signup' %}" method="post">
+    {% csrf_token %}
+    <div class="desktop-1-child1"></div>
+
+<!--    <div class="desktop-1-child2"></div>-->
+<!--    <label for="name" class="full-name" >Full name </label>-->
+<!--    <input type="text" id="name" class="what-is-your" placeholder="what is your name?" name="name" required>-->
+<!--    <div class="desktop-1-child5"></div>-->
+
+      <div class="desktop-1-child2"></div>
+        <label for="name" class="full-name" >Full name <span>*</span></label>
+        <input type="text" id="name" class="what-is-your" placeholder="What is your name?" name="name" required>
+        <div class="desktop-1-child5"></div>
+
+
+
+    <div class="desktop-1-child3"></div>
+    <label for="email" class="email-id2">Email ID <span>*</span></label>
+    <input type="email" id="email" class="tell-us-your" placeholder="Tell us your Email id" name="email" required>
+
+    <div class="desktop-1-child4"></div>
+    <label for="company" class="your-companys-name">Your company’s name <span>*</span></label>
+    <input type="text" id="company" class="companys-name" placeholder="Enter your company" name="company" required >
+
+
+    <label for="mobile" class="mobile-number">Mobile number <span>*</span></label>
+    <input type="tel" id="mobile" class="mobile-number2" placeholder="Mobile number" name="mobile" required >
+
+
+<!--   <div>-->
+<!--        <label for="password" class="your-password">Create a password</label><br>-->
+<!--        <input type="password" id="password" name="password" class="password-name" placeholder="Enter your password" onkeyup="checkPasswordStrength()" required><br>-->
+<!--        <div id="password-strength"></div>-->
+<!--   </div>-->
+
+      <div>
+            <label for="password" class="your-password">Create a password <span>*</span></label><br>
+            <div class="password-container">
+                <input type="password" id="password" name="password" class="password-input" placeholder="Enter your password" required>
+                <span class="toggle-password" onclick="togglePasswordVisibility()"><i class="fa-solid fa-eye"></i></span>
+            </div>
+            <div id="password-strength"></div>
+      </div>
+
+      <script>
+          function togglePasswordVisibility() {
+                var passwordInput = document.getElementById("password");
+                var toggleIcon = document.querySelector(".toggle-password i");
+
+                if (passwordInput.type === "password") {
+                    passwordInput.type = "text";
+                    toggleIcon.classList.remove("fa-eye");
+                    toggleIcon.classList.add("fa-eye-slash");
+                } else {
+                    passwordInput.type = "password";
+                    toggleIcon.classList.remove("fa-eye-slash");
+                    toggleIcon.classList.add("fa-eye");
+                }
+          }
+
+      </script>
+
+
+    <script>
+        function is_password_strong(password) {
+            if (password.length < 8) {
+                return false;
+            }
+
+            if (!/[A-Z]/.test(password)) {
+                return false;
+            }
+
+            if (!/[a-z]/.test(password)) {
+                return false;
+            }
+
+            if (!/\d/.test(password)) {
+                return false;
+            }
+
+            var special_characters = "!@#$%^&*()-_=+[]{}|;:'\",.<>/?";
+            if (!RegExp("[" + special_characters.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + "]").test(password)) {
+                return false;
+            }
+
+            return true;
+        }
+
+        function checkPasswordStrength() {
+            var password = document.getElementById("password").value;
+            var strengthText = document.getElementById("password-strength");
+
+            console.log("Password:", password);
+
+            if (password.length === 0) {
+                strengthText.innerHTML = "";
+                console.log("Password strength cleared.");
+            } else {
+                var isStrong = is_password_strong(password);
+                console.log("Is Strong:", isStrong);
+                strengthText.innerHTML = "Password Strength: " + (isStrong ? "<span style='color: green;'>Strong</span>" : "<span style='color: red;'>Weak</span>");
+                console.log("Password strength message updated:", strengthText.innerHTML);
+            }
+        }
+    </script>
+
+
+    <div class="by-clicking-register-container">
+      <span>By clicking Register, you agree to </span>
+      <a href="" class="terms-and-conditions">Terms and Conditions</a>
+      <span> &</span>
+      <a href="" class="terms-and-conditions"> Privacy Policy</a>
+      <span> of Jobs4U</span>
+    </div>
+    <div class="desktop-1-child6"></div>
+
+
+    <button class="register-now">Register now</button>
+
+
+
+    <a href="" class="about-us">About Us</a>
+    <a href="" class="contact-us">Contact Us</a>
+    <a href="" class="terms-and-conditions1">Terms and Conditions</a>
+    <a href="" class="privacy-policy1">Privacy Policy</a>
+    <a href="" class="report-a-problem">Report a Problem</a>
+    <div class="employer-registration">Employer Registration</div>
+    <div class="for-account-management">
+      For account management communication . Not visible to jobseekers.
+    </div>
+    <div class="desktop-1-child7"></div>
+    <label for="website" class="companys-official-website">Company’s Official website</label>
+    <input type="url" id="website" class="enter-url-here" placeholder="Enter url here" name="website">
+    <div class="optional"></div>
+
+
+  </form>
+
+  <div id="google_translate_element"></div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,mr',  // English and Marathi
+        }, 'google_translate_element');
+    }
+  </script>
+
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+  <script>
+    $(document).ready(function() {
+      {% for message in messages %}
+      var messageType = "{{ message.tags }}"
+      var messageText = "{{ message }}"
+
+      toastr.options = {
+        closeButton: true,
+        progressBar: true,
+        positionClass: 'toast-bottom-right',
+        showMethod: 'slideDown',
+        timeout: 5000
+      };
+
+      if (messageType === 'success') {
+        toastr.success(messageText);
+      } else if (messageType === 'error') {
+        toastr.error(messageText);
+      } else if (messageType === 'info') {
+        toastr.info(messageText);
+      } else {
+        toastr.warning(messageText);
+      }
+      {% endfor %}
+    });
+  </script>
+
+
+  </div>
+</body>
+</html>

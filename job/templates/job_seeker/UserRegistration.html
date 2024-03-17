@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+  {% load static %}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <script>
+      function show() {
+        var a = document.getElementById("pwd");
+        var b = document.getElementById("EYE");
+        if (a.type == "password") {
+          a.type = "text";
+          b.src = "https://i.stack.imgur.com/waw4z.png";
+        } else {
+          a.type = "password";
+          b.src = "https://i.stack.imgur.com/Oyk1g.png";
+        }
+      }
+  </script>
+
+  <style>
+    #password-strength {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .alert {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    }
+
+    .alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    }
+  </style>
+  <link rel="stylesheet" href="{% static 'style/job_seeker/Global.css' %}" />
+  <link rel="stylesheet" href="{% static 'style/job_seeker/UserRegistration.css' %}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+</head>
+<body>
+  <div class="desktop-1">
+    <header class="nav-bar-parent">
+      <div class="nav-bar"></div>
+      <a href="{% url 'landing_page' %}"><img class="logo-box-icon" loading="lazy" alt="" src="{% static 'images/logo_1.png' %}" /></a>
+      <div class="name-input">
+        <div class="already-registered-login-container">
+          <span>
+            <span>Already Registered?</span>
+            <span class="span"> </span>
+          </span>
+          <span class="login">
+            <a href="">Login</a>
+          </span>
+          <span>
+            <span> </span>
+          </span>
+          <span>
+            <span>here</span>
+          </span>
+        </div>
+      </div>
+
+      <div id="google_translate_element"></div>
+
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,mr',  // English and Marathi
+            }, 'google_translate_element');
+        }
+      </script>
+
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </header>
+    <main class="navigation-bar">
+      <div class="navigation-bar-child"></div>
+      <section class="image-box">
+        <a href="{% url 'u_signup' %}"><img class="image-box-on-registering" loading="lazy" alt="" src="{% static 'images/image-box.png' %}" /></a>
+        <div class="what-is-your-name">
+          <div class="what-is-your-name-child"></div>
+          <div class="min-length-six">
+            <h3 class="find-a-job">Find a job & grow your career</h3>
+          </div>
+        <form action="{% url 'u_signup' %}" method="post">
+            {% csrf_token %}
+          <div class="email-i-d-input">
+            <div class="full-name-input">
+              <label for="name" class="full-name">Full name</label>
+              <div class="login-button">
+                <div class="email-i-d-confirm">
+                  <div class="name-box"></div>
+                  <input id="name" class="what-is-your" placeholder="what is your name?" type="text" name="name" required/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="email-i-d-input1">
+            <label for="email" class="email-id">Email ID</label>
+            <div class="city-label">
+              <div class="email-box-parent">
+                <div class="email-box"></div>
+                <input id="email" class="tell-us-your" placeholder="Tell us your Email id" type="email" name="email" required />
+              </div>
+            </div>
+          </div>
+          <div class="city-stroke-wrapper">
+            <div class="city-stroke">
+              <div class="enter-city">
+                <div class="password-parent">
+                  <label for="pwd" class="password">Password</label>
+                  <div class="create-a-password">
+                    <div class="minimum-six-chars">
+                      <div class="mobile-number-label">
+                        <div class="password-box"></div>
+                        <input class="create-a-password1" placeholder="Create  a password for your account" type="password" name="pwd" id="pwd" required/>
+                        <button class="show" onclick="show()"><img src="https://i.stack.imgur.com/Oyk1g.png" id="EYE"></button>
+                      </div>
+                      <div class="city-label-stroke">
+                        <div class="minimum-six-characters">Minimum eight characters required</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <script>
+                      function is_password_strong(password) {
+                          if (password.length < 8) {
+                              return false;
+                          }
+
+                          if (!/[A-Z]/.test(password)) {
+                              return false;
+                          }
+
+                          if (!/[a-z]/.test(password)) {
+                              return false;
+                          }
+
+                          if (!/\d/.test(password)) {
+                              return false;
+                          }
+
+                          var special_characters = "!@#$%^&*()-_=+[]{}|;:'\",.<>/?";
+                          if (!RegExp("[" + special_characters.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + "]").test(password)) {
+                              return false;
+                          }
+
+                          return true;
+                      }
+
+                      function checkPasswordStrength() {
+                          var password = document.getElementById("password").value;
+                          var strengthText = document.getElementById("password-strength");
+
+                          console.log("Password:", password);
+
+                          if (password.length === 0) {
+                              strengthText.innerHTML = "";
+                              console.log("Password strength cleared.");
+                          } else {
+                              var isStrong = is_password_strong(password);
+                              console.log("Is Strong:", isStrong);
+                              strengthText.innerHTML = "Password Strength: " + (isStrong ? "<span style='color: green;'>Strong</span>" : "<span style='color: red;'>Weak</span>");
+                              console.log("Password strength message updated:", strengthText.innerHTML);
+                          }
+                      }
+                  </script>
+                </div>
+              </div>
+              <div class="terms-and-conditions-link-wrapper">
+                <div class="terms-and-conditions-link">
+                  <label for="mobile" class="mobile-number">Mobile number</label>
+                  <div class="terms-and-conditions-link-inner">
+                    <div class="mobile-box-parent">
+                      <div class="mobile-box"></div>
+                      <input id="mobile" class="mobile-number1" placeholder="+91 Mobile number" type="tel" name="mobile" required />
+                    </div>
+                  </div>
+                  <div class="report-a-problem-link">
+                    <div class="recruiters-will-call">Recruiters will call you on this number</div>
+                  </div>
+                </div>
+              </div>
+              <div class="city-stroke-inner">
+                <div class="frame-parent">
+                  <div class="city-wrapper">
+                    <label for="city" class="city">City</label>
+                  </div>
+                  <div class="email-box-stroke-parent">
+                    <img class="email-box-stroke" alt="" src="{% static 'style/job_seeker/email-box-stroke.svg' %}" />
+                    <input id="city" type="text" class="enter-city1" placeholder="Enter city" name="city" required>
+                  </div>
+                </div>
+              </div>
+              <div class="frame-group">
+                <div class="location-wrapper">
+                  <label for="location" class="location">Location</label>
+                </div>
+                <div class="email-box-stroke-group">
+                  <img class="email-box-stroke1" alt="" src="{% static 'style/job_seeker/email-box-stroke.svg' %}" />
+                  <input id="location" class="enter-your-location" placeholder="Enter your location" type="text" name="location" required/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="terms-condition-label">
+            <div class="register-btn-label">
+              <div class="by-clicking-register-container">
+                <span>By clicking Register, you agree to </span>
+                <a href="" class="terms-and-conditions">Terms and Conditions</a>
+                <span> &</span>
+                <a href="" class="privacy-policy"> Privacy Policy</a>
+                <span> of Jobs4U</span>
+              </div>
+              <button class="full-name-input-label">
+                <div class="register-now-box"></div>
+                <b class="register-now">Register now</b>
+              </button>
+            </div>
+          </div>
+
+        </form>
+        </div>
+      </section>
+      <div class="mobile-input-label">
+        <div class="location-input-label">
+          <a href="" class="about-us">About Us</a>
+          <div class="contact-us-link-label">
+            <a href="" class="contact-us">Contact Us</a>
+          </div>
+          <div class="report-problem-link-label">
+            <a href="" class="terms-and-conditions1">Terms and Conditions</a>
+          </div>
+          <div class="contact-us-link-label1">
+            <a href="" class="privacy-policy1">Privacy Policy</a>
+          </div>
+          <a href="" class="report-a-problem">Report a Problem</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+  <script>
+    $(document).ready(function() {
+      {% for message in messages %}
+      var messageType = "{{ message.tags }}"
+      var messageText = "{{ message }}"
+
+      toastr.options = {
+        closeButton: true,
+        progressBar: true,
+        positionClass: 'toast-bottom-right',
+        showMethod: 'slideDown',
+        timeout: 5000
+      };
+
+      if (messageType === 'success') {
+        toastr.success(messageText);
+      } else if (messageType === 'error') {
+        toastr.error(messageText);
+      } else if (messageType === 'info') {
+        toastr.info(messageText);
+      } else {
+        toastr.warning(messageText);
+      }
+      {% endfor %}
+    });
+  </script>
+
+</body>
+</html>
+

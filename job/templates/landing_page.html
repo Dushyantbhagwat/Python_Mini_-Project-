@@ -43,7 +43,7 @@
       <button class="dropdown-btn">Register</button>
       <div class="dropdown-content">
       <a href="{% url 'u_signup' %}"><img src="{% static 'images/user.png' %}" alt="Image1">User</a>
-      <a href="#"><img src="{% static 'images/recruiter.jpg'%}" alt="Image1">Recruiter</a>
+      <a href="{% url 'r_signup' %}"><img src="{% static 'images/recruiter.jpg'%}" alt="Image1">Recruiter</a>
       </div>
     </div>
 
@@ -94,11 +94,12 @@
 
      <div class="dropdown">
       <select>
+          <option value="" selected disabled>City</option>
           {% for option in options %}
               <option value="{{ option }}">{{ option }}</option>
           {% endfor %}
       </select>
-    </div>
+     </div>
 
     <button class="right-button">Search</button>
   </div>

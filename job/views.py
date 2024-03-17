@@ -19,6 +19,7 @@ class LandingPage(generic.TemplateView):
         options = JobSeeker.objects.order_by('city').values_list('city', flat=True).distinct()
         print(f"{options}")
         context['options'] = options
+        print(context)
         return context
 
 
