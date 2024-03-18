@@ -23,36 +23,82 @@ class LandingPage(generic.TemplateView):
         return context
 
 
+# class LoginView(View):
+#     template_name = 'Login.html'
+#
+#     def get(self, request):
+#         return render(request, self.template_name)
+#
+#     def post(self, request):
+#         email = request.POST.get('email')
+#         password = request.POST.get('pwd')
+#
+#         user = authenticate(username=email, password=password)
+#
+#         if user:
+#             try:
+#                 # check if the user is in the JobSeeker table
+#                 user1 = JobSeeker.objects.get(user=user)
+#
+#                 if user1.type == 'seeker':
+#                     request.session['logged_in_user_id'] = user1.id
+#                     print(f"JobSeeker details - Name: {user1.full_name}, Email: {user1.email_id},"
+#                           f" Mobile: {user1.mobile_no}")
+#                     return redirect('u1')
+#
+#                 # check if the user is in the Recruiter table
+#                 user2 = Recruiter.objects.get(user=user)
+#
+#                 if user2.type == 'recruiter':
+#                     request.session['logged_in_user_id'] = user2.id
+#                     print(f"{user2.full_name}")
+#                     return redirect('login')
+#
+#             except ValidationError as e:
+#                 messages.warning(request, f"Fail: {str(e)}")
+#
+#         return render(request, self.template_name)
+
 class LoginView(View):
-    template_name = 'login.html'
+    template_name = 'Login.html'
 
     def get(self, request):
         return render(request, self.template_name)
 
     def post(self, request):
-        email = request.POST.get('username')
-        password = request.POST.get('password')
+        email = request.POST.get('email')
+        password = request.POST.get('pwd')
 
-        try:
-            # check if the user is in the JobSeeker table
-            user = JobSeeker.objects.filter(email_id=email).first()
+        user = authenticate(username=email, password=password)
 
-            if user and check_password(password, user.password):
-                request.session['logged_in_user_id'] = user.id
-                print(f"JobSeeker details - Name: {user.full_name}, Email: {user.email_id}, Mobile: {user.mobile_no}, "
-                      f"Image: {user.image}")
-                return redirect('u1')
+        if user:
+            try:
+                # Check if the user is a JobSeeker
+                job_seeker = JobSeeker.objects.get(user=user)
+                if job_seeker.type == 'seeker':
+                    request.session['logged_in_user_id'] = job_seeker.id
+                    print(f"JobSeeker details - Name: {job_seeker.full_name}, Email: {job_seeker.email_id},"
+                          f" Mobile: {job_seeker.mobile_no}")
+                    return redirect('u1')
 
-            # check if the user is in the Recruiter table
-            recruiter = Recruiter.objects.filter(email_id=email).first()
+            except JobSeeker.DoesNotExist:
+                pass  # No JobSeeker found for this user
 
-            if user and check_password(password, recruiter.password):
-                request.session['logged_in_user_id'] = recruiter.id
-                print(f"{recruiter.full_name}")
-                return redirect('u1')
+            try:
+                # Check if the user is a Recruiter
+                recruiter = Recruiter.objects.get(user=user)
+                if recruiter.type == 'recruiter':
+                    request.session['logged_in_user_id'] = recruiter.id
+                    print(f"{recruiter.full_name}")
+                    return redirect('landing_page')  # Redirect to recruiter dashboard
 
-        except ValidationError as e:
-            messages.warning(request, f"Fail: {str(e)}")
+            except Recruiter.DoesNotExist:
+                pass  # No Recruiter found for this user
+
+            messages.warning(request, "You are not authorized to access this page.")
+
+        else:
+            messages.error(request, "Invalid email or password.")
 
         return render(request, self.template_name)
 

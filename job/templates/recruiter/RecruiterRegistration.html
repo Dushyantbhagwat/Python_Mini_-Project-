@@ -72,7 +72,7 @@
       <span class="span"> </span>
     </span>
     <span class="span">
-      <a href="">Login</a>
+      <a href="{% url 'login' %}">Login</a>
     </span>
     <span>
       <span> </span>
@@ -120,74 +120,55 @@
       <div>
             <label for="password" class="your-password">Create a password <span>*</span></label><br>
             <div class="password-container">
-                <input type="password" id="password" name="password" class="password-input" placeholder="Enter your password" required>
-                <span class="toggle-password" onclick="togglePasswordVisibility()"><i class="fa-solid fa-eye"></i></span>
-            </div>
+                <input type="password" id="password" name="password" class="password-input" placeholder="Enter your password" onkeyup="checkPasswordStrength()" required>
+
             <div id="password-strength"></div>
-      </div>
+            </div>
 
-      <script>
-          function togglePasswordVisibility() {
-                var passwordInput = document.getElementById("password");
-                var toggleIcon = document.querySelector(".toggle-password i");
-
-                if (passwordInput.type === "password") {
-                    passwordInput.type = "text";
-                    toggleIcon.classList.remove("fa-eye");
-                    toggleIcon.classList.add("fa-eye-slash");
-                } else {
-                    passwordInput.type = "password";
-                    toggleIcon.classList.remove("fa-eye-slash");
-                    toggleIcon.classList.add("fa-eye");
+        <script>
+            function is_password_strong(password) {
+                if (password.length < 8) {
+                    return false;
                 }
-          }
 
-      </script>
+                if (!/[A-Z]/.test(password)) {
+                    return false;
+                }
 
+                if (!/[a-z]/.test(password)) {
+                    return false;
+                }
 
-    <script>
-        function is_password_strong(password) {
-            if (password.length < 8) {
-                return false;
+                if (!/\d/.test(password)) {
+                    return false;
+                }
+
+                var special_characters = "!@#$%^&*()-_=+[]{}|;:'\",.<>/?";
+                if (!RegExp("[" + special_characters.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + "]").test(password)) {
+                    return false;
+                }
+
+                return true;
             }
 
-            if (!/[A-Z]/.test(password)) {
-                return false;
+            function checkPasswordStrength() {
+                var password = document.getElementById("password").value;
+                var strengthText = document.getElementById("password-strength");
+
+                console.log("Password:", password);
+
+                if (password.length === 0) {
+                    strengthText.innerHTML = "";
+                    console.log("Password strength cleared.");
+                } else {
+                    var isStrong = is_password_strong(password);
+                    console.log("Is Strong:", isStrong);
+                    strengthText.innerHTML = "Password Strength: " + (isStrong ? "<span style='color: green;'>Strong</span>" : "<span style='color: red;'>Weak</span>");
+                    console.log("Password strength message updated:", strengthText.innerHTML);
+                }
             }
-
-            if (!/[a-z]/.test(password)) {
-                return false;
-            }
-
-            if (!/\d/.test(password)) {
-                return false;
-            }
-
-            var special_characters = "!@#$%^&*()-_=+[]{}|;:'\",.<>/?";
-            if (!RegExp("[" + special_characters.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + "]").test(password)) {
-                return false;
-            }
-
-            return true;
-        }
-
-        function checkPasswordStrength() {
-            var password = document.getElementById("password").value;
-            var strengthText = document.getElementById("password-strength");
-
-            console.log("Password:", password);
-
-            if (password.length === 0) {
-                strengthText.innerHTML = "";
-                console.log("Password strength cleared.");
-            } else {
-                var isStrong = is_password_strong(password);
-                console.log("Is Strong:", isStrong);
-                strengthText.innerHTML = "Password Strength: " + (isStrong ? "<span style='color: green;'>Strong</span>" : "<span style='color: red;'>Weak</span>");
-                console.log("Password strength message updated:", strengthText.innerHTML);
-            }
-        }
-    </script>
+        </script>
+      </div>
 
 
     <div class="by-clicking-register-container">

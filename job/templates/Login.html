@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="{% static 'style/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/index.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap"
+    />
+  </head>
+  <body >
+
+    <nav class="nav">
+      <p><a href="https://www.google.com/">
+      <a href="{% url 'landing_page' %}"><img  class="logo" src="{% static 'images/rectangle-23@2x.png'  %}" alt="logo"></a>
+    </a>
+    </p>
+      <div id="google_translate_element"></div>
+
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,mr',  // English and Marathi
+            }, 'google_translate_element');
+        }
+      </script>
+
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    </nav>
+  
+
+    <form action="{% url 'login'%}" method="post">
+      {% csrf_token %}
+    <div class="desktop-1">
+      <div class="login-area">
+        <h3 class="login">Login</h3>
+        <div class="register-input">
+        <div class="dropdown">
+            <a href="#" class="register-for-free">Register for free</a>
+            <div class="dropdown-content">
+                <a href="{% url 'u_signup' %}">JobSeeker</a>
+                <a href="{% url 'r_signup' %}">Recruiter</a>
+            </div>
+        </div>
+        </div>
+
+      </div>
+      <section class="password-input">
+        <div class="password-confirmation-input">
+          <label for="email" class="email-id">Email ID</label>
+          <div class="login-button">
+            <div class="username-box"></div>
+            <input type="email" class="enter-your-active" placeholder="Enter your Valid Email" id="email" name="email">
+          </div>
+        </div>
+        <div class="email-input-container">
+          <label for="pwd" class="password">Password</label>
+          <div class="show-pass-toggle">
+            <div class="forgot-password-container">
+              <div class="login-title">
+                <div class="password-box"></div>
+                <input type="password" class="enter-your-password" id="pwd" placeholder="Enter Your Password" name="pwd">
+<!--                <button class="show" onclick="show()"><img src="https://i.stack.imgur.com/Oyk1g.png" id="EYE"></button>-->
+              </div>
+            </div>
+            <a href="" class="forgot-password">Forgot Password?</a>
+          </div>
+        </div>
+      </section>
+      <button class="logo-container">
+        <div class="login-box"></div>
+        <div class="login1">Login</div>
+      </button>
+    </div>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <script>
+      $(document).ready(function() {
+        {% for message in messages %}
+        var messageType = "{{ message.tags }}"
+        var messageText = "{{ message }}"
+
+        toastr.options = {
+          closeButton: true,
+          progressBar: true,
+          positionClass: 'toast-bottom-right',
+          showMethod: 'slideDown',
+          timeout: 5000
+        };
+
+        if (messageType === 'success') {
+          toastr.success(messageText);
+        } else if (messageType === 'error') {
+          toastr.error(messageText);
+        } else if (messageType === 'info') {
+          toastr.info(messageText);
+        } else {
+          toastr.warning(messageText);
+        }
+        {% endfor %}
+      });
+    </script>
+
+
+
+  </body>
+</html>

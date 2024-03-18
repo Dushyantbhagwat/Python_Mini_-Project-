@@ -4,19 +4,6 @@
   {% load static %}
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, width=device-width" />
-  <script>
-      function show() {
-        var a = document.getElementById("pwd");
-        var b = document.getElementById("EYE");
-        if (a.type == "password") {
-          a.type = "text";
-          b.src = "https://i.stack.imgur.com/waw4z.png";
-        } else {
-          a.type = "password";
-          b.src = "https://i.stack.imgur.com/Oyk1g.png";
-        }
-      }
-  </script>
 
   <style>
     #password-strength {
@@ -55,7 +42,7 @@
             <span class="span"> </span>
           </span>
           <span class="login">
-            <a href="">Login</a>
+            <a href="{% url 'login'%}">Login</a>
           </span>
           <span>
             <span> </span>
@@ -119,16 +106,15 @@
                     <div class="minimum-six-chars">
                       <div class="mobile-number-label">
                         <div class="password-box"></div>
-                        <input class="create-a-password1" placeholder="Create  a password for your account" type="password" name="pwd" id="pwd" required/>
-                        <button class="show" onclick="show()"><img src="https://i.stack.imgur.com/Oyk1g.png" id="EYE"></button>
+                        <input class="create-a-password1" onkeyup="checkPasswordStrength()" placeholder="Create  a password for your account" type="password" name="pwd" id="pwd" required/>
+<!--                        <button class="show" onclick="show()"><img src="https://i.stack.imgur.com/Oyk1g.png" id="EYE"></button>-->
+                        <div id="password-strength"></div>
                       </div>
                       <div class="city-label-stroke">
                         <div class="minimum-six-characters">Minimum eight characters required</div>
                       </div>
                     </div>
-                  </div>
-
-                  <script>
+                    <script>
                       function is_password_strong(password) {
                           if (password.length < 8) {
                               return false;
@@ -171,6 +157,9 @@
                           }
                       }
                   </script>
+                  </div>
+
+
                 </div>
               </div>
               <div class="terms-and-conditions-link-wrapper">
