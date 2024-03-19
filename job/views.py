@@ -6,9 +6,11 @@ from .models import JobSeeker, Recruiter
 from .utils import *
 from django.contrib import messages
 from django.core.exceptions import ValidationError
-
+from django.http import JsonResponse
+import random
 
 # Create your Views here.
+
 
 class LandingPage(generic.TemplateView):
     template_name = 'landing_page.html'
@@ -69,9 +71,14 @@ class LoginView(View):
         email = request.POST.get('email')
         password = request.POST.get('pwd')
 
+        print("Received email:", email)  # Debug statement
+        print("Received password:", password)  # Debug statement
+
         user = authenticate(username=email, password=password)
 
         if user:
+            print("User authenticated successfully.")  # Debug statement
+
             try:
                 # Check if the user is a JobSeeker
                 job_seeker = JobSeeker.objects.get(user=user)
@@ -79,7 +86,7 @@ class LoginView(View):
                     request.session['logged_in_user_id'] = job_seeker.id
                     print(f"JobSeeker details - Name: {job_seeker.full_name}, Email: {job_seeker.email_id},"
                           f" Mobile: {job_seeker.mobile_no}")
-                    return redirect('u1')
+                    return render(request, 'job_seeker/UserProfile.html', {'job_seeker': job_seeker})
 
             except JobSeeker.DoesNotExist:
                 pass  # No JobSeeker found for this user
@@ -90,7 +97,7 @@ class LoginView(View):
                 if recruiter.type == 'recruiter':
                     request.session['logged_in_user_id'] = recruiter.id
                     print(f"{recruiter.full_name}")
-                    return redirect('landing_page')  # Redirect to recruiter dashboard
+                    return redirect('u_profile')  # Redirect to recruiter dashboard
 
             except Recruiter.DoesNotExist:
                 pass  # No Recruiter found for this user
@@ -98,6 +105,7 @@ class LoginView(View):
             messages.warning(request, "You are not authorized to access this page.")
 
         else:
+            print("Authentication failed.")  # Debug statement
             messages.error(request, "Invalid email or password.")
 
         return render(request, self.template_name)
@@ -124,5 +132,18 @@ def job(request):
     return render(request, 'j1.html')
 
 
+def send_otp(request):
+    if request.method == 'POST':
+        phone_number = request.POST.get('phone_number')
 
+        # Generate OTP
+        otp = ''.join([str(random.randint(0, 9)) for _ in range(6)])  # Generate a 6-digit OTP
 
+        # For demo purposes, print the OTP
+        print("Generated OTP:", otp)
+
+        # Here, you can implement the logic to send the OTP via SMS using a third-party service
+
+        return JsonResponse({'success': True, 'message': 'OTP sent successfully'})
+    else:
+        return JsonResponse({'success': False, 'message': 'Invalid request method'})

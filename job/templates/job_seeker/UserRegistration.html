@@ -23,6 +23,31 @@
     background-color: #dff0d8;
     border-color: #d6e9c6;
     }
+
+    .full-name span {
+      color: red; /* Set the color of the asterisk */
+    }
+
+    .email-id span {
+      color: red; /* Set the color of the asterisk */
+    }
+
+    .password span {
+      color: red; /* Set the color of the asterisk */
+    }
+
+    .mobile-number span {
+      color: red; /* Set the color of the asterisk */
+    }
+
+    .city span {
+      color: red; /* Set the color of the asterisk */
+    }
+
+    .location span {
+      color: red; /* Set the color of the asterisk */
+    }
+
   </style>
   <link rel="stylesheet" href="{% static 'style/job_seeker/Global.css' %}" />
   <link rel="stylesheet" href="{% static 'style/job_seeker/UserRegistration.css' %}">
@@ -79,7 +104,7 @@
             {% csrf_token %}
           <div class="email-i-d-input">
             <div class="full-name-input">
-              <label for="name" class="full-name">Full name</label>
+              <label for="name" class="full-name">Full name <span>*</span></label>
               <div class="login-button">
                 <div class="email-i-d-confirm">
                   <div class="name-box"></div>
@@ -89,7 +114,7 @@
             </div>
           </div>
           <div class="email-i-d-input1">
-            <label for="email" class="email-id">Email ID</label>
+            <label for="email" class="email-id">Email ID <span>*</span></label>
             <div class="city-label">
               <div class="email-box-parent">
                 <div class="email-box"></div>
@@ -101,7 +126,7 @@
             <div class="city-stroke">
               <div class="enter-city">
                 <div class="password-parent">
-                  <label for="pwd" class="password">Password</label>
+                  <label for="pwd" class="password">Password <span>*</span></label>
                   <div class="create-a-password">
                     <div class="minimum-six-chars">
                       <div class="mobile-number-label">
@@ -164,7 +189,7 @@
               </div>
               <div class="terms-and-conditions-link-wrapper">
                 <div class="terms-and-conditions-link">
-                  <label for="mobile" class="mobile-number">Mobile number</label>
+                  <label for="mobile" class="mobile-number">Mobile number <span>*</span></label>
                   <div class="terms-and-conditions-link-inner">
                     <div class="mobile-box-parent">
                       <div class="mobile-box"></div>
@@ -179,7 +204,7 @@
               <div class="city-stroke-inner">
                 <div class="frame-parent">
                   <div class="city-wrapper">
-                    <label for="city" class="city">City</label>
+                    <label for="city" class="city">City <span>*</span></label>
                   </div>
                   <div class="email-box-stroke-parent">
                     <img class="email-box-stroke" alt="" src="{% static 'style/job_seeker/email-box-stroke.svg' %}" />
@@ -189,7 +214,7 @@
               </div>
               <div class="frame-group">
                 <div class="location-wrapper">
-                  <label for="location" class="location">Location</label>
+                  <label for="location" class="location">Location <span>*</span></label>
                 </div>
                 <div class="email-box-stroke-group">
                   <img class="email-box-stroke1" alt="" src="{% static 'style/job_seeker/email-box-stroke.svg' %}" />

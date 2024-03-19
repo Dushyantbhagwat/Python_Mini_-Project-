@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="{% static 'style/job_seeker/UserProfile.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/job_seeker/ProfileGlobal.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="userprofile">
+      <header class="navbarframe">
+        <div class="frame-parent">
+          <div class="logo-wrapper">
+            <img
+              class="logo-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/logo@2x.png' %}"
+            />
+          </div>
+          <div class="home-button-wrapper">
+            <button class="home-button">
+              <img
+                class="material-symbolshome-icon"
+                loading="lazy"
+                alt=""
+                src="{% static 'images/materialsymbolshome@2x.png' %}"
+              />
+
+              <div class="home-wrapper">
+                <div class="home">Home</div>
+              </div>
+            </button>
+          </div>
+          <div class="frame-button-wrapper">
+            <button class="apllication-button-parent">
+              <div class="apllication"></div>
+              <img
+                class="mdinotes-icon"
+                loading="lazy"
+                alt=""
+                src="{% static 'images/mdinotes@2x.png' %}"
+              />
+
+              <div class="application-wrapper">
+                <div class="application">Application</div>
+              </div>
+            </button>
+          </div>
+          <div class="upload-button-wrapper">
+            <button class="upload-button">
+              <div class="addjob"></div>
+              <img
+                class="ggadd-icon"
+                loading="lazy"
+                alt=""
+                src="{% static 'images/ggadd@2x.png' %}"
+              />
+              <div class="add-job-wrapper">
+                <div class="add-job">Add Job</div>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div class="profilepic-button-wrapper">
+          <button class="profilepic-button">
+            <img
+              class="solarlist-linear-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/solarlistlinear@2x.png' %}"
+            />
+
+            <img
+              class="ggprofile-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/ggprofile@2x.png' %}"
+            />
+          </button>
+        </div>
+      </header>
+      <main class="frame">
+        <section class="ggadd-button">
+          <div class="registeredinfo">
+            <div class="upload-resume-message">
+              <img
+                class="profilephoto-icon"
+                loading="lazy"
+                alt=""
+                src="{% static 'images/profilephoto@2x.png' %}"
+              />
+            </div>
+            <div class="frame1">
+              <div class="frame2">
+                <div class="name">
+                  <b class="tejas-bhagat">
+                    <p class="tejas-bhagat1">{{ job_seeker.full_name }}</p>
+                  </b>
+                  <button class="imagebutton">
+                    <img
+                      class="primepencil-icon"
+                      loading="lazy"
+                      alt=""
+                      src="{% static 'images/primepencil@2x.png' %}"
+                    />
+                  </button>
+                </div>
+                <div class="contactinfo">
+                  <div class="frame3">
+                    <div class="availabilityinfo">
+                      <img
+                        class="mdicompany-icon"
+                        loading="lazy"
+                        alt=""
+                        src="{% static 'images/mdicompany@2x.png' %}"
+                      />
+
+                      <div class="add-availaibality-to">
+                        Add availaibality to join
+                      </div>
+                    </div>
+                    <div class="locationinfo">
+                      <img
+                        class="mdilocation-icon"
+                        loading="lazy"
+                        alt=""
+                        src="{% static 'images/mdilocation@2x.png' %}"
+                      />
+
+                      <div class="mumbai-india">Mumbai, India</div>
+                    </div>
+                  </div>
+                  <div class="frame4">
+                    <div class="phonenoinfo">
+                      <img
+                        class="phonenoinfo-child"
+                        loading="lazy"
+                        alt=""
+                        src="{% static 'images/frame-1@2x.png' %}"
+                      />
+
+                      <div class="div">2022199202</div>
+                    </div>
+                    <div class="emailidinfo">
+                      <img
+                        class="icoutline-email-icon"
+                        loading="lazy"
+                        alt=""
+                        src="{% static 'images/icoutlineemail@2x.png' %}"
+                      />
+
+                      <div class="tejasbhagat2004gmailcom">
+                        Tejasbhagat2004@gmail.com
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="frame5">
+          <div class="resume">
+            <div class="frame6">
+              <div class="resume-add-100-container">
+                <span class="resume1">Resume </span>
+                <span class="add-100">Add 100%</span>
+              </div>
+            </div>
+            <div class="registered-name-container">
+              <div class="resume-is-the">
+                Resume is the most important document recruiter look for.
+                Recruiter generally don’t look at profile with no resumes.
+              </div>
+            </div>
+            <div class="frame7">
+              <button class="upload-button-container">
+                <div class="resume-upload">
+                <div class="supported-format-container">
+                  <div class="frame8">
+                    <img
+                      class="carbonadd-alt-icon"
+                      loading="lazy"
+                      alt=""
+                      src="{% static 'images/carbonaddalt@2x.png' %}"
+                    />
+
+                    <div class="upload-resume">Upload Resume</div>
+                  </div>
+                </div>
+                <div class="supported-formats">
+                  <div class="supported-formats-doc">
+                    Supported Formats: doc, docx, rtf, pdf, upto 2 MB
+                  </div>
+                </div>
+              </div>
+            </div>
+          </button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

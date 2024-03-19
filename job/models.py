@@ -17,7 +17,7 @@ class Recruiter(models.Model):
     status = models.CharField(max_length=45, blank=True, null=True, default='request pending')
     type = models.CharField(max_length=45, blank=True, null=True, default='recruiter')
     image = models.ImageField(upload_to='recruiter', null=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
 
 class JobSeeker(models.Model):
@@ -30,7 +30,7 @@ class JobSeeker(models.Model):
     resume = models.FileField(upload_to='user_resume', max_length=100, blank=True, null=True)
     type = models.CharField(max_length=45, null=True, default='seeker')
     image = models.ImageField(upload_to='user', null=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
 
 class Job(models.Model):
