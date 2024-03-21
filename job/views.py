@@ -130,20 +130,20 @@ def u1(request):
 
 def job(request):
     return render(request, 'j1.html')
-
-
-def send_otp(request):
-    if request.method == 'POST':
-        phone_number = request.POST.get('phone_number')
-
-        # Generate OTP
-        otp = ''.join([str(random.randint(0, 9)) for _ in range(6)])  # Generate a 6-digit OTP
-
-        # For demo purposes, print the OTP
-        print("Generated OTP:", otp)
-
-        # Here, you can implement the logic to send the OTP via SMS using a third-party service
-
-        return JsonResponse({'success': True, 'message': 'OTP sent successfully'})
-    else:
-        return JsonResponse({'success': False, 'message': 'Invalid request method'})
+#
+#
+# def send_otp(request):
+#     if request.method == 'POST':
+#         phone_number = request.POST.get('phone_number')
+#
+#         # Generate OTP
+#         otp = ''.join([str(random.randint(0, 9)) for _ in range(6)])  # Generate a 6-digit OTP
+#
+#         # For demo purposes, print the OTP
+#         print("Generated OTP:", otp)
+#
+#         # Here, you can implement the logic to send the OTP via SMS using a third-party service
+#
+#         return JsonResponse({'success': True, 'message': 'OTP sent successfully'})
+#     else:
+#         return JsonResponse({'success': False, 'message': 'Invalid request method'})

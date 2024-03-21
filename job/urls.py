@@ -13,5 +13,8 @@ urlpatterns = [
     path('u_signup/', sign_up.UserSignupView.as_view(), name='u_signup'),
     path('r_signup/', r_sign_up.RecruiterSignupView.as_view(), name='r_signup'),
     path('u_profile/', user_profile.UserProfile.as_view(), name='u_profile'),
+    # path('api/send-otp/', views.send_otp, name='send_otp'),
+    path('verify', r_sign_up.verify_otp_view, name='verify'),
+    path('u_verify', sign_up.verify_otp_view, name='u_verify'),
 ]
 

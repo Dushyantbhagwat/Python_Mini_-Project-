@@ -2,10 +2,12 @@
   align-self: stretch;
   height: 48px;
   position: relative;
-  max-width: 100%;
   overflow: hidden;
   flex-shrink: 0;
   object-fit: cover;
+  width: 180px; /* Adjust this value to change width */
+  height: auto; /* Maintain aspect ratio */
+  left: 30px
 }
 .logo-wrapper {
   flex: 1;
@@ -60,8 +62,12 @@
   padding: var(--padding-6xs) 21px;
   gap: 6px;
   white-space: nowrap;
+  left: 40px
 }
 .home-button-wrapper {
+  position: relative;
+  top: -1px; /* Example value to move the button 20 pixels down */
+  left: -110px; /* Example value to move the button 10 pixels to the left */
   width: 128px;
   flex-direction: column;
   justify-content: flex-end;
@@ -212,6 +218,9 @@
 }
 
 .upload-button-wrapper {
+  position: relative;
+  top: -1px; /* Example value to move the button 20 pixels down */
+  left: -89px; /* Example value to move the button 10 pixels to the left */
   width: 128px;
   flex-direction: column;
   justify-content: flex-end;
@@ -296,6 +305,9 @@
   padding: 0 0 31px;
 }
 .tejas-bhagat1 {
+  white-space: nowrap; /* Prevent name from wrapping */
+  overflow: hidden; /* Hide overflow if the name is too long */
+  text-overflow: ellipsis; /* Show ellipsis if the name exceeds container */
   margin: 0;
 }
 .tejas-bhagat {

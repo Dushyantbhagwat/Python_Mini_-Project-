@@ -17,12 +17,12 @@
       <header class="navbarframe">
         <div class="frame-parent">
           <div class="logo-wrapper">
-            <img
+            <a href="{% url 'landing_page' %}"><img
               class="logo-icon"
               loading="lazy"
               alt=""
               src="{% static 'images/logo@2x.png' %}"
-            />
+            /></a>
           </div>
           <div class="home-button-wrapper">
             <button class="home-button">
@@ -38,21 +38,21 @@
               </div>
             </button>
           </div>
-          <div class="frame-button-wrapper">
-            <button class="apllication-button-parent">
-              <div class="apllication"></div>
-              <img
-                class="mdinotes-icon"
-                loading="lazy"
-                alt=""
-                src="{% static 'images/mdinotes@2x.png' %}"
-              />
+<!--          <div class="frame-button-wrapper">-->
+<!--            <button class="apllication-button-parent">-->
+<!--              <div class="apllication"></div>-->
+<!--              <img-->
+<!--                class="mdinotes-icon"-->
+<!--                loading="lazy"-->
+<!--                alt=""-->
+<!--                src="{% static 'images/mdinotes@2x.png' %}"-->
+<!--              />-->
 
-              <div class="application-wrapper">
-                <div class="application">Application</div>
-              </div>
-            </button>
-          </div>
+<!--              <div class="application-wrapper">-->
+<!--                <div class="application">Application</div>-->
+<!--              </div>-->
+<!--            </button>-->
+<!--          </div>-->
           <div class="upload-button-wrapper">
             <button class="upload-button">
               <div class="addjob"></div>
@@ -63,14 +63,15 @@
                 src="{% static 'images/ggadd@2x.png' %}"
               />
               <div class="add-job-wrapper">
-                <div class="add-job">Add Job</div>
+                <div class="add-job">Status</div>
               </div>
             </button>
           </div>
         </div>
         <div class="profilepic-button-wrapper">
-          <button class="profilepic-button">
-            <img
+          <button class="profilepic-button" id="profileButton">
+            <a href="{% url 'u_profile' %}">
+              <img
               class="solarlist-linear-icon"
               loading="lazy"
               alt=""
@@ -83,7 +84,19 @@
               alt=""
               src="{% static 'images/ggprofile@2x.png' %}"
             />
+            </a>
           </button>
+
+<!--          <script>-->
+<!--            document.addEventListener("DOMContentLoaded", function() {-->
+<!--              const profileButton = document.getElementById("profileButton");-->
+<!--              profileButton.addEventListener("click", function(event) {-->
+<!--                event.preventDefault(); // Prevent default link behavior-->
+<!--                window.location.href = this.querySelector("a").href; // Redirect to the link href-->
+<!--              });-->
+<!--            });-->
+
+<!--          </script>-->
         </div>
       </header>
       <main class="frame">
@@ -134,7 +147,7 @@
                         src="{% static 'images/mdilocation@2x.png' %}"
                       />
 
-                      <div class="mumbai-india">Mumbai, India</div>
+                      <div class="mumbai-india">{{ job_seeker.address }},India</div>
                     </div>
                   </div>
                   <div class="frame4">
@@ -146,7 +159,7 @@
                         src="{% static 'images/frame-1@2x.png' %}"
                       />
 
-                      <div class="div">2022199202</div>
+                      <div class="div">{{ job_seeker.mobile_no }}</div>
                     </div>
                     <div class="emailidinfo">
                       <img
@@ -157,7 +170,7 @@
                       />
 
                       <div class="tejasbhagat2004gmailcom">
-                        Tejasbhagat2004@gmail.com
+                        {{ job_seeker.email_id }}
                       </div>
                     </div>
                   </div>
@@ -200,9 +213,9 @@
                     Supported Formats: doc, docx, rtf, pdf, upto 2 MB
                   </div>
                 </div>
-              </div>
+                </div>
+              </button>
             </div>
-          </button>
           </div>
         </section>
       </main>
