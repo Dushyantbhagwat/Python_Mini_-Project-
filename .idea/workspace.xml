@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="profile and update features added">
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="resume issue solved">
+      <change afterPath="$PROJECT_DIR$/media/user/pngtree-smiley-emoji-png-image_6587368_2I7KUD1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/user_resume/pngtree-smiley-emoji-png-image_6587368.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/user_resume/pngtree-smiley-emoji-png-image_6587368_lohMdfo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/user_resume/pngtree-smiley-emoji-png-image_6587368_nJwCWKs.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/user_profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/user_profile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/user_update_profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/user_update_profile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/sign_up.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/sign_up.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/Views/recruiter/r_sign_up.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/recruiter/r_sign_up.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/middleware.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/UserProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/UserProfile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/u_update_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/u_update_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/u_verify_otp.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/u_verify_otp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/verify_otp.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/verify_otp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,8 +310,27 @@
       <option name="project" value="LOCAL" />
       <updated>1711180932718</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="resume issue solved">
+      <option name="closed" value="true" />
+      <created>1711200105012</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1711200105012</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -322,6 +341,7 @@
     <MESSAGE value="user and recruiter registration and login featured completed" />
     <MESSAGE value="email service is working" />
     <MESSAGE value="profile and update features added" />
-    <option name="LAST_COMMIT_MESSAGE" value="profile and update features added" />
+    <MESSAGE value="resume issue solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="resume issue solved" />
   </component>
 </project>

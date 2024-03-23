@@ -130,6 +130,9 @@ def verify_otp_view(request):
         otp_entered = request.POST.get('otp')
         stored_otp = request.session.get('otp')
 
+        print(otp_entered)
+        print(stored_otp)
+
         if otp_entered == stored_otp:
             # If OTP is verified successfully, proceed with user creation
             # Retrieve user details from session or temporary storage

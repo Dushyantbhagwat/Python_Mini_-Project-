@@ -88,6 +88,32 @@ def r_send_otp(otp, email):
     email_message.send()
 
 
+def r_send_email(name, email):
+    messages_body = (f"""
+
+        Dear {name},
+
+        We are thrilled to welcome you to Jobs4U! Thank you for registering as a recruiter on our platform. 
+        Your interest in connecting with top talent is greatly appreciated.
+
+        Your account details are as follows:
+        - Username: {email}
+
+        Please note that your account is currently pending approval. Access to our job portal will be granted only after administrative review and approval. Once approved, you will have full access to our platform's features, including the ability to post job listings, search for candidates, and manage your recruitment activities efficiently.
+
+        We will notify you via email as soon as your account is approved. If you have any questions or need assistance, please don't hesitate to reach out to our support team at [Support Email Address].
+
+        Thank you again for choosing Jobs4U. We look forward to helping you find the perfect candidates for your open positions.
+
+        Best regards,
+        Jobs4U Team
+
+    """)
+
+    email_message = EmailMessage("Welcome to Jobs4U - Account Registration Confirmation", messages_body, to=[email])
+    email_message.send()
+
+
 class RecruiterSignupView(View):
     template_name = 'recruiter/RecruiterRegistration.html'  # class variable
 
@@ -184,6 +210,8 @@ def verify_otp_view(request):
                 user=new_user
             )
             new_recruiter.save()
+
+            r_send_email(user_details['name'], user_details['email'])
 
             # Clear session data
             del request.session['otp']
