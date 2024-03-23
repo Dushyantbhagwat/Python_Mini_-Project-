@@ -10,7 +10,7 @@ class CheckLoginMiddleware:
 
     def __call__(self, request):
         # Check if the user is not logged in and trying to access a protected feature
-        if not request.user.is_authenticated and request.path == '/u_profile/':
+        if not request.user.is_authenticated and request.path == '/r_landing_page/':
             return redirect(reverse('login'))  # Redirect to login page
 
         response = self.get_response(request)

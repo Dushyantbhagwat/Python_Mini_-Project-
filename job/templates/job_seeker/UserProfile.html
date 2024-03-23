@@ -194,32 +194,33 @@
               </div>
             </div>
             <div class="frame7">
-              <button class="upload-button-container">
-                <div class="resume-upload">
-                <div class="supported-format-container">
-                  <div class="frame8">
-                    <img
-                      class="carbonadd-alt-icon"
-                      loading="lazy"
-                      alt=""
-                      src="{% static 'images/carbonaddalt@2x.png' %}"
-                    />
-
-                    <div class="upload-resume">Upload Resume</div>
+                <a href="{% url 'u_update_profile' %}"><button class="upload-button-container" name="resume">
+                  <div class="resume-upload">
+                    <div class="supported-format-container">
+                      <div class="frame8">
+                        <img
+                        class="carbonadd-alt-icon"
+                          loading="lazy"
+                          alt=""
+                          src="{% static 'images/carbonaddalt@2x.png' %}"
+                        />
+                        <div class="upload-resume">Upload Resume</div>
+                      </div>
+                    </div>
+                    <div class="supported-formats">
+                      <div class="supported-formats-doc">
+                        Supported Formats: doc, docx, rtf, pdf, upto 2 MB
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="supported-formats">
-                  <div class="supported-formats-doc">
-                    Supported Formats: doc, docx, rtf, pdf, upto 2 MB
-                  </div>
-                </div>
-                </div>
-              </button>
+                Submit</button></a>
+              </form>
             </div>
           </div>
         </section>
       </main>
     </div>
+
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

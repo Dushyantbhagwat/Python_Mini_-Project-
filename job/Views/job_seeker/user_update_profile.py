@@ -32,6 +32,7 @@ class UpdateProfileView(View):
             email = request.POST.get('email')
             photo = request.FILES.get('photo')  # Use get() to avoid KeyError
             address = request.POST.get('address')
+            resume = request.FILES.get('resume')
 
             name = name.title()
 
@@ -42,6 +43,7 @@ class UpdateProfileView(View):
             if photo:  # Check if photo is uploaded
                 job_seeker.image = photo
             job_seeker.address = address
+            job_seeker.resume = resume
             job_seeker.save()
 
             messages.success(request, "Profile Updated Successfully")

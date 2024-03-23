@@ -220,4 +220,3 @@ def u_landing_page(request):
 
 
 
-

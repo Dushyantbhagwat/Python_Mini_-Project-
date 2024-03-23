@@ -1,6 +1,7 @@
+from django.contrib import messages
 from django.http import HttpResponse
-from django.shortcuts import render
-from django.views import generic
+from django.shortcuts import render, redirect
+from django.views import generic, View
 
 from job.models import JobSeeker
 
@@ -20,19 +21,6 @@ def seeker_profile(request):
     else:
         # Handle the case where logged_in_user_id is not found in session
         return HttpResponse("Logged in user ID not found in session.")
-
-
-# class UserProfile(generic.TemplateView):
-#     template_name = 'job_seeker/UserProfile.html'
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         logged_in_user_id = self.kwargs.get('logged_in_user_id')  # Get the parameter from URL
-#         context['logged_in_user_id'] = logged_in_user_id
-#         # Add other necessary context data
-#         return context
-
-
 
 
 
