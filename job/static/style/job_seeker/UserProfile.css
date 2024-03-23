@@ -621,6 +621,7 @@
   justify-content: flex-start;
   padding: 21.69999999999999px var(--padding-xl) 32px;
   gap: 10px;
+  width: 1100px;
 }
 .frame5,
 .frame7,

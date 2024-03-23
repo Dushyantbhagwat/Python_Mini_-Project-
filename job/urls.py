@@ -13,7 +13,7 @@ urlpatterns = [
     path('j1/', views.job, name='j1'),
 
     path('u_signup/', sign_up.UserSignupView.as_view(), name='u_signup'),
-    path('u_verify/', sign_up.verify_otp_view, name='u_verify'),
+    path('u_verify/', sign_up.verify_otp_view_u, name='u_verify'),
     path('u_profile/', user_profile.seeker_profile, name='u_profile'),
     path('u_update_profile/', user_update_profile.UpdateProfileView.as_view(), name='u_update_profile'),
     path('u_landing_page/', sign_up.u_landing_page, name='u_landing_page'),

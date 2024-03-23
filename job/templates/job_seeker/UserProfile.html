@@ -13,14 +13,64 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
     />
+    <style>
+      /* Add your CSS styles here */
+          .upload-resume-message {
+              text-align: center;
+          }
+
+          .profilephoto-icon {
+              width: 100px; /* Adjust as needed */
+              height: auto;
+              cursor: pointer;
+          }
+
+          /* Modal styles */
+          .modal {
+              display: none;
+              position: fixed;
+              z-index: 999;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(0, 0, 0, 0.7);
+          }
+
+          .modal-content {
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              max-width: 80%;
+              max-height: 80%;
+          }
+
+          .modal-content img {
+              width: 100%;
+              height: auto;
+          }
+
+          /* Close button */
+          .close {
+              position: absolute;
+              top: 10px;
+              right: 20px;
+              color: white;
+              font-size: 30px;
+              font-weight: bold;
+              cursor: pointer;
+          }
+    </style>
   </head>
   <script>
     function toggleDropdown() {
       var dropdownContent = document.getElementById("dropdown-content");
       dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
     }
-
   </script>
+
   <body>
     <div class="userprofile">
       <header class="navbarframe">
@@ -99,6 +149,7 @@
                         loading="lazy"
                         alt=""
                         src="{{ job_seeker.image.url }}"
+                        onclick="displayImageModal('{{ job_seeker.image.url }}')"
                     />
                 {% else %}
                     <img
@@ -106,9 +157,34 @@
                         loading="lazy"
                         alt=""
                         src="{% static 'images/profilephoto@2x.png' %}"
+                        onclick="displayImageModal('{% static 'images/profilephoto@2x.png' %}')"
                     />
                 {% endif %}
             </div>
+
+            <!-- The Modal -->
+            <div id="imageModal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+                    <img id="modalImage" src="" alt="">
+                </div>
+            </div>
+
+            <script>
+                // Function to display the image modal
+                function displayImageModal(imageUrl) {
+                    var modal = document.getElementById('imageModal');
+                    var modalImg = document.getElementById("modalImage");
+                    modal.style.display = "block";
+                    modalImg.src = imageUrl;
+                }
+
+                // Function to close the modal
+                function closeModal() {
+                    var modal = document.getElementById('imageModal');
+                    modal.style.display = "none";
+                }
+            </script>
 
             <div class="frame1">
               <div class="frame2">
@@ -214,7 +290,6 @@
                     </div>
                   </div>
                 Submit</button></a>
-              </form>
             </div>
           </div>
         </section>

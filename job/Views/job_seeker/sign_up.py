@@ -125,7 +125,7 @@ class UserSignupView(View):
         return render(request, self.template_name)
 
 
-def verify_otp_view(request):
+def verify_otp_view_u(request):
     if request.method == 'POST':
         otp_entered = request.POST.get('otp')
         stored_otp = request.session.get('otp')
