@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
     <link rel="stylesheet" href="{% static 'style/job_seeker/UserProfile.css' %}" />
     <link rel="stylesheet" href="{% static 'style/job_seeker/ProfileGlobal.css' %}" />
     <link
@@ -12,12 +14,19 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
     />
   </head>
+  <script>
+    function toggleDropdown() {
+      var dropdownContent = document.getElementById("dropdown-content");
+      dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    }
+
+  </script>
   <body>
     <div class="userprofile">
       <header class="navbarframe">
         <div class="frame-parent">
           <div class="logo-wrapper">
-            <a href="{% url 'landing_page' %}"><img
+            <a href="{% url 'u_landing_page' %}"><img
               class="logo-icon"
               loading="lazy"
               alt=""
@@ -69,61 +78,52 @@
           </div>
         </div>
         <div class="profilepic-button-wrapper">
-          <button class="profilepic-button" id="profileButton">
-            <a href="{% url 'u_profile' %}">
-              <img
-              class="solarlist-linear-icon"
-              loading="lazy"
-              alt=""
-              src="{% static 'images/solarlistlinear@2x.png' %}"
-            />
-
-            <img
-              class="ggprofile-icon"
-              loading="lazy"
-              alt=""
-              src="{% static 'images/ggprofile@2x.png' %}"
-            />
-            </a>
-          </button>
-
-<!--          <script>-->
-<!--            document.addEventListener("DOMContentLoaded", function() {-->
-<!--              const profileButton = document.getElementById("profileButton");-->
-<!--              profileButton.addEventListener("click", function(event) {-->
-<!--                event.preventDefault(); // Prevent default link behavior-->
-<!--                window.location.href = this.querySelector("a").href; // Redirect to the link href-->
-<!--              });-->
-<!--            });-->
-
-<!--          </script>-->
+            <button class="profilepic-button" >
+              <a href="{% url 'u_profile' %}">
+               <img class="solarlist-linear-icon" loading="lazy" alt="" src="{% static 'images/solarlistlinear@2x.png' %}" />
+                <img class="ggprofile-icon" loading="lazy" alt="" src="{% static 'images/ggprofile@2x.png' %}"/>
+              </a>
+            </button>
         </div>
+
       </header>
+    </div>
+
       <main class="frame">
         <section class="ggadd-button">
           <div class="registeredinfo">
             <div class="upload-resume-message">
-              <img
-                class="profilephoto-icon"
-                loading="lazy"
-                alt=""
-                src="{% static 'images/profilephoto@2x.png' %}"
-              />
+                {% if job_seeker.image %}
+                    <img
+                        class="profilephoto-icon"
+                        loading="lazy"
+                        alt=""
+                        src="{{ job_seeker.image.url }}"
+                    />
+                {% else %}
+                    <img
+                        class="profilephoto-icon"
+                        loading="lazy"
+                        alt=""
+                        src="{% static 'images/profilephoto@2x.png' %}"
+                    />
+                {% endif %}
             </div>
+
             <div class="frame1">
               <div class="frame2">
                 <div class="name">
                   <b class="tejas-bhagat">
                     <p class="tejas-bhagat1">{{ job_seeker.full_name }}</p>
                   </b>
-                  <button class="imagebutton">
+                  <a href="{% url 'u_update_profile' %}"><button class="imagebutton">
                     <img
                       class="primepencil-icon"
                       loading="lazy"
                       alt=""
                       src="{% static 'images/primepencil@2x.png' %}"
                     />
-                  </button>
+                  </button></a>
                 </div>
                 <div class="contactinfo">
                   <div class="frame3">
@@ -220,5 +220,37 @@
         </section>
       </main>
     </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+      <script>
+        $(document).ready(function() {
+          {% for message in messages %}
+          var messageType = "{{ message.tags }}"
+          var messageText = "{{ message }}"
+
+          toastr.options = {
+            closeButton: true,
+            progressBar: true,
+            positionClass: 'toast-bottom-right',
+            showMethod: 'slideDown',
+            timeout: 5000
+          };
+
+          if (messageType === 'success') {
+            toastr.success(messageText);
+          } else if (messageType === 'error') {
+            toastr.error(messageText);
+          } else if (messageType === 'info') {
+            toastr.info(messageText);
+          } else {
+            toastr.warning(messageText);
+          }
+          {% endfor %}
+        });
+      </script>
+
   </body>
 </html>

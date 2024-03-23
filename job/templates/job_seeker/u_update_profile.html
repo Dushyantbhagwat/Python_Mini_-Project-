@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 500px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="file"] {
+            margin-top: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+</head>
+<body>
+    <div class="container">
+    <div class="header">
+        <a href="{% url 'u_profile' %}" class="back-button">&#8592; Back to Previous Page</a>
+        <h2>User Information Form</h2>
+    </div>
+    <form method="POST" enctype="multipart/form-data" action="{% url 'u_update_profile' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ job_seeker.full_name }}" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone No:</label>
+            <input type="text" id="phone" name="phone" value="{{ job_seeker.mobile_no }}" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{ job_seeker.email_id }}" required>
+        </div>
+        <div class="form-group">
+            <label for="photo">Photo:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="3" required>{{ job_seeker.address }}</textarea>
+        </div>
+        <button type="submit" id="submitButton">Submit</button>
+
+        <div id="google_translate_element"></div>
+
+
+    </form>
+
+
+
+
+
+</div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+      <script>
+        $(document).ready(function() {
+          {% for message in messages %}
+          var messageType = "{{ message.tags }}"
+          var messageText = "{{ message }}"
+
+          toastr.options = {
+            closeButton: true,
+            progressBar: true,
+            positionClass: 'toast-bottom-right',
+            showMethod: 'slideDown',
+            timeout: 5000
+          };
+
+          if (messageType === 'success') {
+            toastr.success(messageText);
+          } else if (messageType === 'error') {
+            toastr.error(messageText);
+          } else if (messageType === 'info') {
+            toastr.info(messageText);
+          } else {
+            toastr.warning(messageText);
+          }
+          {% endfor %}
+        });
+      </script>
+
+      <script>
+        document.getElementById("submitButton").addEventListener("click", function() {
+            if (confirm("Are you sure you want to submit the form?")) {
+                document.getElementById("updateForm").submit();
+            }
+        });
+      </script>
+
+        <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,mr',  // English and Marathi
+            }, 'google_translate_element');
+        }
+      </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+</body>
+</html>

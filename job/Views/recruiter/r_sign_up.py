@@ -77,11 +77,11 @@ from django.conf import settings
 #         return render(request, self.template_name)
 
 
-def generate_otp():
+def r_generate_otp():
     return ''.join(random.choices('0123456789', k=8))  # Generate a 8-digit OTP
 
 
-def send_otp(otp, email):
+def r_send_otp(otp, email):
     message_body = (f"Dear User,\n\nThank you for registering with our platform. Your OTP for verification is: {otp}."
                     f"\n\nPlease use this OTP to complete your registration process.\n\nBest regards,\nThe Jobs4U Team")
     email_message = EmailMessage("Otp for Verification", message_body, to=[email])
@@ -140,18 +140,18 @@ class RecruiterSignupView(View):
             }
 
             # Generate OTP
-            otp = generate_otp()
+            otp = r_generate_otp()
             print(otp)
 
             # Send OTP via SMS
-            send_otp(otp, email)
+            r_send_otp(otp, email)
 
             # Store the OTP in session
             request.session['otp'] = otp
             request.session['verified_mobile'] = contact
 
             # Render a template with a form to enter OTP for verification
-            return render(request, 'recruiter/u_verify_otp.html')
+            return render(request, 'recruiter/verify_otp.html')
 
         except ValidationError as e:
             messages.error(request, f"Fail: {str(e)}")
@@ -163,7 +163,7 @@ def verify_otp_view(request):
     if request.method == 'POST':
         otp_entered = request.POST.get('otp')
         stored_otp = request.session.get('otp')
-        verified_mobile = request.session.get('verified_mobile')
+        # verified_mobile = request.session.get('verified_mobile')
 
         if otp_entered == stored_otp:
             # If OTP is verified successfully, proceed with user creation
@@ -196,9 +196,22 @@ def verify_otp_view(request):
             messages.error(request, 'Invalid OTP, please try again.')
             return redirect('r_signup')  # Redirect back to signup page
 
-    return render(request, 'recruiter/u_verify_otp.html')
+    return render(request, 'recruiter/verify_otp.html')
 
 
+def u_landing_page(request):
+    logged_in_user_id = request.session.get('logged_in_user_id')
+
+    if logged_in_user_id:
+        try:
+            recruiter = Recruiter.objects.get(id=logged_in_user_id)
+            return render(request, 'recruiter/RLandingPage.html', {'recruiter': recruiter})
+        except Recruiter.DoesNotExist:
+            # Handle case where no JobSeeker instance is found for the logged-in user
+            return render(request, 'landing_page.html', {'error': 'Recruiter instance not found'})
+    else:
+        # User is not logged in, handle accordingly
+        return redirect('login')
 
 
 

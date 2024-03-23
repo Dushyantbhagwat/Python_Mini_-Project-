@@ -4,22 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="user and recruiter registration and login featured completed">
-      <change afterPath="$PROJECT_DIR$/job/templates/job_seeker/u_verify_otp.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/t.html" afterDir="false" />
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="email service is working">
+      <change afterPath="$PROJECT_DIR$/job/Views/job_seeker/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/Views/job_seeker/user_update_profile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/Views/recruiter/r_profile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/Views/recruiter/recruiter_update_profile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/Views/recruiter/u_applied_list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/migrations/0002_alter_jobseeker_image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/application list rec pov.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/ellipse-1@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/image-box-on-registering@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/materialsymbolspost@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/profile pic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/rectangle-22@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/search-fill0-wght400-grad0-opsz24-1@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/job_seeker/email-box-stroke-1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/recruiter/ALGlobal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/recruiter/ApplicationList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/recruiter/ProfieGlobal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/recruiter/RecruiterProfile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/recruiter/materialsymbolshome.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/recruiter/rectangle-2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/templates/job_seeker/UserR.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/templates/job_seeker/u_landing_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/templates/job_seeker/u_update_profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/templates/recruiter/ApplicationList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/templates/recruiter/RLandingPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/templates/recruiter/RUpdateProfile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/templates/recruiter/RecruiterProfile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/sql-structured-query-language-database-symbol-vector-illustration-concept-fla_KXezxSo.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/user/panel.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/user/pngtree-smiley-emoji-png-image_6587368.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/user/pngtree-smiley-emoji-png-image_6587368_WjJUJFn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/user/pngtree-smiley-emoji-png-image_6587368_nHfJ9as.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/sign_up.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/sign_up.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/user_profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/user_profile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/Views/recruiter/r_sign_up.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/recruiter/r_sign_up.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/middleware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/style/job_seeker/Global.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/job_seeker/global.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/static/style/job_seeker/UserProfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/job_seeker/UserProfile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/static/style/landing_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/landing_page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/style/job_seeker/UserRegistration.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/job_seeker/UserRegistration.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/UserProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/UserProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/UserRegistration.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/UserRegistration.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/landing_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/landing_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/verify_otp.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/verify_otp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobsite/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +62,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -62,18 +95,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/templates/job_seeker",
-    "two.files.diff.last.used.file": "C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/t.html"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/templates/job_seeker/UserR.html&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/templates/job_seeker/UserR.html&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates\job_seeker" />
@@ -83,6 +116,7 @@
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates\templatetags" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates\recruiter" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\media\user" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\media" />
@@ -297,7 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710856371590</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="email service is working">
+      <option name="closed" value="true" />
+      <created>1711039836429</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1711039836429</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -307,6 +349,7 @@
     <MESSAGE value="image file" />
     <MESSAGE value="job seeker and recruiter registration feature added" />
     <MESSAGE value="user and recruiter registration and login featured completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="user and recruiter registration and login featured completed" />
+    <MESSAGE value="email service is working" />
+    <option name="LAST_COMMIT_MESSAGE" value="email service is working" />
   </component>
 </project>

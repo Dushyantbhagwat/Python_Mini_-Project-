@@ -13,6 +13,109 @@
   <link rel="stylesheet" href="./styles/desktop-1.css"/>
   <link rel="stylesheet" href="{% static 'style/landing_page.css' %}">
 
+    <style>
+        .fremp{
+          height: 22px;
+          width: 125px;
+          position: relative;
+          bottom: 59.3px;
+          left: -50px;
+          font-size: medium;
+          background-color: transparent;
+          border-color: transparent;
+          padding-bottom: 20px;
+        }
+
+        /* Dropdown container */
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+
+        /* Dropdown button */
+        .profile {
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            border: 1px solid var(--P100,#275df5);
+            border-radius: 40px;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 20px;
+            outline: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            top: -60px;
+            left: 820px;
+            background-color: transparent;
+            color: #275df5;
+            position: relative;
+            width: 100px;
+            height: 40.8px;
+            /* Ensure text fits and show ellipsis if overflow */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .logout {
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            border: 1px solid var(--P100,#275df5);
+            border-radius: 50px;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 20px;
+            outline: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            top: -68.3px;
+            left: 840px;
+            color: #275df5;
+            background-color: rgb(235, 87, 33);
+            color: white;
+            position: relative;
+        }
+
+        .profile:hover{
+          background-color: #f1f1f8;
+
+        }
+        .solarlist-linear-icon {
+          height: 23px;
+          width: 12px;
+          position: relative;
+          overflow: hidden;
+          flex-shrink: 0;
+          object-fit: cover;
+          min-height: 24px;
+          gap: 0;
+        }
+
+    </style>
+
+  <script>
+      function scrollToContact() {
+        // Get the position of the contact section relative to the top of the document
+        var contactSection = document.getElementById("contact-us-section");
+        var contactSectionPosition = contactSection.offsetTop;
+
+        // Smoothly scroll to the contact section
+        window.scrollTo({
+          top: contactSectionPosition,
+          behavior: 'smooth'
+        });
+      }
+  </script>
 </head>
 <body>
 <div class="desktop-1-5TD">
@@ -20,22 +123,29 @@
     <a href="{% url 'landing_page' %}"><img class="naukrimg"  src="{% static  'images/logo_1.png' %}" alt=""></a>
 
     <div class="menu">
-      <a href="{% url 'j1' %}"><button class="jobs">Jobs</button>
-      <button class="companies">Companies</button>
-      <button class="services">Services</button>
+      <a href="{% url 'j1' %}"><button class="jobs"></button>
+      <button class="companies"></button>
+      <button class="services"></button>
       </a>
     </div>
 
-    <a href="{% url 'login' %}"><button class="login" >Login</button></a>
-    <div class="dropdown">
-      <button class="dropdown-btn">Register</button>
-      <div class="dropdown-content">
-      <a href="{% url 'u_signup' %}"><img src="{% static 'images/user.png' %}" alt="Image1">User</a>
-      <a href="{% url 'r_signup' %}"><img src="{% static 'images/recruiter.jpg'%}" alt="Image1">Recruiter</a>
-      </div>
-    </div>
+        <!--    <div class="dropdown">-->
+<!--      <button class="dropdown-btn">Logout</button>-->
+<!--&lt;!&ndash;      <div class="dropdown-content">&ndash;&gt;-->
+<!--&lt;!&ndash;      <a href="{% url 'u_signup' %}"><img src="{% static 'images/user.png' %}" alt="Image1">User</a>&ndash;&gt;-->
+<!--&lt;!&ndash;      <a href="{% url 'r_signup' %}"><img src="{% static 'images/recruiter.jpg'%}" alt="Image1">Recruiter</a>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--    </div>-->
+    <a href="{% url 'r_profile' %}"><button class="profile" ><img
+              class="solarlist-linear-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/solarlistlinear@2x.png' %}"
+            /> {{ recruiter.full_name }}</button></a>
+      
+    <a href="{% url 'login' %}"><button class="logout" >Logout</button></a>
 
-    <button class="fremp" onclick="scrollToContact()">
+   <button class="fremp" onclick="scrollToContact()">
       Contact Us
     </button>
 

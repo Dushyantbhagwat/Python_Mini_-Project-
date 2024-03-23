@@ -29,7 +29,7 @@ class JobSeeker(models.Model):
     address = models.CharField(max_length=200, null=False)
     resume = models.FileField(upload_to='user_resume', max_length=100, blank=True, null=True)
     type = models.CharField(max_length=45, null=True, default='seeker')
-    image = models.ImageField(upload_to='user', null=True)
+    image = models.ImageField(upload_to='user', blank=True, null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
 

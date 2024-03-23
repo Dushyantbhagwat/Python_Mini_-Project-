@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="{% static 'style/recruiter/ProfieGlobal.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/recruiter/RecruiterProfile.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="desktop-1">
+      <header class="navbarframe">
+        <div class="frame-parent">
+          <div class="logo-wrapper">
+            <a href="{% url 'r_landing_page' %}"><img
+              class="logo-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/logo@2x.png' %}"
+            /></a>
+          </div>
+          <div class="home-button-wrapper">
+            <button class="home-button">
+              <img
+                class="material-symbolshome-icon"
+                loading="lazy"
+                alt=""
+                src="{% static 'images/materialsymbolshome@2x.png' %}"
+              />
+    
+              <div class="home-wrapper">
+                <div class="home">Home</div>
+              </div>
+            </button>
+          </div>
+          <div class="frame-button-wrapper">
+            <button class="apllication-button-parent">
+              <div class="apllication"></div>
+              <img
+                class="mdinotes-icon"
+                loading="lazy"
+                alt=""
+                src="{% static 'images/mdinotes@2x.png' %}"
+              />
+    
+              <div class="application-wrapper">
+                <div class="application">Application</div>
+              </div>
+            </button>
+          </div>
+          <div class="upload-button-wrapper">
+            <button class="upload-button">
+              <div class="addjob"></div>
+              <img
+                class="ggadd-icon"
+                loading="lazy"
+                alt=""
+                src="{% static 'images/ggadd@2x.png' %}"
+              />
+              <div class="add-job-wrapper">
+                <div class="add-job">Add Job</div>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div class="profilepic-button-wrapper">
+          <button class="profilepic-button">
+          <a href="{% url 'r_profile' %}">
+            <img
+              class="solarlist-linear-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/solarlistlinear@2x.png' %}"
+            />
+    
+            <img
+              class="ggprofile-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/ggprofile@2x.png' %}"
+            />
+          </a>
+          </button>
+        </div>
+      </header>
+      <main class="desktop-1-inner">
+        <section class="registeredinfo-parent">
+          <div class="registeredinfo">
+            {% if recruiter.image %}
+                <img
+                  class="profilephoto-icon"
+                  loading="lazy"
+                  alt=""
+                  src="{{ recruiter.image.url }}"
+                />
+            {% else %}
+                <img
+                  class="profilephoto-icon"
+                  loading="lazy"
+                  alt=""
+                  src="{% static 'images/profilephoto@2x.png' %}"
+                />
+            {% endif %}
+
+            <div class="mdicompany-image">
+              <div class="name-parent">
+                <div class="name">
+                  <h3 class="neha-raichand">{{ recruiter.full_name }}</h3>
+                  <button class="primepencil-wrapper">
+                    <a href="{% url 'r_update_profile' %}"><img
+                      class="primepencil-icon"
+                      loading="lazy"
+                      alt=""
+                      src="{% static 'images/primepencil@2x.png' %}"
+                    /></a>
+                  </button>
+                </div>
+                
+              </div>
+              <div class="contactinfo">
+                <div class="frame5">
+                  <div class="companynameinfo">
+                    <img
+                      class="mdicompany-icon"
+                      loading="lazy"
+                      alt=""
+                      src="{% static 'images/mdicompany@2x.png' %}"
+                    />
+
+                    <div class="png-power-ltg">{{ recruiter.company_name }}</div>
+                  </div>
+                  <div class="phonenoinfo">
+                    <img
+                      class="phonenoinfo-child"
+                      loading="lazy"
+                      alt=""
+                      src="{% static 'images/frame-1@2x.png' %}"
+                    />
+
+                    <div class="div">{{ recruiter.mobile }}</div>
+                  </div>
+                </div>
+                <div class="frame6">
+                  <div class="locationinfo">
+                    <img
+                      class="mdilocation-icon"
+                      loading="lazy"
+                      alt=""
+                      src="{% static 'images/mdilocation@2x.png' %}"
+                    />
+
+                    <div class="mumbai-india">Mumbai, India</div>
+                  </div>
+                  <div class="emailidinfo">
+                    <img
+                      class="icoutline-email-icon"
+                      loading="lazy"
+                      alt=""
+                      src="{% static 'images/icoutlineemail@2x.png' %}"
+                    />
+
+                    <div class="pngpowergmailcom">{{ recruiter.email_id }}</div>
+                  </div>
+                </div>
+                <div class="postinfo">
+                  <img
+                    class="material-symbolspost-icon"
+                    loading="lazy"
+                    alt=""
+                    src="{% static 'images/materialsymbolspost@2x.png' %}"
+                  />
+
+                  <div class="manager">Manager</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="adittionalinfo">
+            <div class="past-activity-parent">
+              <h3 class="past-activity">Past Activity:</h3>
+              <input class="pastactivitydescriptiontoadd" type="text" value="{{ recruiter.past_activity }}" />
+            </div>
+            <div class="skills-parent">
+              <h3 class="skills">Skills:</h3>
+              <input class="skillstoadd" type="text" value="{{ recruiter.skills }}" />
+            </div>
+            <div class="company-details-parent">
+              <h3 class="company-details">Company Details:</h3>
+              <input class="companydetailstoadd" type="text" value="{{ recruiter.company_details }}" />
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+      <script>
+        $(document).ready(function() {
+          {% for message in messages %}
+          var messageType = "{{ message.tags }}"
+          var messageText = "{{ message }}"
+
+          toastr.options = {
+            closeButton: true,
+            progressBar: true,
+            positionClass: 'toast-bottom-right',
+            showMethod: 'slideDown',
+            timeout: 5000
+          };
+
+          if (messageType === 'success') {
+            toastr.success(messageText);
+          } else if (messageType === 'error') {
+            toastr.error(messageText);
+          } else if (messageType === 'info') {
+            toastr.info(messageText);
+          } else {
+            toastr.warning(messageText);
+          }
+          {% endfor %}
+        });
+      </script>
+
+
+  </body>
+</html>

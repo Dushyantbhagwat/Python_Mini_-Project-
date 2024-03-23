@@ -86,7 +86,7 @@ class LoginView(View):
                     request.session['logged_in_user_id'] = job_seeker.id
                     print(f"JobSeeker details - Name: {job_seeker.full_name}, Email: {job_seeker.email_id},"
                           f" Mobile: {job_seeker.mobile_no}")
-                    return render(request, 'job_seeker/UserProfile.html', {'job_seeker': job_seeker})
+                    return render(request, 'job_seeker/u_landing_page.html', {'job_seeker': job_seeker})
 
             except JobSeeker.DoesNotExist:
                 pass  # No JobSeeker found for this user
@@ -97,7 +97,8 @@ class LoginView(View):
                 if recruiter.type == 'recruiter':
                     request.session['logged_in_user_id'] = recruiter.id
                     print(f"{recruiter.full_name}")
-                    return redirect('u_profile')  # Redirect to recruiter dashboard
+                    # return ('landing_page')  # Redirect to recruiter dashboard
+                    return render(request, 'recruiter/RLandingPage.html', {'recruiter': recruiter})
 
             except Recruiter.DoesNotExist:
                 pass  # No Recruiter found for this user
@@ -111,39 +112,22 @@ class LoginView(View):
         return render(request, self.template_name)
 
 
-def u1(request):
-    # Retrieve the ID of the logged-in user from the session
-    logged_in_user_id = request.session.get('logged_in_user_id')
-    if logged_in_user_id:
-        # User is logged in, retrieve details based on the ID
-        try:
-            job_seeker = JobSeeker.objects.get(id=logged_in_user_id)
-            # Do something with job_seeker object
-            return render(request, 'u1.html', {'job_seeker': job_seeker})
-        except JobSeeker.DoesNotExist:
-            # Handle case where no JobSeeker instance is found for the logged-in user
-            return render(request, 'dashboard.html', {'error': 'JobSeeker instance not found'})
-    else:
-        # User is not logged in, handle accordingly
-        return redirect('login')
+# def u1(request):
+#     # Retrieve the ID of the logged-in user from the session
+#     logged_in_user_id = request.session.get('logged_in_user_id')
+#     if logged_in_user_id:
+#         # User is logged in, retrieve details based on the ID
+#         try:
+#             job_seeker = JobSeeker.objects.get(id=logged_in_user_id)
+#             # Do something with job_seeker object
+#             return render(request, 'u1.html', {'job_seeker': job_seeker})
+#         except JobSeeker.DoesNotExist:
+#             # Handle case where no JobSeeker instance is found for the logged-in user
+#             return render(request, 'dashboard.html', {'error': 'JobSeeker instance not found'})
+#     else:
+#         # User is not logged in, handle accordingly
+#         return redirect('login')
 
 
 def job(request):
     return render(request, 'j1.html')
-#
-#
-# def send_otp(request):
-#     if request.method == 'POST':
-#         phone_number = request.POST.get('phone_number')
-#
-#         # Generate OTP
-#         otp = ''.join([str(random.randint(0, 9)) for _ in range(6)])  # Generate a 6-digit OTP
-#
-#         # For demo purposes, print the OTP
-#         print("Generated OTP:", otp)
-#
-#         # Here, you can implement the logic to send the OTP via SMS using a third-party service
-#
-#         return JsonResponse({'success': True, 'message': 'OTP sent successfully'})
-#     else:
-#         return JsonResponse({'success': False, 'message': 'Invalid request method'})
