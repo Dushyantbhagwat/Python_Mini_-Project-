@@ -110,6 +110,11 @@
   display: inline-block;
   min-width: 93px;
   z-index: 2;
+  border-bottom: none;
+  border: none; /* Remove default button border */
+  background: none; /* Remove default button background */
+  padding: 0; /* Remove default button padding */
+  cursor: pointer; /
 }
 .applications-btn-parent,
 .frame-container {
@@ -128,6 +133,8 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   flex-direction: row;
   z-index: 1;
+  cursor: pointer; /* Set cursor to pointer when hovering over the button */
+
 }
 .applications-btn-parent:hover {
   background-color: rgb(225, 225, 225);
@@ -135,6 +142,9 @@
 .frame-container {
   flex-direction: column;
   padding: 0 var(--padding-8xs) 0 0;
+}
+.frame-container a {
+    text-decoration: none; /* Remove underline */
 }
 .recruiter-btn-child {
   height: 42px;

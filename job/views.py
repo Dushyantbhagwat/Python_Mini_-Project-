@@ -80,8 +80,10 @@ class LoginView(View):
             print("User authenticated successfully.")  # Debug statement
 
             if user.is_superuser:
+                request.session['logged_in_user_id'] = user.id
+                print(user.id)
                 login(request, user)
-                return redirect('admin_landing_page')  # Redirect to admin dashboard
+                return render(request, 'admin/AdminLandingPage.html', {'user': user})  # Redirect to admin dashboard
 
             try:
                 # Check if the user is a JobSeeker
