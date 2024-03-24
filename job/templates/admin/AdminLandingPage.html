@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Desktop - 1</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C600%2C700"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abhaya+Libre%3A700"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C600"/>
+  <link rel="stylesheet" href="./styles/desktop-1.css"/>
+  <link rel="stylesheet" href="{% static 'style/landing_page.css' %}">
+
+</head>
+<body>
+<div class="desktop-1-5TD">
+  <nav class="nav">
+    <a href="{% url 'admin_landing_page' %}"><img class="naukrimg"  src="{% static  'images/logo_1.png' %}" alt=""></a>
+
+    <div class="menu">
+      <a href="{% url 'j1' %}"><button class="jobs">Jobs</button>
+      <button class="companies">Companies</button>
+      <button class="services">Services</button>
+      </a>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropdown-btn">Home</button>
+      <div class="dropdown-content">
+      <a href="{% url 'seeker_list_admin' %}"><img src="{% static 'images/user.png' %}" alt="Image1">User</a>
+      <a href="{% url 'recruiter_list' %}"><img src="{% static 'images/recruiter.jpg'%}" alt="Image1">Recruiter</a>
+      </div>
+    </div>
+
+    <a href="{% url 'login' %}"><button class="login" >Logout</button></a>
+
+
+    <button class="fremp" onclick="scrollToContact()">
+      Contact Us
+    </button>
+
+      <script>
+              function scrollToContact() {
+            // Get the position of the contact section relative to the top of the document
+            var contactSection = document.getElementById("contact-us-section");
+            var contactSectionPosition = contactSection.offsetTop;
+
+            // Smoothly scroll to the contact section
+            window.scrollTo({
+              top: contactSectionPosition,
+              behavior: 'smooth'
+            });
+          }
+      </script>
+
+  </nav>
+
+  <div class="rectangle-8-D2w"></div>
+  <div class="rectangle-9-xmD"></div>
+
+  <p class="find-your-job-now-qa7">Find your job now</p>
+  <p class="if-opportunity-doesnt-knock-build-a-door-LFy">“If opportunity doesn't knock, build a door”</p>
+
+  <div class="rectangular-bar">
+    <img src="{% static 'images/search-555.png' %}" alt="Image" class="left-image">
+    <div class="dropdown">
+      <select>
+<!--        <option value="" selected disabled>Select experience</option>-->
+        <option value="option1">Fresher (less than 1 year)</option>
+        <option value="option2">1 Years</option>
+        <option value="option2">2 Years</option>
+        <option value="option2">3 Years</option>
+        <option value="option2">4 Years</option>
+        <option value="option2">5 Years</option>
+        <option value="option2">6 Years</option>
+      </select>
+    </div>
+
+
+    <span class="separator">|</span>
+
+    <div class="dropdown">
+      <select>
+        <option value="option1">Full-time</option>
+        <option value="option2">Part-time</option>
+        <option value="option3">Permanent</option>
+        <option value="option3">Internship</option>
+        <option value="option3">Temporary</option>
+        <option value="option3">Freelance</option>
+        <option value="option3">Volunteer</option>
+      </select>
+    </div>
+
+
+    <span class="separator">|</span>
+
+     <div class="dropdown">
+      <select>
+          <option value="" selected disabled>City</option>
+          {% for option in options %}
+              <option value="{{ option }}">{{ option }}</option>
+          {% endfor %}
+      </select>
+     </div>
+
+    <button class="right-button">Search</button>
+  </div>
+
+
+
+  <p class="selected-candidates-QYf">Selected Candidates</p>
+
+  <div class="rectangle-14-vX1"></div>
+  <div class="rectangle-15-fUb"></div>
+  <div class="rectangle-16-CjR"></div>
+  <div class="rectangle-17-kF9"></div>
+
+  <img class="rectangle-18-tcF" src="{% static 'images/c1.jpg' %}"/>
+
+  <img class="rectangle-19-1wm" src="{% static 'images/c2.jpg' %}" />
+  <img class="rectangle-20-iLP" src="{% static 'images/c3.jpg' %}"/>
+
+  <img class="rectangle-21-DY3" src="{% static 'images/c4.jpg' %}"/>
+
+  <div class="rectangle-22-wD9" id="contact-us-section"></div>
+
+    <!-- <footer class="footer" id="contact-us-section">
+hello
+  </footer> -->
+
+  <footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+    <ul class="menu1">
+      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+
+
+    </ul>
+
+    <div class="credits" style="color:#f1f1f1;">
+      Designed &amp; Developed by
+      <span>
+        <a style="color:yellow" target="_blank" href="https://www.linkedin.com/in/dushyant-bhagwat-144917287">Dushyant Bhagwat |</a></span>
+      <a style="color:yellow" target="_blank" href="https://www.linkedin.com/in/niranjan-kumar-yadav-11b365284/">Niranjan Yadav
+        |</a>
+      <a style="color:yellow" target="_blank" href="https://www.linkedin.com/in/saniya-padwal-1684a32a8">Saniya Padwal
+        |</a>
+      <a style="color:yellow" target="_blank" href="https://www.linkedin.com/in/priyanshi-singh-36baa9248">Priyanshi Singh</a>
+
+    </div>
+
+    <p>&copy;2024 NSS JOBS4U | All Rights Reserved</p>
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</div>
+
+
+
+  <div id="google_translate_element"></div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,mr',  // English and Marathi
+        }, 'google_translate_element');
+    }
+  </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+</body>
+</html>

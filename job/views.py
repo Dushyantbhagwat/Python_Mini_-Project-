@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.hashers import make_password, check_password
 from django.shortcuts import render, redirect
 from django.views import generic, View
@@ -78,6 +78,10 @@ class LoginView(View):
 
         if user:
             print("User authenticated successfully.")  # Debug statement
+
+            if user.is_superuser:
+                login(request, user)
+                return redirect('admin_landing_page')  # Redirect to admin dashboard
 
             try:
                 # Check if the user is a JobSeeker

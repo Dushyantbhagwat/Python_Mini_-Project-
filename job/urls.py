@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from job.Views.job_seeker import sign_up, user_profile, user_update_profile
-from job.Views.admin import *
+from job.Views.admin import seeker_list, recruiter_list, a_landing_page
 from job.Views.recruiter import r_sign_up, r_profile, u_applied_list, recruiter_update_profile
 
 
@@ -26,6 +26,9 @@ urlpatterns = [
     path('r_landing_page/', r_sign_up.u_landing_page, name='r_landing_page'),
     path('r_update_profile/', recruiter_update_profile.UpdateProfile.as_view(), name='r_update_profile'),
 
+    path('admin_landing_page/', a_landing_page.ALandingPage.as_view(), name='admin_landing_page'),
+    path('seeker_list_admin/', seeker_list.registered_seeker_list, name='seeker_list_admin'),
+    path('recruiter_list/', recruiter_list.recruiter_list, name='recruiter_list'),
 ]
 
 

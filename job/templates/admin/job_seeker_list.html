@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="{% static 'style/admin/job_seeker_list_global.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/admin/job_seeker_list.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="application-list">
+      <img
+        class="application-list-child"
+        alt=""
+        src="{% static 'style/admin/rectangle-2.svg' %}"
+      />
+
+      <div class="application-list-item"></div>
+      <div class="application-list-inner"></div>
+      <div class="nav-wrapper">
+        <div class="nav">
+          <div class="nav-child"></div>
+          <div class="nav-bar">
+            <div class="rectangle-parent">
+              <img
+                class="frame-child"
+                loading="lazy"
+                alt=""
+                src="{% static 'images/rectangle-22@2x.png' %}"
+              />
+
+              <div class="frame-wrapper">
+                <div class="frame-parent">
+                  <div class="recruiters-list-parent">
+                    <div class="recruiters-list">
+
+
+                      <a href="{% url 'admin_landing_page' %}"><button  class="recruiters-list-child">
+                        <div class="home">Home</div>
+
+                      </button></a>
+
+                    </div>
+                  </div>
+                  <div class="frame-container">
+                    <a href="{% url 'seeker_list_admin' %}"><button class="applications-btn-parent">
+                      <div class="applications-btn"></div>
+                      <div hr class="applications">Applications</div>
+                    </button></a>
+                  </div>
+                  <div class="frame-container">
+                  <a href="{% url 'recruiter_list' %}"><button class="recruiter-btn">
+                    <div class="recruiter-btn-child"></div>
+                    <div class="recruiters">Recruiters</div>
+                  </button></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="{% url 'logout' %}"><button class="nav-item">
+            <img
+            class="material-symbolshome-icon"
+            loading="lazy"
+            alt=""
+            src="{% static 'style/admin/materialsymbolshome.svg' %}"
+          />
+          </button></a>
+        </div>
+      </div>
+      <div class="frame-div">
+        <div class="frame-group">
+          <div class="frame-parent1">
+            <div class="rectangle-group">
+              <button class="frame-item">
+              <div class="excel-wrapper">
+                <div class="excel">EXCEL</div>
+              </div>
+              </button>
+            </div>
+            <div class="csv-wrapper">
+              <button class="csv">
+                <div class="csv-child"></div>
+                <div class="csv1">CSV</div>
+              </button>
+            </div>
+            <div class="pdf-wrapper">
+              <button class="pdf">
+                <div class="pdf-child"></div>
+                <div class="pdf1">PDF</div>
+              </button>
+            </div>
+          </div>
+          <input type="search" class="search" name="search" placeholder="SEARCH">
+
+              <div class="search-child"></div>
+              <div class="search-fill0-wght400-grad0-ops-wrapper">
+                <img
+                  class="search-fill0-wght400-grad0-ops-icon"
+                  alt=""
+                  src="{% static 'images/search-fill0-wght400-grad0-opsz24-1@2x.png' %}"
+                />
+              </div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="rectangle-container">
+        <div class="frame-inner"></div>
+        <div class="srno-wrapper">
+          <div class="srno">Id</div>
+        </div>
+        <div class="name-wrapper">
+          <div class="name">Name</div>
+        </div>
+        <div class="contact-wrapper">
+          <div class="contact">Contact</div>
+        </div>
+        <div class="email-id-wrapper">
+          <div class="email-id">Email ID</div>
+        </div>
+        <div class="gender-wrapper">
+          <div class="gender">Gender</div>
+        </div>
+        <div class="image-parent">
+          <div class="image">Image</div>
+          <div class="action-wrapper">
+            <div class="action">Action</div>
+          </div>
+        </div>
+      </div>
+      {% for job_seeker in job_seekers %}
+            <main class="frame-main">
+              <div class="rectangle-div"></div>
+              <section class="frame-section">
+                <div class="rectangle-parent1">
+                  <div class="frame-child1"></div>
+                  <div class="frame-wrapper1">
+                    <div class="parent">
+                      <div class="div">{{ job_seeker.id }}</div>
+                      <div class="dushyant-bhagwat-wrapper">
+                        <div class="dushyant-bhagwat">{{ job_seeker.full_name }}</div>
+                      </div>
+                      <div class="wrapper">
+                        <div class="div1">{{ job_seeker.mobile_no }}</div>
+                      </div>
+                      <div class="dushyantdbhagwatgmailcom">
+                        {{ job_seeker.email_id }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="male-wrapper">
+                    <div class="male">male</div>
+                  </div>
+                  <div class="vector-parent">
+                    {% if job_seeker.image %}
+                        <img
+                        id="image1"
+                          class="ellipse-icon"
+                          loading="lazy"
+                          alt=""
+                          src="{{ job_seeker.image.url }}"
+                        />
+                    {% else %}
+                        <img
+                        id="image2"
+                          class="ellipse-icon"
+                          loading="lazy"
+                          alt=""
+                          src="{% static 'images/profile pic.jpg' %}"
+                        />
+                    {% endif %}
+
+                    <div class="delete-wrapper">
+                      <button class="delete">delete</button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </main>
+      {% endfor %}
+    </div>
+  </body>
+</html>
