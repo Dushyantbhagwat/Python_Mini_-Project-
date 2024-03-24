@@ -302,7 +302,10 @@
   padding: var(--padding-8xs) 8px;
   gap: 14px;
   z-index: 1;
-
+  width: 79px;
+  position: relative;
+  right: 79px;
+  top: 12px;
 }
 
 .navbarframe,
@@ -330,7 +333,6 @@
   position: sticky;
   max-width: 100%;
   gap: 20px;
-  overflow: hidden;
   text-align: left;
   font-size: var(--font-size-base);
   color: rgba(0, 0, 0, 0.7);
@@ -831,3 +833,40 @@
     gap: 33px 133px;
   }
 }
+
+/* Custom styling for the translation box */
+    #google_translate_element {
+        position: absolute;
+        top: 15px;
+        right: 175.6px;
+
+
+    }
+
+    /* Custom styling for the language dropdown */
+    .goog-te-combo {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    /* Custom styling for the translate button */
+    .goog-te-button {
+        background-color: #4CAF50;
+        color: #fff;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    /* Custom styling for the translated text */
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+
+    .goog-te-menu-value span {
+        color: #4CAF50; /* Change color of the selected language */
+    }

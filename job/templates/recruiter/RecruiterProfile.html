@@ -62,6 +62,39 @@
               font-weight: bold;
               cursor: pointer;
           }
+
+          /* Dropdown content (hidden by default) */
+          .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f9f9f9;
+              min-width: 90px;
+              box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+              z-index: 1;
+              border-radius: 20px;
+              right: 65px;
+              top: 49px;
+          }
+
+          /* Links inside the dropdown */
+          .dropdown-content a {
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+          }
+
+          /* Change color of dropdown links on hover */
+          .dropdown-content a:hover {
+              background-color: #f1f1f1;
+          }
+
+          /* Show the dropdown menu on hover */
+          .dropdown:hover .dropdown-content {
+              display: block;
+          }
+
+
     </style>
 
 
@@ -122,25 +155,35 @@
             </button>
           </div>
         </div>
+
+        <div id="google_translate_element"></div>
+
+        <script type="text/javascript">
+          function googleTranslateElementInit() {
+              new google.translate.TranslateElement({
+                  pageLanguage: 'en',
+                  includedLanguages: 'en,mr',  // English and Marathi
+              }, 'google_translate_element');
+          }
+        </script>
+
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
         <div class="profilepic-button-wrapper">
-          <button class="profilepic-button">
-          <a href="{% url 'r_profile' %}">
-            <img
-              class="solarlist-linear-icon"
-              loading="lazy"
-              alt=""
-              src="{% static 'images/solarlistlinear@2x.png' %}"
-            />
-    
-            <img
-              class="ggprofile-icon"
-              loading="lazy"
-              alt=""
-              src="{% static 'images/ggprofile@2x.png' %}"
-            />
-          </a>
-          </button>
+            <div class="dropdown">
+                <button class="profilepic-button">
+                    <img class="solarlist-linear-icon" loading="lazy" alt="" src="{% static 'images/solarlistlinear@2x.png' %}"/>
+                    <img class="ggprofile-icon" loading="lazy" alt="" src="{% static 'images/ggprofile@2x.png' %}"/>
+                </button>
+                <div class="dropdown-content">
+                    <!-- Dropdown content goes here -->
+                    <a href="{% url 'r_profile' %}">Profile</a>
+                    <a href="{% url 'logout' %}">Logout</a>
+                </div>
+            </div>
         </div>
+
       </header>
       <main class="desktop-1-inner">
         <section class="registeredinfo-parent">

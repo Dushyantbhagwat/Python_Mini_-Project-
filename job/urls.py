@@ -8,6 +8,7 @@ from job.Views.recruiter import r_sign_up, r_profile, u_applied_list, recruiter_
 urlpatterns = [
     path('', views.LandingPage.as_view(), name='landing_page'),
     path('login/', views.LoginView.as_view(), name='login'),
+    path('logout/', views.logout, name='logout'),
 
     # path('u1/', views.u1, name='u1'),
     path('j1/', views.job, name='j1'),

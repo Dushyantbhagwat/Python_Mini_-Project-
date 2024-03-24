@@ -131,3 +131,9 @@ class LoginView(View):
 
 def job(request):
     return render(request, 'j1.html')
+
+
+def logout(request):
+    del request.session['logged_in_user_id']
+    messages.success(request, 'Logged out successfully')
+    return render(request, 'Login.html')

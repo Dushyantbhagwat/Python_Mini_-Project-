@@ -17,7 +17,7 @@ def seeker_profile(request):
             return render(request, 'job_seeker/UserProfile.html', {'job_seeker': job_seeker})
         except JobSeeker.DoesNotExist:
             # Handle the case where the recruiter does not exist
-            return HttpResponse("Recruiter does not exist.")
+            return HttpResponse("Job seeker does not exist.")
     else:
         # Handle the case where logged_in_user_id is not found in session
         return HttpResponse("Logged in user ID not found in session.")
