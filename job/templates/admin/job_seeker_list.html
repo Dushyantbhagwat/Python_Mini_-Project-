@@ -79,7 +79,7 @@
           <div class="frame-parent1">
             <div class="rectangle-group">
               <button class="frame-item">
-              <div class="excel-wrapper">
+              <div class="excel-wrapper" onclick="window.location='{% url 'seeker_list_excel' %}'">
                 <div class="excel">EXCEL</div>
               </div>
               </button>
@@ -90,7 +90,7 @@
                 <div class="csv1">CSV</div>
               </button>
             </div>
-            <div class="pdf-wrapper">
+            <div class="pdf-wrapper" onclick="window.location='{% url 'seeker_list_pdf' %}'">
               <button class="pdf">
                 <div class="pdf-child"></div>
                 <div class="pdf1">PDF</div>
@@ -129,7 +129,7 @@
             <div>{{ job_seeker.full_name }}</div>
             <div>{{ job_seeker.mobile_no }}</div>
             <div>{{ job_seeker.email_id }}</div>
-            <div>Male</div> <!-- Assuming gender is always male based on provided code -->
+            <div>{{ job_seeker.gender }}</div> <!-- Assuming gender is always male based on provided code -->
             <div>
               {% if job_seeker.image %}
               <img class="ellipse-icon" loading="lazy" alt="" src="{{ job_seeker.image.url }}" />
@@ -143,28 +143,6 @@
           </div>
           {% endfor %}
         </div>
-
-        <script>
-          document.addEventListener("DOMContentLoaded", function() {
-              var searchInput = document.getElementById("searchInput");
-              var jobSeekerRows = document.querySelectorAll(".job-seeker-row");
-
-              searchInput.addEventListener("input", function() {
-                  var searchText = searchInput.value.trim().toLowerCase();
-
-                  jobSeekerRows.forEach(function(row) {
-                      var fullName = row.children[1].textContent.toLowerCase(); // Assuming Full Name is in the second column
-                      if (fullName.includes(searchText)) {
-                          row.style.display = "flex"; // Show the row if the search text is found
-                      } else {
-                          row.style.display = "none"; // Hide the row if the search text is not found
-                      }
-                  });
-              });
-          });
-        </script>
-
-
 
 
 <style>

@@ -7,6 +7,8 @@
     <script src="{% static 'script.js' %}"></script>
     <link rel="stylesheet" href="{% static 'style/admin/recruiter_list.css' %}" />
     <link rel="stylesheet" href="{% static 'style/admin/recruiter_list_global.css.' %}" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap"
@@ -111,82 +113,281 @@
           </div>
         </div>
       </div>
-      <div class="rectangle-container">
-        <div class="frame-inner"></div>
-        <div class="srno-wrapper">
-          <div class="srno">SR.No</div>
-        </div>
-        <div class="name-wrapper">
-          <div class="name">Name</div>
-        </div>
-        <div class="contact-wrapper">
-          <div class="contact">Contact</div>
-        </div>
-        <div class="email-id-wrapper">
-          <div class="email-id">Email ID</div>
-        </div>
-        <div class="gender-wrapper">
-          <div class="gender">Company</div>
-        </div>
-        <div class="image-parent">
-          <div class="image">Logo</div>
-          <div class="action-wrapper">
-            <div class="action">Action</div>
+
+        <div class="column-names-container">
+          <div class="column-names-box">
+            <div class="column-name shifted">ID</div>
+            <div class="column-name shifted2">Name</div>
+            <div class="column-name shifted3">Contact</div>
+            <div class="column-name shifted4">Email ID</div>
+            <div class="column-name shifted5">Company</div>
+            <div class="column-name shifted7">Status</div>
+            <div class="column-name shifted6">Action</div>
           </div>
         </div>
-      </div>
-      {% for recruiter in recruiters %}
-        <main class="frame-main">
-          <div class="rectangle-div"></div>
-          <section class="frame-section">
-            <div class="rectangle-parent1">
-              <div class="frame-child1"></div>
-              <div class="frame-wrapper1">
-                <div class="parent">
-                  <div class="div">{{ recruiter.id }}</div>
-                  <div class="dushyant-bhagwat-wrapper">
-                    <div class="dushyant-bhagwat">{{ recruiter.full_name }}</div>
-                  </div>
-                  <div class="wrapper">
-                    <div class="div1">{{ recruiter.mobile }}</div>
-                  </div>
-                  <div class="dushyantdbhagwatgmailcom">
-                    {{ recruiter.email_id }}
-                  </div>
-                </div>
-              </div>
-              <div class="male-wrapper">
-                <a href="https://www.google.com/" target="_blank" class="male">Google</a>
-              </div>
-              <div class="vector-parent">
-                {% if recruiter.image %}
-                    <img
-                    id="image1"
-                      class="ellipse-icon"
-                      loading="lazy"
-                      alt=""
-                      src="{{ recruiter.image.url }}"
-                    />
-                {% else %}
-                    <img
-                    id="image2"
-                      class="ellipse-icon"
-                      loading="lazy"
-                      alt=""
-                      src="{% static 'images/profile pic.jpg' %}"
-                    />
-                {% endif %}
 
-                <div class="delete-wrapper">
-                  <label  class="status">Accepted</label>
-                  <button onclick="reject()"  class="delete">delete</button>
-                  <button   class="chgstat">Change Status</button>
-                </div>
-              </div>
+        <div class="job-seekers-container">
+          {% for recruiter in recruiters %}
+          <div class="job-seeker-row">
+            <div>{{ recruiter.id }}</div>
+            <div>{{ recruiter.full_name }}</div>
+            <div>{{ recruiter.mobile }}</div>
+            <div>{{ recruiter.email_id }}</div>
+            <div>{{ recruiter.company_name }}</div>
+            <div>{{ recruiter.status }}</div>
+<!--            <div>-->
+<!--              {% if recruiter.image %}-->
+<!--              <img class="ellipse-icon" loading="lazy" alt="" src="{{ recruiter.image.url }}" />-->
+<!--              {% else %}-->
+<!--              <img class="ellipse-icon" loading="lazy" alt="" src="{% static 'images/profile pic.jpg' %}" />-->
+<!--              {% endif %}-->
+<!--            </div>-->
+<!--            <div>-->
+<!--              <button class="more" data-user-id="{{ recruiter.id }}" onclick="">More</button>-->
+<!--            </div>-->
+
+            <div>
+            <button class="button  arrow">Read more</button>
             </div>
-          </section>
-        </main>
-      {% endfor %}
-    </div>
+
+          </div>
+          {% endfor %}
+        </div>
+
+<style>
+
+  @button-colour: #009ED8;
+  @button-text: #ffffff;
+  @regular-text: #333;
+  @button-tint: fadeout(#000, 90%);
+  @background: #303036;
+
+  * {
+  box-sizing: border-box;
+  }
+
+  .button {
+    display: inline-block;
+    font-family: "Montserrat", "Trebuchet MS", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    padding: .8em 1.4em;
+    padding-right: 4.7em;
+    background: @button-colour;
+    border: none;
+    color: white;
+    transition: .2s;
+    &:before,
+    &:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      padding-top: inherit;
+      padding-bottom: inherit;
+      width: 2.8em;
+      content: "\00a0";
+      font-family: 'FontAwesome', sans-serif;
+      font-size: 1.2em;
+      text-align: center;
+
+      transition: .2s;
+      transform-origin: 50% 60%;
+    }
+    &:before {
+      background: @button-tint;
+    }
+    &:hover {
+      background: darken(@button-colour, 10%);
+    }
+    &:active,
+    &:focus {
+      background: darken(@button-colour, 30%);
+      outline: none;
+    }
+  }
+
+  .button {
+    min-width: 0.5em;
+  }
+
+  .arrow {
+    background: #FE5F55;
+    &:hover {
+      background: darken(#FE5F55, 10%);
+    }
+    &:active,
+    &:focus {
+      background: darken(#FE5F55, 30%);
+    }
+    &:after {
+      content: "\F054";
+    }
+    &:hover:after {
+      -webkit-animation: bounceright .3s alternate ease infinite;
+      animation: bounceright .3s alternate ease infinite;
+    }
+  }
+
+
+
+
+
+
+
+
+  @-webkit-keyframes bounceright {
+    from { -webkit-transform: translateX(0); }
+    to   { -webkit-transform: translateX(3px); }
+  }
+
+  @-webkit-keyframes wiggle {
+    from { -webkit-transform: rotate(0deg); }
+    to   { -webkit-transform: rotate(30deg); }
+  }
+
+  @keyframes bounceright {
+    from { transform: translateX(0); }
+    to   { transform: translateX(3px); }
+  }
+
+  @keyframes wiggle {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(30deg); }
+  }
+
+
+
+
+
+
+
+
+
+
+  .column-names-container,
+  .job-seekers-container {
+    margin-bottom: 20px;
+  }
+  .column-names-box {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 8px; /* Decrease margin */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .column-name {
+    flex: 1;
+    text-align: center;
+  }
+
+  .shifted {
+    position: relative;
+    left: -49px;
+  }
+  .shifted2 {
+    position: relative;
+    left: -38px;
+  }
+  .shifted3 {
+    position: relative;
+    left: 45px;
+  }
+  .shifted4 {
+    position: relative;
+    left: 82px;
+  }
+  .shifted5 {
+    position: relative;
+    left: 110px;
+  }
+  .shifted6 {
+    position: relative;
+    left: 70px;
+  }
+  .shifted7 {
+    position: relative;
+    left: 15px;
+  }
+  /* Example individual styling */
+  .column-name:nth-child(1) {
+    margin-left: -40px; /* Adjust the value as needed */
+  }
+  .column-name:nth-child(2) {
+    margin-right: -40px; /* Adjust the value as needed */
+  }
+  .column-name:nth-child(3) {
+    margin-left: 30px; /* Adjust the value as needed */
+  }
+  .column-name:nth-child(4) {
+    margin-left: 30px; /* Adjust the value as needed */
+  }
+  .column-name:nth-child(5) {
+    margin-left: 30px; /* Adjust the value as needed */
+  }
+  .column-name:nth-child(6) {
+    margin-left: 30px; /* Adjust the value as needed */
+  }
+  .column-name:nth-child(7) {
+    margin-left: 30px; /* Adjust the value as needed */
+  }
+
+  .job-seeker-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+
+  /* Styles for the delete button */
+  .more {
+    background-color: green; /* Red background */
+    color: #fff; /* White text color */
+    border: none; /* Remove border */
+    padding: 8px 16px; /* Add padding */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Add pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    right: 35px;
+    width: 60px;
+    height: 29px;
+  }
+
+  .more:hover {
+    background-color: #F8F0EB; /* Darker red background on hover */
+  }
+
+  /* Center the delete button */
+  .job-seeker-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center vertically */
+    padding: 32px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+
+  /* Apply background colors to alternate rows */
+  .job-seeker-row:nth-child(even) {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    background: linear-gradient(180deg, rgba(186, 188, 224, 0), #badbe0);
+    box-sizing: border-box;
+  }
+
+  .job-seeker-row:nth-child(odd) {
+    background-color: var(--color-gainsboro);
+    color: var(--color-black);
+    background: linear-gradient(180deg, #badbe0, rgba(186, 188, 224, 0));
+    box-sizing: border-box;
+  }
+</style>
+
+
   </body>
 </html>
