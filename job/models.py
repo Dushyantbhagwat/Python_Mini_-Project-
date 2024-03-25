@@ -23,6 +23,7 @@ class Recruiter(models.Model):
 class JobSeeker(models.Model):
     id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
     full_name = models.CharField(max_length=200, null=False)
+    gender = models.CharField(max_length=10, blank=True, null=True)
     email_id = models.CharField(unique=True, max_length=200, null=False)
     mobile_no = models.CharField(max_length=10, null=False)
     city = models.CharField(max_length=100, null=False)

@@ -28,6 +28,7 @@ class UpdateProfileView(View):
     def post(self, request):
         try:
             name = request.POST.get('name')
+            gender = request.POST.get('gender')
             mobile = request.POST.get('phone')
             email = request.POST.get('email')
             photo = request.FILES.get('photo')  # Use get() to avoid KeyError
@@ -38,6 +39,7 @@ class UpdateProfileView(View):
 
             job_seeker = JobSeeker.objects.get(id=request.session.get('logged_in_user_id'))
             job_seeker.full_name = name
+            job_seeker.gender = gender
             job_seeker.mobile_no = mobile
             job_seeker.email_id = email
             if photo:  # Check if photo is uploaded

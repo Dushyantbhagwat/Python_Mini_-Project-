@@ -97,55 +97,75 @@
               </button>
             </div>
           </div>
-          <input type="search" class="search" name="search" placeholder="SEARCH">
 
-              <div class="search-child"></div>
-              <div class="search-fill0-wght400-grad0-ops-wrapper">
-                <img
-                  class="search-fill0-wght400-grad0-ops-icon"
-                  alt=""
-                  src="{% static 'images/search-fill0-wght400-grad0-opsz24-1@2x.png' %}"
-                />
-              </div>
+          <input type="search" class="search" name="search" id="searchInput" placeholder="SEARCH....">
+          <div class="search-child"></div>
+          <div class="search-fill0-wght400-grad0-ops-wrapper">
+              <img class="search-fill0-wght400-grad0-ops-icon" alt="" src="{% static 'images/search-fill0-wght400-grad0-opsz24-1@2x.png' %}">
+          </div>
 
+          <div class="search-results"></div>
 
           </div>
         </div>
       </div>
 
         <div class="column-names-container">
-  <div class="column-names-box">
-    <div class="column-name shifted">ID</div>
-    <div class="column-name shifted2">Full Name</div>
-    <div class="column-name shifted3">Mobile No</div>
-    <div class="column-name shifted4">Email ID</div>
-    <div class="column-name shifted5">Gender</div>
-    <div class="column-name shifted6">Image</div>
-    <div class="column-name shifted7">Action</div>
-  </div>
-</div>
+          <div class="column-names-box">
+            <div class="column-name shifted">ID</div>
+            <div class="column-name shifted2">Full Name</div>
+            <div class="column-name shifted3">Mobile No</div>
+            <div class="column-name shifted4">Email ID</div>
+            <div class="column-name shifted5">Gender</div>
+            <div class="column-name shifted6">Image</div>
+            <div class="column-name shifted7">Action</div>
+          </div>
+        </div>
 
-<div class="job-seekers-container">
-  {% for job_seeker in job_seekers %}
-  <div class="job-seeker-row">
-    <div>{{ job_seeker.id }}</div>
-    <div>{{ job_seeker.full_name }}</div>
-    <div>{{ job_seeker.mobile_no }}</div>
-    <div>{{ job_seeker.email_id }}</div>
-    <div>Male</div> <!-- Assuming gender is always male based on provided code -->
-    <div>
-      {% if job_seeker.image %}
-      <img class="ellipse-icon" loading="lazy" alt="" src="{{ job_seeker.image.url }}" />
-      {% else %}
-      <img class="ellipse-icon" loading="lazy" alt="" src="{% static 'images/profile pic.jpg' %}" />
-      {% endif %}
-    </div>
-    <div>
-      <button class="delete" data-user-id="{{ job_seeker.id }}" onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
-    </div>
-  </div>
-  {% endfor %}
-</div>
+        <div class="job-seekers-container">
+          {% for job_seeker in job_seekers %}
+          <div class="job-seeker-row">
+            <div>{{ job_seeker.id }}</div>
+            <div>{{ job_seeker.full_name }}</div>
+            <div>{{ job_seeker.mobile_no }}</div>
+            <div>{{ job_seeker.email_id }}</div>
+            <div>Male</div> <!-- Assuming gender is always male based on provided code -->
+            <div>
+              {% if job_seeker.image %}
+              <img class="ellipse-icon" loading="lazy" alt="" src="{{ job_seeker.image.url }}" />
+              {% else %}
+              <img class="ellipse-icon" loading="lazy" alt="" src="{% static 'images/profile pic.jpg' %}" />
+              {% endif %}
+            </div>
+            <div>
+              <button class="delete" data-user-id="{{ job_seeker.id }}" onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+              var searchInput = document.getElementById("searchInput");
+              var jobSeekerRows = document.querySelectorAll(".job-seeker-row");
+
+              searchInput.addEventListener("input", function() {
+                  var searchText = searchInput.value.trim().toLowerCase();
+
+                  jobSeekerRows.forEach(function(row) {
+                      var fullName = row.children[1].textContent.toLowerCase(); // Assuming Full Name is in the second column
+                      if (fullName.includes(searchText)) {
+                          row.style.display = "flex"; // Show the row if the search text is found
+                      } else {
+                          row.style.display = "none"; // Hide the row if the search text is not found
+                      }
+                  });
+              });
+          });
+        </script>
+
+
+
 
 <style>
   .column-names-container,
@@ -273,7 +293,6 @@
     box-sizing: border-box;
   }
 
-
 </style>
 
     <script>
@@ -311,7 +330,42 @@
         });
     </script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var searchInput = document.getElementById("searchInput");
+            var jobSeekerRows = document.querySelectorAll(".job-seeker-row");
+
+            searchInput.addEventListener("input", function() {
+                var searchText = searchInput.value.trim().toLowerCase();
+
+                jobSeekerRows.forEach(function(row) {
+                    var id = row.children[0].textContent.toLowerCase(); // ID
+                    var fullName = row.children[1].textContent.toLowerCase(); // Assuming Full Name is in the second column
+                    var mobileNo = row.children[2].textContent.toLowerCase(); // Mobile No
+                    var email = row.children[3].textContent.toLowerCase(); // Email ID
+                    var gender = row.children[4].textContent.toLowerCase(); // Gender
+
+
+                    // Add more conditions as needed
+                    if (
+                        id.includes(searchText) ||
+                        fullName.includes(searchText) ||
+                        mobileNo.includes(searchText) ||
+                        email.includes(searchText) ||
+                        gender.includes(searchText)
+                    ) {
+                        row.style.display = "flex"; // Show the row if any condition matches
+                    } else {
+                        row.style.display = "none"; // Hide the row if no condition matches
+                    }
+                });
+            });
+        });
+    </script>
+
+
 
     </div>
   </body>
 </html>
+
