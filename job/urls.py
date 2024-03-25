@@ -29,7 +29,7 @@ urlpatterns = [
     path('admin_landing_page/', a_landing_page.ALandingPage.as_view(), name='admin_landing_page'),
     path('seeker_list_admin/', seeker_list.registered_seeker_list, name='seeker_list_admin'),
     path('recruiter_list/', recruiter_list.recruiter_list, name='recruiter_list'),
-    path('delete_job_seeker', seeker_list.delete_job_seeker, name='delete_job_seeker'),
+    path('delete_job_seeker/<int:user_id>/', seeker_list.delete_job_seeker, name='delete_job_seeker'),
 ]
 
 

@@ -1260,5 +1260,12 @@
   mix-blend-mode: multiply;
 }
 
+.shifted {
+    position: relative;
+    left: 15px;
+}
 
-
+.shifted1{
+    position: relative;
+    left: -40px;
+}

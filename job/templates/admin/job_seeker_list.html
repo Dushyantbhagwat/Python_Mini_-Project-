@@ -112,80 +112,206 @@
           </div>
         </div>
       </div>
-      <div class="rectangle-container">
-        <div class="frame-inner"></div>
-        <div class="srno-wrapper">
-          <div class="srno">Id</div>
-        </div>
-        <div class="name-wrapper">
-          <div class="name">Name</div>
-        </div>
-        <div class="contact-wrapper">
-          <div class="contact">Contact</div>
-        </div>
-        <div class="email-id-wrapper">
-          <div class="email-id">Email ID</div>
-        </div>
-        <div class="gender-wrapper">
-          <div class="gender">Gender</div>
-        </div>
-        <div class="image-parent">
-          <div class="image">Image</div>
-          <div class="action-wrapper">
-            <div class="action">Action</div>
-          </div>
-        </div>
-      </div>
-      {% for job_seeker in job_seekers %}
-            <main class="frame-main">
-              <div class="rectangle-div"></div>
-              <section class="frame-section">
-                <div class="rectangle-parent1">
-                  <div class="frame-child1"></div>
-                  <div class="frame-wrapper1">
-                    <div class="parent">
-                      <div class="div">{{ job_seeker.id }}</div>
-                      <div class="dushyant-bhagwat-wrapper">
-                        <div class="dushyant-bhagwat">{{ job_seeker.full_name }}</div>
-                      </div>
-                      <div class="wrapper">
-                        <div class="div1">{{ job_seeker.mobile_no }}</div>
-                      </div>
-                      <div class="dushyantdbhagwatgmailcom">
-                        {{ job_seeker.email_id }}
-                      </div>
-                    </div>
-                  </div>
-                  <div class="male-wrapper">
-                    <div class="male">male</div>
-                  </div>
-                  <div class="vector-parent">
-                    {% if job_seeker.image %}
-                        <img
-                        id="image1"
-                          class="ellipse-icon"
-                          loading="lazy"
-                          alt=""
-                          src="{{ job_seeker.image.url }}"
-                        />
-                    {% else %}
-                        <img
-                        id="image2"
-                          class="ellipse-icon"
-                          loading="lazy"
-                          alt=""
-                          src="{% static 'images/profile pic.jpg' %}"
-                        />
-                    {% endif %}
 
-                    <div class="delete-wrapper">
-                      <button class="delete">delete</button>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </main>
-      {% endfor %}
+        <div class="column-names-container">
+  <div class="column-names-box">
+    <div class="column-name shifted">ID</div>
+    <div class="column-name shifted2">Full Name</div>
+    <div class="column-name shifted3">Mobile No</div>
+    <div class="column-name shifted4">Email ID</div>
+    <div class="column-name shifted5">Gender</div>
+    <div class="column-name shifted6">Image</div>
+    <div class="column-name shifted7">Action</div>
+  </div>
+</div>
+
+<div class="job-seekers-container">
+  {% for job_seeker in job_seekers %}
+  <div class="job-seeker-row">
+    <div>{{ job_seeker.id }}</div>
+    <div>{{ job_seeker.full_name }}</div>
+    <div>{{ job_seeker.mobile_no }}</div>
+    <div>{{ job_seeker.email_id }}</div>
+    <div>Male</div> <!-- Assuming gender is always male based on provided code -->
+    <div>
+      {% if job_seeker.image %}
+      <img class="ellipse-icon" loading="lazy" alt="" src="{{ job_seeker.image.url }}" />
+      {% else %}
+      <img class="ellipse-icon" loading="lazy" alt="" src="{% static 'images/profile pic.jpg' %}" />
+      {% endif %}
+    </div>
+    <div>
+      <button class="delete" data-user-id="{{ job_seeker.id }}" onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<style>
+  .column-names-container,
+  .job-seekers-container {
+    margin-bottom: 20px;
+  }
+  .column-names-box {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 8px; /* Decrease margin */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .column-name {
+    flex: 1;
+    text-align: center;
+  }
+
+  .shifted {
+    position: relative;
+    left: -45px;
+  }
+  .shifted2 {
+    position: relative;
+    left: -34px;
+  }
+  .shifted3 {
+    position: relative;
+    left: 12px;
+  }
+  .shifted4 {
+    position: relative;
+    left: 24px;
+  }
+  .shifted5 {
+    position: relative;
+    left: 43px;
+  }
+  .shifted6 {
+    position: relative;
+    left: 35px;
+  }
+  .shifted7 {
+    position: relative;
+    left: 15px;
+  }
+  /* Example individual styling */
+  .column-name:nth-child(1) {
+    margin-left: -40px; /* Adjust the value as needed */
+  }
+  .column-name:nth-child(2) {
+    margin-right: -40px; /* Adjust the value as needed */
+  }
+  .column-name:nth-child(3) {
+    margin-left: 30px; /* Adjust the value as needed */
+  }
+  .column-name:nth-child(4) {
+    margin-left: 30px; /* Adjust the value as needed */
+  }
+  .column-name:nth-child(5) {
+    margin-left: 30px; /* Adjust the value as needed */
+  }
+  .column-name:nth-child(6) {
+    margin-left: 30px; /* Adjust the value as needed */
+  }
+  .column-name:nth-child(7) {
+    margin-left: 30px; /* Adjust the value as needed */
+  }
+
+
+
+
+  .job-seeker-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+
+  /* Styles for the delete button */
+  .delete {
+    background-color: #ff6347; /* Red background */
+    color: #fff; /* White text color */
+    border: none; /* Remove border */
+    padding: 8px 16px; /* Add padding */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Add pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    left: -50px;
+    width: 60px;
+    height: 35px;
+  }
+
+  .delete:hover {
+    background-color: #d9534f; /* Darker red background on hover */
+  }
+
+  /* Center the delete button */
+  .job-seeker-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center vertically */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+
+  /* Apply background colors to alternate rows */
+  .job-seeker-row:nth-child(even) {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    background: linear-gradient(180deg, rgba(186, 188, 224, 0), #badbe0);
+    box-sizing: border-box;
+  }
+
+  .job-seeker-row:nth-child(odd) {
+    background-color: var(--color-gainsboro);
+    color: var(--color-black);
+    background: linear-gradient(180deg, #badbe0, rgba(186, 188, 224, 0));
+    box-sizing: border-box;
+  }
+
+
+</style>
+
+    <script>
+        document.querySelectorAll('.delete').forEach(button => {
+          button.addEventListener('click', function(event) {
+            // Prevent the default action of the button
+            event.preventDefault();
+
+            // Ask for confirmation before deletion
+            const confirmed = confirm('Are you sure you want to delete this user?');
+
+            // If user confirms, proceed with deletion
+            if (confirmed) {
+              const userId = this.getAttribute('data-user-id');
+
+              // Send AJAX request to delete user
+              fetch(`/delete_job_seeker/${userId}`, {
+                method: 'DELETE',
+                headers: {
+                  'X-CSRFToken': '{{ csrf_token }}'
+                }
+              })
+              .then(response => {
+                if (response.ok) {
+                  // Remove the deleted user row from the UI
+                  this.closest('.job-seeker-row').remove();
+                  // Optionally, perform additional actions after deletion
+                }
+              })
+              .catch(error => {
+                console.error(error);
+              });
+            }
+          });
+        });
+    </script>
+
+
     </div>
   </body>
 </html>
