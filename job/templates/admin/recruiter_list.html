@@ -98,19 +98,29 @@
               </button>
             </div>
           </div>
-          <input type="search" class="search" name="search" placeholder="SEARCH">
+<!--          <input type="search" class="search" name="search" placeholder="SEARCH">-->
 
-              <div class="search-child"></div>
-              <div class="search-fill0-wght400-grad0-ops-wrapper">
-                <img
-                  class="search-fill0-wght400-grad0-ops-icon"
-                  alt=""
-                  src="{% static 'images/search-fill0-wght400-grad0-opsz24-1@2x.png' %}"
-                />
-              </div>
+<!--              <div class="search-child"></div>-->
+<!--              <div class="search-fill0-wght400-grad0-ops-wrapper">-->
+<!--                <img-->
+<!--                  class="search-fill0-wght400-grad0-ops-icon"-->
+<!--                  alt=""-->
+<!--                  src="{% static 'images/search-fill0-wght400-grad0-opsz24-1@2x.png' %}"-->
+<!--                />-->
+<!--              </div>-->
 
-
+          <div class="pdf2-wrapper">
+              <a href="{% url 'accepted_recruiter_list' %}"><button class="pdf2">
+                Accepted Recruiter
+              </button></a>
           </div>
+          <div class="pdf3-wrapper">
+              <a href="{% url 'rejected_recruiter_list' %}"><button class="pdf3">
+                Rejected Recruiter
+              </button></a>
+          </div>
+
+         </div>
         </div>
       </div>
 
@@ -285,31 +295,31 @@
 
   .shifted {
     position: relative;
-    left: -49px;
+    left: -60px;
   }
   .shifted2 {
     position: relative;
-    left: -38px;
+    left: -108px;
   }
   .shifted3 {
     position: relative;
-    left: 45px;
+    left: -43px;
   }
   .shifted4 {
     position: relative;
-    left: 82px;
+    left: -17px;
   }
   .shifted5 {
     position: relative;
-    left: 110px;
+    left: 0px;
   }
   .shifted6 {
     position: relative;
-    left: 70px;
+    left: 18px;
   }
   .shifted7 {
     position: relative;
-    left: 15px;
+    left: -8px;
   }
   /* Example individual styling */
   .column-name:nth-child(1) {
@@ -319,19 +329,19 @@
     margin-right: -40px; /* Adjust the value as needed */
   }
   .column-name:nth-child(3) {
-    margin-left: 30px; /* Adjust the value as needed */
+    margin-left: -40px; /* Adjust the value as needed */
   }
   .column-name:nth-child(4) {
-    margin-left: 30px; /* Adjust the value as needed */
+    margin-left: -40px; /* Adjust the value as needed */
   }
   .column-name:nth-child(5) {
-    margin-left: 30px; /* Adjust the value as needed */
+    margin-left: -40px; /* Adjust the value as needed */
   }
   .column-name:nth-child(6) {
-    margin-left: 30px; /* Adjust the value as needed */
+    margin-left: -40px; /* Adjust the value as needed */
   }
   .column-name:nth-child(7) {
-    margin-left: 30px; /* Adjust the value as needed */
+    margin-left: -40px; /* Adjust the value as needed */
   }
 
   .job-seeker-row {
