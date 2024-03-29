@@ -37,13 +37,13 @@ class JobSeeker(models.Model):
 class Job(models.Model):
     id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
     title = models.CharField(max_length=45, null=False)
-    salary = models.CharField(max_length=45, null=True, default='Not Disclosed')
-    skills = models.CharField(max_length=45, null=False)
-    job_type = models.CharField(max_length=45, null=False)
-    location = models.CharField(max_length=45, null=False)
     description = models.CharField(max_length=45, null=False)
+    location = models.CharField(max_length=45, null=False)
     start_date = models.CharField(max_length=45, null=False)
     deadline = models.CharField(max_length=45, null=False)
+    salary = models.CharField(max_length=45, null=True, default='Not Disclosed')
+    job_type = models.CharField(max_length=45, null=False)
+    skills = models.CharField(max_length=45, null=False)
     recruiter = models.ForeignKey('Recruiter', models.CASCADE)
 
 

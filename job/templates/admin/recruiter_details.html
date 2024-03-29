@@ -88,7 +88,7 @@
         <label for="company-details">Company Details:</label>
         <p>{{ recruiter.company_details }}</p>
         <label for="logo">Logo:</label>
-        <p><img src="{{ recruiter.image.url }}" alt="Company Logo" style="max-width: 100px;"></p>
+        <p><img src="{{ recruiter.image.url }}" onclick="displayImageModal('{{ recruiter.image.url }}')" alt="Company Logo" style="max-width: 100px;"></p>
         <label for="website">Website:</label>
         <p><a href="https://www.example.com">{{ recruiter.website }}</a></p>
         <label for="past-activity">Past Activity:</label>
@@ -118,6 +118,22 @@
 
         function acceptConfirmation() {
             return confirm("Are you sure you want to accept this recruiter?");
+        }
+    </script>
+
+    <script>
+        // Function to display the image modal
+        function displayImageModal(imageUrl) {
+            var modal = document.getElementById('imageModal');
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImg.src = imageUrl;
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            var modal = document.getElementById('imageModal');
+            modal.style.display = "none";
         }
     </script>
 

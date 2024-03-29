@@ -25,7 +25,7 @@ urlpatterns = [
     path('ap_list_r/', u_applied_list.applied_seeker, name='ap_list_r'),
     path('r_landing_page/', r_sign_up.u_landing_page, name='r_landing_page'),
     path('r_update_profile/', recruiter_update_profile.UpdateProfile.as_view(), name='r_update_profile'),
-    path('post_jobs/', post_jobs.post_jobs, name='post_jobs'),
+    path('post_jobs/<int:r_id>/', post_jobs.post_jobs, name='post_jobs'),
 
     path('admin_landing_page/', a_landing_page.ALandingPage.as_view(), name='admin_landing_page'),
     path('seeker_list_admin/', seeker_list.registered_seeker_list, name='seeker_list_admin'),

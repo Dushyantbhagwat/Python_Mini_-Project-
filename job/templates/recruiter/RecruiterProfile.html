@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet" href="{% static 'style/recruiter/ProfieGlobal.css' %}" />
     <link rel="stylesheet" href="{% static 'style/recruiter/RecruiterProfile.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
@@ -94,7 +96,6 @@
               display: block;
           }
 
-
     </style>
 
 
@@ -104,7 +105,7 @@
       <header class="navbarframe">
         <div class="frame-parent">
           <div class="logo-wrapper">
-            <a href="{% url 'r_landing_page' %}"><img
+            <a href="{% url 'r_profile' %}"><img
               class="logo-icon"
               loading="lazy"
               alt=""
@@ -120,9 +121,9 @@
                 src="{% static 'images/materialsymbolshome@2x.png' %}"
               />
     
-              <div class="home-wrapper">
+              <a href="{% url 'r_landing_page' %}" style="text-decoration: none;"><div class="home-wrapper">
                 <div class="home">Home</div>
-              </div>
+              </div></a>
             </button>
           </div>
           <div class="frame-button-wrapper">
@@ -141,7 +142,8 @@
             </button>
           </div>
           <div class="upload-button-wrapper">
-            <button class="upload-button">
+            {% with r_id=recruiter.id %}
+            <a href="{% url 'post_jobs' r_id %}" style="text-decoration: none;"><button class="upload-button">
               <div class="addjob"></div>
               <img
                 class="ggadd-icon"
@@ -152,7 +154,8 @@
               <div class="add-job-wrapper">
                 <div class="add-job">Add Job</div>
               </div>
-            </button>
+            </button></a>
+            {% endwith %}
           </div>
         </div>
 

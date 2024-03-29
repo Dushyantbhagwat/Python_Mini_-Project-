@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C600"/>
   <link rel="stylesheet" href="./styles/desktop-1.css"/>
   <link rel="stylesheet" href="{% static 'style/landing_page.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
 
 </head>
 <body>
@@ -27,7 +29,7 @@
     </div>
 
     <div class="dropdown">
-      <button class="dropdown-btn">Home</button>
+      <button class="dropdown-btn">Admin</button>
       <div class="dropdown-content">
       <a href="{% url 'seeker_list_admin' %}"><img src="{% static 'images/user.png' %}" alt="Image1">User</a>
       <a href="{% url 'recruiter_list' %}"><img src="{% static 'images/recruiter.jpg'%}" alt="Image1">Recruiter</a>
@@ -195,6 +197,39 @@ hello
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <script>
+      $(document).ready(function() {
+        {% for message in messages %}
+        var messageType = "{{ message.tags }}"
+        var messageText = "{{ message }}"
+
+        toastr.options = {
+          closeButton: true,
+          progressBar: true,
+          positionClass: 'toast-bottom-right',
+          showMethod: 'slideDown',
+          timeout: 5000
+        };
+
+        if (messageType === 'success') {
+          toastr.success(messageText);
+        } else if (messageType === 'error') {
+          toastr.error(messageText);
+        } else if (messageType === 'info') {
+          toastr.info(messageText);
+        } else {
+          toastr.warning(messageText);
+        }
+        {% endfor %}
+      });
+    </script>
+
 
 
 </body>

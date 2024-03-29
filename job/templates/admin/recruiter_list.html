@@ -15,6 +15,32 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap"
     />
+
+    <style>
+      .logout {
+          top: 22px;
+          height: 32px;
+          width: 79px;
+          position: relative;
+          border-radius: var(--br-6xl);
+          background-color: var(--color-white);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+          display: none;
+          background-color: rgb(225, 225, 225);
+          cursor: pointer;
+          border-radius: var(--br-6xl);
+          background-color: var(--color-white);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+          flex-direction: row;
+          justify-content: flex-start;
+          padding: var(--padding-sm) 26px var(--padding-4xs) var(--padding-8xl);
+          z-index: 1;
+          display: flex;
+          text-align: left;
+          padding: 8px 18px; /* Adjust padding as needed */
+      }
+    </style>
+
   </head>
   <body>
     <div class="application-list">
@@ -66,15 +92,11 @@
               </div>
             </div>
           </div>
-
-        <a href="{% url 'logout' %}"><button class="nav-item">
-            <img
-            class="material-symbolshome-icon"
-            loading="lazy"
-            alt=""
-            src="{% static 'style/admin/materialsymbolshome.svg' %}"
-          />
+        <div class="frame-container">
+        <a href="{% url 'logout' %}"><button class="logout">
+            Logout
           </button></a>
+        </div>
         </div>
       </div>
       <div class="frame-div">
@@ -82,14 +104,14 @@
           <div class="frame-parent1">
             <div class="rectangle-group">
               <button class="frame-item">
-                <a href="{% url 'seeker_list_excel' %}"><div class="excel-wrapper">
+                <div class="excel-wrapper" onclick="window.location = {% url 'seeker_list_excel' %}">
                 <div class="excel">EXCEL</div>
-                </div></a>
+                </div>
               </button>
             </div>
             <div class="pdf-wrapper">
               <button class="pdf">
-                <div class="pdf-child"></div>
+                <div class="pdf-child" onclick="window.location = {% url 'seeker_list_excel' %}"></div>
                 <div class="pdf1">PDF</div>
               </button>
             </div>

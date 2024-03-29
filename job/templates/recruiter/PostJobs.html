@@ -123,7 +123,7 @@
           />
         </div>
       </header>
-     <form action="{% url 'post_jobs' %}" method="post">
+     <form action="{% url 'post_jobs' r_id %}" method="post">
        {% csrf_token %}
       <main class="frame-main">
         <section class="wrapper-adj-1-wrapper">
