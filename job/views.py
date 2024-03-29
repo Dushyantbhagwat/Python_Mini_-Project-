@@ -100,16 +100,17 @@ class LoginView(View):
             try:
                 # Check if the user is a Recruiter
                 recruiter = Recruiter.objects.get(user=user)
-                if recruiter.type == 'recruiter':
+                if recruiter.type == 'recruiter' and recruiter.status == 'Accepted':
                     request.session['logged_in_user_id'] = recruiter.id
                     print(f"{recruiter.full_name}")
                     # return ('landing_page')  # Redirect to recruiter dashboard
                     return render(request, 'recruiter/RLandingPage.html', {'recruiter': recruiter})
 
             except Recruiter.DoesNotExist:
+                messages.warning(request, "Your request is still is in process!")
                 pass  # No Recruiter found for this user
 
-            messages.warning(request, "You are not authorized to access this page.")
+            messages.warning(request, "You are not authorized to access the page.")
 
         else:
             print("Authentication failed.")  # Debug statement

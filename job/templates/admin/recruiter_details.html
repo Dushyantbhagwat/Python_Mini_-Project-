@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+<title>Recruiter Profile</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+    }
+
+    .profile-container {
+        max-width: 600px;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+    }
+
+    .profile-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .profile-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .profile-details label {
+        font-weight: bold;
+    }
+
+    .profile-details p {
+        margin: 0;
+    }
+
+    .profile-buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .profile-buttons button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .accept-button {
+        background-color: #4caf50;
+        color: #fff;
+    }
+
+    .reject-button {
+        background-color: #f44336;
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+
+<div class="profile-container">
+    <h2>Recruiter Profile</h2>
+    <div class="profile-details">
+        <label >ID:</label>
+        <p>{{ recruiter.id }}</p>
+        <label for="name">Name:</label>
+        <p>{{ recruiter.full_name }}</p>
+        <label for="email">Email:</label>
+        <p>{{ recruiter.email_id }}</p>
+        <label for="contact">Contact:</label>
+        <p>{{ recruiter.mobile }}</p>
+        <label for="company">Company Name:</label>
+        <p>{{ recruiter.company_name }}</p>
+        <label for="company-details">Company Details:</label>
+        <p>{{ recruiter.company_details }}</p>
+        <label for="logo">Logo:</label>
+        <p><img src="{{ recruiter.image.url }}" alt="Company Logo" style="max-width: 100px;"></p>
+        <label for="website">Website:</label>
+        <p><a href="https://www.example.com">{{ recruiter.website }}</a></p>
+        <label for="past-activity">Past Activity:</label>
+        <p>{{ recruiter.past_activity }}</p>
+        <label for="skills">Skills:</label>
+        <p>{{ recruiter.skills }}</p>
+    </div>
+
+<!--    <div class="profile-buttons">-->
+<!--    <button value="accepted" id="accept-button" data-recruiter-id="{{ recruiter.id }}" class="accept-button">Accept</button>-->
+<!--    <button value="rejected" id="reject-button" data-recruiter-id="{{ recruiter.id }}" class="reject-button">Reject</button>-->
+<!--    </div>-->
+    <div class="profile-buttons">
+
+    <form id="status-form" method="post" action="{% url 'recruiter_status_update' %}">
+    {% csrf_token %}
+    <input type="hidden" name="recruiter_id" id="recruiter-id" value="{{ recruiter.id }}">
+    <button type="submit" name="status" value="accepted"  onclick="return rejectConfirmation()" class="accept-button">Accept</button>
+    <button type="submit" name="status" value="rejected" onclick="return acceptConfirmation()" class="reject-button">Reject</button>
+    </form>
+    </div>
+
+    <script>
+        function rejectConfirmation() {
+            return confirm("Are you sure you want to reject this recruiter?");
+        }
+
+        function acceptConfirmation() {
+            return confirm("Are you sure you want to accept this recruiter?");
+        }
+    </script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <script>
+      $(document).ready(function() {
+        {% for message in messages %}
+        var messageType = "{{ message.tags }}"
+        var messageText = "{{ message }}"
+
+        toastr.options = {
+          closeButton: true,
+          progressBar: true,
+          positionClass: 'toast-bottom-right',
+          showMethod: 'slideDown',
+          timeout: 5000
+        };
+
+        if (messageType === 'success') {
+          toastr.success(messageText);
+        } else if (messageType === 'error') {
+          toastr.error(messageText);
+        } else if (messageType === 'info') {
+          toastr.info(messageText);
+        } else {
+          toastr.warning(messageText);
+        }
+        {% endfor %}
+      });
+    </script>
+
+
+</div>
+
+</body>
+</html>
+

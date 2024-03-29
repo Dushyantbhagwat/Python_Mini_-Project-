@@ -5,17 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="table">
-      <change afterPath="$PROJECT_DIR$/job/t1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/user/2_4P0YDXg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/user/5_XgAKSYj.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/user/7_jSvwRU0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/user/8_eDBuPGP.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/Views/recruiter/post_jobs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/migrations/0004_alter_recruiter_image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/add-fill0-wght400-grad0-opsz24-1@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/adj-1@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/calendar-month-fill0-wght400-grad0-opsz24-1@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/expand-more-fill0-wght400-grad0-opsz24-1@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/images.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/jd-1@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/materialsymbolshome.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/rectangle-28.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/tickmark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/recruiter/AddJobs.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/recruiter/GlobalJobs.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/recruiter/rectangle-28.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/templates/admin/recruiter_details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/templates/recruiter/PostJobs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/Logo-Samples2-04-min.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/Logo-Samples2-16-min.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/Logo-Samples2-16-min_mokF2pM.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/Logo-Samples2-22-min.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/Logo-Samples2-43-min.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/Logo-Samples2-60-min.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/t1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/Views/admin/recruiter_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/admin/recruiter_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/images/mdinotes@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/images/mdinotes@2x.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/static/style/admin/recruiter_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/admin/recruiter_list.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/t1.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/admin/recruiter_details.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/admin/recruiter_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/recruiter_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/try.py" beforeDir="false" afterPath="$PROJECT_DIR$/try.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +51,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -62,32 +88,55 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.re.executor&quot;: &quot;Run&quot;,
     &quot;Python.try.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/templates/job_seeker/UserR.html&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/static/images&quot;,
     &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/templates/job_seeker/UserR.html&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates\job_seeker" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\static\images" />
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates\job_seeker" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\views" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates\templatetags" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates\recruiter" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\media\user" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\media" />
-      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\static\style" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.re">
+    <configuration name="re" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="JOB_PORTAL" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/re.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="try" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="JOB_PORTAL" />
       <option name="ENV_FILES" value="" />
@@ -112,6 +161,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.re" />
         <item itemvalue="Python.try" />
       </list>
     </recent_temporary>
@@ -412,7 +462,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711380855924</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="table">
+      <option name="closed" value="true" />
+      <created>1711430698666</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1711430698666</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

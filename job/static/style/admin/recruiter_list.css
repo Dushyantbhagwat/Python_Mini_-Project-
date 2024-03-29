@@ -110,11 +110,6 @@
   display: inline-block;
   min-width: 93px;
   z-index: 2;
-  border-bottom: none;
-  border: none; /* Remove default button border */
-  background: none; /* Remove default button background */
-  padding: 0; /* Remove default button padding */
-  cursor: pointer; /
 }
 .applications-btn-parent,
 .frame-container {
@@ -133,8 +128,6 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   flex-direction: row;
   z-index: 1;
-  cursor: pointer; /* Set cursor to pointer when hovering over the button */
-
 }
 .applications-btn-parent:hover {
   background-color: rgb(225, 225, 225);
@@ -142,9 +135,6 @@
 .frame-container {
   flex-direction: column;
   padding: 0 var(--padding-8xs) 0 0;
-}
-.frame-container a {
-    text-decoration: none; /* Remove underline */
 }
 .recruiter-btn-child {
   height: 42px;
@@ -268,8 +258,9 @@
 }
 .frame-item {
   font-size: 24px;
+  height: 56px;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
-  width: 120px;
+  width: 124px;
   position: absolute;
   margin: 0 !important;
   top: 8px;
@@ -277,8 +268,6 @@
   border-radius: var(--br-6xl);
   background-color: var(--color-gray-400);
   z-index: 1;
-  text-align: left;
-  height: 51px;
 }
 .excel {
   bottom: 7px;
@@ -335,6 +324,8 @@
   justify-content: flex-start;
 }
 .csv {
+  left: 760px;
+  position: relative;
   cursor: pointer;
 
   padding: var(--padding-xs) var(--padding-18xl) var(--padding-xs)
@@ -345,12 +336,10 @@
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
   flex-direction: row;
   z-index: 1;
-  width: 120px;
-  text-align: left;
-  height: 51px;
 }
 .csv:hover,
-.pdf:hover {
+.pdf:hover,
+.pdf0:hover {
   background-color: var(--color-gainsboro-100);
 }
 .csv-wrapper {
@@ -367,7 +356,7 @@
   display: none;
 }
 .pdf1 {
-  position: absolute;
+  position: relative;
   font-size: var(--font-size-5xl);
   font-family: var(--font-inter);
   color: var(--color-black);
@@ -375,10 +364,10 @@
   display: inline-block;
   min-width: 47px;
   z-index: 1;
-  left: -34px;
 }
 .pdf {
   cursor: pointer;
+
   padding: var(--padding-xs) var(--padding-19xl);
   background-color: var(--color-gray-400);
   align-self: stretch;
@@ -386,14 +375,13 @@
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
   flex-direction: row;
   z-index: 1;
-  text-align: left;
-  height: 51px;
-  width: 255px;
-  left: 440px;
 }
 .frame-parent1,
 .pdf,
 .pdf-wrapper {
+  right: -50px;
+  width: 125px;
+  position: relative;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -404,11 +392,36 @@
   padding: var(--padding-5xs) 0 0;
 }
 .frame-parent1 {
-  width: 434px;
+  width: 300px;
   flex-direction: row;
   gap: 35.5px;
   max-width: 100%;
 }
+
+.pdf0 {
+  width: 185px;
+  cursor: pointer;
+  left: 695px;
+  position: relative;
+  padding: var(--padding-xs) var(--padding-19xl);
+  background-color: var(--color-gray-400);
+  align-self: stretch;
+  border-radius: var(--br-6xl);
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
+  flex-direction: row;
+  z-index: 1;
+}
+.pdf1 {
+  position: relative;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  min-width: 47px;
+  z-index: 1;
+}
+
 .search-child {
   height: 53px;
   width: 363px;
@@ -1305,73 +1318,3 @@
 #image{
   mix-blend-mode: multiply;
 }
-
-
-.pdf2-wrapper {
-    flex: 1;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    padding: var(--padding-5xs) 0 0;
-}
-
-.pdf2 {
-    position: relative;
-    font-size: var(--font-size-lgi);
-    font-family: var(--font-inter);
-    color: var(--color-black);
-    text-align: left;
-    cursor: pointer;
-    padding: var(--padding-xs) var(--padding-19xl);
-    background-color: var(--color-gray-400);
-    align-self: stretch;
-    border-radius: var(--br-6xl);
-    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: row;
-    z-index: 1;
-    width: 255px;
-    left: 440px;
-    height: 51px;
-}
-
-.pdf2:hover {
-    background-color: var(--color-gainsboro-100);
-}
-
-
-.pdf3-wrapper {
-    flex: 1;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    padding: var(--padding-5xs) 0 0;
-}
-
-.pdf3 {
-    position: relative;
-    font-size: var(--font-size-lgi);
-    font-family: var(--font-inter);
-    color: var(--color-black);
-    text-align: left;
-    cursor: pointer;
-    padding: var(--padding-xs) var(--padding-19xl);
-    background-color: var(--color-gray-400);
-    align-self: stretch;
-    border-radius: var(--br-6xl);
-    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: row;
-    z-index: 1;
-    width: 255px;
-    left: 270px;
-    height: 51px;
-}
-
-.pdf3:hover {
-    background-color: var(--color-gainsboro-100);
-}
-
-
