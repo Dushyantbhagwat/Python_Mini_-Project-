@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="{% static 'style/job_seeker/JList.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <!-- Navbar content -->
+    <header class="navbarframe">
+      <div class="frame-parent">
+        <div class="logo-wrapper">
+          <a href="{% url 'job_list' %}"><img
+            class="logo-icon"
+            loading="lazy"
+            alt=""
+            src="{% static 'images/logo@2x.png' %}"
+          /></a>
+        </div>
+        <div class="home-button-wrapper">
+          <a href="{% url 'u_profile' %}" style="text-decoration: none"><button class="home-button">
+            <img
+              class="material-symbolshome-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/materialsymbolshome@2x.png' %}"
+            />
+
+            <div class="home-wrapper">
+              <div class="home">Home</div>
+            </div>
+          </button></a>
+        </div>
+        <div class="frame-button-wrapper">
+          <button class="apllication-button-parent">
+            <div class="apllication"></div>
+            <img
+              class="mdinotes-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/status.jpg' %}"
+            />
+
+            <div class="application-wrapper">
+              <div class="application">Status</div>
+            </div>
+          </button>
+        </div>
+        <div class="upload-button-wrapper">
+          <a href="{% url 'job_list' %}" style="text-decoration: none"><button class="upload-button">
+            <div class="addjob"></div>
+            <img
+              class="ggadd-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/ggadd@2x.png' %}"
+            />
+            <div class="add-job-wrapper">
+              <div class="add-job">Jobs</div>
+            </div>
+          </button></a>
+        </div>
+
+        <div id="google_translate_element"></div>
+
+        <script type="text/javascript">
+          function googleTranslateElementInit() {
+              new google.translate.TranslateElement({
+                  pageLanguage: 'en',
+                  includedLanguages: 'en,mr',  // English and Marathi
+              }, 'google_translate_element');
+          }
+        </script>
+
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+      </div>
+      <div class="profilepic-button-wrapper">
+        <div class="dropdown">
+
+          <button class="profilepic-button">
+            <img
+              class="solarlist-linear-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/solarlistlinear@2x.png' %}"
+            />
+
+            <img
+              class="ggprofile-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/ggprofile@2x.png' %}"
+            />
+          </button>
+        <div class="dropdown-content">
+                    <!-- Dropdown content goes here -->
+                    <a href="{% url 'u_profile' %}">Profile</a>
+                    <a href="{% url 'logout' %}">Logout</a>
+                </div>
+      </div>
+    </header>
+
+      <div class="container">
+  {% for job in jobs %}
+    <div class="content">
+      <div class="curved-box">
+        <div class="title">{{ job.title }}</div>
+        <div class="company-name">{{ job.recruiter.company_name }}</div>
+        <img src="{{ job.recruiter.image.url }}" alt="Placeholder Image" class="image">
+        <div class="placeholders">
+          <div class="placeholder1">
+            <img src="{% static 'images/briefcase@2x.png' %}" alt="Placeholder" class="placeholder-icon">
+            {{ job.experience }}
+          </div>
+          <div class="separator">|</div>
+          <div class="placeholder2">
+            <img src="{% static 'images/rupee@2x.png' %}" alt="Placeholder" class="placeholder-icon">
+            {{ job.minimum_salary }} - {{ job.maximum_salary }}
+          </div>
+          <div class="separator">|</div>
+          <div class="placeholder">
+            <img src="{% static 'images/address@2x.png' %}" alt="Placeholder" class="placeholder-icon">
+            {{ job.city }}
+          </div>
+        </div>
+        <!-- Date placeholder -->
+        <div class="date-placeholder">End on:
+            <span class="ti">{{ job.deadline }}</span>
+        </div>
+
+        <div class="job-type-placeholder">Job Type:
+            <span class="type">{{ job.job_type }}</span>
+        </div>
+
+        <div >
+          <a href="{% url 'job_profile' job.id %}"><button class="curved-button">Apply Now</button></a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <script>
+      $(document).ready(function() {
+        {% for message in messages %}
+        var messageType = "{{ message.tags }}"
+        var messageText = "{{ message }}"
+
+        toastr.options = {
+          closeButton: true,
+          progressBar: true,
+          positionClass: 'toast-bottom-right',
+          showMethod: 'slideDown',
+          timeout: 5000
+        };
+
+        if (messageType === 'success') {
+          toastr.success(messageText);
+        } else if (messageType === 'error') {
+          toastr.error(messageText);
+        } else if (messageType === 'info') {
+          toastr.info(messageText);
+        } else {
+          toastr.warning(messageText);
+        }
+        {% endfor %}
+      });
+    </script>
+
+  </body>
+</html>

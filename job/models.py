@@ -38,13 +38,17 @@ class Job(models.Model):
     id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
     title = models.CharField(max_length=45, null=False)
     description = models.CharField(max_length=45, null=False)
+    city = models.CharField(max_length=100, null=True)
     location = models.CharField(max_length=45, null=False)
     start_date = models.CharField(max_length=45, null=False)
     deadline = models.CharField(max_length=45, null=False)
-    salary = models.CharField(max_length=45, null=True, default='Not Disclosed')
+    minimum_salary = models.CharField(max_length=45, null=False, default='Not Disclosed')
+    maximum_salary = models.CharField(max_length=45, null=False, default='Not Disclosed')
     job_type = models.CharField(max_length=45, null=False)
-    skills = models.CharField(max_length=45, null=False)
+    experience = models.CharField(max_length=50, null=False, default='not provided')
+    skills = models.CharField(max_length=45, blank=True, null=False)
     recruiter = models.ForeignKey('Recruiter', models.CASCADE)
+    rate = models.CharField(max_length=10, null=False)
 
 
 class Application(models.Model):
@@ -52,5 +56,6 @@ class Application(models.Model):
     date = models.DateField(auto_now_add=True)
     user = models.ForeignKey('JobSeeker', models.CASCADE)
     job = models.ForeignKey('Job', models.CASCADE)
+    status = models.CharField(max_length=20, default='request pending')
 
 

@@ -44,8 +44,8 @@ body {
   position: relative;
   display: flex;
   justify-content: center;
-  top: -13px;
-  left: 175px;
+  top: -14px;
+  left: 130px;
   background-color: white;
 }
 
@@ -107,7 +107,7 @@ body {
   width: 122px;
   position: relative;
   bottom: 55px;
-  left: 790px;
+  left: -790px;
   font-size: medium;
   background-color: transparent;
   border-color: transparent;

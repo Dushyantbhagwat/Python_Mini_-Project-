@@ -4,26 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="table">
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="fixed">
+      <change afterPath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/Views/recruiter/candidate_list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/migrations/0008_job_rate.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/migrations/0009_rename_minium_salary_job_minimum_salary.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/migrations/0010_job_city.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/migrations/0011_alter_job_maximum_salary_alter_job_minimum_salary_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/migrations/0012_application_status.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/address@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/back@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/bookmark@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/briefcase@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/facebook@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/forward@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/instagram@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/linkedin@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/rectangle-12@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/rectangle-14@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/rectangle-16@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/rectangle-2@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/rupee@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/status.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/twitterx@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/job_seeker/JList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/job_seeker/JListGloabl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/recruiter/CList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/recruiter/CListGloabl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/templates/job_seeker/JList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/templates/job_seeker/JobDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/templates/recruiter/Application.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23-Mar-24_9_14_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23-Mar-24_9_14_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/Views/recruiter/post_jobs.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/recruiter/post_jobs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/static/style/admin/job_seeker_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/admin/job_seeker_list.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/static/style/admin/recruiter_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/admin/recruiter_list.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/AdminLandingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/AdminLandingPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/recruiter_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/recruiter_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/recruiter_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/recruiter_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/style/landing_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/landing_page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/style/recruiter/AddJobs.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/recruiter/AddJobs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/style/recruiter/ApplicationList.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/recruiter/ApplicationList.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/UserProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/UserProfile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/u_landing_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/u_landing_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/landing_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/landing_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/recruiter/ApplicationList.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/ApplicationList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/recruiter/PostJobs.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/PostJobs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/RLandingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/RLandingPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/RUpdateProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/RUpdateProfile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/recruiter/RecruiterProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/RecruiterProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/verify_otp.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/verify_otp.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +58,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -84,10 +108,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\static\images" />
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\static\style\recruiter" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates\job_seeker" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\views" />
-      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL" />
@@ -461,7 +485,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711680317713</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="fixed">
+      <option name="closed" value="true" />
+      <created>1711693894128</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1711693894129</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -489,6 +521,7 @@
     <MESSAGE value="logout added" />
     <MESSAGE value="now recruiter and seeker list can be seen by admin" />
     <MESSAGE value="table" />
-    <option name="LAST_COMMIT_MESSAGE" value="table" />
+    <MESSAGE value="fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed" />
   </component>
 </project>

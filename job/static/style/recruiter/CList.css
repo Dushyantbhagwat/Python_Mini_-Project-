@@ -291,7 +291,7 @@
 }
 
 .excel-wrapper {
- 
+
   border-radius: var(--br-6xl);
   padding: var(--padding-xl);
   z-index: 2;
@@ -1256,9 +1256,7 @@
   cursor: pointer;
   color: rgb(0, 103, 0);
 }
-
-
-.accept{
+.rej{
   position: relative;
   border: 0;
   color: rgb(239, 0, 0);
@@ -1269,71 +1267,11 @@
   font-size: large;
 }
 
-.accept:hover{
+.rej:hover{
   cursor: pointer;
   color: rgb(103, 0, 0);
 }
 
-
-    .acc {
-        color: blue;
-        text-decoration: none; /* Removes underline */
-        position: relative; /* Required for positioning */
-        top: 10px; /* Adjust this value to move it up */
-        left: -45px; /* Adjust this value to move it left */
-    }
-
-    .rej {
-        color: red;
-        text-decoration: none; /* Removes underline */
-        position: relative; /* Required for positioning */
-        top: 10px; /* Adjust this value to move it up */
-        left: -45px; /* Adjust this value to move it left */
-    }
-
-    /* Optional: Hover styles */
-    .acc:hover {
-        text-decoration: none; /* Underline on hover */
-    }
-
-    .rej:hover {
-        text-decoration: none; /* Underline on hover */
-    }
-
-
-    .next {
-        color: green;
-        text-decoration: none; /* Removes underline */
-        position: relative; /* Required for positioning */
-        top: -28px; /* Adjust this value to move it up */
-        left: -41px; /* Adjust this value to move it left */
-    }
-
-    .next:hover {
-        text-decoration: none; /* Underline on hover */
-    }
-
-
 #image{
   mix-blend-mode: multiply;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

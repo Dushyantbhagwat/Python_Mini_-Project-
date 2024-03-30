@@ -127,7 +127,7 @@
             </button>
           </div>
           <div class="frame-button-wrapper">
-            <button class="apllication-button-parent">
+            <a href="{% url 'c_list'%}" style="text-decoration: none;"><button class="apllication-button-parent">
               <div class="apllication"></div>
               <img
                 class="mdinotes-icon"
@@ -139,11 +139,10 @@
               <div class="application-wrapper">
                 <div class="application">Application</div>
               </div>
-            </button>
+            </button></a>
           </div>
           <div class="upload-button-wrapper">
-            {% with r_id=recruiter.id %}
-            <a href="{% url 'post_jobs' r_id %}" style="text-decoration: none;"><button class="upload-button">
+            <a href="{% url 'post_jobs'%}" style="text-decoration: none;"><button class="upload-button">
               <div class="addjob"></div>
               <img
                 class="ggadd-icon"
@@ -155,7 +154,6 @@
                 <div class="add-job">Add Job</div>
               </div>
             </button></a>
-            {% endwith %}
           </div>
         </div>
 

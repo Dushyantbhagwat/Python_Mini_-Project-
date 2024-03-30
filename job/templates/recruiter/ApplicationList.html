@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
   <head>
     {% load static %}
     <meta charset="utf-8" />
@@ -13,6 +13,152 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap"
     />
+
+    <style>
+      .column-names-container,
+      .job-seekers-container {
+        margin-bottom: 20px;
+
+
+      }
+      .column-names-box {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        margin-bottom: 8px; /* Decrease margin */
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background-color: var(--color-white);
+        height: 40px;
+      }
+      .column-name {
+        flex: 1;
+        text-align: center;
+      }
+
+      .shifted {
+        position: relative;
+        left: -33px;
+      }
+      .shifted2 {
+        position: relative;
+        left: -56px;
+      }
+      .shifted3 {
+        position: relative;
+        left: -12px;
+      }
+      .shifted4 {
+        position: relative;
+        left: 19px;
+      }
+      .shifted5 {
+        position: relative;
+        left: 63px;
+      }
+      .shifted6 {
+        position: relative;
+        left: 1px;
+      }
+      .shifted7 {
+        position: relative;
+        left: -23px;
+      }
+      .shifted8 {
+        position: relative;
+        left: -5px;
+      }
+      /* Example individual styling */
+      .column-name:nth-child(1) {
+        margin-left: -40px; /* Adjust the value as needed */
+      }
+      .column-name:nth-child(2) {
+        margin-right: -40px; /* Adjust the value as needed */
+      }
+      .column-name:nth-child(3) {
+        margin-left: 30px; /* Adjust the value as needed */
+      }
+      .column-name:nth-child(4) {
+        margin-left: 30px; /* Adjust the value as needed */
+      }
+      .column-name:nth-child(5) {
+        margin-left: 30px; /* Adjust the value as needed */
+      }
+      .column-name:nth-child(6) {
+        margin-left: 30px; /* Adjust the value as needed */
+      }
+      .column-name:nth-child(7) {
+        margin-left: 30px; /* Adjust the value as needed */
+      }
+
+
+
+
+      .job-seeker-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 5px;
+      }
+
+      /* Styles for the delete button */
+      .delete {
+        background-color: #ff6347; /* Red background */
+        color: #fff; /* White text color */
+        border: none; /* Remove border */
+        padding: 8px 16px; /* Add padding */
+        border-radius: 5px; /* Add border radius */
+        cursor: pointer; /* Add pointer cursor on hover */
+        transition: background-color 0.3s ease; /* Smooth transition */
+        left: -50px;
+        width: 60px;
+        height: 35px;
+      }
+
+      .delete:hover {
+        background-color: #d9534f; /* Darker red background on hover */
+      }
+
+      /* Center the delete button */
+      .job-seeker-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Center vertically */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 5px;
+      }
+
+      /* Apply background colors to alternate rows */
+      .job-seeker-row:nth-child(even) {
+        background-color: var(--color-white);
+        color: var(--color-black);
+        background: linear-gradient(180deg, rgba(186, 188, 224, 0), #badbe0);
+        box-sizing: border-box;
+      }
+
+      .job-seeker-row:nth-child(odd) {
+        background-color: var(--color-gainsboro);
+        color: var(--color-black);
+        background: linear-gradient(180deg, #badbe0, rgba(186, 188, 224, 0));
+        box-sizing: border-box;
+      }
+
+
+    </style>
+
+
+
+
+
+
+
+
+
+
   </head>
   <body>
     <div class="application-list">
@@ -42,23 +188,23 @@
                     <div class="recruiters-list">
 
                      
-                      <button  class="recruiters-list-child">
+                      <a href="{% url 'r_profile' %}" style="text-decoration: none;"><button  class="recruiters-list-child">
                         <div class="home">Home</div>
                         
-                      </button>
+                      </button></a>
                    
                     </div>
                   </div>
                   <div class="frame-container">
-                    <button class="applications-btn-parent">
+                    <a href="{% url 'c_list' %}" style="text-decoration: none;"><button class="applications-btn-parent">
                       <div class="applications-btn"></div>
                       <div class="applications">Applications</div>
-                    </button>
+                    </button></a>
                   </div>
-                  <button class="recruiter-btn">
+                  <a href="{% url 'post_jobs' %}" style="text-decoration: none;"><button class="recruiter-btn">
                     <div class="recruiter-btn-child"></div>
-                    <div class="recruiters">Recruiters</div>
-                  </button>
+                    <div class="recruiters">Add Job</div>
+                  </button></a>
                 </div>
               </div>
             </div>
@@ -112,161 +258,107 @@
           </div>
         </div>
       </div>
-      <div class="rectangle-container">
-        <div class="frame-inner"></div>
-        <div class="srno-wrapper">
-          <div class="srno">SR.No</div>
-        </div>
-        <div class="name-wrapper">
-          <div class="name">Name</div>
-        </div>
-        <div class="contact-wrapper">
-          <div class="contact">Contact</div>
-        </div>
-        <div class="email-id-wrapper">
-          <div class="email-id">Email ID</div>
-        </div>
-        <div class="gender-wrapper">
-          <div class="gender">Resume</div>
-        </div>
-        <div class="image-parent">
-          <div class="image">Image</div>
-          <div class="action-wrapper">
-            <div class="action">Action</div>
-          </div>
-        </div>
-      </div>
-      <main class="frame-main">
-        <div class="rectangle-div"></div>
-        <section class="frame-section">
-          <div class="rectangle-parent1">
-            <div class="frame-child1"></div>
-            <div class="frame-wrapper1">
-              <div class="parent">
-                <div class="div">1</div>
-                <div class="dushyant-bhagwat-wrapper">
-                  <div class="dushyant-bhagwat">Dushyant Bhagwat</div>
-                </div>
-                <div class="wrapper">
-                  <div class="div1">7400126595</div>
-                </div>
-                <div class="dushyantdbhagwatgmailcom">
-                  dushyantdbhagwat@gmail.com
-                </div>
-              </div>
-            </div>
-            <div class="male-wrapper">
-              <a href="" class="male">resume</a>
-            </div>
-            <div class="vector-parent">
-              <img
-              id="image"
-                class="ellipse-icon"
-                loading="lazy"
-                alt=""
-                src="{% static 'images/profile pic.jpg' %}"
-              />
+<!--      <div class="rectangle-container">-->
+<!--        <div class="frame-inner"></div>-->
+<!--        <div class="srno-wrapper">-->
+<!--          <div class="srno">SR.No</div>-->
+<!--        </div>-->
+<!--        <div class="name-wrapper">-->
+<!--          <div class="name">Name</div>-->
+<!--        </div>-->
+<!--        <div class="contact-wrapper">-->
+<!--          <div class="contact">Contact</div>-->
+<!--        </div>-->
+<!--        <div class="email-id-wrapper">-->
+<!--          <div class="email-id">Email ID</div>-->
+<!--        </div>-->
+<!--        <div class="gender-wrapper">-->
+<!--          <div class="gender">Resume</div>-->
+<!--        </div>-->
+<!--        <div class="image-parent">-->
+<!--          <div class="image">Image</div>-->
+<!--          <div class="action-wrapper">-->
+<!--            <div class="action">Action</div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <main class="frame-main">-->
+<!--        <div class="rectangle-div"></div>-->
+<!--        <section class="frame-section">-->
+<!--          <div class="rectangle-parent1">-->
+<!--            <div class="frame-child1"></div>-->
+<!--            <div class="frame-wrapper1">-->
+<!--              <div class="parent">-->
+<!--                <div class="div">1</div>-->
+<!--                <div class="dushyant-bhagwat-wrapper">-->
+<!--                  <div class="dushyant-bhagwat">Dushyant Bhagwat</div>-->
+<!--                </div>-->
+<!--                <div class="wrapper">-->
+<!--                  <div class="div1">7400126595</div>-->
+<!--                </div>-->
+<!--                <div class="dushyantdbhagwatgmailcom">-->
+<!--                  dushyantdbhagwat@gmail.com-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="male-wrapper">-->
+<!--              <a href="" class="male">resume</a>-->
+<!--            </div>-->
+<!--            <div class="vector-parent">-->
+<!--              <img-->
+<!--              id="image"-->
+<!--                class="ellipse-icon"-->
+<!--                loading="lazy"-->
+<!--                alt=""-->
+<!--                src="{% static 'images/profile pic.jpg' %}"-->
+<!--              />-->
 
-              <div class="delete-wrapper">
-                <button onclick="accept()" class="delete">Accept</button>
-                <button onclick="reject()" class="rej">Reject</button>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="frame-wrapper2">
-          <div class="frame-parent2">
-            <div class="container">
-              <div class="div2">1</div>
-            </div>
-            <div class="dushyant-bhagwat-container">
-              <div class="dushyant-bhagwat1">Dushyant Bhagwat</div>
-            </div>
-            <div class="frame-wrapper3">
-              <div class="group">
-                <div class="div3">7400126595</div>
-                <div class="dushyantdbhagwatgmailcom1">
-                  dushyantdbhagwat@gmail.com
-                </div>
-              </div>
-            </div>
-            <div class="male-container">
-              <a href="" class="male1">resume</a>
-            </div>
-            <div class="vector-group">
-              <img
-              id="image"
-                class="frame-child2"
-                alt=""
-                src="{% static 'images/profile pic.jpg' %}" />
+<!--              <div class="delete-wrapper">-->
+<!--                <button onclick="accept()" class="delete">Accept</button>-->
+<!--                <button onclick="reject()" class="rej">Reject</button>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </section>-->
 
-              <div class="delete-container">
-                <button onclick="accept()" class="delete">Accept</button>
-                <button onclick="reject()" class="rej">Reject</button>
+            <div class="column-names-container">
+              <div class="column-names-box">
+                <div class="column-name shifted">SR.N0</div>
+                <div class="column-name shifted2">Name</div>
+                <div class="column-name shifted3">Contact</div>
+                <div class="column-name shifted4">Email ID</div>
+                <div class="column-name shifted5">Gender</div>
+                <div class="column-name shifted6">Resume</div>
+                <div class="column-name shifted7">Image</div>
+                <div class="column-name shifted8">Action</div>
               </div>
             </div>
-          </div>
-        </section>
-        <section class="rectangle-parent2">
-          <div class="frame-child3"></div>
-          <div class="frame-wrapper4">
-            <div class="parent1">
-              <div class="div4">1</div>
-              <div class="dushyant-bhagwat-frame">
-                <div class="dushyant-bhagwat2">Dushyant Bhagwat</div>
-              </div>
-              <div class="frame">
-                <div class="div5">7400126595</div>
-              </div>
-              <div class="dushyantdbhagwatgmailcom2">
-                dushyantdbhagwat@gmail.com
-              </div>
-            </div>
-          </div>
-          <div class="male-frame">
-            <a href="" class="male2">resume</a>
-          </div>
-          <div class="vector-container">
-            <img id="image" class="frame-child4" alt="" src="{% static 'images/profile pic.jpg' %}" />
 
-            <div class="delete-frame">
-              <button onclick="accept()" class="delete">Accept</button>
-              <button onclick="reject()" class="rej">Reject</button>
+            <div class="job-seekers-container">
+          {% for app in apps %}
+          <div class="job-seeker-row">
+            <div>{{ forloop.counter }}</div>
+            <div>{{ app.user.full_name }}</div>
+            <div>{{ app.user.mobile_no }}</div>
+            <div>{{ app.user.email_id }}</div>
+            <div>{{ app.user.gender }}</div>
+            <div>{{ app.user.resume }}</div>
+            <div>
+              {% if app.user.image %}
+              <img class="ellipse-icon" loading="lazy" alt="" src="{{ app.user.image.url }}" />
+              {% else %}
+              <img class="ellipse-icon" loading="lazy" alt="" src="{% static 'images/profile pic.jpg' %}" />
+              {% endif %}
             </div>
+             <div>
+                  <a href="" class="next">Job Applied</a><br>
+                  <a href="#" onclick="accept()" class="acc">Accept</a>
+                  <a href="#" onclick="reject()" class="rej">Reject</a>
+             </div>
           </div>
-        </section>
-        <section class="frame-wrapper5">
-          <div class="frame-parent3">
-            <div class="wrapper1">
-              <div class="div6">1</div>
-            </div>
-            <div class="frame-wrapper6">
-              <div class="dushyant-bhagwat-parent">
-                <div class="dushyant-bhagwat3">Dushyant Bhagwat</div>
-                <div class="div7">7400126595</div>
-                <div class="dushyantdbhagwatgmailcom3">
-                  dushyantdbhagwat@gmail.com
-                </div>
-              </div>
-            </div>
-            <div class="male-wrapper1">
-              <a href="" class="male3">resume</a>
-            </div>
-            <div class="vector-parent1">
-              <img
-              id="image"
-                class="frame-child5"
-                alt=""
-                src="{% static 'images/profile pic.jpg' %}"
-              />
+          {% endfor %}
+        </div>
 
-              <div class="delete-wrapper1">
-                <button onclick="accept()" class="delete">Accept</button>
-                <button onclick="reject()" class="rej">Reject</button>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
     </div>
 
@@ -300,7 +392,7 @@
         {% endfor %}
       });
     </script>
-
+</style>
 
 
   </body>

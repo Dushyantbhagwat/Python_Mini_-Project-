@@ -1,0 +1,594 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar {
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+
+  .navbar a {
+    display: inline-block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #333333;
+    font-size: 18px;
+  }
+
+  .navbar a:hover {
+    background-color: #eeeeee;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 35px;
+
+  }
+
+  .content {
+    padding-top: 80px;
+  }
+
+  /* New CSS for the rectangular curved box */
+  .curved-box {
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adjusted shadow properties */
+    position: relative;
+    height: 200px;
+    bottom: -35px;
+    background-color: #DFF5FF;
+  }
+
+  /* Placeholder styles */
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  /* Placeholder styles */
+    .company-name {
+        margin-bottom: 20px;
+        margin-right: -50px; /* Move content to the right by 50 pixels */
+    }
+
+  .image {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px; /* Adjust as needed */
+    height: 60px; /* Adjust as needed */
+  }
+
+  /* Placeholder layout */
+  .placeholders {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-right: -40px;
+  }
+
+  .placeholder {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    justify-content: center; /* Center align text */
+  }
+  .placeholder1 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    justify-content: center; /* Center align text */
+  }
+  .placeholder2 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    justify-content: center; /* Center align text */
+  }
+
+  .placeholder:not(:last-child) {
+    margin-right: -80px;
+  }
+
+  .placeholder img {
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    margin-right: 5px; /* Add a small margin to the right of the image */
+  }
+
+  .placeholder2 img {
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    margin-right: 5px; /* Add a small margin to the right of the image */
+  }
+  .placeholder1 img {
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    margin-right: 5px; /* Add a small margin to the right of the image */
+  }
+
+  .separator {
+    margin: 0 10px; /* Adjusted margin for the separator */
+  }
+
+  /* Style for the date placeholder */
+  .date-placeholder {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 14px;
+    color: #333333;
+  }
+  .date-placeholder .ti {
+    font-size: 14px;
+    color: red;
+  }
+
+  /* Style for the date placeholder */
+  .job-type-placeholder {
+    position: absolute;
+    bottom: 20px;
+    right: 169px;
+    font-size: 14px;
+    color: #333333;
+  }
+  .job-type-placeholder .type {
+    font-size: 14px;
+    color: red;
+  }
+  /* Style for the curved button */
+  .curved-button {
+    position: absolute;
+    bottom: 13px;
+    right: 20px;
+    background-color: #67C6E3;
+    border: none; /* Remove border */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding */
+    border-radius: 30px; /* Rounded corners */
+    cursor: pointer; /* Cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+  }
+
+  /* Hover effect for curved button */
+  .curved-button:hover {
+    background-color: #378CE7; /* Darker blue*/
+  }
+
+  /* Style for page changer container */
+  .page-changer {
+    position: relative;
+    bottom: -768px;
+    right: -690px;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+  /* Style for page changer options */
+  .page-changer a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: #333333;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  /* Hover effect for page changer options */
+  .page-changer a:hover {
+    background-color: #555555;
+  }
+  .logo-icon {
+    align-self: stretch;
+    height: 48px;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+  .logo-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0 var(--padding-6xs) var(--padding-12xs) 0;
+    height: 34px;
+    bottom: -34px;
+    left: 24px;
+    position: relative;
+  }
+.material-symbolshome-icon {
+height: 24px;
+width: 24px;
+position: absolute;
+overflow: hidden;
+flex-shrink: 0;
+object-fit: cover;
+min-height: 24px;
+}
+.home{
+height: 23px;
+font-size: var(--font-size-base);
+font-family: var(--font-inter);
+color: var(--color-black);
+text-align: left;
+display: inline-block;
+min-width: 69px;
+
+}
+.material-symbolshome-icon {
+align-self: stretch;
+position: relative;
+z-index: 1;
+}
+.home-wrapper {
+flex: 1;
+flex-direction: column;
+justify-content: flex-start;
+padding-top: 5px;
+}
+.home-button,
+.home-button-wrapper,
+.home-wrapper {
+display: flex;
+align-items: flex-start;
+}
+.home-button {
+border-radius: 50px;
+background-color: var(--color-white);
+box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+flex-direction: row;
+justify-content: flex-start;
+padding: var(--padding-6xs) 21px;
+gap: 6px;
+white-space: nowrap;
+position: absolute;
+top: 3px;
+width: 87px;
+height: 30px;
+}
+.home-button-wrapper {
+width: 128px;
+flex-direction: column;
+justify-content: flex-end;
+padding-bottom: 10px;
+box-sizing: border-box;
+position: relative;
+}
+.home-button:hover,
+.apllication-button-parent:hover,
+.profilepic-button:hover,
+.imagebutton:hover,
+.upload-button:hover,
+.upload-button-container:hover{
+background-color: #e6e6e6;
+cursor: pointer;
+}
+
+.apllication {
+height: 23px;
+position: relative;
+background-color: var(--color-white);
+box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+font-size: var(--font-size-base);
+font-family: var(--font-inter);
+color: var(--color-black);
+text-align: left;
+display: inline-block;
+}
+.mdinotes-icon {
+height: 24px;
+width: 24px;
+position: relative;
+overflow: hidden;
+flex-shrink: 0;
+object-fit: cover;
+min-height: 24px;
+}
+.mdinotes-icon{
+align-self: stretch;
+position: relative;
+z-index: 1;
+}
+.application,
+.mdinotes-icon{
+position: relative;
+z-index: 1;
+}
+.application-wrapper {
+flex: 1;
+flex-direction: column;
+justify-content: flex-start;
+padding-top: 5px;
+
+}
+.application{
+height: 23px;
+font-size: var(--font-size-base);
+font-family: var(--font-inter);
+color: var(--color-black);
+text-align: left;
+display: inline-block;
+min-width: 69px;
+}
+.apllication-button-parent,
+.application-button-wrapper,
+.frame-button-wrapper {
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+}
+.apllication-button-parent {
+border-radius: 50px;
+background-color: var(--color-white);
+box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+flex-direction: row;
+padding: var(--padding-6xs) 21px;
+gap: 7px;
+justify-content: flex-start;
+gap: var(--gap-4xs);
+white-space: nowrap;
+overflow:hidden ;
+position: absolute;
+top: 3px;
+width: 87px;
+height: 30px;
+}
+.frame-button-wrapper {
+flex: 1;
+width: 128px;
+flex-direction: column;
+padding: 0 var(--padding-9xs) 0 0;
+color: var(--color-black);
+justify-content: flex-end;
+padding: 0 0 var(--padding-8xs);
+box-sizing: border-box;
+padding-bottom: 10px;
+position: relative;
+}
+.addjob {
+height: 42px;
+width: 130px;
+position: relative;
+border-radius: var(--br-6xl);
+background-color: var(--color-white);
+box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+display: none;
+}
+.add-job,
+.ggadd-icon {
+align-self: stretch;
+position: relative;
+z-index: 1;
+}
+.add-job-wrapper{
+flex: 1;
+flex-direction: column;
+justify-content: flex-start;
+padding-top: 5px;
+padding-left: 5px;
+}
+.ggadd-icon {
+height: 24px;
+width: 24px;
+overflow: hidden;
+position: relative;
+flex-shrink: 0;
+object-fit: cover;
+min-height: 24px;
+padding-top: 2px;
+}
+.add-job {
+height: 23px;
+font-size: var(--font-size-base);
+font-family: var(--font-inter);
+color: var(--color-black);
+text-align: left;
+display: inline-block;
+min-width: 69px;
+}
+.upload-button,
+.upload-button-wrapper,
+.add-job-wrapper{
+cursor: pointer;
+display: flex;
+align-items: flex-start;
+}
+.upload-button {
+padding: var(--padding-6xs) 21px;
+background-color: var(--color-white);
+border-radius: 50px;
+box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+flex-direction: row;
+justify-content: flex-start;
+gap: var(--gap-4xs);
+white-space: nowrap;
+position: absolute;
+top: 3px;
+width: 87px;
+height: 30px;
+}
+
+.upload-button-wrapper {
+width: 128px;
+flex-direction: column;
+justify-content: flex-end;
+padding: 0 0 var(--padding-8xs);
+box-sizing: border-box;
+padding-bottom: 10px;
+position: relative;
+}
+.frame-parent {
+width: 693px;
+display: flex;
+flex-direction: row;
+align-items: flex-end;
+justify-content: flex-start;
+gap: 39px;
+max-width: 100%;
+}
+.ggprofile-icon,
+.solarlist-linear-icon {
+height: 20px;
+width: 20px;
+position: relative;
+overflow: hidden;
+flex-shrink: 0;
+object-fit: cover;
+min-height: 20px;
+padding-top: 3px;
+}
+.profilepic-button {
+align-self: stretch;
+border-radius: 50px;
+background-color: var(--color-white);
+box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+border: 1px solid var(--color-black);
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+justify-content: flex-start;
+gap: 14px;
+height: 30px;
+position: relative;
+top: 19px;
+width: 68px;
+height: 30px;
+left: -25px;
+}
+
+.navbarframe,
+.profilepic-button-wrapper {
+display: flex;
+align-items: flex-start;
+box-sizing: border-box;
+}
+.profilepic-button-wrapper {
+width: 72px;
+flex-direction: column;
+justify-content: flex-start;
+padding-top: 10px;
+padding-right: 10px;
+position: relative;
+}
+.navbarframe {
+align-self: stretch;
+border-end-start-radius: 25px;
+border-end-end-radius: 25px;
+background-color: var(--color-white);
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+flex-direction: row;
+justify-content: space-between;
+top: 0;
+z-index: 99;
+position: sticky;
+max-width: 100%;
+gap: 20px;
+text-align: left;
+font-size: var(--font-size-base);
+color: rgba(0, 0, 0, 0.7);
+font-family: var(--font-inter);
+overflow: hidden;
+height: 79px;
+}
+
+
+/* Dropdown content (hidden by default) */
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 90px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 20px;
+      overflow-y: auto; /* Enable vertical scrolling if content overflows */
+      max-height: 400px; /* Set maximum height for the dropdown */
+      top: 23px;
+      width: 87px;
+      left: -23px;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+      color: black;
+      padding: 2px 16px;
+      text-decoration: none;
+      display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+      background-color: #f1f1f1;
+  }
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+      display: block;
+  }
+
+  .profilephoto-icon {
+              width: 100px; /* Adjust as needed */
+              height: auto;
+              cursor: pointer;
+
+          }
+
+
+
+
+/* Custom styling for the translation box */
+    #google_translate_element {
+        position: absolute;
+        top: 24px;
+        right: 150px;
+
+
+    }
+
+    /* Custom styling for the language dropdown */
+    .goog-te-combo {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    /* Custom styling for the translate button */
+    .goog-te-button {
+        background-color: #4CAF50;
+        color: #fff;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    /* Custom styling for the translated text */
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+
+    .goog-te-menu-value span {
+        color: #4CAF50; /* Change color of the selected language */
+    }

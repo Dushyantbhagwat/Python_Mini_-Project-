@@ -122,12 +122,10 @@
 <body>
 <div class="desktop-1-5TD">
   <nav class="nav">
-    <a href="{% url 'u_landing_page' %}"><img class="naukrimg"  src="{% static  'images/logo_1.png' %}" alt=""></a>
+    <a  onclick="scrollToContact()"><img style="cursor: pointer;" class="naukrimg"  src="{% static  'images/logo_1.png' %}" alt=""></a>
 
     <div class="menu">
-      <a href="{% url 'j1' %}"><button class="jobs"></button>
-      <button class="companies"></button>
-      <button class="services"></button>
+      <a href="{% url 'job_list' %}"><button class="jobs">Jobs</button>
       </a>
     </div>
 
@@ -148,9 +146,7 @@
 
     <a href="{% url 'logout' %}"><button class="logout" >Logout</button></a>
 
-   <button class="fremp" onclick="scrollToContact()">
-      Contact Us
-    </button>
+
 
   </nav>
 

@@ -4,58 +4,69 @@
     {% load static %}
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
-    <link rel="stylesheet" href="{% static 'style/recruiter/GlobalJobs.css' %}" />
+    
     <link rel="stylesheet" href="{% static 'style/recruiter/AddJobs.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/recruiter/GlobalJobs.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap"
     />
+          <style>
+              .frame-parent8 {
+                  display: flex;
+                  justify-content: space-between; /* Adjust spacing between buttons */
+                  width: 80%; /* Adjust the width of the container */
+                  margin: auto; /* Center the container horizontally */
+              }
 
-    <style>
-      .job-title {
-        position: absolute;
-        top: -30px;
-      }
-      .job-description-wrapp {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 0 var(--padding-4xs) 0 9.5px;
-        position: relative;
-      }
-      .job-title{
-        font-size: var(--font-size-7xl);
-      }
-      @media screen and (max-width: 450px) {
-        .add-basic-description,
-        .job-title {
-          font-size: var(--font-size-lgi);
-      }
+              .frame-parent8 input[type="submit"] {
+                  padding: 10px 20px; /* Adjust button padding */
+                  font-size: 16px; /* Adjust button font size */
+                  background-color: green;
+                  color: white;
+                  border: none;
+                  border-radius: 8px;
+                  cursor: pointer;
+                  margin: 10px 0;
+              }
 
-      .vector-parents {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        max-width: 90px;
-      }
-      .vector-parents {
-        align-self: stretch;
-        flex-direction: row;
-        position: relative;
-        font-size: var(--font-size-5xl);
-        color: rgba(0, 0, 0, 0.93);
-        width: 1225px;
-        height: 156px;
-        border-radius: 50px;
-        background-color: var(--color-white);
-        border: 1px solid #1f1f1f;
-        margin-top: 20px;
-      }
+              .frame-parent8 input[type="submit"]:hover {
+                  background-color: red;
+              }
 
-    </style>
-   
+              .frame-parent8 input[type="submit"]:disabled {
+                  background-color: gray;
+                  cursor: not-allowed;
+              }
+          </style>
+
+          <script>
+              function handleButtonClick(buttonId) {
+                  const buttons = document.getElementsByName('job_type');
+                  const selectedJobTypeInput = document.getElementById('selectedJobType');
+
+                  // Set the value of the hidden input field to the clicked button's value
+                  selectedJobTypeInput.value = buttonId;
+
+                  // Disable only the clicked button
+                  buttons.forEach(button => {
+                      if (button.id == buttonId + 'Button') {
+                          button. disabled = false;
+                          button.classList.remove('disabled');
+                      } else {
+                          button.disabled = true;
+                          button.classList.add('disabled');
+                      }
+                  });
+              }
+
+
+          </script>
+
+
+
   </head>
   <body>
     <div class="add-jobs">
@@ -63,12 +74,12 @@
         <div class="nav-child"></div>
         <div class="value-link">
           <div class="rectangle-parent">
-            <img
+            <a href="{% url 'post_jobs' %}"><img
               class="frame-child"
               loading="lazy"
               alt=""
               src="{% static 'images/rectangle-22@2x.png' %}"
-            />
+            /></a>
 
             <div class="frame-wrapper">
               <div class="frame-parent">
@@ -79,9 +90,9 @@
                         class="material-symbolshome-icon"
                         loading="lazy"
                         alt=""
-                        src="{% static 'images/materialsymbolshome.svg' %}"
+                        src="{% static 'style/recruiter/materialsymbolshome.svg' %}"
                       />
-                      <div class="home">Home</div>
+                      <a href="{% url 'r_profile' %}"><div class="home">Home</div></a>
                     </button>
                   </div>
                 </div>
@@ -94,10 +105,10 @@
                     alt=""
                     src="{% static 'images/mdinotes@2x.png' %}"
                     />
-                    <div class="applications">Applications</div>
+                    <a href="{% url 'post_jobs' %}"><div class="applications">Applications</div></a>
                   </button>
                 </div>
-                <button class="recruiter-btn">
+                <a href="{% url 'post_jobs' %}"><button class="recruiter-btn">
                   <div class="recruiter-btn-child"></div>
                   <img 
                   class="addjobs-icon"
@@ -105,26 +116,28 @@
                   src="{% static 'images/ggadd@2x.png' %}"
                   />
                   <div class="add-jobs1">Add Jobs</div>
-                </button>
+                </button></a>
               </div>
             </div>
           </div>
         </div>
         <div class="nav-item">
           <img
-          class="profile-icon"
-          src="{% static 'images/ggprofile@2x.png' %}"
-          alt=""
-          />
-          <img
           class="note-icon"
           src="{% static 'images/solarlistlinear@2x.png' %}"
           alt=""
           />
+          <img
+          class="profile-icon"
+          src="{% static 'images/ggprofile@2x.png' %}"
+          alt=""
+          />
         </div>
       </header>
-     <form action="{% url 'post_jobs' r_id %}" method="post">
+     <form action="{% url 'post_jobs' %}" method="post">
        {% csrf_token %}
+       <!-- Add the hidden input field here -->
+      <input type="hidden" name="selected_job_type" id="selectedJobType">
       <main class="frame-main">
         <section class="wrapper-adj-1-wrapper">
           <div class="wrapper-adj-1">
@@ -141,16 +154,21 @@
           <div class="line-div"></div>
         </div>
         <section class="frame-section">
-
-
-
+          <div class="frame-div">
+            <div class="jobtitlewrapper" >
+              <b class="jobtitle">Job title</b>
+              <div>
+                <input name="job_title" class="jobtitleinput"  placeholder="write title for job" type="text" required/>
+              </div>
+          </div>
+          </div>
           <div class="frame-wrapper1">
             <div class="frame-parent1">
               <div class="frame-parent2">
                 <div class="job-description-wrapper">
                   <b class="job-description">Job Description</b>
                 </div>
-                <input class="vector-parent" placeholder="basic description about the job in 30 words">
+                <input name="job_description" class="vector-parent" placeholder="basic description about the job in 30 words" required>
               </div>
               <div class="blend-modes-wrapper">
                 <div class="blend-modes"></div>
@@ -176,7 +194,7 @@
                     <div class="location-wrapper">
                       <b class="location">Location</b>
                     </div>
-                    <input class="rectangle-div">
+                    <input name="location" class="rectangle-div">
                   </div>
                   <div class="data-aggregator-parent">
                     <div class="data-aggregator">
@@ -184,7 +202,7 @@
                         <div class="logic-splitter">
                           <b class="start-date">Start Date</b>
                         </div>
-                        <input type="datetime-local" class="input-collector">
+                        <input name="start_date" type="datetime-local" class="input-collector" required>
                       </div>
                       <div class="error-handler">
                         <div class="frame-parent6">
@@ -192,128 +210,45 @@
                             <div class="job-type-wrapper">
                               <b class="job-type">Job Type</b>
                             </div>
-                            <div class="frame-parent8">
-                              <div class="frame-wrapper4">
-                                <button class="rectangle-container" id="toggleButton" onclick="changeImage()">
-                                  <div class="frame-child2"></div>
-                                  <div
-                                    class="add-fill0-wght400-grad0-opsz24-wrapper"
-                                  >
-                                    <img
-                                      class="add-fill0-wght400-grad0-opsz24-icon"
-                                      id="image"
-                                      alt=""
-                                      src="{% static 'images/add-fill0-wght400-grad0-opsz24-1@2x.png' %}"
-                                    />
+<!--                                  <input type="hidden" name="selected_job_type" id="selectedJobType">-->
+                                  <div class="frame-parent8">
+                                      <input name="job_type" type="submit" value="Full-Time" onclick="handleButtonClick('Full-Time')" id="fullTimeButton">
+                                      <input name="job_type" type="submit" value="Part-Time" onclick="handleButtonClick('Part-Time')" id="partTimeButton">
+                                      <input name="job_type" type="submit" value="Permanent" onclick="handleButtonClick('Permanent')" id="permanentButton">
+                                      <input name="job_type" type="submit" value="Internship" onclick="handleButtonClick('Internship')" id="internshipButton">
+                                      <input name="job_type" type="submit" value="Temporary" onclick="handleButtonClick('Temporary')" id="temporaryButton">
+                                      <input name="job_type" type="submit" value="Freelance" onclick="handleButtonClick('Freelance')" id="freelanceButton">
+                                      <input name="job_type" type="submit" value="Volunteer" onclick="handleButtonClick('Volunteer')" id="volunteerButton">
                                   </div>
-                                  <div class="full-time">Full-time</div>
-                                  
-                                </button>
-                              </div>
-                              <button class="transform-pair" id="toggleButton" onclick="changeImage()" >
-                                <div class="transform-pair-child"></div>
-                                <div
-                                  class="add-fill0-wght400-grad0-opsz24-container"
-                                >
-                                  <img
-                                    class="add-fill0-wght400-grad0-opsz24-icon1"
-                                    id="image"
-                                    alt=""
-                                    src="{% static 'images/add-fill0-wght400-grad0-opsz24-1@2x.png' %}"
-                                  />
-                                </div>
-                                <div class="permanent">Permanent</div>
-                                
-                              </button>
-                            </div>
-                          </div>
-                          <div class="output-filter">
-                            <button class="value-comparer" id="toggleButton">
-                              <div class="value-comparer-child"></div>
-                             
-                                <img
-                                  class="add-fill0-wght400-grad0-opsz24-icon2"
-                                  id="image"
-                                  loading="lazy"
-                                  alt=""
-                                  src="{% static 'images/add-fill0-wght400-grad0-opsz24-1@2x.png' %}"
-                                />
-                              
-                              <div class="temporary">Temporary</div>
-                              
-                            </button>
-                            <button class="value-comparer1" id="toggleButton">
-                              <div class="value-comparer-item"></div>
-                              <img
-                                class="add-fill0-wght400-grad0-opsz24-icon3"
-                                id="image"
-                                alt=""
-                                src="{% static 'images/add-fill0-wght400-grad0-opsz24-1@2x.png' %}"
-                              />
 
-                              <div class="freelance">Freelance</div>
-                              
-                            </button>
+<!--                                  <script>-->
+<!--                                        function handleButtonClick(buttonId) {-->
+<!--                                            const selectedJobTypeInput = document.getElementById('selectedJobType');-->
+<!--                                            selectedJobTypeInput.value = buttonId;-->
+<!--                                        }-->
+<!--                                  </script>-->
+
                           </div>
+
+                            <div class="output-filter">
+
+                            </div>
+
                         </div>
                       </div>
                     </div>
                     <div class="frame-parent9">
                       <div class="end-date-parent">
                         <b class="end-date">End Date</b>
-                        <input type="datetime-local" class="rectangle-parent1">
+                        <input name="end_date" type="datetime-local" class="rectangle-parent1" required>
                       </div>
                       <div class="frame-wrapper5">
                         <div class="frame-parent10">
                           <div class="frame-wrapper6">
                             <div class="frame-parent11">
-                              <button class="frame-button" id="toggleButton">
-                                <div class="frame-child4"></div>
-                                <div
-                                  class="add-fill0-wght400-grad0-opsz24-frame"
-                                >
-                                  <img
-                                    class="add-fill0-wght400-grad0-opsz24-icon4"
-                                    id="image"
-                                    alt=""
-                                    src="{% static 'images/add-fill0-wght400-grad0-opsz24-1@2x.png' %}"
-                                  />
-                                </div>
-                                <div class="part-time">Part-time</div>
-                                
-                              </button>
-                              <button class="rectangle-parent2" id="toggleButton">
-                                <div class="frame-child5"></div>
-                                <div
-                                  class="add-fill0-wght400-grad0-opsz24-wrapper1"
-                                >
-                                  <img
-                                    class="add-fill0-wght400-grad0-opsz24-icon5"
-                                    id="image"
-                                    alt=""
-                                    src="{% static 'images/add-fill0-wght400-grad0-opsz24-1@2x.png' %}"
-                                  />
-                                </div>
-                                <div class="volunteer">Volunteer</div>
-                                
-                              </button>
+
                             </div>
                           </div>
-                          <button class="rectangle-parent3" id="toggleButton">
-                            <div class="frame-child6"></div>
-                            <div
-                              class="add-fill0-wght400-grad0-opsz24-wrapper2"
-                            >
-                              <img
-                                class="add-fill0-wght400-grad0-opsz24-icon6"
-                                id="image"
-                                alt=""
-                                src="{% static 'images/add-fill0-wght400-grad0-opsz24-1@2x.png' %}"
-                              />
-                            </div>
-                            <div class="internship">Internship</div>
-                          </button>
-                          <script src="script.js"></script>
                         </div>
                       </div>
                     </div>
@@ -332,7 +267,7 @@
                         <div class="minimum">Minimum</div>
                       </div>
                       <div class="icon-assembler">
-                        <input class="color-combinator" type="text"/>
+                        <input required name="minimum" class="color-combinator" type="text"/>
                         <div class="size-adjustor">
                           <div class="to">To</div>
                         </div>
@@ -341,10 +276,10 @@
                     <div class="scale-transform">
                       <div class="frame-parent12">
                         <div class="minimum-wrapper">
-                          <div class="minimum">Maximum</div>
+                          <div class="minimum" >Maximum</div>
                         </div>
                         <div class="icon-assembler">
-                          <input class="color-combinator" type="text"/>
+                          <input required name="maximum" class="color-combinator" type="text"/>
                           <div class="size-adjustor">
                             <div class="to">To</div>
                           </div>
@@ -352,11 +287,11 @@
                       </div>
                       <div class="boolean-operation">
                         <div class="blend-operation">
-                          <label for="rate">Rate:</label>
+                          <label for="rate" >Rate:</label>
                           
                         </div>
                         <div class="stroke-operation">
-                          <select name="rate" id="rate">
+                          <select name="rate" id="rate" required>
                             
                             <option value="Monthly">Monthly</option>
                             <option value="Annual">Annual</option>
@@ -388,15 +323,20 @@
                           <div class="position-property">
                             <div class="experience">Experience</div>
                           </div>
-                          <input class="rotation-property" type="text"/>
+                          <select name="experience" class="rotation-property" required>
+                            <option value="">Select experience...</option>
+                            <option value="0-1 years">0-1 years</option>
+                            <option value="1-3 years">1-3 years</option>
+                            <option value="3-5 years">3-5 years</option>
+                            <option value="5+ years">5+ years</option>
+                          </select>
                         </div>
-                        <div
-                          class="transform-property1"
-                          placeholder="Skills"
-                          rows="{6}"
-                          cols="{25}"
-                        >
-                      </div>
+                        <div class="transform-property">
+                          <div class="position-property">
+                            <div class="experience">Skills</div>
+                          </div>
+                          <input name="skills" class="rotation-property" type="text" required/>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -417,6 +357,42 @@
           </div>
         </section>
       </main>
+     </form>
+
     </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <script>
+      $(document).ready(function() {
+        {% for message in messages %}
+        var messageType = "{{ message.tags }}"
+        var messageText = "{{ message }}"
+
+        toastr.options = {
+          closeButton: true,
+          progressBar: true,
+          positionClass: 'toast-bottom-right',
+          showMethod: 'slideDown',
+          timeout: 5000
+        };
+
+        if (messageType === 'success') {
+          toastr.success(messageText);
+        } else if (messageType === 'error') {
+          toastr.error(messageText);
+        } else if (messageType === 'info') {
+          toastr.info(messageText);
+        } else {
+          toastr.warning(messageText);
+        }
+        {% endfor %}
+      });
+    </script>
+
+
   </body>
 </html>
