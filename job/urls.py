@@ -30,6 +30,11 @@ urlpatterns = [
     path('r_update_profile/', recruiter_update_profile.UpdateProfile.as_view(), name='r_update_profile'),
     path('c_list/', candidate_list.c_list, name='c_list'),
     path('post_jobs/', post_jobs.post_jobs, name='post_jobs'),
+    path('action/', candidate_list.action, name='action'),
+    path('accepted_candidate/', candidate_list.accepted, name='accepted_candidate'),
+    path('rejected_candidate/', candidate_list.rejected, name='rejected_candidate'),
+    path('c_job/<int:app_id>/', candidate_list.candidate_applied_job, name='c_job'),
+
 
     path('admin_landing_page/', a_landing_page.ALandingPage.as_view(), name='admin_landing_page'),
     path('seeker_list_admin/', seeker_list.registered_seeker_list, name='seeker_list_admin'),

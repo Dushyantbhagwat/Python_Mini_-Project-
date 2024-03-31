@@ -76,7 +76,7 @@
     <h2>Recruiter Profile</h2>
     <div class="profile-details">
         <label for="name">Name:</label>
-        <p>{{ app.full_name }}</p>
+        <p>{{ application.job.title }}</p>
         <label for="email">Email:</label>
         <p>{{ recruiter.email_id }}</p>
         <label for="contact">Contact:</label>
@@ -95,19 +95,7 @@
         <p>{{ recruiter.skills }}</p>
     </div>
 
-<!--    <div class="profile-buttons">-->
-<!--    <button value="accepted" id="accept-button" data-recruiter-id="{{ recruiter.id }}" class="accept-button">Accept</button>-->
-<!--    <button value="rejected" id="reject-button" data-recruiter-id="{{ recruiter.id }}" class="reject-button">Reject</button>-->
-<!--    </div>-->
-    <div class="profile-buttons">
 
-    <form id="status-form" method="post" action="{% url 'recruiter_status_update' %}">
-    {% csrf_token %}
-    <input type="hidden" name="recruiter_id" id="recruiter-id" value="{{ recruiter.id }}">
-    <button type="submit" name="status" value="accepted"  onclick="return rejectConfirmation()" class="accept-button">Accept</button>
-    <button type="submit" name="status" value="rejected" onclick="return acceptConfirmation()" class="reject-button">Reject</button>
-    </form>
-    </div>
 
     <script>
         function rejectConfirmation() {
