@@ -8,6 +8,63 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
     />
+
+
+    <style>
+      .filter-container {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; /* Shift to right side */
+      }
+
+      .sort-by {
+        margin-right: 10px;
+      }
+
+      .filter-wrapper {
+        display: flex;
+        align-items: center;
+      }
+
+      .separator {
+        color: #333;
+        margin-right: 5px;
+        margin-left: 5px;
+      }
+
+
+      .filter-wrapper select {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 5px;
+        font-size: 14px;
+        background-color: #fff;
+        color: #333;
+      }
+
+      .filter-wrapper .separator {
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+
+      .filter-wrapper button {
+        padding: 8px 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .filter-wrapper button:hover {
+        background-color: #0056b3;
+      }
+      
+    </style>
+
   </head>
   <body>
     <!-- Navbar content -->
@@ -107,6 +164,84 @@
                 </div>
       </div>
     </header>
+            <div class="filter-container">
+
+              <div class="sort-by">Sort by:</div>
+
+              <div class="filter-wrapper">
+
+
+                  <select name="experience" id="experience">
+                    <option value="" disabled selected hidden>Select Experience</option>
+                    <option value="0-1 years">0-1 Years</option>
+                    <option value="1-3 years">1-3 Years</option>
+                    <option value="3-5 years">3-5 Years</option>
+                    <option value="5+ years">5+ Years</option>
+                  </select>
+
+                  <span class="separator">|</span>
+
+                  <select name="job_type" id="job_type">
+                    <option value="" disabled selected hidden>Select Job Type</option>
+                    <option value="full_time">Full-time</option>
+                    <option value="part_time">Part-time</option>
+                    <option value="Permanent">Permanent</option>
+                    <option value="Internship">Internship</option>
+                    <option value="Temporary">Temporary</option>
+                    <option value="Freelance">Freelance</option>
+                    <option value="Volunteer">Volunteer</option>
+                  </select>
+
+                  <span class="separator">|</span>
+
+                  <select name="job_type" id="salary">
+                    <option value="" disabled selected hidden>Salary Range</option>
+                    <option value="below 10000">₹ Below 10000</option>
+                    <option value="10000-20000">₹ 10000-20000</option>
+                    <option value="20000-30000">₹ 20000-30000</option>
+                    <option value="30000-40000">₹  40000-50000</option>
+                    <option value="40000-5000">₹  50000+</option>
+                  </select>
+
+                  <span class="separator">|</span>
+
+                  <select name="city">
+                    <option value="" disabled selected hidden>City</option>
+                    {% for option in options %}
+                      <option value="{{ option.city }}">{{ option.city }}</option>
+                    {% endfor %}
+                  </select>
+
+
+
+
+                  <span class="separator">|</span>
+
+                  <select name="job_type" id="job_type">
+                    <option value="" disabled selected hidden>Select Job Type</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+
+                  </select>
+
+                  <span class="separator">|</span>
+
+                  <select name="job_type" id="job_type">
+                    <option value="" disabled selected hidden>Select Job Type</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+
+                  </select>
+
+              </div>
+
+            </div>
+
 
       <div class="container">
   {% for job in jobs %}

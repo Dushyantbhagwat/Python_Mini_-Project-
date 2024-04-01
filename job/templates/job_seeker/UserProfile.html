@@ -129,21 +129,23 @@
               </div></a>
             </button>
           </div>
-<!--          <div class="frame-button-wrapper">-->
-<!--            <button class="apllication-button-parent">-->
-<!--              <div class="apllication"></div>-->
-<!--              <img-->
-<!--                class="mdinotes-icon"-->
-<!--                loading="lazy"-->
-<!--                alt=""-->
-<!--                src="{% static 'images/mdinotes@2x.png' %}"-->
-<!--              />-->
+          <div class="frame-button-wrapper">
+            <button class="apllication-button-parent">
+              <div class="apllication"></div>
+              <img
+                class="mdinotes-icon"
+                loading="lazy"
+                alt=""
+                src="{% static 'images/mdinotes@2x.png' %}"
+              />
 
-<!--              <div class="application-wrapper">-->
-<!--                <div class="application">Application</div>-->
-<!--              </div>-->
-<!--            </button>-->
-<!--          </div>-->
+              <a href="{% url 'job_list' %}" style="text-decoration: none;"><div class="application-wrapper">
+                <div class="application">Jobs</div>
+              </div></a>
+            </button>
+          </div>
+
+
           <div class="upload-button-wrapper">
             <button class="upload-button">
               <div class="addjob"></div>
@@ -151,7 +153,7 @@
                 class="ggadd-icon"
                 loading="lazy"
                 alt=""
-                src="{% static 'images/ggadd@2x.png' %}"
+                src="{% static 'images/status.jpg' %}"
               />
               <div class="add-job-wrapper">
                 <div class="add-job">Status</div>

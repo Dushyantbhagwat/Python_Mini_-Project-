@@ -6,13 +6,19 @@ from django.views import generic
 from job.models import Job, Recruiter, JobSeeker, Application
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotAllowed
+from django.db.models import Count
 
 
 def job_list(request):
     jobs = Job.objects.all()
     i = [job.recruiter_id for job in jobs]
     print(i)
-    return render(request, 'job_seeker/JList.html', {'jobs': jobs})
+
+    # Retrieve a list of unique cities ordered alphabetically
+    options = Job.objects.values('city').annotate(city_count=Count('city')).order_by('city').distinct()
+
+    print(options)
+    return render(request, 'job_seeker/JList.html', {'jobs': jobs, 'options': options})
 
 
 def job_profile(request, job_id):
