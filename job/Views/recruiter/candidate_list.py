@@ -40,6 +40,5 @@ def rejected(request):
     return render(request, 'recruiter/ApplicationList.html', {'aaps': application})
 
 
-def candidate_applied_job(request, app_id):
-    application = get_object_or_404(Application, id=app_id)
-    return render(request, 'recruiter/Application.html', {'application': application})
+def candidate_applied_job(request):
+    return render(request, 'recruiter/Application.html')

@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from job.Views.job_seeker import sign_up, user_profile, user_update_profile, job_list
+from job.Views.job_seeker import sign_up, user_profile, user_update_profile, job_list, job_filtering
 from job.Views.admin import seeker_list, recruiter_list, a_landing_page, seeker_list_download, recruiter_details
 from job.Views.recruiter import r_sign_up, r_profile, u_applied_list, recruiter_update_profile, post_jobs, candidate_list
 
@@ -21,11 +21,14 @@ urlpatterns = [
     path('job_list/', job_list.job_list, name='job_list'),
     path('job_profile/<int:job_id>/', job_list.job_profile, name='job_profile'),
     path('apply/', job_list.apply, name='apply'),
+    path('u_filter_landing/', job_filtering.LandingFilter.as_view(), name='u_filter_landing'),
+    path('job_filter/', job_filtering.filter_job, name='job_filter'),
+
 
     path('r_signup/', r_sign_up.RecruiterSignupView.as_view(), name='r_signup'),
     path('verify/', r_sign_up.verify_otp_view, name='verify'),
     path('r_profile/', r_profile.recruiter_profile, name='r_profile'),
-    path('ap_list_r/', u_applied_list.applied_seeker, name='ap_list_r'),
+    # path('ap_list_r/', u_applied_list.applied_seeker, name='ap_list_r'),
     path('r_landing_page/', r_sign_up.u_landing_page, name='r_landing_page'),
     path('r_update_profile/', recruiter_update_profile.UpdateProfile.as_view(), name='r_update_profile'),
     path('c_list/', candidate_list.c_list, name='c_list'),
@@ -33,7 +36,7 @@ urlpatterns = [
     path('action/', candidate_list.action, name='action'),
     path('accepted_candidate/', candidate_list.accepted, name='accepted_candidate'),
     path('rejected_candidate/', candidate_list.rejected, name='rejected_candidate'),
-    path('c_job/<int:app_id>/', candidate_list.candidate_applied_job, name='c_job'),
+    path('c_job/', candidate_list.candidate_applied_job, name='c_job'),
 
 
     path('admin_landing_page/', a_landing_page.ALandingPage.as_view(), name='admin_landing_page'),

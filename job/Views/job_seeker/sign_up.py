@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
 from django.shortcuts import render, redirect
 from django.views import generic, View
-from job.models import JobSeeker
+from job.models import JobSeeker, Job
 from job.utils import *
 from django.contrib import messages
 from django.core.exceptions import ValidationError
@@ -182,4 +182,10 @@ def u_landing_page(request):
     else:
         # User is not logged in, handle accordingly
         return redirect('login')
+
+
+def u_filter_landing(request):
+    options = Job.objects.order_by('city').values_list('city', flat=True).distinct()
+    print(options)
+    return render(request, 'job_seeker/u_landing_page.html', {'options': options})
 

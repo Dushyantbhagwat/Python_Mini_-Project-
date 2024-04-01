@@ -45,6 +45,10 @@ def apply(request):
         job_seeker = JobSeeker.objects.get(id=logged_in_user_id)
         print(job_seeker.id)
 
+        if job_seeker.resume == 'not uploaded':
+            messages.warning(request, "Please first upload your resume!")
+            return redirect('u_profile')
+
         job = get_object_or_404(Job, id=job_id)  # Fetch the Job instance corresponding to job_id
         print(job.id)
 

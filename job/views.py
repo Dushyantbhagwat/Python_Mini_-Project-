@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.hashers import make_password, check_password
 from django.shortcuts import render, redirect
 from django.views import generic, View
-from .models import JobSeeker, Recruiter
+from .models import JobSeeker, Recruiter, Job
 from .utils import *
 from django.contrib import messages
 from django.core.exceptions import ValidationError
@@ -18,7 +18,7 @@ class LandingPage(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # Retrieve data from the database
-        options = JobSeeker.objects.order_by('city').values_list('city', flat=True).distinct()
+        options = Job.objects.order_by('city').values_list('city', flat=True).distinct()
         print(f"{options}")
         context['options'] = options
         print(context)

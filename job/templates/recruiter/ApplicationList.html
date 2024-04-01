@@ -351,7 +351,7 @@
               {% endif %}
             </div>
              <div>
-                  <a href="{% url 'c_job' application.id %}" class="next">Job Applied</a><br>
+                  <a href="{% url 'c_job' %}" onclick="newpage({{ app.jobs.id }})" class="next">Job Applied</a><br>
                   <a href="{% url 'action' %}"  onclick="accept({{ app.id }})" class="acc">Accept</a>
                   <a href="{% url 'action' %}" onclick="reject({{ app.id }})" class="rej">Reject</a>
              </div>
@@ -363,6 +363,17 @@
     </div>
 
     <script>
+
+        function newpage(applicationId) {
+            // Your JavaScript logic here, for example:
+            // Redirecting to a new page with the application ID
+            window.location.href = '{% url 'c_job' %}' + applicationId;
+        }
+
+
+
+
+
         function accept(id) {
             if (confirm('Are you sure you want to accept this candidate?')) {
                 // If user confirms, proceed with acceptance

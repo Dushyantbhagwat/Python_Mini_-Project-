@@ -28,7 +28,7 @@ class JobSeeker(models.Model):
     mobile_no = models.CharField(max_length=10, null=False)
     city = models.CharField(max_length=100, null=False)
     address = models.CharField(max_length=200, null=False)
-    resume = models.FileField(upload_to='user_resume', max_length=100, blank=True, null=True)
+    resume = models.FileField(upload_to='user_resume', max_length=100, blank=True, null=True, default='not uploaded')
     type = models.CharField(max_length=45, null=True, default='seeker')
     image = models.ImageField(upload_to='user', blank=True, null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
