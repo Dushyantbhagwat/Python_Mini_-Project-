@@ -164,6 +164,8 @@
                 </div>
       </div>
     </header>
+    <form action="{% url 'all_job_filter' %}" method="post">
+      {% csrf_token %}
             <div class="filter-container">
 
               <div class="sort-by">Sort by:</div>
@@ -183,8 +185,8 @@
 
                   <select name="job_type" id="job_type">
                     <option value="" disabled selected hidden>Select Job Type</option>
-                    <option value="full_time">Full-time</option>
-                    <option value="part_time">Part-time</option>
+                    <option value="Full-Time">Full-time</option>
+                    <option value="Part-Time">Part-time</option>
                     <option value="Permanent">Permanent</option>
                     <option value="Internship">Internship</option>
                     <option value="Temporary">Temporary</option>
@@ -194,14 +196,13 @@
 
                   <span class="separator">|</span>
 
-                  <select name="job_type" id="salary">
-                    <option value="" disabled selected hidden>Salary Range</option>
-                    <option value="below 10000">₹ Below 10000</option>
-                    <option value="10000-20000">₹ 10000-20000</option>
-                    <option value="20000-30000">₹ 20000-30000</option>
-                    <option value="30000-40000">₹  40000-50000</option>
-                    <option value="40000-5000">₹  50000+</option>
-                  </select>
+<!--                  <select name="salary" id="salary">-->
+<!--                    <option value="" disabled selected hidden>Salary Range</option>-->
+<!--                    <option value="below 10000">₹ Below 10000</option>-->
+<!--                    <option value="10000-20000">₹ 10000-20000</option>-->
+<!--                    <option value="20000-40000">₹ 20000-40000</option>-->
+<!--                    <option value="40000+">₹  40000+</option>-->
+<!--                  </select>-->
 
                   <span class="separator">|</span>
 
@@ -212,35 +213,15 @@
                     {% endfor %}
                   </select>
 
+                  <button type="submit" class="right-button">Search</button>
 
 
 
-                  <span class="separator">|</span>
-
-                  <select name="job_type" id="job_type">
-                    <option value="" disabled selected hidden>Select Job Type</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-
-                  </select>
-
-                  <span class="separator">|</span>
-
-                  <select name="job_type" id="job_type">
-                    <option value="" disabled selected hidden>Select Job Type</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-
-                  </select>
 
               </div>
 
             </div>
+    </form>
 
 
       <div class="container">
