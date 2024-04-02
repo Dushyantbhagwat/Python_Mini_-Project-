@@ -273,6 +273,7 @@ justify-content: flex-end;
 padding-bottom: 10px;
 box-sizing: border-box;
 position: relative;
+left: 45px;
 }
 .home-button:hover,
 .apllication-button-parent:hover,
@@ -364,6 +365,7 @@ padding: 0 0 var(--padding-8xs);
 box-sizing: border-box;
 padding-bottom: 10px;
 position: relative;
+left: -22px;
 }
 .addjob {
 height: 42px;
@@ -436,6 +438,7 @@ padding: 0 0 var(--padding-8xs);
 box-sizing: border-box;
 padding-bottom: 10px;
 position: relative;
+left: -120px;
 }
 .frame-parent {
 width: 693px;

@@ -112,6 +112,8 @@ class UserSignupView(View):
             # Send OTP via SMS
             u_send_otp(otp, email)
 
+            messages.info(request, "OTP for verification sent to email")
+
             # Store the OTP in session
             request.session['otp'] = otp
             request.session['verified_email'] = email

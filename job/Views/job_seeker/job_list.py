@@ -32,7 +32,7 @@ def job_profile(request, job_id):
             job_seeker = JobSeeker.objects.get(id=logged_in_user_id)
             print(job_seeker.id)
         except JobSeeker.DoesNotExist:
-            return render(request, 'dashboard.html', {'error': 'JobSeeker instance not found'})
+            return render(request, 'landing_page.html', {'error': 'JobSeeker instance not found'})
     else:
         return redirect('login')
 
@@ -68,5 +68,3 @@ def apply(request):
 
     else:
         return HttpResponseNotAllowed(['POST'])  # Return method not allowed response for non-POST requests
-
-

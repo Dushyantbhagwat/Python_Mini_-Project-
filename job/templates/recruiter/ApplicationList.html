@@ -15,6 +15,61 @@
     />
 
     <style>
+      .custom-dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .custom-dropdown select {
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #f2f2f2;
+        cursor: pointer;
+        width: 190px;
+        height: 45px;
+        position: relative;
+        top: 2px;
+      }
+
+      .custom-dropdown select:focus {
+        outline: none;
+      }
+
+      /* Style for dropdown arrow */
+      .custom-dropdown::after {
+        content: '\25BC';
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+      }
+
+      /* Style for dropdown options */
+      .custom-dropdown option {
+        background-color: #fff;
+        color: #000;
+      }
+
+      .custom-dropdown option:hover {
+        background-color: #f2f2f2;
+      }
+
+
+    </style>
+
+
+
+
+
+
+
+
+    <style>
       .column-names-container,
       .job-seekers-container {
         margin-bottom: 20px;
@@ -222,28 +277,30 @@
       </div>
       <div class="frame-div">
 
-        <div class="frame-group">
+       <div class="frame-group">
           <div class="frame-parent1">
             <div class="rectangle-group">
-              <button class="frame-item">
+              <a href="{% url 'c_list' %}" style="text-decoration: none;" ><button class="frame-item">
               <div class="excel-wrapper">
                 <div class="excel">Pending</div>
               </div>
-              </button>
+              </button></a>
             </div>
             <div class="csv-wrapper">
-              <button class="csv">
+              <a href="{% url 'accepted_candidate' %}" style="text-decoration: none;" ><button class="csv">
                 <div class="csv-child"></div>
                 <div class="csv1">Accepted</div>
-              </button>
+              </button></a>
             </div>
             <div class="pdf-wrapper">
-              <button class="pdf">
+              <a href="{% url 'rejected_candidate' %}" style="text-decoration: none;" ><button class="pdf">
                 <div class="pdf-child"></div>
                 <div class="pdf1">Rejected</div>
-              </button>
+              </button></a>
             </div>
           </div>
+
+
           <input type="search" class="search" name="search" placeholder="SEARCH">
               
               <div class="search-child"></div>
@@ -351,11 +408,25 @@
               <img class="ellipse-icon" loading="lazy" alt="" src="{% static 'images/profile pic.jpg' %}" />
               {% endif %}
             </div>
-             <div>
-                  <a href="{% url 'c_job' %}" onclick="newpage({{ app.jobs.id }})" class="next">Job Applied</a><br>
-                  <a href="{% url 'action' %}"  onclick="accept({{ app.id }})" class="acc">Accept</a>
-                  <a href="{% url 'action' %}" onclick="reject({{ app.id }})" class="rej">Reject</a>
-             </div>
+            <div>
+              {% if app.status == 'request pending' %}
+               <div>
+                    <a href="{% url 'c_job' %}" onclick="newpage({{ app.jobs.id }})" class="next">Job Applied</a><br>
+                    <a href="{% url 'action' %}"  onclick="accept({{ app.id }})" class="acc">Accept</a>
+                    <a href="{% url 'action' %}" onclick="reject({{ app.id }})" class="rej">Reject</a>
+               </div>
+              {% elif app.status == 'accepted' %}
+               <div>
+                      <p class="acc">Accepted</p>
+               </div>
+
+              {% else %}
+               <div>
+                      <p class="rej">Rejected</p>
+               </div>
+            {% endif %}
+
+            </div>
           </div>
           {% endfor %}
         </div>

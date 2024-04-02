@@ -11,6 +11,13 @@
 
 
     <style>
+      .blue-container {
+        background-color: #FFF5EE;; /* Blue background color */
+        padding: 2px; /* Add padding for spacing */
+        border-radius: 9px; /* Add border radius for rounded corners */
+        height: 69px;
+      }
+
       .filter-container {
         margin-top: 20px;
         display: flex;
@@ -166,6 +173,7 @@
     </header>
     <form action="{% url 'all_job_filter' %}" method="post">
       {% csrf_token %}
+      <div class="blue-container">
             <div class="filter-container">
 
               <div class="sort-by">Sort by:</div>
@@ -222,6 +230,7 @@
 
             </div>
     </form>
+
 
 
       <div class="container">

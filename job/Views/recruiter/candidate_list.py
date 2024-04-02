@@ -32,12 +32,12 @@ def action(request):
 
 def accepted(request):
     application = Application.objects.filter(status='accepted')
-    return render(request, 'recruiter/ApplicationList.html', {'application': application})
+    return render(request, 'recruiter/ApplicationList.html', {'apps': application})
 
 
 def rejected(request):
     application = Application.objects.filter(status='rejected')
-    return render(request, 'recruiter/ApplicationList.html', {'aaps': application})
+    return render(request, 'recruiter/ApplicationList.html', {'apps': application})
 
 
 def candidate_applied_job(request):

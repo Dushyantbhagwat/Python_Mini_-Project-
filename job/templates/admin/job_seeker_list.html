@@ -148,7 +148,7 @@
         </div>
 
         <div class="job-seekers-container">
-          {% for job_seeker in job_seekers %}
+          {% for job_seeker in page_object %}
           <div class="job-seeker-row">
             <div>{{ job_seeker.id }}</div>
             <div>{{ job_seeker.full_name }}</div>
@@ -168,6 +168,30 @@
           </div>
           {% endfor %}
         </div>
+
+        <!-- Pagination -->
+          <div class="pagination">
+            <!-- Container for the pagination links -->
+            <span class="pagination-links">
+              <!-- If there is a previous page, display the "First" and "Previous" links -->
+              {% if page_obj.has_previous %}
+                <a href="?page=1" class="pagination-link">&laquo; First</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="pagination-link">Previous</a>
+              {% endif %}
+
+              <!-- Display the current page number and the total number of pages -->
+              <span class="pagination-current">
+                  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+              </span>
+
+              <!-- If there is a next page, display the "Next" and "Last" links -->
+              {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" class="pagination-link">Next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}" class="pagination-link">Last &raquo;</a>
+              {% endif %}
+            </span>
+          </div>
+
 
 
 <style>
@@ -296,6 +320,38 @@
     box-sizing: border-box;
   }
 
+
+  .pagination {
+    margin-top: 20px;
+    text-align: center; /* Center the pagination links */
+  }
+
+  .pagination-links {
+      display: inline-block;
+      z-index: 1000px;
+  }
+
+  .pagination-link {
+      padding: 5px 10px;
+      margin: 0 5px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      text-decoration: none;
+      color: #333;
+  }
+
+  .pagination-link:hover,
+  .pagination-link:focus {
+      background-color: #e0e0e0;
+  }
+
+  .pagination-current {
+      margin: 0 5px;
+      color: #333;
+  }
+
+
 </style>
 
     <script>
@@ -400,8 +456,6 @@
     </script>
 
 
-
-    </div>
   </body>
 </html>
 
