@@ -42,6 +42,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -76,11 +79,11 @@
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\jobsite" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\Views\job_seeker" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates\templatetags" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates\recruiter" />
-      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\media\user" />
     </key>
   </component>
   <component name="RunManager" selected="Python.re">
@@ -527,7 +530,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712947623467</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="job filter system added">
+      <option name="closed" value="true" />
+      <created>1712947717352</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1712947717352</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
