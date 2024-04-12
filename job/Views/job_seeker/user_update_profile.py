@@ -45,7 +45,8 @@ class UpdateProfileView(View):
             if photo:  # Check if photo is uploaded
                 job_seeker.image = photo
             job_seeker.address = address
-            job_seeker.resume = resume
+            if resume:
+                job_seeker.resume = resume
             job_seeker.save()
 
             messages.success(request, "Profile Updated Successfully")
@@ -59,4 +60,5 @@ class UpdateProfileView(View):
             logged_in_user_id = request.session.get('logged_in_user_id')
             job_seeker = JobSeeker.objects.get(id=logged_in_user_id)
             return render(request, self.template_name, {'job_seeker': job_seeker})
+
 
