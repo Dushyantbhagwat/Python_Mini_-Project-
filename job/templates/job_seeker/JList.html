@@ -11,6 +11,37 @@
 
 
     <style>
+      /* Style for modal overlay */
+      .modal {
+          display: none;
+          position: fixed;
+          z-index: 1000; /* Ensure it appears above other elements */
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      }
+
+      .modal-content {
+          background-color: #fefefe;
+          margin: 15% auto;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 50%;
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Add box shadow for a lifted effect */
+      }
+
+      /* Add more styling as needed */
+
+
+      /* Style for filter dropdown */
+      .filter-dropdown {
+          display: none;
+          /* Add more styling as needed */
+      }
+
       .blue-container {
         background-color: #FFF5EE;; /* Blue background color */
         padding: 2px; /* Add padding for spacing */
@@ -173,49 +204,104 @@
       </div>
     </header>
       <div class="container">
-  {% for job in jobs %}
-    <div class="content">
-      <div class="curved-box">
-        <div class="title">{{ job.title }}</div>
-        <div class="company-name">{{ job.recruiter.company_name }}</div>
-        <img src="{{ job.recruiter.image.url }}" alt="Placeholder Image" class="image">
-        <div class="placeholders">
-          <div class="placeholder1">
-            <img src="{% static 'images/briefcase@2x.png' %}" alt="Placeholder" class="placeholder-icon">
-            {{ job.experience }}
+        <a id="filterButton">Filter</a>
+          <div id="filterModal" class="modal">
+              <div class="modal-content">
+                  <!-- Filter options -->
+                  <label for="jobTypeFilter">Job Type:</label>
+                  <select id="jobTypeFilter">
+                      <option value="all">All</option>
+                      <option value="Full-Time">Full Time</option>
+                      <option value="Part-Time">Part Time</option>
+                  </select>
+                  <button id="applyFilterButton">Apply Filter</button>
+                  <button id="closeFilterModal">Close</button>
+              </div>
           </div>
-          <div class="separator">|</div>
-          <div class="placeholder2">
-            <img src="{% static 'images/rupee@2x.png' %}" alt="Placeholder" class="placeholder-icon">
-            {{ job.minimum_salary }} - {{ job.maximum_salary }}
-          </div>
-          <div class="separator">|</div>
-          <div class="placeholder">
-            <img src="{% static 'images/address@2x.png' %}" alt="Placeholder" class="placeholder-icon">
-            {{ job.city }}
-          </div>
-        </div>
-        <!-- Date placeholder -->
-        <div class="date-placeholder">End on:
-            <span class="ti">{{ job.deadline }}</span>
-        </div>
+          {% for job in jobs %}
+            <div class="content">
+              <div class="curved-box">
+                <div class="title">{{ job.title }}</div>
+                <div class="company-name">{{ job.recruiter.company_name }}</div>
+                <img src="{{ job.recruiter.image.url }}" alt="Placeholder Image" class="image">
+                <div class="placeholders">
+                  <div class="placeholder1">
+                    <img src="{% static 'images/briefcase@2x.png' %}" alt="Placeholder" class="placeholder-icon">
+                    {{ job.experience }}
+                  </div>
+                  <div class="separator">|</div>
+                  <div class="placeholder2">
+                    <img src="{% static 'images/rupee@2x.png' %}" alt="Placeholder" class="placeholder-icon">
+                    {{ job.minimum_salary }} - {{ job.maximum_salary }}
+                  </div>
+                  <div class="separator">|</div>
+                  <div class="placeholder">
+                    <img src="{% static 'images/address@2x.png' %}" alt="Placeholder" class="placeholder-icon">
+                    {{ job.city }}
+                  </div>
+                </div>
+                <!-- Date placeholder -->
+                <div class="date-placeholder">End on:
+                    <span class="ti">{{ job.deadline }}</span>
+                </div>
 
-        <div class="job-type-placeholder">Job Type:
-            <span class="type">{{ job.job_type }}</span>
-        </div>
+                <div class="job-type-placeholder">Job Type:
+                    <span class="type">{{ job.job_type }}</span>
+                </div>
 
-        <div>
-          <a href="{% url 'job_details' job.id %}"><button class="curved-button">Apply Now</button></a>
+                <div>
+                  <a href="{% url 'job_details' job.id %}"><button class="curved-button">Apply Now</button></a>
 
+                </div>
+              </div>
+            </div>
+          {% endfor %}
         </div>
-      </div>
-    </div>
-  {% endfor %}
-</div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+          document.addEventListener('DOMContentLoaded', function () {
+          // Get filter button, modal, and filter options
+          const filterButton = document.getElementById('filterButton');
+          const filterModal = document.getElementById('filterModal');
+          const applyFilterButton = document.getElementById('applyFilterButton');
+          const closeFilterModalButton = document.getElementById('closeFilterModal');
+
+          // Show filter modal when filter button is clicked
+          filterButton.addEventListener('click', function () {
+              filterModal.style.display = 'block';
+          });
+
+          // Apply filter when apply filter button is clicked
+          applyFilterButton.addEventListener('click', function () {
+              // Implement filter logic here
+              // For example, you can get selected filter options and filter job listings accordingly
+              const jobTypeFilter = document.getElementById('jobTypeFilter').value;
+              // Implement filtering logic based on the selected filter options
+              // You can modify the job listings accordingly
+              console.log('Applying filter:', jobTypeFilter);
+              // Close the filter modal
+              filterModal.style.display = 'none';
+          });
+
+          // Close filter modal when close button is clicked
+          closeFilterModalButton.addEventListener('click', function () {
+              filterModal.style.display = 'none';
+          });
+
+          // Close filter modal when clicking outside of it
+          window.addEventListener('click', function (event) {
+              if (event.target === filterModal) {
+                  filterModal.style.display = 'none';
+              }
+          });
+      });
+
+
+    </script>
 
 
     <script>
