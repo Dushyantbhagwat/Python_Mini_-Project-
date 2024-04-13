@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    
+    <link rel="stylesheet" href="{% static 'style/recruiter/AddJobs.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/recruiter/GlobalJobs.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap"
+    />
+          <style>
+              .frame-parent8 {
+                  display: flex;
+                  justify-content: space-between; /* Adjust spacing between buttons */
+                  width: 80%; /* Adjust the width of the container */
+                  margin: auto; /* Center the container horizontally */
+              }
+
+              .frame-parent8 input[type="submit"] {
+                  padding: 10px 20px; /* Adjust button padding */
+                  font-size: 16px; /* Adjust button font size */
+                  background-color: green;
+                  color: white;
+                  border: none;
+                  border-radius: 8px;
+                  cursor: pointer;
+                  margin: 10px 0;
+              }
+
+              .frame-parent8 input[type="submit"]:hover {
+                  background-color: red;
+              }
+
+              .frame-parent8 input[type="submit"]:disabled {
+                  background-color: gray;
+                  cursor: not-allowed;
+              }
+          </style>
+
+          <script>
+              function handleButtonClick(buttonId) {
+                  const buttons = document.getElementsByName('job_type');
+                  const selectedJobTypeInput = document.getElementById('selectedJobType');
+
+                  // Set the value of the hidden input field to the clicked button's value
+                  selectedJobTypeInput.value = buttonId;
+
+                  // Disable only the clicked button
+                  buttons.forEach(button => {
+                      if (button.id == buttonId + 'Button') {
+                          button. disabled = false;
+                          button.classList.remove('disabled');
+                      } else {
+                          button.disabled = true;
+                          button.classList.add('disabled');
+                      }
+                  });
+              }
+
+
+          </script>
+
+
+
+  </head>
+  <body>
+    <div class="add-jobs">
+      <header class="nav">
+        <div class="nav-child"></div>
+        <div class="value-link">
+          <div class="rectangle-parent">
+            <a href="{% url 'post_jobs' %}"><img
+              class="frame-child"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/rectangle-22@2x.png' %}"
+            /></a>
+
+            <div class="frame-wrapper">
+              <div class="frame-parent">
+                <div class="frame-group">
+                  <div class="rectangle-group">
+                    <button class="frame-item">
+                      <img
+                        class="material-symbolshome-icon"
+                        loading="lazy"
+                        alt=""
+                        src="{% static 'style/recruiter/materialsymbolshome.svg' %}"
+                      />
+                      <a href="{% url 'r_profile' %}"><div class="home">Home</div></a>
+                    </button>
+                  </div>
+                </div>
+                <div class="frame-container">
+                  <button class="applications-btn-parent">
+                    <div class="applications-btn"></div>
+                    <img 
+                    class="application-icon"
+                    loading="lazy" 
+                    alt=""
+                    src="{% static 'images/mdinotes@2x.png' %}"
+                    />
+                    <a href="{% url 'post_jobs' %}"><div class="applications">Applications</div></a>
+                  </button>
+                </div>
+                <a href="{% url 'post_jobs' %}"><button class="recruiter-btn">
+                  <div class="recruiter-btn-child"></div>
+                  <img 
+                  class="addjobs-icon"
+                  alt=""
+                  src="{% static 'images/ggadd@2x.png' %}"
+                  />
+                  <div class="add-jobs1">Add Jobs</div>
+                </button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <img
+          class="note-icon"
+          src="{% static 'images/solarlistlinear@2x.png' %}"
+          alt=""
+          />
+          <img
+          class="profile-icon"
+          src="{% static 'images/ggprofile@2x.png' %}"
+          alt=""
+          />
+        </div>
+      </header>
+     <form action="{% url 'post_jobs' %}" method="post">
+       {% csrf_token %}
+       <!-- Add the hidden input field here -->
+      <input type="hidden" name="selected_job_type" id="selectedJobType">
+      <main class="frame-main">
+        <section class="wrapper-adj-1-wrapper">
+          <div class="wrapper-adj-1">
+            <img
+              class="adj-1-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/adj-1@2x.png' %}"
+            />
+          </div>
+        </section>
+        <div class="line-parent">
+          <div class="frame-inner"></div>
+          <div class="line-div"></div>
+        </div>
+        <section class="frame-section">
+          <div class="frame-div">
+            <div class="jobtitlewrapper" >
+              <b class="jobtitle">Job title</b>
+              <div>
+                <input name="job_title" class="jobtitleinput"  placeholder="write title for job" type="text" required/>
+              </div>
+          </div>
+          </div>
+          <div class="frame-wrapper1">
+            <div class="frame-parent1">
+              <div class="frame-parent2">
+                <div class="job-description-wrapper">
+                  <b class="job-description">Job Description</b>
+                </div>
+                <input name="job_description" class="vector-parent" placeholder="basic description about the job in 30 words" required>
+              </div>
+              <div class="blend-modes-wrapper">
+                <div class="blend-modes"></div>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper-jd-1-wrapper">
+            <div class="wrapper-jd-1">
+              <img
+                class="jd-1-icon"
+                loading="lazy"
+                alt=""
+                src="{% static 'images/jd-1@2x.png' %}"
+              />
+            </div>
+          </div>
+          <div class="frame-child1"></div>
+          <div class="frame-wrapper2">
+            <div class="frame-parent3">
+              <div class="frame-wrapper3">
+                <div class="frame-parent4">
+                  <div class="frame-parent5">
+                    <div class="location-wrapper">
+                      <b class="location">Location</b>
+                    </div>
+                    <input name="location" class="rectangle-div">
+                  </div>
+                  <div class="data-aggregator-parent">
+                    <div class="data-aggregator">
+                      <div class="function-chain">
+                        <div class="logic-splitter">
+                          <b class="start-date">Start Date</b>
+                        </div>
+                        <input name="start_date" type="datetime-local" class="input-collector" required>
+                      </div>
+                      <div class="error-handler">
+                        <div class="frame-parent6">
+                          <div class="frame-parent7">
+                            <div class="job-type-wrapper">
+                              <b class="job-type">Job Type</b>
+                            </div>
+<!--                                  <input type="hidden" name="selected_job_type" id="selectedJobType">-->
+                                  <div class="frame-parent8">
+                                      <input name="job_type" type="submit" value="Full-Time" onclick="handleButtonClick('Full-Time')" id="fullTimeButton">
+                                      <input name="job_type" type="submit" value="Part-Time" onclick="handleButtonClick('Part-Time')" id="partTimeButton">
+                                      <input name="job_type" type="submit" value="Permanent" onclick="handleButtonClick('Permanent')" id="permanentButton">
+                                      <input name="job_type" type="submit" value="Internship" onclick="handleButtonClick('Internship')" id="internshipButton">
+                                      <input name="job_type" type="submit" value="Temporary" onclick="handleButtonClick('Temporary')" id="temporaryButton">
+                                      <input name="job_type" type="submit" value="Freelance" onclick="handleButtonClick('Freelance')" id="freelanceButton">
+                                      <input name="job_type" type="submit" value="Volunteer" onclick="handleButtonClick('Volunteer')" id="volunteerButton">
+                                  </div>
+
+<!--                                  <script>-->
+<!--                                        function handleButtonClick(buttonId) {-->
+<!--                                            const selectedJobTypeInput = document.getElementById('selectedJobType');-->
+<!--                                            selectedJobTypeInput.value = buttonId;-->
+<!--                                        }-->
+<!--                                  </script>-->
+
+                          </div>
+
+                            <div class="output-filter">
+
+                            </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="frame-parent9">
+                      <div class="end-date-parent">
+                        <b class="end-date">End Date</b>
+                        <input name="end_date" type="datetime-local" class="rectangle-parent1" required>
+                      </div>
+                      <div class="frame-wrapper5">
+                        <div class="frame-parent10">
+                          <div class="frame-wrapper6">
+                            <div class="frame-parent11">
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="line-group">
+                <div class="frame-child7"></div>
+                <div class="salary-wrapper">
+                  <b class="salary">Salary</b>
+                </div>
+                <div class="data-processor">
+                  <div class="shape-arranger">
+                    <div class="frame-parent12">
+                      <div class="minimum-wrapper">
+                        <div class="minimum">Minimum</div>
+                      </div>
+                      <div class="icon-assembler">
+                        <input required name="minimum" class="color-combinator" type="text"/>
+                        <div class="size-adjustor">
+                          <div class="to">To</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="scale-transform">
+                      <div class="frame-parent12">
+                        <div class="minimum-wrapper">
+                          <div class="minimum" >Maximum</div>
+                        </div>
+                        <div class="icon-assembler">
+                          <input required name="maximum" class="color-combinator" type="text"/>
+                          <div class="size-adjustor">
+                            <div class="to">To</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="boolean-operation">
+                        <div class="blend-operation">
+                          <label for="rate" >Rate:</label>
+                          
+                        </div>
+                        <div class="stroke-operation">
+                          <select name="rate" id="rate" required>
+                            
+                            <option value="Monthly">Monthly</option>
+                            <option value="Annual">Annual</option>
+                          </select>
+                          <br><br>
+                         
+                          <div class="stroke-operation-child"></div>
+                          <div class="effect-container"> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="frame-wrapper7">
+                  <div class="frame-parent13">
+                    <div class="frame-parent14">
+                      <div class="line-container">
+                        <div class="frame-child8"></div>
+                        <div class="frame-child9"></div>
+                      </div>
+                      <div class="job-requirments-wrapper">
+                        <b class="job-requirments">Job Requirments</b>
+                      </div>
+                    </div>
+                    <div class="stroke-property">
+                      <div class="effect-property">
+                        <div class="transform-property">
+                          <div class="position-property">
+                            <div class="experience">Experience</div>
+                          </div>
+                          <select name="experience" class="rotation-property" required>
+                            <option value="">Select experience...</option>
+                            <option value="0-1 years">0-1 years</option>
+                            <option value="1-3 years">1-3 years</option>
+                            <option value="3-5 years">3-5 years</option>
+                            <option value="5+ years">5+ years</option>
+                          </select>
+                        </div>
+                        <div class="transform-property">
+                          <div class="position-property">
+                            <div class="experience">Skills</div>
+                          </div>
+                          <input name="skills" class="rotation-property" type="text" required/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="scale-property">
+            <div class="opacity-property">
+              <div class="blend-mode-property"></div>
+              <div class="raster-image-property-wrapper">
+                <button class="raster-image-property">
+                  <div class="raster-image-property-child"></div>
+                  <b class="submit">Submit</b>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+     </form>
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <script>
+      $(document).ready(function() {
+        {% for message in messages %}
+        var messageType = "{{ message.tags }}"
+        var messageText = "{{ message }}"
+
+        toastr.options = {
+          closeButton: true,
+          progressBar: true,
+          positionClass: 'toast-bottom-right',
+          showMethod: 'slideDown',
+          timeout: 5000
+        };
+
+        if (messageType === 'success') {
+          toastr.success(messageText);
+        } else if (messageType === 'error') {
+          toastr.error(messageText);
+        } else if (messageType === 'info') {
+          toastr.info(messageText);
+        } else {
+          toastr.warning(messageText);
+        }
+        {% endfor %}
+      });
+    </script>
+
+
+  </body>
+</html>

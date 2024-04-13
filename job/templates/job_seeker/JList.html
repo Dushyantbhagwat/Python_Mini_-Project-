@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="{% static 'style/job_seeker/JList.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+
+
+    <style>
+      .blue-container {
+        background-color: #FFF5EE;; /* Blue background color */
+        padding: 2px; /* Add padding for spacing */
+        border-radius: 9px; /* Add border radius for rounded corners */
+        height: 69px;
+      }
+
+      .filter-container {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; /* Shift to right side */
+      }
+
+      .sort-by {
+        margin-right: 10px;
+      }
+
+      .filter-wrapper {
+        display: flex;
+        align-items: center;
+      }
+
+      .separator {
+        color: #333;
+        margin-right: 5px;
+        margin-left: 5px;
+      }
+
+
+      .filter-wrapper select {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 5px;
+        font-size: 14px;
+        background-color: #fff;
+        color: #333;
+      }
+
+      .filter-wrapper .separator {
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+
+      .filter-wrapper button {
+        padding: 8px 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .filter-wrapper button:hover {
+        background-color: #0056b3;
+      }
+      
+    </style>
+
+  </head>
+  <body>
+    <!-- Navbar content -->
+    <header class="navbarframe">
+      <div class="frame-parent">
+        <div class="logo-wrapper">
+          <a href="{% url 'job_list' %}"><img
+            class="logo-icon"
+            loading="lazy"
+            alt=""
+            src="{% static 'images/logo@2x.png' %}"
+          /></a>
+        </div>
+        <div class="home-button-wrapper">
+          <a href="{% url 'u_profile' %}" style="text-decoration: none"><button class="home-button">
+            <img
+              class="material-symbolshome-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/materialsymbolshome@2x.png' %}"
+            />
+
+            <div class="home-wrapper">
+              <div class="home">Home</div>
+            </div>
+          </button></a>
+        </div>
+        <div class="frame-button-wrapper">
+          <button class="apllication-button-parent">
+            <div class="apllication"></div>
+            <img
+              class="mdinotes-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/status.jpg' %}"
+            />
+
+            <div class="application-wrapper">
+              <div class="application">Status</div>
+            </div>
+          </button>
+        </div>
+        <div class="upload-button-wrapper">
+          <a href="{% url 'job_list' %}" style="text-decoration: none"><button class="upload-button">
+            <div class="addjob"></div>
+            <img
+              class="ggadd-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/ggadd@2x.png' %}"
+            />
+            <div class="add-job-wrapper">
+              <div class="add-job">Jobs</div>
+            </div>
+          </button></a>
+        </div>
+
+        <div id="google_translate_element"></div>
+
+        <script type="text/javascript">
+          function googleTranslateElementInit() {
+              new google.translate.TranslateElement({
+                  pageLanguage: 'en',
+                  includedLanguages: 'en,mr',  // English and Marathi
+              }, 'google_translate_element');
+          }
+        </script>
+
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+      </div>
+      <div class="profilepic-button-wrapper">
+        <div class="dropdown">
+
+          <button class="profilepic-button">
+            <img
+              class="solarlist-linear-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/solarlistlinear@2x.png' %}"
+            />
+
+            <img
+              class="ggprofile-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/ggprofile@2x.png' %}"
+            />
+          </button>
+        <div class="dropdown-content">
+                    <!-- Dropdown content goes here -->
+                    <a href="{% url 'u_profile' %}">Profile</a>
+                    <a href="{% url 'logout' %}">Logout</a>
+                </div>
+      </div>
+    </header>
+    <form action="{% url 'all_job_filter' %}" method="post">
+      {% csrf_token %}
+      <div class="blue-container">
+            <div class="filter-container">
+
+              <div class="sort-by">Sort by:</div>
+
+              <div class="filter-wrapper">
+
+
+                  <select name="experience" id="experience">
+                    <option value="" disabled selected hidden>Select Experience</option>
+                    <option value="0-1 years">0-1 Years</option>
+                    <option value="1-3 years">1-3 Years</option>
+                    <option value="3-5 years">3-5 Years</option>
+                    <option value="5+ years">5+ Years</option>
+                  </select>
+
+                  <span class="separator">|</span>
+
+                  <select name="job_type" id="job_type">
+                    <option value="" disabled selected hidden>Select Job Type</option>
+                    <option value="Full-Time">Full-time</option>
+                    <option value="Part-Time">Part-time</option>
+                    <option value="Permanent">Permanent</option>
+                    <option value="Internship">Internship</option>
+                    <option value="Temporary">Temporary</option>
+                    <option value="Freelance">Freelance</option>
+                    <option value="Volunteer">Volunteer</option>
+                  </select>
+
+                  <span class="separator">|</span>
+
+<!--                  <select name="salary" id="salary">-->
+<!--                    <option value="" disabled selected hidden>Salary Range</option>-->
+<!--                    <option value="below 10000">₹ Below 10000</option>-->
+<!--                    <option value="10000-20000">₹ 10000-20000</option>-->
+<!--                    <option value="20000-40000">₹ 20000-40000</option>-->
+<!--                    <option value="40000+">₹  40000+</option>-->
+<!--                  </select>-->
+
+                  <span class="separator">|</span>
+
+                  <select name="city">
+                    <option value="" disabled selected hidden>City</option>
+                    {% for option in options %}
+                      <option value="{{ option.city }}">{{ option.city }}</option>
+                    {% endfor %}
+                  </select>
+
+                  <button type="submit" class="right-button">Search</button>
+
+
+
+
+              </div>
+
+            </div>
+    </form>
+
+
+
+      <div class="container">
+  {% for job in jobs %}
+    <div class="content">
+      <div class="curved-box">
+        <div class="title">{{ job.title }}</div>
+        <div class="company-name">{{ job.recruiter.company_name }}</div>
+        <img src="{{ job.recruiter.image.url }}" alt="Placeholder Image" class="image">
+        <div class="placeholders">
+          <div class="placeholder1">
+            <img src="{% static 'images/briefcase@2x.png' %}" alt="Placeholder" class="placeholder-icon">
+            {{ job.experience }}
+          </div>
+          <div class="separator">|</div>
+          <div class="placeholder2">
+            <img src="{% static 'images/rupee@2x.png' %}" alt="Placeholder" class="placeholder-icon">
+            {{ job.minimum_salary }} - {{ job.maximum_salary }}
+          </div>
+          <div class="separator">|</div>
+          <div class="placeholder">
+            <img src="{% static 'images/address@2x.png' %}" alt="Placeholder" class="placeholder-icon">
+            {{ job.city }}
+          </div>
+        </div>
+        <!-- Date placeholder -->
+        <div class="date-placeholder">End on:
+            <span class="ti">{{ job.deadline }}</span>
+        </div>
+
+        <div class="job-type-placeholder">Job Type:
+            <span class="type">{{ job.job_type }}</span>
+        </div>
+
+        <div >
+          <a href="{% url 'job_profile' job.id %}"><button class="curved-button">Apply Now</button></a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <script>
+      $(document).ready(function() {
+        {% for message in messages %}
+        var messageType = "{{ message.tags }}"
+        var messageText = "{{ message }}"
+
+        toastr.options = {
+          closeButton: true,
+          progressBar: true,
+          positionClass: 'toast-bottom-right',
+          showMethod: 'slideDown',
+          timeout: 5000
+        };
+
+        if (messageType === 'success') {
+          toastr.success(messageText);
+        } else if (messageType === 'error') {
+          toastr.error(messageText);
+        } else if (messageType === 'info') {
+          toastr.info(messageText);
+        } else {
+          toastr.warning(messageText);
+        }
+        {% endfor %}
+      });
+    </script>
+
+  </body>
+</html>

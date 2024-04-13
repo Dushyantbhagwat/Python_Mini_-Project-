@@ -1,0 +1,826 @@
+.logo-icon {
+  align-self: stretch;
+  height: 48px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+  width: 180px; /* Adjust this value to change width */
+  height: auto; /* Maintain aspect ratio */
+  left: 30px
+}
+.logo-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-6xs) var(--padding-12xs) 0;
+
+}
+.material-symbolshome-icon {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+  min-height: 24px;
+}
+.home{
+  height: 23px;
+  font-size: var(--font-size-base);
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  min-width: 69px;
+
+}
+.material-symbolshome-icon {
+  align-self: stretch;
+  position: relative;
+  z-index: 1;
+}
+.home-wrapper {
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-11xs) 0 0;
+}
+.home-button,
+.home-button-wrapper,
+.home-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+.home-button {
+  border-radius: var(--br-6xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: var(--padding-6xs) 21px;
+  gap: 6px;
+  white-space: nowrap;
+  left: 40px
+}
+.home-button-wrapper {
+  position: relative;
+  top: -1px; /* Example value to move the button 20 pixels down */
+  left: 20px; /* Example value to move the button 10 pixels to the left */
+  width: 128px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-8xs);
+  box-sizing: border-box;
+}
+.home-button:hover,
+.apllication-button-parent:hover,
+.profilepic-button:hover,
+.imagebutton:hover,
+.upload-button:hover,
+.upload-button-container:hover{
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+
+.apllication {
+  height: 23px;
+  position: relative;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: var(--font-size-base);
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+}
+.mdinotes-icon {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+  min-height: 24px;
+}
+.mdinotes-icon{
+  align-self: stretch;
+  position: relative;
+  z-index: 1;
+}
+.application,
+.mdinotes-icon{
+  position: relative;
+  z-index: 1;
+}
+.application-wrapper {
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-11xs) 0 0;
+
+}
+.application{
+  height: 23px;
+  font-size: var(--font-size-base);
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  min-width: 69px;
+}
+.apllication-button-parent,
+.application-button-wrapper,
+.frame-button-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.apllication-button-parent {
+  border-radius: var(--br-6xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  flex-direction: row;
+  padding: var(--padding-6xs) 21px;
+  gap: 7px;
+  justify-content: flex-start;
+  gap: var(--gap-4xs);
+  white-space: nowrap;
+  right: 20px;
+
+}
+.frame-button-wrapper {
+  flex: 1;
+  width: 128px;
+  flex-direction: column;
+  padding: 0 var(--padding-9xs) 0 0;
+  color: var(--color-black);
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-8xs);
+  box-sizing: border-box;
+  position: relative;
+  top: -1px; /* Example value to move the button 20 pixels down */
+  right: -10px; /* Example value to move the button 10 pixels to the left */
+  width: 128px;
+
+}
+.addjob {
+  height: 42px;
+  width: 130px;
+  position: relative;
+  border-radius: var(--br-6xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: none;
+}
+.add-job,
+.ggadd-icon {
+  align-self: stretch;
+  position: relative;
+  z-index: 1;
+}
+.add-job-wrapper{
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-11xs) 0 0;
+}
+.ggadd-icon {
+  height: 24px;
+  width: 24px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  object-fit: cover;
+  min-height: 24px;
+}
+.add-job {
+  height: 23px;
+  font-size: var(--font-size-base);
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  min-width: 69px;
+}
+.upload-button,
+.upload-button-wrapper,
+.add-job-wrapper{
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+}
+.upload-button {
+  padding: var(--padding-6xs) 21px;
+  background-color: var(--color-white);
+  border-radius: var(--br-6xl);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--gap-4xs);
+  white-space: nowrap;
+}
+
+.upload-button-wrapper {
+  position: relative;
+  top: -1px; /* Example value to move the button 20 pixels down */
+  right: -6.7px; /* Example value to move the button 10 pixels to the left */
+  width: 128px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-8xs);
+  box-sizing: border-box;
+}
+.frame-parent {
+  width: 693px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 39px;
+  max-width: 100%;
+}
+.ggprofile-icon,
+.solarlist-linear-icon {
+  height: 20px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+  min-height: 20px;
+}
+.profilepic-button {
+  align-self: stretch;
+  border-radius: var(--br-6xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-black);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-8xs) 8px;
+  gap: 14px;
+  position: relative;
+  width: 79px;
+}
+
+.navbarframe,
+.profilepic-button-wrapper {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  position: relative;
+}
+.profilepic-button-wrapper {
+  width: 72px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-4xs) 0 0;
+}
+.navbarframe {
+  align-self: stretch;
+  border-radius: 0 0 var(--br-xl) var(--br-xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--padding-sm) 47px var(--padding-4xs) 41px;
+  top: 0;
+  z-index: 99;
+  position: sticky;
+  max-width: 100%;
+  gap: 20px;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: rgba(0, 0, 0, 0.7);
+  font-family: var(--font-inter);
+}
+.profilephoto-icon {
+  width: 161px;
+  height: 161px;
+  position: relative;
+  object-fit: cover;
+}
+.upload-resume-message {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 0 31px;
+}
+.tejas-bhagat1 {
+  white-space: nowrap; /* Prevent name from wrapping */
+  overflow: hidden; /* Hide overflow if the name is too long */
+  text-overflow: ellipsis; /* Show ellipsis if the name exceeds container */
+  margin: 0;
+}
+.tejas-bhagat {
+  height: 31px;
+  flex: 1;
+  position: relative;
+  display: inline-block;
+  min-width: 100px;
+}
+.primepencil-icon {
+  height: 19px;
+  width: 20px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+
+.name {
+  align-self: stretch;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 302px 0 0;
+  gap: var(--gap-11xs);
+}
+.mdicompany-icon {
+  height: 14px;
+  width: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.add-availaibality-to,
+.mdicompany-icon {
+  position: relative;
+}
+.availabilityinfo {
+  align-self: stretch;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-12xs-5) 51.30000000000001px var(--padding-12xs-5)
+    var(--padding-12xs);
+  gap: var(--gap-9xs);
+}
+.mdilocation-icon {
+  height: 14px;
+  width: 14px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.mumbai-india {
+  flex: 1;
+  position: relative;
+}
+.frame3,
+.locationinfo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.locationinfo {
+  align-self: stretch;
+  background-color: var(--color-white);
+  flex-direction: row;
+  padding: 0 0.30000000000001137px 0 var(--padding-12xs);
+  gap: var(--gap-9xs);
+  color: #070707;
+}
+.frame3 {
+  flex: 1;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 13px;
+  min-width: 145px;
+}
+.phonenoinfo-child {
+  height: 14px;
+  width: 14px;
+  position: relative;
+  object-fit: cover;
+}
+.div {
+  flex: 1;
+  position: relative;
+}
+.phonenoinfo {
+  align-self: stretch;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 0.30000000000001137px 0 0;
+  gap: var(--gap-11xs);
+}
+.icoutline-email-icon {
+  height: 14px;
+  width: 14px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.tejasbhagat2004gmailcom {
+  position: relative;
+  white-space: nowrap;
+}
+.emailidinfo {
+  align-self: stretch;
+  background-color: var(--color-white);
+  flex-direction: row;
+  align-items: center;
+  padding: var(--padding-12xs-5) 2.3000000000000114px var(--padding-12xs-5)
+    var(--padding-9xs);
+  gap: var(--gap-9xs);
+}
+.contactinfo,
+.emailidinfo,
+.frame4 {
+  display: flex;
+  justify-content: flex-start;
+}
+.frame4 {
+  flex: 1;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 145px;
+  color: var(--color-black);
+}
+.contactinfo {
+  align-self: stretch;
+  background-color: var(--color-white);
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 11px 16.399999999999977px var(--padding-27xl) 0;
+  gap: 17px;
+  font-size: var(--font-size-sm);
+  color: #100101;
+}
+.frame1,
+.frame2 {
+  overflow: hidden;
+  flex-direction: column;
+}
+.frame2 {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-18xl);
+}
+.frame1 {
+  flex: 1;
+  justify-content: flex-end;
+  padding: var(--padding-11xl) 0 0;
+  min-width: 312px;
+}
+.frame1,
+.ggadd-button,
+.registeredinfo {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.registeredinfo {
+  width: 1120px;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: var(--padding-27xl) 337px var(--padding-27xl) 68px;
+  gap: 74px;
+}
+.ggadd-button {
+  align-self: stretch;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8.5px var(--padding-xl);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+.resume1 {
+  white-space: pre-wrap;
+}
+.add-100 {
+  color: #55df63;
+}
+.resume-add-100-container {
+  width: 249px;
+  height: 15.8px;
+  position: relative;
+  line-height: 19.2px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.frame6 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.resume-is-the {
+  align-self: stretch;
+  height: 16px;
+  position: relative;
+  line-height: 19.2px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.registered-name-container {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 29px 0 var(--padding-12xs);
+  flex-shrink: 0;
+}
+.carbonadd-alt-icon {
+  height: 32px;
+  width: 32px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+  align-self: stretch;
+  position: relative;
+  z-index: 1;
+  min-height: 32px;
+  left:30%;
+}
+.upload-resume {
+  height: 20px;
+  flex: 1;
+  position: relative;
+  line-height: 24px;
+  display: inline-block;
+  min-width: 116px;
+  max-width: 100%;
+}
+.frame8,
+.supported-format-container {
+  overflow: hidden;
+  display: flex;
+  max-width: 100%;
+}
+.frame8 {
+  width: 362px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0 0 var(--padding-8xs);
+}
+.supported-format-container {
+  width: 464px;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.supported-formats-doc {
+  width: 530px;
+  height: 20px;
+  position: relative;
+  line-height: 24px;
+  display: inline-block;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+.supported-formats,
+.upload-button-container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.supported-formats {
+  width: 574px;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 100%;
+  color: rgba(0, 0, 0, 0.75);
+}
+.upload-button-container {
+  border-radius: var(--br-6xl);
+  background-color: var(--color-white);
+  border: 1px dashed var(--color-black);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 21.69999999999999px var(--padding-xl) 32px;
+  gap: 10px;
+  width: 1090px;
+  left: -89px;
+}
+.frame5,
+.frame7,
+.resume,
+.upload-button-container {
+  align-self: stretch;
+  max-width: 100%;
+}
+.frame7 {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 var(--padding-8xs) 0 25px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  font-size: var(--font-size-xl);
+}
+.frame5,
+.resume {
+  justify-content: flex-start;
+
+}
+.resume {
+  border-radius: var(--br-31xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 46.3px 45px 106.3px;
+  box-sizing: border-box;
+  gap: 42px;
+}
+.frame5 {
+  padding: 6px 159px 27px 154px;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+.frame,
+.frame5,
+.userprofile {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.frame {
+  align-self: stretch;
+  justify-content: flex-end;
+  padding: 0 var(--padding-6xs) 0 0;
+  gap: 46px;
+  max-width: 100%;
+}
+.userprofile {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  justify-content: flex-start;
+  padding: 0 0 70px;
+  gap: 106px;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 1125px) {
+  .registeredinfo {
+    gap: var(--gap-18xl);
+    padding-left: 34px;
+    padding-right: 168px;
+    box-sizing: border-box;
+  }
+  .resume {
+    padding-left: var(--padding-3xl);
+    padding-right: var(--padding-3xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 750px) {
+  .frame-parent {
+    gap: 39px 19px;
+  }
+  .navbarframe {
+    padding-right: 23px;
+  }
+  .contactinfo,
+  .name,
+  .navbarframe {
+    box-sizing: border-box;
+  }
+  .name {
+    padding-right: 151px;
+  }
+  .contactinfo {
+    flex-wrap: wrap;
+    padding-left: 16px;
+  }
+  .frame2 {
+    gap: 18px 37px;
+  }
+  .registeredinfo {
+    gap: 18px;
+    padding-right: 84px;
+    box-sizing: border-box;
+  }
+  .resume {
+    gap: 21px 42px;
+  }
+  .frame5 {
+    padding-left: 77px;
+    padding-right: 79px;
+    box-sizing: border-box;
+  }
+  .frame {
+    gap: 23px 46px;
+  }
+  .userprofile {
+    gap: 53px 106px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .tejas-bhagat {
+    font-size: var(--font-size-base);
+  }
+  .name {
+    flex-wrap: wrap;
+    padding: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .registeredinfo {
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .supported-formats-doc,
+  .upload-resume {
+    font-size: var(--font-size-base);
+  }
+  .frame5,
+  .resume {
+    box-sizing: border-box;
+  }
+  .resume {
+    padding-top: var(--padding-11xl);
+    padding-bottom: 69px;
+  }
+  .frame5 {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+  }
+  .userprofile {
+    gap: 26px 106px;
+  }
+}
+
+
+
+/* Custom styling for the translation box */
+    #google_translate_element {
+        position: absolute;
+        top: 20px;
+        right: 147px;
+
+
+    }
+
+    /* Custom styling for the language dropdown */
+    .goog-te-combo {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    /* Custom styling for the translate button */
+    .goog-te-button {
+        background-color: #4CAF50;
+        color: #fff;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    /* Custom styling for the translated text */
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+
+    .goog-te-menu-value span {
+        color: #4CAF50; /* Change color of the selected language */
+    }

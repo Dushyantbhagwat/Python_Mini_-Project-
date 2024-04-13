@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <link rel="stylesheet" href="{% static 'style/job_seeker/UserProfile.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/job_seeker/ProfileGlobal.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+    <style>
+      /* Add your CSS styles here */
+          .upload-resume-message {
+              text-align: center;
+          }
+
+          .profilephoto-icon {
+              width: 100px; /* Adjust as needed */
+              height: auto;
+              cursor: pointer;
+          }
+
+          /* Modal styles */
+          .modal {
+              display: none;
+              position: fixed;
+              z-index: 999;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(0, 0, 0, 0.7);
+          }
+
+          .modal-content {
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              max-width: 80%;
+              max-height: 80%;
+          }
+
+          .modal-content img {
+              width: 100%;
+              height: auto;
+          }
+
+          /* Close button */
+          .close {
+              position: absolute;
+              top: 10px;
+              right: 20px;
+              color: white;
+              font-size: 30px;
+              font-weight: bold;
+              cursor: pointer;
+          }
+
+          /* Dropdown content (hidden by default) */
+          .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f9f9f9;
+              min-width: 90px;
+              box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+              z-index: 1;
+              border-radius: 20px;
+              overflow-y: auto; /* Enable vertical scrolling if content overflows */
+              max-height: 200px; /* Set maximum height for the dropdown */
+          }
+
+          /* Links inside the dropdown */
+          .dropdown-content a {
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+          }
+
+          /* Change color of dropdown links on hover */
+          .dropdown-content a:hover {
+              background-color: #f1f1f1;
+          }
+
+          /* Show the dropdown menu on hover */
+          .dropdown:hover .dropdown-content {
+              display: block;
+          }
+
+    </style>
+  </head>
+  <script>
+    function toggleDropdown() {
+      var dropdownContent = document.getElementById("dropdown-content");
+      dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
+  <body>
+    <div class="userprofile">
+      <header class="navbarframe">
+        <div class="frame-parent">
+          <div class="logo-wrapper">
+            <a href="{% url 'u_landing_page' %}"><img
+              class="logo-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/logo@2x.png' %}"
+            /></a>
+          </div>
+          <div class="home-button-wrapper">
+            <button class="home-button">
+              <img
+                class="material-symbolshome-icon"
+                loading="lazy"
+                alt=""
+                src="{% static 'images/materialsymbolshome@2x.png' %}"
+              />
+
+              <a href="{% url 'u_profile' %}" style="text-decoration: none;"><div class="home-wrapper">
+                <div class="home">Home</div>
+              </div></a>
+            </button>
+          </div>
+          <div class="frame-button-wrapper">
+            <button class="apllication-button-parent">
+              <div class="apllication"></div>
+              <img
+                class="mdinotes-icon"
+                loading="lazy"
+                alt=""
+                src="{% static 'images/mdinotes@2x.png' %}"
+              />
+
+              <a href="{% url 'job_list' %}" style="text-decoration: none;"><div class="application-wrapper">
+                <div class="application">Jobs</div>
+              </div></a>
+            </button>
+          </div>
+
+
+          <div class="upload-button-wrapper">
+            <button class="upload-button">
+              <div class="addjob"></div>
+              <img
+                class="ggadd-icon"
+                loading="lazy"
+                alt=""
+                src="{% static 'images/status.jpg' %}"
+              />
+              <div class="add-job-wrapper">
+                <div class="add-job">Status</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div id="google_translate_element"></div>
+
+        <script type="text/javascript">
+          function googleTranslateElementInit() {
+              new google.translate.TranslateElement({
+                  pageLanguage: 'en',
+                  includedLanguages: 'en,mr',  // English and Marathi
+              }, 'google_translate_element');
+          }
+        </script>
+
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+        <div class="profilepic-button-wrapper">
+            <div class="dropdown">
+                <button class="profilepic-button">
+                        <img class="solarlist-linear-icon" loading="lazy" alt="" src="{% static 'images/solarlistlinear@2x.png' %}" />
+                        <img class="ggprofile-icon" loading="lazy" alt="" src="{% static 'images/ggprofile@2x.png' %}"/>
+                </button>
+                <div class="dropdown-content">
+                    <!-- Dropdown content goes here -->
+                    <a href="{% url 'u_profile' %}">Profile</a>
+                    <a href="{% url 'logout' %}">Logout</a>
+                </div>
+            </div>
+        </div>
+
+      </header>
+    </div>
+
+      <main class="frame">
+        <section class="ggadd-button">
+          <div class="registeredinfo">
+            <div class="upload-resume-message">
+                {% if job_seeker.image %}
+                    <img
+                        class="profilephoto-icon"
+                        loading="lazy"
+                        alt=""
+                        src="{{ job_seeker.image.url }}"
+                        onclick="displayImageModal('{{ job_seeker.image.url }}')"
+                    />
+                {% else %}
+                    <img
+                        class="profilephoto-icon"
+                        loading="lazy"
+                        alt=""
+                        src="{% static 'images/profilephoto@2x.png' %}"
+                        onclick="displayImageModal('{% static 'images/profilephoto@2x.png' %}')"
+                    />
+                {% endif %}
+            </div>
+
+            <!-- The Modal -->
+            <div id="imageModal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+                    <img id="modalImage" src="" alt="">
+                </div>
+            </div>
+
+            <script>
+                // Function to display the image modal
+                function displayImageModal(imageUrl) {
+                    var modal = document.getElementById('imageModal');
+                    var modalImg = document.getElementById("modalImage");
+                    modal.style.display = "block";
+                    modalImg.src = imageUrl;
+                }
+
+                // Function to close the modal
+                function closeModal() {
+                    var modal = document.getElementById('imageModal');
+                    modal.style.display = "none";
+                }
+            </script>
+
+            <div class="frame1">
+              <div class="frame2">
+                <div class="name">
+                  <b class="tejas-bhagat">
+                    <p class="tejas-bhagat1">{{ job_seeker.full_name }}</p>
+                  </b>
+                  <a href="{% url 'u_update_profile' %}"><button class="imagebutton">
+                    <img
+                      class="primepencil-icon"
+                      loading="lazy"
+                      alt=""
+                      src="{% static 'images/primepencil@2x.png' %}"
+                    />
+                  </button></a>
+                </div>
+                <div class="contactinfo">
+                  <div class="frame3">
+                    <div class="availabilityinfo">
+                      <img
+                        class="mdicompany-icon"
+                        loading="lazy"
+                        alt=""
+                        src="{% static 'images/mdicompany@2x.png' %}"
+                      />
+
+                      <div class="add-availaibality-to">
+                        Add availaibality to join
+                      </div>
+                    </div>
+                    <div class="locationinfo">
+                      <img
+                        class="mdilocation-icon"
+                        loading="lazy"
+                        alt=""
+                        src="{% static 'images/mdilocation@2x.png' %}"
+                      />
+
+                      <div class="mumbai-india">{{ job_seeker.address }},India</div>
+                    </div>
+                  </div>
+                  <div class="frame4">
+                    <div class="phonenoinfo">
+                      <img
+                        class="phonenoinfo-child"
+                        loading="lazy"
+                        alt=""
+                        src="{% static 'images/frame-1@2x.png' %}"
+                      />
+
+                      <div class="div">{{ job_seeker.mobile_no }}</div>
+                    </div>
+                    <div class="emailidinfo">
+                      <img
+                        class="icoutline-email-icon"
+                        loading="lazy"
+                        alt=""
+                        src="{% static 'images/icoutlineemail@2x.png' %}"
+                      />
+
+                      <div class="tejasbhagat2004gmailcom">
+                        {{ job_seeker.email_id }}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="frame5">
+          <div class="resume">
+            <div class="frame6">
+              <div class="resume-add-100-container">
+                <span class="resume1">Resume </span>
+                <span class="add-100">Add 100%</span>
+              </div>
+            </div>
+            <div class="registered-name-container">
+              <div class="resume-is-the">
+                Resume is the most important document recruiter look for.
+                Recruiter generally don’t look at profile with no resumes.
+              </div>
+            </div>
+            <div class="frame7">
+                <a href="{% url 'u_update_profile' %}"><button class="upload-button-container" name="resume">
+                  <div class="resume-upload">
+                    <div class="supported-format-container">
+                      <div class="frame8">
+                        <img
+                        class="carbonadd-alt-icon"
+                          loading="lazy"
+                          alt=""
+                          src="{% static 'images/carbonaddalt@2x.png' %}"
+                        />
+                        <div class="upload-resume">Upload Resume</div>
+                      </div>
+                    </div>
+                    <div class="supported-formats">
+                      <div class="supported-formats-doc">
+                        Supported Formats: doc, docx, rtf, pdf, upto 2 MB
+                      </div>
+                    </div>
+                  </div>
+                Submit</button></a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+      <script>
+        $(document).ready(function() {
+          {% for message in messages %}
+          var messageType = "{{ message.tags }}"
+          var messageText = "{{ message }}"
+
+          toastr.options = {
+            closeButton: true,
+            progressBar: true,
+            positionClass: 'toast-bottom-right',
+            showMethod: 'slideDown',
+            timeout: 5000
+          };
+
+          if (messageType === 'success') {
+            toastr.success(messageText);
+          } else if (messageType === 'error') {
+            toastr.error(messageText);
+          } else if (messageType === 'info') {
+            toastr.info(messageText);
+          } else {
+            toastr.warning(messageText);
+          }
+          {% endfor %}
+        });
+      </script>
+
+  </body>
+</html>

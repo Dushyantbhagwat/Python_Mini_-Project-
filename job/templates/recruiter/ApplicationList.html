@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+<!--    <script src="{% static 'style/script.js' %}"></script>-->
+    <link rel="stylesheet" href="{% static 'style/recruiter/ALGlobal.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/recruiter/ApplicationList.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap"
+    />
+
+    <style>
+      .custom-dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .custom-dropdown select {
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #f2f2f2;
+        cursor: pointer;
+        width: 190px;
+        height: 45px;
+        position: relative;
+        top: 2px;
+      }
+
+      .custom-dropdown select:focus {
+        outline: none;
+      }
+
+      /* Style for dropdown arrow */
+      .custom-dropdown::after {
+        content: '\25BC';
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+      }
+
+      /* Style for dropdown options */
+      .custom-dropdown option {
+        background-color: #fff;
+        color: #000;
+      }
+
+      .custom-dropdown option:hover {
+        background-color: #f2f2f2;
+      }
+
+
+    </style>
+
+
+
+
+
+
+
+
+    <style>
+      .column-names-container,
+      .job-seekers-container {
+        margin-bottom: 20px;
+
+
+      }
+      .column-names-box {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        margin-bottom: 8px; /* Decrease margin */
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background-color: var(--color-white);
+        height: 40px;
+      }
+      .column-name {
+        flex: 1;
+        text-align: center;
+      }
+
+      .shifted {
+        position: relative;
+        left: -33px;
+      }
+      .shifted2 {
+        position: relative;
+        left: -56px;
+      }
+      .shifted3 {
+        position: relative;
+        left: -12px;
+      }
+      .shifted4 {
+        position: relative;
+        left: 19px;
+      }
+      .shifted5 {
+        position: relative;
+        left: 63px;
+      }
+      .shifted6 {
+        position: relative;
+        left: 1px;
+      }
+      .shifted7 {
+        position: relative;
+        left: -23px;
+      }
+      .shifted8 {
+        position: relative;
+        left: -5px;
+      }
+      /* Example individual styling */
+      .column-name:nth-child(1) {
+        margin-left: -40px; /* Adjust the value as needed */
+      }
+      .column-name:nth-child(2) {
+        margin-right: -40px; /* Adjust the value as needed */
+      }
+      .column-name:nth-child(3) {
+        margin-left: 30px; /* Adjust the value as needed */
+      }
+      .column-name:nth-child(4) {
+        margin-left: 30px; /* Adjust the value as needed */
+      }
+      .column-name:nth-child(5) {
+        margin-left: 30px; /* Adjust the value as needed */
+      }
+      .column-name:nth-child(6) {
+        margin-left: 30px; /* Adjust the value as needed */
+      }
+      .column-name:nth-child(7) {
+        margin-left: 30px; /* Adjust the value as needed */
+      }
+
+
+
+
+      .job-seeker-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 5px;
+      }
+
+      /* Styles for the delete button */
+      .delete {
+        background-color: #ff6347; /* Red background */
+        color: #fff; /* White text color */
+        border: none; /* Remove border */
+        padding: 8px 16px; /* Add padding */
+        border-radius: 5px; /* Add border radius */
+        cursor: pointer; /* Add pointer cursor on hover */
+        transition: background-color 0.3s ease; /* Smooth transition */
+        left: -50px;
+        width: 60px;
+        height: 35px;
+      }
+
+      .delete:hover {
+        background-color: #d9534f; /* Darker red background on hover */
+      }
+
+      /* Center the delete button */
+      .job-seeker-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Center vertically */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 5px;
+      }
+
+      /* Apply background colors to alternate rows */
+      .job-seeker-row:nth-child(even) {
+        background-color: var(--color-white);
+        color: var(--color-black);
+        background: linear-gradient(180deg, rgba(186, 188, 224, 0), #badbe0);
+        box-sizing: border-box;
+      }
+
+      .job-seeker-row:nth-child(odd) {
+        background-color: var(--color-gainsboro);
+        color: var(--color-black);
+        background: linear-gradient(180deg, #badbe0, rgba(186, 188, 224, 0));
+        box-sizing: border-box;
+      }
+
+
+    </style>
+
+
+
+
+
+
+
+
+
+
+  </head>
+  <body>
+    <div class="application-list">
+      <img
+        class="application-list-child"
+        alt=""
+        src="{% static 'style/recruiter/rectangle-2.svg' %}"
+      />
+
+      <div class="application-list-item"></div>
+      <div class="application-list-inner"></div>
+      <div class="nav-wrapper">
+        <div class="nav">
+          <div class="nav-child"></div>
+          <div class="nav-bar">
+            <div class="rectangle-parent">
+              <img
+                class="frame-child"
+                loading="lazy"
+                alt=""
+                src="{% static 'images/rectangle-22@2x.png' %}"
+              />
+
+              <div class="frame-wrapper">
+                <div class="frame-parent">
+                  <div class="recruiters-list-parent">
+                    <div class="recruiters-list">
+
+                     
+                      <a href="{% url 'r_profile' %}" style="text-decoration: none;"><button  class="recruiters-list-child">
+                        <div class="home">Home</div>
+                        
+                      </button></a>
+                   
+                    </div>
+                  </div>
+                  <div class="frame-container">
+                    <a href="{% url 'c_list' %}" style="text-decoration: none;"><button class="applications-btn-parent">
+                      <div class="applications-btn"></div>
+                      <div class="applications">Applications</div>
+                    </button></a>
+                  </div>
+                  <a href="{% url 'post_jobs' %}" style="text-decoration: none;"><button class="recruiter-btn">
+                    <div class="recruiter-btn-child"></div>
+                    <div class="recruiters">Add Job</div>
+                  </button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <button class="nav-item">
+            <img
+            class="material-symbolshome-icon"
+            loading="lazy"
+            alt=""
+            src="{% static 'style/recruiter/materialsymbolshome.svg' %}"
+          />
+          </button>
+        </div>
+      </div>
+      <div class="frame-div">
+
+       <div class="frame-group">
+          <div class="frame-parent1">
+            <div class="rectangle-group">
+              <a href="{% url 'c_list' %}" style="text-decoration: none;" ><button class="frame-item">
+              <div class="excel-wrapper">
+                <div class="excel">Pending</div>
+              </div>
+              </button></a>
+            </div>
+            <div class="csv-wrapper">
+              <a href="{% url 'accepted_candidate' %}" style="text-decoration: none;" ><button class="csv">
+                <div class="csv-child"></div>
+                <div class="csv1">Accepted</div>
+              </button></a>
+            </div>
+            <div class="pdf-wrapper">
+              <a href="{% url 'rejected_candidate' %}" style="text-decoration: none;" ><button class="pdf">
+                <div class="pdf-child"></div>
+                <div class="pdf1">Rejected</div>
+              </button></a>
+            </div>
+          </div>
+
+
+          <input type="search" class="search" name="search" placeholder="SEARCH">
+              
+              <div class="search-child"></div>
+              <div class="search-fill0-wght400-grad0-ops-wrapper">
+                <img
+                  class="search-fill0-wght400-grad0-ops-icon"
+                  alt=""
+                  src="{% static 'images/search-fill0-wght400-grad0-opsz24-1@2x.png' %}"
+                />
+              </div>
+              
+        
+          </div>
+        </div>
+      </div>
+<!--      <div class="rectangle-container">-->
+<!--        <div class="frame-inner"></div>-->
+<!--        <div class="srno-wrapper">-->
+<!--          <div class="srno">SR.No</div>-->
+<!--        </div>-->
+<!--        <div class="name-wrapper">-->
+<!--          <div class="name">Name</div>-->
+<!--        </div>-->
+<!--        <div class="contact-wrapper">-->
+<!--          <div class="contact">Contact</div>-->
+<!--        </div>-->
+<!--        <div class="email-id-wrapper">-->
+<!--          <div class="email-id">Email ID</div>-->
+<!--        </div>-->
+<!--        <div class="gender-wrapper">-->
+<!--          <div class="gender">Resume</div>-->
+<!--        </div>-->
+<!--        <div class="image-parent">-->
+<!--          <div class="image">Image</div>-->
+<!--          <div class="action-wrapper">-->
+<!--            <div class="action">Action</div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <main class="frame-main">-->
+<!--        <div class="rectangle-div"></div>-->
+<!--        <section class="frame-section">-->
+<!--          <div class="rectangle-parent1">-->
+<!--            <div class="frame-child1"></div>-->
+<!--            <div class="frame-wrapper1">-->
+<!--              <div class="parent">-->
+<!--                <div class="div">1</div>-->
+<!--                <div class="dushyant-bhagwat-wrapper">-->
+<!--                  <div class="dushyant-bhagwat">Dushyant Bhagwat</div>-->
+<!--                </div>-->
+<!--                <div class="wrapper">-->
+<!--                  <div class="div1">7400126595</div>-->
+<!--                </div>-->
+<!--                <div class="dushyantdbhagwatgmailcom">-->
+<!--                  dushyantdbhagwat@gmail.com-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="male-wrapper">-->
+<!--              <a href="" class="male">resume</a>-->
+<!--            </div>-->
+<!--            <div class="vector-parent">-->
+<!--              <img-->
+<!--              id="image"-->
+<!--                class="ellipse-icon"-->
+<!--                loading="lazy"-->
+<!--                alt=""-->
+<!--                src="{% static 'images/profile pic.jpg' %}"-->
+<!--              />-->
+
+<!--              <div class="delete-wrapper">-->
+<!--                <button onclick="accept()" class="delete">Accept</button>-->
+<!--                <button onclick="reject()" class="rej">Reject</button>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </section>-->
+
+            <div class="column-names-container">
+              <div class="column-names-box">
+                <div class="column-name shifted">SR.N0</div>
+                <div class="column-name shifted2">Name</div>
+                <div class="column-name shifted3">Contact</div>
+                <div class="column-name shifted4">Email ID</div>
+                <div class="column-name shifted5">Gender</div>
+                <div class="column-name shifted6">Resume</div>
+                <div class="column-name shifted7">Image</div>
+                <div class="column-name shifted8">Action</div>
+              </div>
+            </div>
+
+            <div class="job-seekers-container">
+          {% for app in apps %}
+          <div class="job-seeker-row">
+            <div>{{ forloop.counter }}</div>
+            <div>{{ app.user.full_name }}</div>
+            <div>{{ app.user.mobile_no }}</div>
+            <div>{{ app.user.email_id }}</div>
+            <div>{{ app.user.gender }}</div>
+            <div>{{ app.user.resume }}</div>
+            <div>
+              {% if app.user.image %}
+              <img class="ellipse-icon" loading="lazy" alt="" src="{{ app.user.image.url }}" />
+              {% else %}
+              <img class="ellipse-icon" loading="lazy" alt="" src="{% static 'images/profile pic.jpg' %}" />
+              {% endif %}
+            </div>
+            <div>
+              {% if app.status == 'request pending' %}
+               <div>
+                    <a href="{% url 'c_job' %}" onclick="newpage({{ app.jobs.id }})" class="next">Job Applied</a><br>
+                    <a href="{% url 'action' %}"  onclick="accept({{ app.id }})" class="acc">Accept</a>
+                    <a href="{% url 'action' %}" onclick="reject({{ app.id }})" class="rej">Reject</a>
+               </div>
+              {% elif app.status == 'accepted' %}
+               <div>
+                      <p class="acc">Accepted</p>
+               </div>
+
+              {% else %}
+               <div>
+                      <p class="rej">Rejected</p>
+               </div>
+            {% endif %}
+
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </main>
+    </div>
+
+    <script>
+
+        function newpage(applicationId) {
+            // Your JavaScript logic here, for example:
+            // Redirecting to a new page with the application ID
+            window.location.href = '{% url 'c_job' %}' + applicationId;
+        }
+
+
+
+
+
+        function accept(id) {
+            if (confirm('Are you sure you want to accept this candidate?')) {
+                // If user confirms, proceed with acceptance
+                $.ajax({
+                    type: 'POST',
+                    url: '{% url "action" %}',
+                    data: {
+                        'id': id,
+                        'status': 'accepted',
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    },
+                    success: function () {
+                        // Update UI or perform any additional actions after accepting
+                        alert('Candidate Accepted Successfully');
+                    },
+                    error: function () {
+                        // Handle errors if any
+                        alert('Error occurred while accepting the candidate');
+                    }
+                });
+            }
+        }
+
+        function reject(id) {
+            if (confirm('Are you sure you want to reject this candidate?')) {
+                // If user confirms, proceed with rejection
+                $.ajax({
+                    type: 'POST',
+                    url: '{% url "action" %}',
+                    data: {
+                        'id': id,
+                        'status': 'rejected',
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    },
+                    success: function () {
+                        // Update UI or perform any additional actions after rejecting
+                        alert('Candidate Rejected Successfully');
+                    },
+                    error: function () {
+                        // Handle errors if any
+                        alert('Error occurred while rejecting the candidate');
+                    }
+                });
+            } else {
+                // If user cancels, redirect to some page
+                window.location.href = '{% url "action" %}';
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <script>
+      $(document).ready(function() {
+        {% for message in messages %}
+        var messageType = "{{ message.tags }}"
+        var messageText = "{{ message }}"
+
+        toastr.options = {
+          closeButton: true,
+          progressBar: true,
+          positionClass: 'toast-bottom-right',
+          showMethod: 'slideDown',
+          timeout: 5000
+        };
+
+        if (messageType === 'success') {
+          toastr.success(messageText);
+        } else if (messageType === 'error') {
+          toastr.error(messageText);
+        } else if (messageType === 'info') {
+          toastr.info(messageText);
+        } else {
+          toastr.warning(messageText);
+        }
+        {% endfor %}
+      });
+    </script>
+</style>
+
+
+  </body>
+</html>

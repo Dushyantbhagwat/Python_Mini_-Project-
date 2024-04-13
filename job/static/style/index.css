@@ -1,0 +1,393 @@
+body{
+  margin: -15px;
+  padding-top: 0;
+  background-color: rgb(211, 211, 211);
+  height: 750px;
+  width: 101%;
+}
+
+
+
+.login,
+.register-for-free {
+  position: relative;
+  white-space: nowrap;
+}
+.login {
+  margin: 0;
+  font-size: inherit;
+  font-weight: 600;
+  font-family: inherit;
+  display: inline-block;
+  min-width: 58px;
+}
+.register-for-free {
+  font-weight: 500;
+}
+.login-area,
+.register-input {
+  display: flex;
+  align-items: flex-start;
+}
+.register-input {
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 3px 0 0;
+  font-size: var(--font-size-base);
+  color: var(--color-royalblue);
+}
+.login-area {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.email-id {
+  align-self: stretch;
+  height: 16px;
+  position: relative;
+  line-height: 19.2px;
+  
+  display: inline-block;
+  flex-shrink: 0;
+}
+.username-box {
+  height: 44px;
+  width: 410px;
+  position: relative;
+  border-radius: var(--br-mini);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  display: none;
+  max-width: 100%;
+}
+.enter-your-active {
+  width: 457px;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  z-index: 1;
+
+}
+
+.email{
+  border-color: transparent;
+}
+
+
+.enter-your-active,
+.password-confirmation-input {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+
+.enter-your-active {
+  border-radius: var(--br-mini);
+  background-color: var(--color-white);
+     border: 1px solid rgb(180 180 180);
+  box-sizing: border-box;
+  flex-direction: row;
+  padding: 13px var(--padding-base) 14px;
+  white-space: nowrap;
+  text-align: center;
+  font-size: large;
+  color: black;
+}
+.password-confirmation-input {
+  flex-direction: column;
+  gap: var(--gap-6xs);
+}
+
+
+
+.password {
+  align-self: stretch;
+  height: 16px;
+  position: relative;
+  line-height: 19.2px;
+  font-weight: 600;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.password-box {
+  height: 44px;
+  width: 410px;
+  position: relative;
+  border-radius: var(--br-mini);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray);
+  box-sizing: border-box;
+  display: none;
+  max-width: 100%;
+}
+.enter-your-password,
+.show {
+  position: relative;
+  z-index: 1;
+  /* border: 0; */
+  border-color: black;
+}
+.show {
+  height: 25px;
+  border: 0;
+  background-color: transparent;
+  position: relative;
+  left: 181px;
+  bottom: 35px;
+  width: 50px;
+  font-weight: 600;
+  color: var(--color-royalblue);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.enter-your-password{
+  border-radius: var(--br-mini);
+  background-color: var(--color-white);
+  border: 1px solid rgb(180 180 180);
+  box-sizing: border-box;
+  flex-direction: row;
+  padding: 13px var(--padding-base) 14px;
+  white-space: nowrap;
+  text-align: center;
+  font-size: large;
+  color: black;
+  width: 455px;
+  height: 47px;
+  right: 10px;
+}
+
+
+.enter-your-password{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+/* .login-title {
+  flex: 1;
+  border-radius: var(--br-mini);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray);
+  justify-content: space-between;
+  padding: var(--padding-2xs) 18px var(--padding-base) 21px;
+  gap: var(--gap-xl);
+} */
+
+.enter-your-password {
+  align-self: stretch;
+  justify-content: flex-start;
+  padding: 0 6px 0 0;
+}
+.forgot-password {
+  width: 148px;
+  position: relative;
+  font-weight: 600;
+  color: var(--color-royalblue);
+  display: inline-block;
+}
+.email-input-container,
+.password-input,
+.show-pass-toggle {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.show-pass-toggle {
+  align-items: flex-end;
+  gap: 2px;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-steelblue);
+}
+.email-input-container,
+.password-input {
+  align-items: flex-start;
+}
+.email-input-container {
+  gap: var(--gap-6xs);
+}
+.password-input {
+  gap: 39px;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+.login-box {
+  height: 40px;
+  width: 410px;
+  position: relative;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-royalblue);
+  display: none;
+  max-width: 100%;
+}
+.login1 {
+  flex: 1;
+  position: relative;
+  font-size: var(--font-size-base);
+  font-weight: 800;
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  text-align: center;
+  z-index: 1;
+}
+.desktop-1,
+.logo-container {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.logo-container {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-2xs) 166px 10px 156px;
+  background-color: #418dff;
+  align-self: stretch;
+  border-radius: var(--br-31xl);
+  flex-direction: row;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.logo-container:hover {
+  background-color: #086bff;
+}
+.desktop-1 {
+  height: 600px;
+  width: 560px;
+  left: 472px;
+  top: 30px;
+  position: relative;
+  border-radius: 25px;
+  background-color: var(--color-white);
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 61px 44px 370px 50px;
+  gap: 50px;
+  letter-spacing: normal;
+  text-align: left;
+  font-size: 20px;
+  color: var(--color-black);
+  font-family: var(--font-inter);
+  box-shadow: 0 8px 6px 8px rgba(0,0,0,.2);
+}
+@media screen and (max-width: 450px) {
+  .login-title {
+    flex-wrap: wrap;
+  }
+  .password-input {
+    gap: 19px 39px;
+  }
+  .desktop-1,
+  .logo-container {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}
+
+.nav{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 1px;
+  background-color: white;
+  height: 72px;
+  width: 100%;
+  box-shadow: 0 8px 4px 0 rgba(0,0,0,.2);
+}
+
+.logo{
+  position: relative;
+  object-fit: contain;
+  left: 60px;
+  top: 5px;
+  height: 62px;
+  width: 160px;
+}
+
+
+/* Custom styling for the translation box */
+    #google_translate_element {
+        position: absolute;
+        top: 10px;
+        right: 31px;
+
+
+    }
+
+    /* Custom styling for the language dropdown */
+    .goog-te-combo {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    /* Custom styling for the translate button */
+    .goog-te-button {
+        background-color: #4CAF50;
+        color: #fff;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    /* Custom styling for the translated text */
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+
+    .goog-te-menu-value span {
+        color: #4CAF50; /* Change color of the selected language */
+    }
+
+
+/* CSS for dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 1px solid var(--P100,#275df5);
+    border-radius: 20px;
+    padding: 5px;
+    height: 62.7px; /* Adjust the height as needed */
+     overflow-y: auto; /* Add scrollbar if content exceeds height */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

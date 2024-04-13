@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+  <head>
+    {% load static %}
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="{% static 'style/job_seeker/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/job_seeker/UserRegistration.css' %}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <style>
+
+        #password-strength {
+        margin-top: 10px;
+        font-weight: bold;
+        position: relative; /* Ensure the element's position is relative */
+        left: 10px; /* Adjust left positioning as needed */
+        }
+
+        .alert {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        }
+
+        .alert-success {
+        color: #3c763d;
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+        }
+
+        .full-name span {
+          color: red; /* Set the color of the asterisk */
+        }
+
+        .email-id span {
+          color: red; /* Set the color of the asterisk */
+        }
+
+        .password span {
+          color: red; /* Set the color of the asterisk */
+        }
+
+        .mobile-number span {
+          color: red; /* Set the color of the asterisk */
+        }
+
+        .city span {
+          color: red; /* Set the color of the asterisk */
+        }
+
+        .location span {
+          color: red; /* Set the color of the asterisk */
+        }
+    </style>
+
+  </head>
+  <body>
+    <div class="desktop-1">
+      <header class="nav-bar-parent">
+        <div class="nav-bar"></div>
+        <a href="{% url 'landing_page' %}"><img
+          class="logo-box-icon"
+          loading="lazy"
+          alt=""
+          src="{% static 'images/logo_1.png' %}"
+        />
+        </a>
+
+        <div class="already-registered-login-here-wrapper">
+          <div class="already-registered-login-container">
+            <span>
+              <span>Already Registered?</span>
+              <span class="span"> </span>
+            </span>
+            <span class="login">
+              <a href="{% url 'login'%}"><span>Login</span></a>
+            </span>
+            <span>
+              <span> </span>
+            </span>
+            <span>
+              <span>here</span>
+            </span>
+          </div>
+        </div>
+
+        <div id="google_translate_element"></div>
+
+          <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,mr',  // English and Marathi
+                }, 'google_translate_element');
+            }
+          </script>
+
+          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+      </header>
+      <main class="rectangle-parent">
+        <div class="frame-child"></div>
+        <section class="image-box-on-registering-parent">
+          <a href="{% url 'u_signup' %}"><img
+            class="image-box-on-registering"
+            loading="lazy"
+            alt=""
+            src="{% static 'images/image-box-on-registering@2x.png' %}"
+          /></a>
+
+          <form action="{% url 'u_signup' %}" method="post" class="rectangle-group">
+              {% csrf_token %}
+            <div class="frame-item"></div>
+            <div class="find-a-job-grow-your-career-wrapper">
+              <h3 class="find-a-job">Find a job & grow your career</h3>
+            </div>
+            <div class="frame-wrapper">
+              <div class="full-name-parent">
+                <div class="full-name">Full name <span>*</span></div></label>
+                <div class="frame-container">
+                  <div class="name-box-parent">
+                    <div class="name-box"></div>
+                    <input
+                      class="what-is-your"
+                      placeholder="What is your name?"
+                      type="text"
+                      id="name"
+                      name="name" required
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="email-id-parent">
+              <div class="email-id">Email ID <span>*</span></div>
+              <div class="frame-div">
+                <div class="email-box-parent">
+                  <div class="email-box"></div>
+                  <input
+                    class="tell-us-your"
+                    placeholder="Tell us your Email id"
+                    type="email"
+                    id="email"
+                    name="email" required
+
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="frame-wrapper1">
+              <div class="password-parent">
+                <div class="password">Password <span>*</span></div>
+                <div class="frame-wrapper2">
+                  <div class="password-box-parent">
+                    <div class="password-box"></div>
+                    <input
+                      class="create-a-password"
+                      placeholder="Create  a password for your account"
+                      type="password"
+                      onkeyup="checkPasswordStrength()"
+                      id="password"
+                      name="pwd" required
+                    />
+                  </div>
+
+                </div>
+                <div class="enter-city-label">
+                  <div class="minimum-six-characters">
+                    Minimum six characters required
+                  </div>
+                </div>
+                    <div id="password-strength"></div>
+
+              </div>
+            </div>
+            <div class="footer-layout">
+              <div class="mobile-number-parent">
+                <div class="mobile-number">Mobile number <span>*</span></div>
+                <div class="mobile-number-field">
+                  <div class="call-me-label">
+                    <div class="mobile-box-parent">
+                      <div class="mobile-box"></div>
+                      <input
+                        class="mobile-number1"
+                        placeholder="+91 Mobile number"
+                        type="tel"
+                        id="mobile"
+                        name="mobile" required
+                      />
+                    </div>
+                    <div class="recruiters-will-call-you-on-th-wrapper">
+                      <div class="recruiters-will-call">
+                        Recruiters will call you on this number
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="terms-and-conditions-box-wrapper">
+              <div class="terms-and-conditions-box">
+                <div class="frame-parent">
+                  <div class="city-wrapper">
+                    <div class="city">City <span>*</span></div>
+                  </div>
+                  <div class="email-box-stroke-parent">
+                    <img
+                      class="email-box-stroke"
+                      alt=""
+                      src="{% static 'style/job_seeker/email-box-stroke.svg' %}"
+                    />
+
+                    <input
+                      class="enter-city"
+                      placeholder="Enter City"
+                      type="text"
+                      id="city"
+                      name="city" required
+                    />
+                  </div>
+                </div>
+                <div class="frame-group">
+                  <div class="location-wrapper">
+                    <div class="location">Location <span>*</span></div>
+                  </div>
+                  <div class="email-box-stroke-group">
+                    <img
+                      class="email-box-stroke1"
+                      alt=""
+                      src="{% static 'style/job_seeker/email-box-stroke-1.svg' %}"
+                    />
+
+                    <input
+                      class="enter-your-location"
+                      placeholder="Enter your location"
+                      type="text"
+                      id="location"
+                      name="location" required
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="by-clicking-register-you-agre-wrapper">
+              <div class="by-clicking-register-container">
+                <span class="by-clicking-register"
+                  >By clicking Register, you agree to
+                </span>
+                <span class="terms-and-conditions">Terms and Conditions</span>
+                <span class="span1"> &</span>
+                <span class="privacy-policy"> Privacy Policy</span>
+                <span class="of-jobs4u"> of Jobs4U</span>
+              </div>
+            </div>
+            <div class="terms-and-conditions-header-wrapper">
+              <button class="terms-and-conditions-header">
+                <div class="register-now-box"></div>
+                <b class="register-now">Register now</b>
+              </button>
+            </div>
+          </form>
+        </section>
+        <div class="frame-wrapper3">
+          <div class="about-us-parent">
+            <div class="about-us">About Us</div>
+            <div class="contact-us-wrapper">
+              <div class="contact-us">Contact Us</div>
+            </div>
+            <div class="terms-and-conditions-wrapper">
+              <div class="terms-and-conditions1">Terms and Conditions</div>
+            </div>
+            <div class="privacy-policy-wrapper">
+              <div class="privacy-policy1">Privacy Policy</div>
+            </div>
+            <div class="report-a-problem">Report a Problem</div>
+          </div>
+        </div>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+      </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <script>
+      $(document).ready(function() {
+        {% for message in messages %}
+        var messageType = "{{ message.tags }}"
+        var messageText = "{{ message }}"
+
+        toastr.options = {
+          closeButton: true,
+          progressBar: true,
+          positionClass: 'toast-bottom-right',
+          showMethod: 'slideDown',
+          timeout: 5000
+        };
+
+        if (messageType === 'success') {
+          toastr.success(messageText);
+        } else if (messageType === 'error') {
+          toastr.error(messageText);
+        } else if (messageType === 'info') {
+          toastr.info(messageText);
+        } else {
+          toastr.warning(messageText);
+        }
+        {% endfor %}
+      });
+    </script>
+
+    <script>
+            function is_password_strong(password) {
+                if (password.length < 8) {
+                    return false;
+                }
+
+                if (!/[A-Z]/.test(password)) {
+                    return false;
+                }
+
+                if (!/[a-z]/.test(password)) {
+                    return false;
+                }
+
+                if (!/\d/.test(password)) {
+                    return false;
+                }
+
+                var special_characters = "!@#$%^&*()-_=+[]{}|;:'\",.<>/?";
+                if (!RegExp("[" + special_characters.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + "]").test(password)) {
+                    return false;
+                }
+
+                return true;
+            }
+
+            function checkPasswordStrength() {
+                var password = document.getElementById("password").value;
+                var strengthText = document.getElementById("password-strength");
+
+                console.log("Password:", password);
+
+                if (password.length === 0) {
+                    strengthText.innerHTML = "";
+                    console.log("Password strength cleared.");
+                } else {
+                    var isStrong = is_password_strong(password);
+                    console.log("Is Strong:", isStrong);
+                    strengthText.innerHTML = "Password Strength: " + (isStrong ? "<span style='color: green;'>Strong</span>" : "<span style='color: red;'>Weak</span>");
+                    console.log("Password strength message updated:", strengthText.innerHTML);
+                }
+            }
+    </script>
+
+  </body>
+</html>
