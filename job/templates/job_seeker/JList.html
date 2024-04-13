@@ -78,7 +78,7 @@
     <header class="navbarframe">
       <div class="frame-parent">
         <div class="logo-wrapper">
-          <a href="{% url 'job_list' %}"><img
+          <a href=""><img
             class="logo-icon"
             loading="lazy"
             alt=""
@@ -115,7 +115,7 @@
           </button>
         </div>
         <div class="upload-button-wrapper">
-          <a href="{% url 'job_list' %}" style="text-decoration: none"><button class="upload-button">
+          <a href="" style="text-decoration: none"><button class="upload-button">
             <div class="addjob"></div>
             <img
               class="ggadd-icon"
@@ -171,7 +171,7 @@
                 </div>
       </div>
     </header>
-    <form action="{% url 'all_job_filter' %}" method="post">
+    <form action="" method="post">
       {% csrf_token %}
       <div class="blue-container">
             <div class="filter-container">
@@ -266,7 +266,7 @@
         </div>
 
         <div >
-          <a href="{% url 'job_profile' job.id %}"><button class="curved-button">Apply Now</button></a>
+          <a href="{% url 'job_details' job.id %}"><button class="curved-button">Apply Now</button></a>
         </div>
       </div>
     </div>

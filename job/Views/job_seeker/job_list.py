@@ -11,17 +11,17 @@ from django.db.models import Count
 
 def job_list(request):
     jobs = Job.objects.all()
-    i = [job.recruiter_id for job in jobs]
-    print(i)
+    # i = [job.recruiter_id for job in jobs]
+    # print(i)
 
     # Retrieve a list of unique cities ordered alphabetically
-    options = Job.objects.values('city').annotate(city_count=Count('city')).order_by('city').distinct()
+    # options = Job.objects.values('city').annotate(city_count=Count('city')).order_by('city').distinct()
 
-    print(options)
-    return render(request, 'job_seeker/JList.html', {'jobs': jobs, 'options': options})
+    # print(options)
+    return render(request, 'job_seeker/JList.html', {'jobs': jobs})
 
 
-def job_profile(request, job_id):
+def job_details(request, job_id):
     jobs = get_object_or_404(Job, id=job_id)
 
     logged_in_user_id = request.session.get('logged_in_user_id')
@@ -36,7 +36,7 @@ def job_profile(request, job_id):
     else:
         return redirect('login')
 
-    return render(request, 'job_seeker/JobDetails.html', {'jobs': jobs, 'job_seeker': job_seeker})
+    return render(request, 'j1.html', {'jobs': jobs, 'job_seeker': job_seeker})
 
 
 def apply(request):

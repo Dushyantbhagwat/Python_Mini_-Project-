@@ -125,7 +125,7 @@
     <a  onclick="scrollToContact()"><img style="cursor: pointer;" class="naukrimg"  src="{% static  'images/logo_1.png' %}" alt=""></a>
 
     <div class="menu">
-      <a href="{% url 'job_list' %}"><button class="jobs">Jobs</button>
+      <a href=""><button class="jobs">Jobs</button>
       </a>
     </div>
 
@@ -156,7 +156,7 @@
   <p class="find-your-job-now-qa7">Find your job now</p>
   <p class="if-opportunity-doesnt-knock-build-a-door-LFy">“If opportunity doesn't knock, build a door”</p>
 
-  <form action="{% url 'job_filter' %}" method="post">
+  <form action="" method="post">
       {% csrf_token %}
   <div class="rectangular-bar">
     <img src="{% static 'images/search-555.png' %}" alt="Image" class="left-image">

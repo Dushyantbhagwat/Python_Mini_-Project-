@@ -19,11 +19,11 @@ urlpatterns = [
     path('u_update_profile/', user_update_profile.UpdateProfileView.as_view(), name='u_update_profile'),
     path('u_landing_page/', sign_up.u_landing_page, name='u_landing_page'),
     path('job_list/', job_list.job_list, name='job_list'),
-    path('job_profile/<int:job_id>/', job_list.job_profile, name='job_profile'),
+    path('job_details/<int:job_id>/', job_list.job_details, name='job_details'),
     path('apply/', job_list.apply, name='apply'),
-    path('u_filter_landing/', job_filtering.LandingFilter.as_view(), name='u_filter_landing'),
-    path('job_filter/', job_filtering.filter_job, name='job_filter'),
-    path('all_job_filter/', job_filtering.all_filter_job, name='all_job_filter'),
+    # path('u_filter_landing/', job_filtering.LandingFilter.as_view(), name='u_filter_landing'),
+    # path('job_filter/', job_filtering.filter_job, name='job_filter'),
+    # path('all_job_filter/', job_filtering.all_filter_job, name='all_job_filter'),
 
 
     path('r_signup/', r_sign_up.RecruiterSignupView.as_view(), name='r_signup'),
