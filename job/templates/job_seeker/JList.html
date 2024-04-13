@@ -170,69 +170,8 @@
                     <a href="{% url 'logout' %}">Logout</a>
                 </div>
       </div>
+      </div>
     </header>
-    <form action="" method="post">
-      {% csrf_token %}
-      <div class="blue-container">
-            <div class="filter-container">
-
-              <div class="sort-by">Sort by:</div>
-
-              <div class="filter-wrapper">
-
-
-                  <select name="experience" id="experience">
-                    <option value="" disabled selected hidden>Select Experience</option>
-                    <option value="0-1 years">0-1 Years</option>
-                    <option value="1-3 years">1-3 Years</option>
-                    <option value="3-5 years">3-5 Years</option>
-                    <option value="5+ years">5+ Years</option>
-                  </select>
-
-                  <span class="separator">|</span>
-
-                  <select name="job_type" id="job_type">
-                    <option value="" disabled selected hidden>Select Job Type</option>
-                    <option value="Full-Time">Full-time</option>
-                    <option value="Part-Time">Part-time</option>
-                    <option value="Permanent">Permanent</option>
-                    <option value="Internship">Internship</option>
-                    <option value="Temporary">Temporary</option>
-                    <option value="Freelance">Freelance</option>
-                    <option value="Volunteer">Volunteer</option>
-                  </select>
-
-                  <span class="separator">|</span>
-
-<!--                  <select name="salary" id="salary">-->
-<!--                    <option value="" disabled selected hidden>Salary Range</option>-->
-<!--                    <option value="below 10000">₹ Below 10000</option>-->
-<!--                    <option value="10000-20000">₹ 10000-20000</option>-->
-<!--                    <option value="20000-40000">₹ 20000-40000</option>-->
-<!--                    <option value="40000+">₹  40000+</option>-->
-<!--                  </select>-->
-
-                  <span class="separator">|</span>
-
-                  <select name="city">
-                    <option value="" disabled selected hidden>City</option>
-                    {% for option in options %}
-                      <option value="{{ option.city }}">{{ option.city }}</option>
-                    {% endfor %}
-                  </select>
-
-                  <button type="submit" class="right-button">Search</button>
-
-
-
-
-              </div>
-
-            </div>
-    </form>
-
-
-
       <div class="container">
   {% for job in jobs %}
     <div class="content">
@@ -265,8 +204,9 @@
             <span class="type">{{ job.job_type }}</span>
         </div>
 
-        <div >
+        <div>
           <a href="{% url 'job_details' job.id %}"><button class="curved-button">Apply Now</button></a>
+
         </div>
       </div>
     </div>

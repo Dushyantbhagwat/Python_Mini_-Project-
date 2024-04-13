@@ -4,3 +4,4 @@ from .models import JobSeeker, Recruiter, Job, Application
 
 admin.site.register(JobSeeker)
 admin.site.register(Recruiter)
+admin.site.register(Job)

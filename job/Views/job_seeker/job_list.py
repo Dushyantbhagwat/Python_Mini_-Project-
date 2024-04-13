@@ -36,7 +36,7 @@ def job_details(request, job_id):
     else:
         return redirect('login')
 
-    return render(request, 'j1.html', {'jobs': jobs, 'job_seeker': job_seeker})
+    return render(request, 'job_seeker/JobDetails.html', {'jobs': jobs, 'job_seeker': job_seeker})
 
 
 def apply(request):
@@ -68,3 +68,4 @@ def apply(request):
 
     else:
         return HttpResponseNotAllowed(['POST'])  # Return method not allowed response for non-POST requests
+

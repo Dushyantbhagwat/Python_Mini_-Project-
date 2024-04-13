@@ -129,8 +129,6 @@ from django.utils.dateparse import parse_datetime
 #
 #     return render(request, 'recruiter/PostJobs.html', context)
 
-from django.utils import timezone
-
 
 def post_jobs(request):
     # context = {'r_id': r_id}
