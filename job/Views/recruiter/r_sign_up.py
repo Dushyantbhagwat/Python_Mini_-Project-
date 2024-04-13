@@ -10,10 +10,11 @@ from job.models import Recruiter
 from job.utils import *
 from django.contrib.auth.models import User
 import random
-from twilio.rest import Client
+# from twilio.rest import Client
+# from twilio.base.client_base import TwilioClient
 
 from django.contrib.auth.models import User
-import requests
+# import requests
 
 from django.conf import settings
 

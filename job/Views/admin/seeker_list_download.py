@@ -4,29 +4,29 @@ from django.http import HttpResponse
 from django.views import View
 from job.models import JobSeeker
 from django.template.loader import get_template
-from xhtml2pdf import pisa
+# from xhtml2pdf import pisa
 
-
-class DownloadPDFView(View):
-    def get(self, request):
-        template_path = 'admin/job_seeker_list.html'
-        persons = JobSeeker.objects.all()
-
-        context = {
-            'persons': persons,
-        }
-
-        response = HttpResponse(content_type='application/pdf')
-        response['Content-Disposition'] = 'attachment; filename="data.pdf"'
-
-        template = get_template(template_path)
-        html = template.render(context)
-
-        # Create PDF
-        pisa_status = pisa.CreatePDF(html, dest=response)
-        if pisa_status.err:
-            return HttpResponse('We had some errors <pre>' + html + '</pre>')
-        return response
+#
+# class DownloadPDFView(View):
+#     def get(self, request):
+#         template_path = 'admin/job_seeker_list.html'
+#         persons = JobSeeker.objects.all()
+#
+#         context = {
+#             'persons': persons,
+#         }
+#
+#         response = HttpResponse(content_type='application/pdf')
+#         response['Content-Disposition'] = 'attachment; filename="data.pdf"'
+#
+#         template = get_template(template_path)
+#         html = template.render(context)
+#
+#         # Create PDF
+#         # pisa_status = pisa.CreatePDF(html, dest=response)
+#         # if pisa_status.err:
+#         #     return HttpResponse('We had some errors <pre>' + html + '</pre>')
+#         return response
 
 
 class DownloadExcelView(View):
