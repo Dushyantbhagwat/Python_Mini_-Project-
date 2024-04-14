@@ -205,19 +205,22 @@
     </header>
       <div class="container">
         <a id="filterButton">Filter</a>
+        <form action="{% url 'filter_jobs' %}" method="post">
+          {% csrf_token %}
           <div id="filterModal" class="modal">
               <div class="modal-content">
                   <!-- Filter options -->
                   <label for="jobTypeFilter">Job Type:</label>
-                  <select id="jobTypeFilter">
+                  <select name="job_type" id="jobTypeFilter">
                       <option value="all">All</option>
                       <option value="Full-Time">Full Time</option>
                       <option value="Part-Time">Part Time</option>
                   </select>
-                  <button id="applyFilterButton">Apply Filter</button>
+                  <button type="submit" id="applyFilterButton">Apply Filter</button>
                   <button id="closeFilterModal">Close</button>
               </div>
           </div>
+        </form>
           {% for job in jobs %}
             <div class="content">
               <div class="curved-box">
@@ -275,17 +278,7 @@
               filterModal.style.display = 'block';
           });
 
-          // Apply filter when apply filter button is clicked
-          applyFilterButton.addEventListener('click', function () {
-              // Implement filter logic here
-              // For example, you can get selected filter options and filter job listings accordingly
-              const jobTypeFilter = document.getElementById('jobTypeFilter').value;
-              // Implement filtering logic based on the selected filter options
-              // You can modify the job listings accordingly
-              console.log('Applying filter:', jobTypeFilter);
-              // Close the filter modal
-              filterModal.style.display = 'none';
-          });
+
 
           // Close filter modal when close button is clicked
           closeFilterModalButton.addEventListener('click', function () {
