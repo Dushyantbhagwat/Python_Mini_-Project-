@@ -16,9 +16,14 @@ def job_list(request):
 
     # Retrieve a list of unique cities ordered alphabetically
     # options = Job.objects.values('city').annotate(city_count=Count('city')).order_by('city').distinct()
+    options = Job.objects.order_by('location').values_list('location', flat=True).distinct()
+    skill_options = Job.objects.order_by('skills').values_list('skills', flat=True).distinct()
+    title_options = Job.objects.order_by('title').values_list('title', flat=True).distinct()
+    print(options, skill_options, title_options)
 
+    context = {'jobs': jobs, 'options': options, 'skill_options': skill_options, 'title_options': title_options}
     # print(options)
-    return render(request, 'job_seeker/JList.html', {'jobs': jobs})
+    return render(request, 'job_seeker/JList.html', context=context)
 
 
 def job_details(request, job_id):

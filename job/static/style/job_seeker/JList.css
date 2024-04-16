@@ -258,6 +258,7 @@ padding-top: 5px;
 .home-wrapper {
 display: flex;
 align-items: flex-start;
+color: black;
 }
 .home-button {
 border-radius: 50px;

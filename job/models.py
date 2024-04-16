@@ -43,7 +43,6 @@ class Job(models.Model):
     start_date = models.CharField(max_length=45, null=False)
     deadline = models.CharField(max_length=45, null=False)
     minimum_salary = models.CharField(max_length=45, null=False, default='Not Disclosed')
-    maximum_salary = models.CharField(max_length=45, null=False, default='Not Disclosed')
     job_type = models.CharField(max_length=45, null=False)
     experience = models.CharField(max_length=50, null=False, default='not provided')
     skills = models.CharField(max_length=45, blank=True, null=False)

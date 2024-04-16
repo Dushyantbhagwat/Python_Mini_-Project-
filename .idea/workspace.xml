@@ -4,11 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="job seeker problems resolved">
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="job filter system added">
+      <change afterPath="$PROJECT_DIR$/job/migrations/0015_remove_job_maximum_salary.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/223346.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/36136.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/4599467.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/533010.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/944.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/944_qmSIYzH.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/Accen_nov20.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/oracle_nov13.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/static/style/landing_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/landing_page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JobDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JobDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/job_filtering.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/job_filtering.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/recruiter/post_jobs.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/recruiter/post_jobs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/style/job_seeker/JList.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/job_seeker/JList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JList.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/PostJobs.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/PostJobs.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,14 +52,12 @@
     &quot;assignee&quot;: &quot;NiranjanKumarYadav36&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="5a4264b0-9b05-44dd-abe0-96ec6af1fa69" />
-        <option name="url" value="https://github.com/NiranjanKumarYadav36/Python_Mini_-Project-.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NiranjanKumarYadav36/Python_Mini_-Project-.git&quot;,
+    &quot;accountId&quot;: &quot;5a4264b0-9b05-44dd-abe0-96ec6af1fa69&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -69,32 +82,25 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/acer/PycharmProjects/Python_Mini_-Project-/job/templates/job_seeker/style&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/templates/job_seeker/UserR.html&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/templates/job_seeker/UserR.html&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker\style" />
-      <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker" />
-      <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\static\style" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\static\images" />
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\static\style\recruiter" />
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates\job_seeker" />
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker" />
-      <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker\style" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\jobsite" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\Views\job_seeker" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL" />
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates\templatetags" />
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates\recruiter" />
     </key>
   </component>
   <component name="RunManager" selected="Python.re">
@@ -111,7 +117,6 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/re.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -134,7 +139,6 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/try.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -154,7 +158,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-09665e90c3a7-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.15026.15" />
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
       </set>
     </attachedChunks>
   </component>
@@ -166,17 +170,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708523728017</updated>
-      <workItem from="1713086351833" duration="4918000" />
-      <workItem from="1713199257547" duration="5111000" />
-      <workItem from="1713242386313" duration="3333000" />
-    </task>
-    <task id="LOCAL-00004" summary="project started and home page is added">
-      <option name="closed" value="true" />
-      <created>1708694245067</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1708694245067</updated>
     </task>
     <task id="LOCAL-00005" summary="project started and home page is added">
       <option name="closed" value="true" />
@@ -546,27 +539,32 @@
       <option name="project" value="LOCAL" />
       <updated>1712979111409</updated>
     </task>
-    <task id="LOCAL-00051" summary="login page dropdown resolved">
+    <task id="LOCAL-00051" summary="job filter system added">
       <option name="closed" value="true" />
-      <created>1713086253787</created>
+      <created>1713017789513</created>
       <option name="number" value="00051" />
       <option name="presentableId" value="LOCAL-00051" />
       <option name="project" value="LOCAL" />
-      <updated>1713086253788</updated>
+      <updated>1713017789513</updated>
     </task>
-    <task id="LOCAL-00052" summary="job seeker problems resolved">
+    <task id="LOCAL-00052" summary="job filter system added">
       <option name="closed" value="true" />
-      <created>1713243130065</created>
+      <created>1713030365357</created>
       <option name="number" value="00052" />
       <option name="presentableId" value="LOCAL-00052" />
       <option name="project" value="LOCAL" />
-      <updated>1713243130066</updated>
+      <updated>1713030365358</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="job filter system added">
+      <option name="closed" value="true" />
+      <created>1713032263828</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1713032263829</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -596,8 +594,6 @@
     <MESSAGE value="fixed" />
     <MESSAGE value="apllication preocess completed" />
     <MESSAGE value="job filter system added" />
-    <MESSAGE value="login page dropdown resolved" />
-    <MESSAGE value="job seeker problems resolved" />
-    <option name="LAST_COMMIT_MESSAGE" value="job seeker problems resolved" />
+    <option name="LAST_COMMIT_MESSAGE" value="job filter system added" />
   </component>
 </project>

@@ -1,35 +1,95 @@
+import datetime
+
+from django.db.models import Q
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views import generic
 from job.models import Job
+from functools import reduce
+from operator import or_
+
+from django.db.models import Q
 
 
 def filter_jobs(request):
     if request.method == 'POST':
         # Retrieve filter options from the request
-        job_type_filter = request.POST.get('job_type')
+        job_type_filter = request.POST.get('jobTypeFilter')
+        experience_filter = request.POST.get('experienceRangeFilter')
+        salary_filter = request.POST.get('salaryRangeFilter')
+        city_filter = request.POST.get('locationFilter')
+        skills_filter = request.POST.get('skillsFilter')
+        title_filter = request.POST.get('titleFilter')
+        date_filter = request.POST.get('dateFilter')
 
-        # Filter jobs based on the selected filter options
-        if job_type_filter == 'all':
-            filtered_jobs = Job.objects.all()  # Get all jobs
+        print(job_type_filter, experience_filter, salary_filter, city_filter, skills_filter, date_filter)
+
+        # Initialize an empty list to store filter conditions
+        filter_conditions = []
+
+        if (job_type_filter == 'All' or experience_filter == 'All' or salary_filter == 'All' or city_filter == 'All' or
+                skills_filter == 'All' or title_filter == 'All' or date_filter == 'All'):
+            jobs = Job.objects.all()
+            options = Job.objects.order_by('location').values_list('location', flat=True).distinct()
+            skill_options = Job.objects.order_by('skills').values_list('skills', flat=True).distinct()
+            title_options = Job.objects.order_by('title').values_list('title', flat=True).distinct()
+            print(options, skill_options, title_options)
+            context = {'jobs': jobs, 'options': options, 'skill_options': skill_options, 'title_options': title_options}
+            return render(request, 'job_seeker/JList.html', context=context)
+
         else:
-            filtered_jobs = Job.objects.filter(job_type=job_type_filter)  # Filter jobs by job type
-            print(filtered_jobs)
+            # Check if each condition is provided and add it to the filter_conditions list
+            if job_type_filter:
+                filter_conditions.append(('job_type', job_type_filter))
 
-        # Serialize filtered job data
+            if experience_filter:
+                filter_conditions.append(('experience', experience_filter))
 
-        # Return filtered data as a JSON response
-        return render(request, 'job_seeker/JList.html', {'jobs': filtered_jobs})
+            # Handle salary range filter
+            if salary_filter:
+                min_salary, max_salary = map(int, salary_filter.split('-'))
+                print(min_salary, max_salary)
+                filter_conditions.append(Q(minimum_salary__lte=max_salary, maximum_salary__gte=min_salary))
+
+            if city_filter:
+                filter_conditions.append(('location', city_filter))
+
+            if skills_filter:
+                filter_conditions.append(('skills', skills_filter))
+
+            if title_filter:
+                filter_conditions.append(('title', title_filter))
+
+            if date_filter:
+                filter_conditions.append(Q(deadline=date_filter))
+
+            # Start with all jobs and progressively filter based on provided conditions
+            jobs = Job.objects.all()
+            options = Job.objects.order_by('location').values_list('location', flat=True).distinct()
+            skill_options = Job.objects.order_by('skills').values_list('skills', flat=True).distinct()
+            title_options = Job.objects.order_by('title').values_list('title', flat=True).distinct()
+            print(options, skill_options, title_options)
+
+            if filter_conditions:
+                # Construct filter query dynamically based on the provided conditions
+                filter_query = Q()
+                for condition in filter_conditions:
+                    if isinstance(condition, Q):
+                        filter_query &= condition
+                    else:
+                        filter_query &= Q(**{condition[0]: condition[1]})
+
+                # Apply filter query to jobs
+                jobs = jobs.filter(filter_query)
+
+            context = {'jobs': jobs, 'options': options, 'skill_options': skill_options, 'title_options': title_options}
+
+            # Render a new page with the filtered jobs
+            return render(request, 'job_seeker/JList.html', context=context)
     else:
         print('error')
         # Handle invalid requests
         return JsonResponse({'error': 'Invalid request'}, status=400)
-
-
-
-
-
-
 
 
 

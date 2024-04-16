@@ -146,12 +146,11 @@ def post_jobs(request):
             end_date = request.POST.get('end_date')
             job_type = request.POST.get('selected_job_type')
             minimum_salary = request.POST.get('minimum')
-            maximum_salary = request.POST.get('maximum')
             experience = request.POST.get('experience')
             skills = request.POST.get('skills')
             rate = request.POST.get('rate')
 
-            print(rate, job_type, maximum_salary)
+            print(rate, job_type, minimum_salary)
 
             # Title case conversion for certain fields
             job_title = job_title.title()
@@ -191,7 +190,6 @@ def post_jobs(request):
                 start_date=start_date,
                 deadline=end_date,
                 job_type=job_type,
-                maximum_salary=maximum_salary,
                 minimum_salary=minimum_salary,
                 experience=experience,
                 skills=skills,

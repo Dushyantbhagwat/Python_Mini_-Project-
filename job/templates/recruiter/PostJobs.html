@@ -264,27 +264,21 @@
                   <div class="shape-arranger">
                     <div class="frame-parent12">
                       <div class="minimum-wrapper">
-                        <div class="minimum">Minimum</div>
+                        <div class="minimum">Range</div>
                       </div>
                       <div class="icon-assembler">
-                        <input required name="minimum" class="color-combinator" type="text"/>
+                        <select required name="minimum" class="color-combinator">
+                          <option value="" selected disabled>Select Range</option>
+                          <option value="10000 - 30000">10000-30000</option>
+                          <option value="30001 - 50000">30001-50000</option>
+                          <option value="50001+">50001+</option>
+                        </select>
                         <div class="size-adjustor">
                           <div class="to">To</div>
                         </div>
                       </div>
                     </div>
-                    <div class="scale-transform">
-                      <div class="frame-parent12">
-                        <div class="minimum-wrapper">
-                          <div class="minimum" >Maximum</div>
-                        </div>
-                        <div class="icon-assembler">
-                          <input required name="maximum" class="color-combinator" type="text"/>
-                          <div class="size-adjustor">
-                            <div class="to">To</div>
-                          </div>
-                        </div>
-                      </div>
+
                       <div class="boolean-operation">
                         <div class="blend-operation">
                           <label for="rate" >Rate:</label>
@@ -324,7 +318,7 @@
                             <div class="experience">Experience</div>
                           </div>
                           <select name="experience" class="rotation-property" required>
-                            <option value="">Select experience...</option>
+                            <option value="" selected disabled>Select experience...</option>
                             <option value="0-1 years">0-1 years</option>
                             <option value="1-3 years">1-3 years</option>
                             <option value="3-5 years">3-5 years</option>
