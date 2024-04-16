@@ -830,8 +830,9 @@
   max-width: 100%;
 }
 .userprofile {
-    bottom: 295px;
-  width: 100%;
+   right: 455px;
+        bottom: 290px;
+    width: 253%;
   position: relative;
   background-color: var(--color-white);
   justify-content: flex-start;
@@ -984,7 +985,7 @@
 
 
     body {
-        width: 125%;
+        width: 100%;
         margin: 0;
         padding: 0;
         display: flex;
@@ -995,8 +996,11 @@
     }
 
     .profile-container {
-             right: 950px;
-    top: 230px;
+        height: 700px;
+        bottom: 190px;
+    position: relative;
+      right: 6px;
+    top: 270px;
     position: relative;
         max-width: 600px;
         background-color: #fff;
@@ -1008,9 +1012,14 @@
     .profile-container h2 {
         text-align: center;
         margin-bottom: 20px;
+            position: relative;
+    bottom: 190px;
     }
 
     .profile-details {
+        left: 100px;
+    bottom: 170px;
+    position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
@@ -1026,6 +1035,8 @@
     }
 
     .profile-buttons {
+            bottom: 140px;
+    position: relative;
         display: flex;
         justify-content: center;
     }
@@ -1052,7 +1063,22 @@
 </head>
 <body>
 
-<div class="userprofile">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="profile-container">
+
+    <div class="userprofile">
       <header class="navbarframe">
         <div class="frame-parent">
           <div class="logo-wrapper">
@@ -1133,7 +1159,6 @@
 
 
 
-<div class="profile-container">
     <h2>Job Details</h2>
     <div class="profile-details">
         <label >Title:</label>
