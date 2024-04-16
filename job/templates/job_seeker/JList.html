@@ -78,20 +78,21 @@
       }
 
       #filterButton {
-        position: absolute;
-        bottom: 10px; /* Adjust as needed */
-        left: 1110px; /* Adjust as needed */
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: gray; /* blue color */
-        color: #fff; /* white color */
-        text-decoration: none;
-        border-radius: 32px;
-        transition: background-color 0.3s ease;
+            border: 1px solid black;
+    position: absolute;
+    bottom: 17px;
+    left: 1110px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #80808000;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 32px;
+    transition: background-color 0.3s ease;
       }
 
       #filterButton:hover {
-        background-color: #0056b3; /* darker blue color on hover */
+        background-color: #b2d7ff; /* darker blue color on hover */
       }
 
       .blue-container {
@@ -117,7 +118,7 @@
         </div>
         <div class="home-button-wrapper">
           <a href="{% url 'u_profile' %}" style="text-decoration: none">
-              <button class="home-button" style="border: 1.6px solid black;">
+              <button class="home-button" style="border: 0px solid black;">
 
             <img
               class="material-symbolshome-icon"
@@ -162,6 +163,7 @@
         </div>
 
         <div id="google_translate_element"></div>
+
         <a id="filterButton">Filter</a>
 
 

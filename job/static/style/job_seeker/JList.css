@@ -263,7 +263,7 @@ color: black;
 .home-button {
 border-radius: 50px;
 background-color: var(--color-white);
-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+box-shadow: 0px 2px 4px 2px rgba(0.25, 0.25, 0.25, 0.25);
 flex-direction: row;
 justify-content: flex-start;
 padding: var(--padding-6xs) 21px;
@@ -320,6 +320,7 @@ z-index: 1;
 }
 .application,
 .mdinotes-icon{
+      mix-blend-mode: multiply;
 position: relative;
 z-index: 1;
 }
@@ -331,10 +332,9 @@ padding-top: 5px;
 
 }
 .application{
+  font-weight: 550;
 height: 23px;
-font-size: var(--font-size-base);
-font-family: var(--font-inter);
-color: var(--color-black);
+    color: black;
 text-align: left;
 display: inline-block;
 min-width: 69px;
@@ -409,9 +409,8 @@ padding-top: 2px;
 }
 .add-job {
 height: 23px;
-font-size: var(--font-size-base);
-font-family: var(--font-inter);
-color: var(--color-black);
+font-weight: 550;
+color: black;
 text-align: left;
 display: inline-block;
 min-width: 69px;
@@ -459,6 +458,8 @@ max-width: 100%;
 }
 .ggprofile-icon,
 .solarlist-linear-icon {
+      right: 13px;
+    bottom: 7px;
 height: 20px;
 width: 20px;
 position: relative;
