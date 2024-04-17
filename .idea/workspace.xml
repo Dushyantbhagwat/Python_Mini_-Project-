@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="job filter system added">
-      <change afterPath="$PROJECT_DIR$/media/recruiter/223346_buImH1G.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/recruiter/36136_NYlj00O.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/recruiter/4599467_GiSLB0J.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/recruiter/533010_ecbNKcd.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/recruiter/944_JSCw7rB.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/recruiter/Accen_nov20_Ln9gKJR.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/recruiter/oracle_nov13_psfbEZ7.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/migrations/0016_alter_application_status.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JobStatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JobStatus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/UserProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/UserProfile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,21 +60,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.re.executor": "Run",
-    "Python.try.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/static/images",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "two.files.diff.last.used.file": "C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/templates/job_seeker/UserR.html"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.re.executor&quot;: &quot;Run&quot;,
+    &quot;Python.try.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/static/images&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/templates/job_seeker/UserR.html&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\static\images" />
@@ -160,14 +158,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708523728017</updated>
-    </task>
-    <task id="LOCAL-00006" summary="project started and home page is added">
-      <option name="closed" value="true" />
-      <created>1708754780143</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1708754780143</updated>
     </task>
     <task id="LOCAL-00007" summary="project started and home page is added">
       <option name="closed" value="true" />
@@ -553,7 +543,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713327891765</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="job filter system added">
+      <option name="closed" value="true" />
+      <created>1713330635507</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1713330635507</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

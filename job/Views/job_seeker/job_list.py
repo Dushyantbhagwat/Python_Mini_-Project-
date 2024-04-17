@@ -76,4 +76,24 @@ def apply(request):
 
 
 def job_status(request):
-    return render(request, 'job_seeker/JobStatus.html')
+    logged_in_user_id = request.session.get('logged_in_user_id')
+
+    # Assuming JobSeeker is your model for job_seekers
+    job_seeker = JobSeeker.objects.get(id=logged_in_user_id)
+
+    # Fetch all applications associated with the job_seeker
+    applications = Application.objects.filter(user=job_seeker)
+
+    # Now, let's iterate over each application and extract the associated job and status
+    jobs = []
+    for application in applications:
+        job = application.job
+        status = application.status  # Assuming status is a field in your Application model
+        date = application.date
+        jobs.append((job, status, date))
+
+    # Now, 'jobs' contains tuples of (job, status) applied to by the job_seeker
+    print(jobs)
+
+    return render(request, 'job_seeker/JobStatus.html', {'jobs': jobs})
+

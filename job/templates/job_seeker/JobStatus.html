@@ -100,26 +100,27 @@
                 </div>
               </div>
             </div>
-            <div class="rectangle-group">
+            {% for job, status, date in jobs %}
+            <div class="rectangle-group" style="margin-bottom: 29px;">
               <div class="frame-item"></div>
               <div class="frame-wrapper2">
                 <div class="frame-parent1">
                   <div class="machine-operator-parent">
-                    <div class="machine-operator">Machine Operator</div>
+                    <div class="machine-operator" style="white-space: nowrap;">{{ job.title }}</div>
                     <div class="nexsus-techno-solutions-wrapper">
-                      <div class="nexsus-techno-solutions">
-                        Nexsus Techno solutions
+                      <div class="nexsus-techno-solutions" style="white-space: nowrap;">
+                        {{ job.recruiter.company_name }}
                       </div>
                     </div>
                   </div>
                   <div class="application-date-412024-wrapper">
-                    <div class="application-date">
-                      Application Date : 4/1/2024
+                    <div class="application-date" style="white-space: nowrap;">
+                      Application Date : {{ date }}
                     </div>
                   </div>
                   <div class="frame-wrapper3">
                     <div class="years-parent">
-                      <div class="years">0-1 years</div>
+                      <div class="years">{{ job.experience }}</div>
                       <img
                         class="briefcase-icon"
                         loading="lazy"
@@ -146,8 +147,8 @@
                     src="{% static 'images/address@2x.png' %}"
                   />
 
-                  <div class="not-disclosed">Not disclosed</div>
-                  <div class="mumbai">Mumbai</div>
+                  <div class="not-disclosed">{{ job.minimum_salary }}</div>
+                  <div class="mumbai">{{ job.location }}</div>
                 </div>
               </div>
               <div class="rectangle-container">
@@ -155,144 +156,158 @@
                   class="frame-inner"
                   loading="lazy"
                   alt=""
-                  src="{% static 'images/rectangle-5@2x.png' %}"
+                  src="{{ job.recruiter.image.url }}"
                 />
 
-                <button class="frame-button">
-                  <div class="rectangle-div"></div>
-                  <div class="accepted">Accepted</div>
-                </button>
+                {% if status == 'Pending' %}
+                    <button class="pending-box-parent">
+                        <div class="pending-box"></div>
+                        <div class="pending">{{ status }}</div>
+                    </button>
+                {% elif status == 'Rejected' %}
+                    <button class="rej-box-parent">
+                        <div class="rej-box"></div>
+                        <div class="rejected">{{ status }}</div>
+                    </button>
+                {% else %}
+                    <button class="frame-button">
+                        <div class="rectangle-div"></div>
+                        <div class="accepted">{{ status }}</div>
+                    </button>
+                {% endif %}
               </div>
+
             </div>
+            {% endfor %}
           </div>
-          <div class="rectangle-parent1">
-            <div class="frame-child1"></div>
-            <div class="frame-wrapper5">
-              <div class="frame-parent2">
-                <div class="frame-wrapper6">
-                  <div class="data-entry-operator-parent">
-                    <div class="data-entry-operator">Data Entry Operator</div>
-                    <div class="frame-wrapper7">
-                      <div class="frame-parent3">
-                        <div class="frame-wrapper8">
-                          <div class="shree-nm-electricals-parent">
-                            <div class="shree-nm-electricals">
-                              Shree NM Electricals
-                            </div>
-                            <div class="application-date-412024-container">
-                              <div class="application-date1">
-                                Application Date : 4/1/2024
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="years-group">
-                          <div class="years1">0-1 years</div>
-                          <img
-                            class="briefcase-icon1"
-                            alt=""
-                            src="{% static 'images/briefcase@2x.png' %}"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="frame-parent4">
-                  <div class="to-2-lpa-wrapper">
-                    <div class="to-2-lpa">1.75 to 2 lpa</div>
-                  </div>
-                  <img class="rupee-icon1" alt="" src="{% static 'images/rupee@2x.png' %}" />
-                </div>
-              </div>
-            </div>
-            <div class="frame-wrapper9">
-              <div class="address-parent">
-                <img
-                  class="address-icon1"
-                  alt=""
-                  src="{% static 'images/address@2x.png' %}"
-                />
+<!--          <div class="rectangle-parent1">-->
+<!--            <div class="frame-child1"></div>-->
+<!--            <div class="frame-wrapper5">-->
+<!--              <div class="frame-parent2">-->
+<!--                <div class="frame-wrapper6">-->
+<!--                  <div class="data-entry-operator-parent">-->
+<!--                    <div class="data-entry-operator">Data Entry Operator</div>-->
+<!--                    <div class="frame-wrapper7">-->
+<!--                      <div class="frame-parent3">-->
+<!--                        <div class="frame-wrapper8">-->
+<!--                          <div class="shree-nm-electricals-parent">-->
+<!--                            <div class="shree-nm-electricals">-->
+<!--                              Shree NM Electricals-->
+<!--                            </div>-->
+<!--                            <div class="application-date-412024-container">-->
+<!--                              <div class="application-date1">-->
+<!--                                Application Date : 4/1/2024-->
+<!--                              </div>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                        <div class="years-group">-->
+<!--                          <div class="years1">0-1 years</div>-->
+<!--                          <img-->
+<!--                            class="briefcase-icon1"-->
+<!--                            alt=""-->
+<!--                            src="{% static 'images/briefcase@2x.png' %}"-->
+<!--                          />-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div class="frame-parent4">-->
+<!--                  <div class="to-2-lpa-wrapper">-->
+<!--                    <div class="to-2-lpa">1.75 to 2 lpa</div>-->
+<!--                  </div>-->
+<!--                  <img class="rupee-icon1" alt="" src="{% static 'images/rupee@2x.png' %}" />-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="frame-wrapper9">-->
+<!--              <div class="address-parent">-->
+<!--                <img-->
+<!--                  class="address-icon1"-->
+<!--                  alt=""-->
+<!--                  src="{% static 'images/address@2x.png' %}"-->
+<!--                />-->
 
-                <div class="mumbai1">Mumbai</div>
-              </div>
-            </div>
-            <div class="company-logo-parent">
-              <img
-                class="company-logo-icon"
-                loading="lazy"
-                alt=""
-                src="{% static 'images/company-logo@2x.png' %}"
-              />
+<!--                <div class="mumbai1">Mumbai</div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="company-logo-parent">-->
+<!--              <img-->
+<!--                class="company-logo-icon"-->
+<!--                loading="lazy"-->
+<!--                alt=""-->
+<!--                src="{% static 'images/company-logo@2x.png' %}"-->
+<!--              />-->
 
-              <button class="rej-box-parent">
-                <div class="rej-box"></div>
-                <div class="rejected">Rejected</div>
-              </button>
-            </div>
-          </div>
-          <div class="technician-box-parent">
-            <div class="technician-box"></div>
-            <div class="frame-wrapper10">
-              <div class="technician-parent">
-                <div class="technician">Technician</div>
-                <div class="frame-wrapper11">
-                  <div class="tactics-management-parent">
-                    <div class="tactics-management">Tactics Management</div>
-                    <div class="application-date-522024-wrapper">
-                      <div class="application-date2">
-                        Application Date : 5/2/2024
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="frame-wrapper12">
-                  <div class="years-container">
-                    <div class="years2">1-2 years</div>
-                    <img
-                      class="briefcase-icon2"
-                      alt=""
-                      src="{% static 'images/briefcase@2x.png' %}"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="frame-wrapper13">
-              <div class="frame-parent5">
-                <div class="not-disclosed-wrapper">
-                  <div class="not-disclosed1">Not disclosed</div>
-                </div>
-                <img class="rupee-icon2" alt="" src="{% static 'images/rupee@2x.png' %}" />
-              </div>
-            </div>
-            <div class="frame-parent6">
-              <div class="frame-wrapper14">
-                <div class="address-group">
-                  <img
-                    class="address-icon2"
-                    alt=""
-                    src="{% static 'images/address@2x.png' %}"
-                  />
+<!--              <button class="rej-box-parent">-->
+<!--                <div class="rej-box"></div>-->
+<!--                <div class="rejected">Rejected</div>-->
+<!--              </button>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="technician-box-parent">-->
+<!--            <div class="technician-box"></div>-->
+<!--            <div class="frame-wrapper10">-->
+<!--              <div class="technician-parent">-->
+<!--                <div class="technician">Technician</div>-->
+<!--                <div class="frame-wrapper11">-->
+<!--                  <div class="tactics-management-parent">-->
+<!--                    <div class="tactics-management">Tactics Management</div>-->
+<!--                    <div class="application-date-522024-wrapper">-->
+<!--                      <div class="application-date2">-->
+<!--                        Application Date : 5/2/2024-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div class="frame-wrapper12">-->
+<!--                  <div class="years-container">-->
+<!--                    <div class="years2">1-2 years</div>-->
+<!--                    <img-->
+<!--                      class="briefcase-icon2"-->
+<!--                      alt=""-->
+<!--                      src="{% static 'images/briefcase@2x.png' %}"-->
+<!--                    />-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="frame-wrapper13">-->
+<!--              <div class="frame-parent5">-->
+<!--                <div class="not-disclosed-wrapper">-->
+<!--                  <div class="not-disclosed1">Not disclosed</div>-->
+<!--                </div>-->
+<!--                <img class="rupee-icon2" alt="" src="{% static 'images/rupee@2x.png' %}" />-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="frame-parent6">-->
+<!--              <div class="frame-wrapper14">-->
+<!--                <div class="address-group">-->
+<!--                  <img-->
+<!--                    class="address-icon2"-->
+<!--                    alt=""-->
+<!--                    src="{% static 'images/address@2x.png' %}"-->
+<!--                  />-->
 
-                  <div class="goregaonmumbai">Goregaon,Mumbai</div>
-                </div>
-              </div>
-              <div class="tactics-image-parent">
-                <img
-                  class="tactics-image-icon"
-                  loading="lazy"
-                  alt=""
-                  src="{% static 'images/tactics-image@2x.png' %}"
-                />
+<!--                  <div class="goregaonmumbai">Goregaon,Mumbai</div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="tactics-image-parent">-->
+<!--                <img-->
+<!--                  class="tactics-image-icon"-->
+<!--                  loading="lazy"-->
+<!--                  alt=""-->
+<!--                  src="{% static 'images/tactics-image@2x.png' %}"-->
+<!--                />-->
 
-                <button class="pending-box-parent">
-                  <div class="pending-box"></div>
-                  <div class="pending">Pending</div>
-                </button>
-              </div>
-            </div>
-          </div>
+<!--                <button class="pending-box-parent">-->
+<!--                  <div class="pending-box"></div>-->
+<!--                  <div class="pending">Pending</div>-->
+<!--                </button>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
         </div>
       </section>
     </div>
