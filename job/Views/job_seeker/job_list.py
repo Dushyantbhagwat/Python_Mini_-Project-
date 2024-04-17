@@ -74,3 +74,6 @@ def apply(request):
     else:
         return HttpResponseNotAllowed(['POST'])  # Return method not allowed response for non-POST requests
 
+
+def job_status(request):
+    return render(request, 'job_seeker/JobStatus.html')

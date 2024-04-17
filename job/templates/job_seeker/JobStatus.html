@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="{% static 'style/job_seeker/JobStatus.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/job_seeker/JobStatusGlobal.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="desktop-1">
+      <div class="desktop-1-child"></div>
+      <header class="nav-parent">
+        <div class="nav"></div>
+        <div class="logo-parent">
+          <a href="{% url 'job_status' %}" style="text-decoration: none; color: inherit;"><img
+            class="logo-icon"
+            loading="lazy"
+            alt=""
+            src="{% static 'images/logo@2x.png' %}"
+
+          /></a>
+
+          <div class="frame-wrapper">
+            <div class="frame-parent">
+              <a href="{% url 'u_landing_page' %}" style="text-decoration: none; color: inherit;"><div class="home-box-parent">
+                <div class="home-box"></div>
+                <img
+                  class="home-page-icon"
+                  loading="lazy"
+                  alt=""
+                  src="{% static 'images/home-page@2x.png' %}"
+                />
+
+                <div class="home-wrapper">
+                  <div class="home">Home</div>
+                </div>
+              </div></a>
+              <a href="{% url 'u_profile' %}" style="text-decoration: none; color: inherit;"><div class="job-status-box-parent">
+                <div class="job-status-box"></div>
+                <img
+                  class="loading-icon"
+                  loading="lazy"
+                  alt=""
+                  src="{% static 'images/loading@2x.png' %}"
+                />
+
+                <div class="job-status">Job Status</div>
+              </div></a>
+              <a href="{% url 'job_list' %}" style="text-decoration: none; color: inherit;"><div class="job-status-box-group">
+                <div class="job-status-box1"></div>
+                <img
+                  class="architect-icon"
+                  loading="lazy"
+                  alt=""
+                  src="{% static 'images/architect@2x.png' %}"
+                />
+
+                <div class="jobs">Jobs</div>
+              </div></a>
+            </div>
+          </div>
+        </div>
+        <div class="profile" onclick="toggleDropdown()">
+            <div class="dropdown-content" id="dropdownContent">
+                <a href="{% url 'u_profile' %}">Profile</a>
+                <a href="{% url 'logout' %}">Logout</a>
+            </div>
+            <img class="solarlist-linear-icon" loading="lazy" alt="" src="{% static 'images/solarlistlinear@2x.png' %}" />
+            <img class="ggprofile-icon" loading="lazy" alt="" src="{% static 'images/ggprofile@2x.png' %}"/>
+        </div>
+
+        <script>
+              function toggleDropdown() {
+                  var dropdownContent = document.getElementById("dropdownContent");
+                  dropdownContent.classList.toggle("show");
+              }
+        </script>
+
+
+      </header>
+      <section class="desktop-1-inner">
+        <div class="frame-group">
+          <div class="frame-container">
+            <div class="frame-div">
+              <div class="here-is-the-list-of-jobs-you-h-parent">
+                <h3 class="here-is-the">
+                  Here is the list of Jobs you have applied for
+                </h3>
+                <div class="frame-wrapper1">
+                  <div class="rectangle-parent">
+                    <div class="frame-child"></div>
+                    <div class="job-title">Job title</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="rectangle-group">
+              <div class="frame-item"></div>
+              <div class="frame-wrapper2">
+                <div class="frame-parent1">
+                  <div class="machine-operator-parent">
+                    <div class="machine-operator">Machine Operator</div>
+                    <div class="nexsus-techno-solutions-wrapper">
+                      <div class="nexsus-techno-solutions">
+                        Nexsus Techno solutions
+                      </div>
+                    </div>
+                  </div>
+                  <div class="application-date-412024-wrapper">
+                    <div class="application-date">
+                      Application Date : 4/1/2024
+                    </div>
+                  </div>
+                  <div class="frame-wrapper3">
+                    <div class="years-parent">
+                      <div class="years">0-1 years</div>
+                      <img
+                        class="briefcase-icon"
+                        loading="lazy"
+                        alt=""
+                        src="{% static 'images/briefcase@2x.png' %}"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="frame-wrapper4">
+                <div class="rupee-parent">
+                  <img
+                    class="rupee-icon"
+                    loading="lazy"
+                    alt=""
+                    src="{% static 'images/rupee@2x.png' %}"
+                  />
+
+                  <img
+                    class="address-icon"
+                    loading="lazy"
+                    alt=""
+                    src="{% static 'images/address@2x.png' %}"
+                  />
+
+                  <div class="not-disclosed">Not disclosed</div>
+                  <div class="mumbai">Mumbai</div>
+                </div>
+              </div>
+              <div class="rectangle-container">
+                <img
+                  class="frame-inner"
+                  loading="lazy"
+                  alt=""
+                  src="{% static 'images/rectangle-5@2x.png' %}"
+                />
+
+                <button class="frame-button">
+                  <div class="rectangle-div"></div>
+                  <div class="accepted">Accepted</div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="rectangle-parent1">
+            <div class="frame-child1"></div>
+            <div class="frame-wrapper5">
+              <div class="frame-parent2">
+                <div class="frame-wrapper6">
+                  <div class="data-entry-operator-parent">
+                    <div class="data-entry-operator">Data Entry Operator</div>
+                    <div class="frame-wrapper7">
+                      <div class="frame-parent3">
+                        <div class="frame-wrapper8">
+                          <div class="shree-nm-electricals-parent">
+                            <div class="shree-nm-electricals">
+                              Shree NM Electricals
+                            </div>
+                            <div class="application-date-412024-container">
+                              <div class="application-date1">
+                                Application Date : 4/1/2024
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="years-group">
+                          <div class="years1">0-1 years</div>
+                          <img
+                            class="briefcase-icon1"
+                            alt=""
+                            src="{% static 'images/briefcase@2x.png' %}"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="frame-parent4">
+                  <div class="to-2-lpa-wrapper">
+                    <div class="to-2-lpa">1.75 to 2 lpa</div>
+                  </div>
+                  <img class="rupee-icon1" alt="" src="{% static 'images/rupee@2x.png' %}" />
+                </div>
+              </div>
+            </div>
+            <div class="frame-wrapper9">
+              <div class="address-parent">
+                <img
+                  class="address-icon1"
+                  alt=""
+                  src="{% static 'images/address@2x.png' %}"
+                />
+
+                <div class="mumbai1">Mumbai</div>
+              </div>
+            </div>
+            <div class="company-logo-parent">
+              <img
+                class="company-logo-icon"
+                loading="lazy"
+                alt=""
+                src="{% static 'images/company-logo@2x.png' %}"
+              />
+
+              <button class="rej-box-parent">
+                <div class="rej-box"></div>
+                <div class="rejected">Rejected</div>
+              </button>
+            </div>
+          </div>
+          <div class="technician-box-parent">
+            <div class="technician-box"></div>
+            <div class="frame-wrapper10">
+              <div class="technician-parent">
+                <div class="technician">Technician</div>
+                <div class="frame-wrapper11">
+                  <div class="tactics-management-parent">
+                    <div class="tactics-management">Tactics Management</div>
+                    <div class="application-date-522024-wrapper">
+                      <div class="application-date2">
+                        Application Date : 5/2/2024
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="frame-wrapper12">
+                  <div class="years-container">
+                    <div class="years2">1-2 years</div>
+                    <img
+                      class="briefcase-icon2"
+                      alt=""
+                      src="{% static 'images/briefcase@2x.png' %}"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="frame-wrapper13">
+              <div class="frame-parent5">
+                <div class="not-disclosed-wrapper">
+                  <div class="not-disclosed1">Not disclosed</div>
+                </div>
+                <img class="rupee-icon2" alt="" src="{% static 'images/rupee@2x.png' %}" />
+              </div>
+            </div>
+            <div class="frame-parent6">
+              <div class="frame-wrapper14">
+                <div class="address-group">
+                  <img
+                    class="address-icon2"
+                    alt=""
+                    src="{% static 'images/address@2x.png' %}"
+                  />
+
+                  <div class="goregaonmumbai">Goregaon,Mumbai</div>
+                </div>
+              </div>
+              <div class="tactics-image-parent">
+                <img
+                  class="tactics-image-icon"
+                  loading="lazy"
+                  alt=""
+                  src="{% static 'images/tactics-image@2x.png' %}"
+                />
+
+                <button class="pending-box-parent">
+                  <div class="pending-box"></div>
+                  <div class="pending">Pending</div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
