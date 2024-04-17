@@ -157,15 +157,15 @@
     <div class="userprofile">
       <header class="navbarframe">
         <div class="frame-parent">
-          <div class="logo-wrapper">
-            <a href="{% url 'u_landing_page' %}"><img
+          <a href="{% url 'u_profile' %}" style="text-decoration: none; color: inherit;"><div class="logo-wrapper">
+            <img
               class="logo-icon"
               loading="lazy"
               alt=""
               src="{% static 'images/logo@2x.png' %}"
-            /></a>
-          </div>
-          <div class="home-button-wrapper">
+            />
+          </div></a>
+          <a href="{% url 'u_landing_page' %}" style="text-decoration: none; color: inherit;"><div class="home-button-wrapper">
             <button class="home-button">
               <img
                 class="material-symbolshome-icon"
@@ -174,11 +174,11 @@
                 src="{% static 'images/materialsymbolshome@2x.png' %}"
               />
 
-              <a href="{% url 'u_profile' %}" style="text-decoration: none;"><div class="home-wrapper">
+              <div class="home-wrapper">
                 <div class="home">Home</div>
-              </div></a>
+              </div>
             </button>
-          </div>
+          </div></a>
           <a href="{% url 'job_list' %}" style="text-decoration: none; color: inherit;"><div class="frame-button-wrapper">
             <button class="apllication-button-parent">
               <div class="apllication"></div>

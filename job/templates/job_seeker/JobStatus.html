@@ -66,6 +66,9 @@
             </div>
           </div>
         </div>
+
+        <div id="google_translate_element"></div>
+
         <div class="profile" onclick="toggleDropdown()">
             <div class="dropdown-content" id="dropdownContent">
                 <a href="{% url 'u_profile' %}">Profile</a>
@@ -92,12 +95,18 @@
                 <h3 class="here-is-the">
                   Here is the list of Jobs you have applied for
                 </h3>
-                <div class="frame-wrapper1">
+                <a href="{% url 'accepted_jobs' %}" style="text-decoration: none; color: inherit;"><div class="frame-wrapper1">
                   <div class="rectangle-parent">
                     <div class="frame-child"></div>
-                    <div class="job-title">Job title</div>
+                    <div class="job-title">Accepted</div>
                   </div>
-                </div>
+                </div></a>
+                <a href="{% url 'rejected_jobs' %}" style="text-decoration: none; color: inherit;"><div class="frame-wrapper1">
+                  <div class="rectangle-parent">
+                    <div class="frame-child"></div>
+                    <div class="job-title">Rejected</div>
+                  </div>
+                </div></a>
               </div>
             </div>
             {% for job, status, date in jobs %}
@@ -311,5 +320,51 @@
         </div>
       </section>
     </div>
+
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+              pageLanguage: 'en',
+              includedLanguages: 'en,mr',  // English and Marathi
+          }, 'google_translate_element');
+      }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <script>
+      $(document).ready(function() {
+        {% for message in messages %}
+        var messageType = "{{ message.tags }}"
+        var messageText = "{{ message }}"
+
+        toastr.options = {
+          closeButton: true,
+          progressBar: true,
+          positionClass: 'toast-bottom-right',
+          showMethod: 'slideDown',
+          timeout: 5000
+        };
+
+        if (messageType === 'success') {
+          toastr.success(messageText);
+        } else if (messageType === 'error') {
+          toastr.error(messageText);
+        } else if (messageType === 'info') {
+          toastr.info(messageText);
+        } else {
+          toastr.warning(messageText);
+        }
+        {% endfor %}
+      });
+    </script>
+
   </body>
 </html>

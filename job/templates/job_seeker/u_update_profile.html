@@ -1096,31 +1096,31 @@
 <div class="userprofile">
       <header class="navbarframe">
         <div class="frame-parent">
-          <div class="logo-wrapper">
-            <a href="/u_landing_page/"><img class="logo-icon" loading="lazy" alt="" src="/static/images/logo%402x.png"></a>
+          <a href="{% url 'u_update_profile' %}" style="text-decoration: none; color: inherit;"><div class="logo-wrapper">
+            <img class="logo-icon" loading="lazy" alt="" src="/static/images/logo%402x.png">
           </div>
-          <div class="home-button-wrapper">
+          <a href="{% url 'u_landing_page' %}" style="text-decoration: none; color: inherit;"><div class="home-button-wrapper">
             <button class="home-button">
               <img class="material-symbolshome-icon" loading="lazy" alt="" src="/static/images/materialsymbolshome%402x.png">
 
-              <a href="/u_profile/" style="text-decoration: none;"><div class="home-wrapper">
+              <div class="home-wrapper">
                 <div class="home">Home</div>
-              </div></a>
+              </div>
             </button>
-          </div>
-          <div class="frame-button-wrapper">
+          </div></a>
+          <a href="{% url 'job_list' %}" style="text-decoration: none; color: inherit;"><div class="frame-button-wrapper">
             <button class="apllication-button-parent">
               <div class="apllication"></div>
               <img class="mdinotes-icon" loading="lazy" alt="" src="/static/images/mdinotes%402x.png">
 
-              <a href="/job_list/" style="text-decoration: none;"><div class="application-wrapper">
+              <div class="application-wrapper">
                 <div class="application">Jobs</div>
-              </div></a>
+              </div>
             </button>
-          </div>
+          </div></a>
 
 
-          <div class="upload-button-wrapper">
+          <a href="{% url 'job_status' %}" style="text-decoration: none; color: inherit;"><div class="upload-button-wrapper">
             <button class="upload-button">
               <div class="addjob"></div>
               <img class="ggadd-icon" loading="lazy" alt="" src="/static/images/status.jpg">
@@ -1128,7 +1128,7 @@
                 <div class="add-job">Status</div>
               </div>
             </button>
-          </div>
+          </div></a>
         </div>
 
         <div id="google_translate_element"></div>

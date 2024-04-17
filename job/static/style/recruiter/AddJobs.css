@@ -39,7 +39,7 @@
 .rectangle-group {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -15px;
   width: 130px;
   height: 42px;
 }
@@ -66,6 +66,8 @@
   background-color: var(--color-white);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   display: none;
+  left: -34px;
+
 }
 .application-icon{
   position: absolute;
@@ -73,8 +75,8 @@
   height: 24px;
   overflow: hidden;
   z-index: 1;
-  top: 22px;
-  left: 400px;
+  top: 25px;
+  left: 380px;
 }
 
 .applications {
@@ -89,8 +91,8 @@
 .applications-btn-parent,
 .frame-container {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: flex-end; /* Align button to the right */
 }
 .applications-btn-parent {
   border-radius: var(--br-6xl);
@@ -131,8 +133,8 @@
   height: 24px;
   overflow: hidden;
   z-index: 1;
-  top: 22px;
-  left: 550px;
+  top: 25.5px;
+  left: 530px;
 }
 .recruiter-btn {
   cursor: pointer;
@@ -145,7 +147,7 @@
   white-space: nowrap;
   z-index: 1;
   background-color: transparent;
-  width: 30%;
+  width: 90%;
   height: 42px;
 }
 .recruiter-btn:hover,

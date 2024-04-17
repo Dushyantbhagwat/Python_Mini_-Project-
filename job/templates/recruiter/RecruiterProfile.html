@@ -104,15 +104,15 @@
     <div class="desktop-1">
       <header class="navbarframe">
         <div class="frame-parent">
-          <div class="logo-wrapper">
-            <a href="{% url 'r_profile' %}"><img
+          <a href="{% url 'r_profile' %}" style="text-decoration: none; color: inherit;"><div class="logo-wrapper">
+            <img
               class="logo-icon"
               loading="lazy"
               alt=""
               src="{% static 'images/logo@2x.png' %}"
-            /></a>
-          </div>
-          <div class="home-button-wrapper">
+            />
+          </div></a>
+          <a href="{% url 'r_landing_page' %}" style="text-decoration: none; color: inherit;"><div class="home-button-wrapper">
             <button class="home-button">
               <img
                 class="material-symbolshome-icon"
@@ -121,13 +121,13 @@
                 src="{% static 'images/materialsymbolshome@2x.png' %}"
               />
     
-              <a href="{% url 'r_landing_page' %}" style="text-decoration: none;"><div class="home-wrapper">
+              <div class="home-wrapper">
                 <div class="home">Home</div>
-              </div></a>
+              </div>
             </button>
-          </div>
-          <div class="frame-button-wrapper">
-            <a href="{% url 'job_history' %}" style="text-decoration: none;"><button class="apllication-button-parent">
+          </div></a>
+          <a href="{% url 'job_history' %}" style="text-decoration: none; color: inherit;"><div class="frame-button-wrapper">
+            <button class="apllication-button-parent">
               <div class="apllication"></div>
               <img
                 class="mdinotes-icon"
@@ -139,10 +139,10 @@
               <div class="application-wrapper">
                 <div class="application">Application</div>
               </div>
-            </button></a>
-          </div>
-          <div class="upload-button-wrapper">
-            <a href="{% url 'post_jobs'%}" style="text-decoration: none;"><button class="upload-button">
+            </button>
+          </div></a>
+          <a href="{% url 'post_jobs' %}" style="text-decoration: none; color: inherit;"><div class="upload-button-wrapper">
+            <button class="upload-button">
               <div class="addjob"></div>
               <img
                 class="ggadd-icon"
@@ -153,8 +153,8 @@
               <div class="add-job-wrapper">
                 <div class="add-job">Add Job</div>
               </div>
-            </button></a>
-          </div>
+            </button>
+          </div></a>
         </div>
 
         <div id="google_translate_element"></div>

@@ -108,31 +108,28 @@
     <!-- Navbar content -->
     <header class="navbarframe">
       <div class="frame-parent">
-        <div class="logo-wrapper">
-          <a href=""><img
+        <a href="{% url 'job_list' %}" style="text-decoration: none; color: inherit;"><div class="logo-wrapper">
+          <img
             class="logo-icon"
             loading="lazy"
             alt=""
             src="{% static 'images/logo@2x.png' %}"
-          /></a>
-        </div>
-        <div class="home-button-wrapper">
-          <a href="{% url 'u_profile' %}" style="text-decoration: none">
-              <button class="home-button" style="border: 0px solid black;">
-
+          />
+        </div></a>
+        <a href="{% url 'u_landing_page' %}" style="text-decoration: none; color: inherit;"><div class="home-button-wrapper">
+            <button class="home-button" style="border: 0px solid black;">
             <img
               class="material-symbolshome-icon"
               loading="lazy"
               alt=""
               src="{% static 'images/materialsymbolshome@2x.png' %}"
             />
-
             <div class="home-wrapper">
                 <div class="home" style="color: #000; font-weight: bold;">Home</div>
             </div>
-          </button></a>
-        </div>
-        <div class="frame-button-wrapper">
+          </button>
+        </div></a>
+        <a href="{% url 'job_status' %}" style="text-decoration: none; color: inherit;"><div class="frame-button-wrapper">
           <button class="apllication-button-parent">
             <div class="apllication"></div>
             <img
@@ -146,8 +143,8 @@
               <div class="application">Status</div>
             </div>
           </button>
-        </div>
-        <div class="upload-button-wrapper">
+        </div></a>
+        <a href="{% url 'job_list' %}" style="text-decoration: none; color: inherit;"><div class="upload-button-wrapper">
           <a href="" style="text-decoration: none"><button class="upload-button">
             <div class="addjob"></div>
             <img
@@ -160,7 +157,7 @@
               <div class="add-job">Jobs</div>
             </div>
           </button></a>
-        </div>
+        </div></a>
 
         <div id="google_translate_element"></div>
 

@@ -183,6 +183,7 @@
   z-index: 2;
   display: flex;
   align-items: center;
+  top: -10px;
 }
 .profile img {
     width: 28px; /* Adjust the width as needed */
@@ -281,7 +282,7 @@
   z-index: 1;
 }
 .frame-wrapper1 {
-  width: 133px;
+  width: 109px;
   flex-direction: column;
   padding: var(--padding-mid) 0 0;
   box-sizing: border-box;
@@ -1153,3 +1154,41 @@
     gap: 28px;
   }
 }
+
+
+/* Custom styling for the translation box */
+    #google_translate_element {
+        position: absolute;
+        top: 15px;
+        right: 147px;
+
+
+    }
+
+    /* Custom styling for the language dropdown */
+    .goog-te-combo {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    /* Custom styling for the translate button */
+    .goog-te-button {
+        background-color: #4CAF50;
+        color: #fff;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    /* Custom styling for the translated text */
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+
+    .goog-te-menu-value span {
+        color: #4CAF50; /* Change color of the selected language */
+    }

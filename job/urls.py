@@ -23,7 +23,8 @@ urlpatterns = [
     path('apply/', job_list.apply, name='apply'),
     path('filter-jobs/', job_filtering.filter_jobs, name='filter_jobs'),
     path('job_status/', job_list.job_status, name='job_status'),
-
+    path('accepted_jobs', job_list.job_accepted, name='accepted_jobs'),
+    path('rejected_jobs', job_list.job_rejected, name='rejected_jobs'),
 
 
     # path('u_filter_landing/', job_filtering.LandingFilter.as_view(), name='u_filter_landing'),
@@ -43,7 +44,7 @@ urlpatterns = [
     path('accepted_candidate/', candidate_list.accepted, name='accepted_candidate'),
     path('rejected_candidate/', candidate_list.rejected, name='rejected_candidate'),
     path('c_job/', candidate_list.candidate_applied_job, name='c_job'),
-    path('job_history', job_history.jobs_history, name='job_history'),
+    path('job_history/', job_history.jobs_history, name='job_history'),
 
 
     path('admin_landing_page/', a_landing_page.ALandingPage.as_view(), name='admin_landing_page'),

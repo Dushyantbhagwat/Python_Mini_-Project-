@@ -4,14 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="job filter system added">
-      <change afterPath="$PROJECT_DIR$/job/migrations/0016_alter_application_status.py" afterDir="false" />
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="job status completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/style/job_seeker/JobStatus.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/job_seeker/JobStatus.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/style/recruiter/AddJobs.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/recruiter/AddJobs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JList.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JobStatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JobStatus.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/UserProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/UserProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/u_update_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/u_update_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/PostJobs.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/PostJobs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/RecruiterProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/RecruiterProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,14 +163,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708523728017</updated>
-    </task>
-    <task id="LOCAL-00007" summary="project started and home page is added">
-      <option name="closed" value="true" />
-      <created>1708770322897</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1708770322897</updated>
     </task>
     <task id="LOCAL-00008" summary="project started and home page is added">
       <option name="closed" value="true" />
@@ -551,7 +548,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713330635507</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="job status completed">
+      <option name="closed" value="true" />
+      <created>1713341193074</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1713341193076</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -582,6 +587,7 @@
     <MESSAGE value="fixed" />
     <MESSAGE value="apllication preocess completed" />
     <MESSAGE value="job filter system added" />
-    <option name="LAST_COMMIT_MESSAGE" value="job filter system added" />
+    <MESSAGE value="job status completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="job status completed" />
   </component>
 </project>
