@@ -5,26 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="job filter system added">
-      <change afterPath="$PROJECT_DIR$/job/Views/recruiter/job_history.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/static/images/architect@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/static/images/company-logo@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/static/images/home-page@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/static/images/loading@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/static/images/rectangle-5@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/static/images/tactics-image@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/static/style/job_seeker/JobStatus.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/static/style/job_seeker/JobStatusGlobal.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/templates/job_seeker/JobStatus.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/templates/recruiter/JobHistory.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/223346_buImH1G.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/36136_NYlj00O.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/4599467_GiSLB0J.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/533010_ecbNKcd.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/944_JSCw7rB.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/Accen_nov20_Ln9gKJR.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/oracle_nov13_psfbEZ7.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/static/images/address@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/images/address@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/static/images/briefcase@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/images/briefcase@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/static/images/logo@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/images/logo@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/static/images/rupee@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/images/rupee@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/RecruiterProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/RecruiterProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,14 +160,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708523728017</updated>
-    </task>
-    <task id="LOCAL-00005" summary="project started and home page is added">
-      <option name="closed" value="true" />
-      <created>1708699217933</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1708699217933</updated>
     </task>
     <task id="LOCAL-00006" summary="project started and home page is added">
       <option name="closed" value="true" />
@@ -564,7 +545,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713032263829</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="job filter system added">
+      <option name="closed" value="true" />
+      <created>1713327891762</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1713327891765</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
