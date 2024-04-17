@@ -99,29 +99,41 @@
           </div>
         </div>
       </div>
-      <div class="frame-div">
-        <div class="frame-group">
-          <div class="frame-parent1">
-            <div class="rectangle-group">
-              <button class="frame-item">
-              <div class="excel-wrapper" onclick="window.location='{% url 'seeker_list_excel' %}'">
-                <div class="excel">EXCEL</div>
-              </div>
-              </button>
+
+
+
+
+
+
+
+
+
+     <div class="frame-div">
+    <div class="frame-group">
+        <div class="frame-parent1">
+            <div class="dropdown">
+                 <div class="dropdown-content">
+                    <div class="excel-wrapper" onclick="window.location='{% url 'seeker_list_excel' %}'">
+                        <button class="excel">EXCEL</button>
+                    </div>
+                    <div class="csv-wrapper">
+                        <div class="csv-child"></div>
+                        <button class="csv1">CSV</button>
+                    </div>
+                    <div class="pdf-wrapper" onclick="">
+                        <div class="pdf-child"></div>
+                        <button class="pdf1">PDF</button>
+                    </div>
+                </div>
+                <button class="dropbtn" >Download</button>
+
             </div>
-            <div class="csv-wrapper">
-              <button class="csv">
-                <div class="csv-child"></div>
-                <div class="csv1">CSV</div>
-              </button>
-            </div>
-            <div class="pdf-wrapper" onclick="">
-              <button class="pdf">
-                <div class="pdf-child"></div>
-                <div class="pdf1">PDF</div>
-              </button>
-            </div>
-          </div>
+        </div>
+    </div>
+</div>
+
+
+
 
           <input type="search" class="search" name="search" id="searchInput" placeholder="SEARCH....">
           <div class="search-child"></div>
@@ -195,9 +207,92 @@
 
 
 <style>
+
+    .dropbtn{
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background: #f9f9f9;
+    position: relative;
+    z-index: 10;
+    border-radius: 0px;
+       font-size: smaller;
+    right: 10px;
+    width: 121px;
+    height: 45px;
+
+    }
+
+ /* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown button */
+.btn-random {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+     background-color: #f9f9f900;
+    min-width: 320px;
+  overflow: hidden;
+  white-space: nowrap; /* Prevent line breaks */
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content .item-wrapper {
+  display: inline-block; /* Display items horizontally */
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content .item-wrapper:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Position the dropdown menu to extend to the right */
+.dropdown-content {
+     top: -19%;
+    left: 55px;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .btn-random {
+  background-color: #3e8e41;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   .column-names-container,
   .job-seekers-container {
-    margin-bottom: 20px;
+
   }
   .column-names-box {
     display: flex;
