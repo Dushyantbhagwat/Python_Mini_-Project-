@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="job seeker problems resolved">
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="admin design problem resolved">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/static/style/job_seeker/JList.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/job_seeker/JList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/recruiter_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/recruiter_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JList.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JobDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JobDetails.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,6 +169,7 @@
       <workItem from="1713199257547" duration="5111000" />
       <workItem from="1713242386313" duration="3333000" />
       <workItem from="1713275657046" duration="3053000" />
+      <workItem from="1713447475624" duration="1265000" />
     </task>
     <task id="LOCAL-00004" summary="project started and home page is added">
       <option name="closed" value="true" />
