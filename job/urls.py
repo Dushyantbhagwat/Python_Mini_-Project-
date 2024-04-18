@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from job.Views.job_seeker import sign_up, user_profile, user_update_profile, job_list, job_filtering
 from job.Views.admin import seeker_list, recruiter_list, a_landing_page, seeker_list_download, recruiter_details
-from job.Views.recruiter import r_sign_up, r_profile, u_applied_list, recruiter_update_profile, post_jobs, candidate_list
+from job.Views.recruiter import r_sign_up, r_profile, u_applied_list, recruiter_update_profile, post_jobs, candidate_list, job_history
 
 
 urlpatterns = [
@@ -22,7 +22,9 @@ urlpatterns = [
     path('job_details/<int:job_id>/', job_list.job_details, name='job_details'),
     path('apply/', job_list.apply, name='apply'),
     path('filter-jobs/', job_filtering.filter_jobs, name='filter_jobs'),
-
+    path('job_status/', job_list.job_status, name='job_status'),
+    path('accepted_jobs', job_list.job_accepted, name='accepted_jobs'),
+    path('rejected_jobs', job_list.job_rejected, name='rejected_jobs'),
 
 
     # path('u_filter_landing/', job_filtering.LandingFilter.as_view(), name='u_filter_landing'),
@@ -42,6 +44,7 @@ urlpatterns = [
     path('accepted_candidate/', candidate_list.accepted, name='accepted_candidate'),
     path('rejected_candidate/', candidate_list.rejected, name='rejected_candidate'),
     path('c_job/', candidate_list.candidate_applied_job, name='c_job'),
+    path('job_history/', job_history.jobs_history, name='job_history'),
 
 
     path('admin_landing_page/', a_landing_page.ALandingPage.as_view(), name='admin_landing_page'),

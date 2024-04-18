@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curved Box with Navigation Bar</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+    }
+
+    .curved-box {
+        position: absolute;
+        top: 250px; /* Adjust as per your navbar height */
+        left: 90px;
+        width: 300px;
+        height: 289px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+    }
+
+    .job {
+        margin: 9px 0 60px; /* Adjust margin as needed */
+        padding: 0;
+        font-weight: bold;
+    }
+
+    .serial {
+        margin: 0;
+        padding: 0;
+        color: #888;
+    }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    <!-- Your navigation bar content here -->
+    <h1>Navigation Bar</h1>
+</div>
+
+<div class="curved-box">
+    <!-- Content for the curved box goes here -->
+    {% for job in jobs.all %}
+    <div class="job-details">
+        <p class="serial">01</p>
+        <h2 class="job">{{ job.title}}</h2>
+        <p>Total Application: {{ total_applications }}</p>
+        <p>Application pending: {{ total_pending }}</p>
+        <p>Accepted candidate: {{ total_accepted }}</p>
+        <p>Rejected candidate: {{ total_rejected }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+
+</body>
+</html>
