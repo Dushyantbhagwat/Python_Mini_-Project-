@@ -256,21 +256,25 @@
   padding: 0 0 var(--padding-xs);
   color: var(--color-gray-300);
 }
+
+
 .frame-item {
-  font-size: 24px;
-  height: 56px;
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
-  width: 124px;
-  position: absolute;
-  margin: 0 !important;
-  top: 8px;
-  left: -6px;
-  border-radius: var(--br-6xl);
-  background-color: var(--color-gray-400);
-  z-index: 1;
+  visibility: hidden;
+font-size: 24px;
+    height: 42px;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
+    width: 124px;
+    position: absolute;
+    margin: 0 !important;
+    top: 14px;
+    left: 42px;
+    /* border-radius: var(--br-6xl); */
+    background-color: var(--color-gray-400);
+    z-index: 1;
 }
 .excel {
-  bottom: 7px;
+      font-size: smaller;
+    bottom: 12px;
   right: 2px;
   position: relative;
   display: inline-block;
@@ -369,12 +373,16 @@
   z-index: 1;
 }
 .pdf {
+  visibility: hidden;
+      top: 6px;
+    height: 42px;
+    left: 163px;
   cursor: pointer;
 
   padding: var(--padding-xs) var(--padding-19xl);
   background-color: var(--color-gray-400);
   align-self: stretch;
-  border-radius: var(--br-6xl);
+
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
   flex-direction: row;
   z-index: 1;
@@ -418,15 +426,34 @@
   z-index: 1;
 }
 .pdf1 {
-  position: relative;
-  font-size: var(--font-size-5xl);
-  font-family: var(--font-inter);
-  color: var(--color-black);
-  text-align: left;
-  display: inline-block;
-  min-width: 47px;
-  z-index: 1;
+     bottom: 5px;
+    position: relative;
+    font-size: 22px;
+    /* font-family: var(--font-inter); */
+    color: var(--color-black);
+    text-align: left;
+    display: inline-block;
+    /* min-width: 47px; */
+    z-index: 1;
 }
+
+/* Show frame-item when hovering over the "Download" button */
+.dropbtn:hover + .frame-group .frame-item {
+  visibility: visible !important;
+}
+
+/* Show pdf when hovering over the "Download" button */
+.dropbtn:hover + .frame-group .pdf {
+  visibility: visible !important;
+}
+
+
+
+
+
+
+
+
 
 .search-child {
   height: 53px;
@@ -511,6 +538,7 @@
   z-index: 99;
   position: sticky;
   font-size: var(--font-size-5xl);
+  height: 80px;
 }
 .frame-inner {
   height: 68px;

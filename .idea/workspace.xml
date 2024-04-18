@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="job seeker problems resolved">
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="admin application list problems resolved">
+      <change afterPath="$PROJECT_DIR$/job/static/images/chevron_right_FILL0_wght400_GRAD0_opsz24.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/static/style/job_seeker/JList.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/job_seeker/JList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/style/admin/recruiter_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/admin/recruiter_list.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/recruiter_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/recruiter_details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/admin/recruiter_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/recruiter_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JList.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JList.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +22,7 @@
       <list>
         <option value="HTML File" />
         <option value="Python Script" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -71,7 +72,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/acer/PycharmProjects/Python_Mini_-Project-/job/templates/job_seeker/style&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/acer/PycharmProjects/Python_Mini_-Project-/job/static/images&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -85,18 +87,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\static\images" />
       <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker\style" />
       <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker" />
       <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\static\style" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL" />
-      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\static\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\admin" />
       <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker" />
       <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker\style" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\jobsite" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\Views\job_seeker" />
-      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL" />
     </key>
   </component>
   <component name="RunManager" selected="Python.re">
@@ -171,23 +173,14 @@
       <workItem from="1713086351833" duration="4918000" />
       <workItem from="1713199257547" duration="5111000" />
       <workItem from="1713242386313" duration="3333000" />
-      <workItem from="1713275657046" duration="3053000" />
-    </task>
-    <task id="LOCAL-00004" summary="project started and home page is added">
-      <option name="closed" value="true" />
-      <created>1708694245067</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1708694245067</updated>
-    </task>
-    <task id="LOCAL-00005" summary="project started and home page is added">
-      <option name="closed" value="true" />
-      <created>1708699217933</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1708699217933</updated>
+      <workItem from="1713275657046" duration="3252000" />
+      <workItem from="1713282791620" duration="3497000" />
+      <workItem from="1713331122544" duration="6555000" />
+      <workItem from="1713355835657" duration="2857000" />
+      <workItem from="1713369760232" duration="1883000" />
+      <workItem from="1713371657986" duration="5507000" />
+      <workItem from="1713418717676" duration="4206000" />
+      <workItem from="1713424228667" duration="1992000" />
     </task>
     <task id="LOCAL-00006" summary="project started and home page is added">
       <option name="closed" value="true" />
@@ -565,7 +558,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713243130066</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="job seeker problems resolved">
+      <option name="closed" value="true" />
+      <created>1713280611536</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1713280611538</updated>
+    </task>
+    <task id="LOCAL-00054" summary="admin application list problems resolved">
+      <option name="closed" value="true" />
+      <created>1713369859708</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1713369859709</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,6 +610,7 @@
     <MESSAGE value="job filter system added" />
     <MESSAGE value="login page dropdown resolved" />
     <MESSAGE value="job seeker problems resolved" />
-    <option name="LAST_COMMIT_MESSAGE" value="job seeker problems resolved" />
+    <MESSAGE value="admin application list problems resolved" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin application list problems resolved" />
   </component>
 </project>
