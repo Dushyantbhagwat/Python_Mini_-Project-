@@ -243,7 +243,7 @@
                     <div class="recruiters-list">
 
                      
-                      <a href="{% url 'r_profile' %}" style="text-decoration: none;"><button  class="recruiters-list-child">
+                      <a href="{% url 'r_landing_page' %}" style="text-decoration: none;"><button  class="recruiters-list-child">
                         <div class="home">Home</div>
                         
                       </button></a>
@@ -251,7 +251,7 @@
                     </div>
                   </div>
                   <div class="frame-container">
-                    <a href="{% url 'c_list' %}" style="text-decoration: none;"><button class="applications-btn-parent">
+                    <a href="{% url 'candidate_list' job_id %}" style="text-decoration: none;"><button class="applications-btn-parent">
                       <div class="applications-btn"></div>
                       <div class="applications">Applications</div>
                     </button></a>
@@ -280,20 +280,20 @@
        <div class="frame-group">
           <div class="frame-parent1">
             <div class="rectangle-group">
-              <a href="{% url 'c_list' %}" style="text-decoration: none;" ><button class="frame-item">
+              <a href="{% url 'pending_candidate_list' job_id %}" style="text-decoration: none;" ><button class="frame-item">
               <div class="excel-wrapper">
                 <div class="excel">Pending</div>
               </div>
               </button></a>
             </div>
             <div class="csv-wrapper">
-              <a href="{% url 'accepted_candidate' %}" style="text-decoration: none;" ><button class="csv">
+              <a href="{% url 'accepted_candidate_list' job_id %}" style="text-decoration: none;" ><button class="csv">
                 <div class="csv-child"></div>
                 <div class="csv1">Accepted</div>
               </button></a>
             </div>
             <div class="pdf-wrapper">
-              <a href="{% url 'rejected_candidate' %}" style="text-decoration: none;" ><button class="pdf">
+              <a href="{% url 'rejected_candidate_list' job_id %}" style="text-decoration: none;" ><button class="pdf">
                 <div class="pdf-child"></div>
                 <div class="pdf1">Rejected</div>
               </button></a>
@@ -316,68 +316,6 @@
           </div>
         </div>
       </div>
-<!--      <div class="rectangle-container">-->
-<!--        <div class="frame-inner"></div>-->
-<!--        <div class="srno-wrapper">-->
-<!--          <div class="srno">SR.No</div>-->
-<!--        </div>-->
-<!--        <div class="name-wrapper">-->
-<!--          <div class="name">Name</div>-->
-<!--        </div>-->
-<!--        <div class="contact-wrapper">-->
-<!--          <div class="contact">Contact</div>-->
-<!--        </div>-->
-<!--        <div class="email-id-wrapper">-->
-<!--          <div class="email-id">Email ID</div>-->
-<!--        </div>-->
-<!--        <div class="gender-wrapper">-->
-<!--          <div class="gender">Resume</div>-->
-<!--        </div>-->
-<!--        <div class="image-parent">-->
-<!--          <div class="image">Image</div>-->
-<!--          <div class="action-wrapper">-->
-<!--            <div class="action">Action</div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <main class="frame-main">-->
-<!--        <div class="rectangle-div"></div>-->
-<!--        <section class="frame-section">-->
-<!--          <div class="rectangle-parent1">-->
-<!--            <div class="frame-child1"></div>-->
-<!--            <div class="frame-wrapper1">-->
-<!--              <div class="parent">-->
-<!--                <div class="div">1</div>-->
-<!--                <div class="dushyant-bhagwat-wrapper">-->
-<!--                  <div class="dushyant-bhagwat">Dushyant Bhagwat</div>-->
-<!--                </div>-->
-<!--                <div class="wrapper">-->
-<!--                  <div class="div1">7400126595</div>-->
-<!--                </div>-->
-<!--                <div class="dushyantdbhagwatgmailcom">-->
-<!--                  dushyantdbhagwat@gmail.com-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="male-wrapper">-->
-<!--              <a href="" class="male">resume</a>-->
-<!--            </div>-->
-<!--            <div class="vector-parent">-->
-<!--              <img-->
-<!--              id="image"-->
-<!--                class="ellipse-icon"-->
-<!--                loading="lazy"-->
-<!--                alt=""-->
-<!--                src="{% static 'images/profile pic.jpg' %}"-->
-<!--              />-->
-
-<!--              <div class="delete-wrapper">-->
-<!--                <button onclick="accept()" class="delete">Accept</button>-->
-<!--                <button onclick="reject()" class="rej">Reject</button>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </section>-->
 
             <div class="column-names-container">
               <div class="column-names-box">
@@ -400,7 +338,8 @@
             <div>{{ app.user.mobile_no }}</div>
             <div>{{ app.user.email_id }}</div>
             <div>{{ app.user.gender }}</div>
-            <div>{{ app.user.resume }}</div>
+            <div><a href="{{ app.user.resume.url }}" download>Resume</a></div>
+            </a>
             <div>
               {% if app.user.image %}
               <img class="ellipse-icon" loading="lazy" alt="" src="{{ app.user.image.url }}" />
@@ -409,18 +348,18 @@
               {% endif %}
             </div>
             <div>
-              {% if app.status == 'request pending' %}
+              {% if app.status == 'Pending' %}
                <div>
-                    <a href="{% url 'c_job' %}" onclick="newpage({{ app.jobs.id }})" class="next">Job Applied</a><br>
-                    <a href="{% url 'action' %}"  onclick="accept({{ app.id }})" class="acc">Accept</a>
-                    <a href="{% url 'action' %}" onclick="reject({{ app.id }})" class="rej">Reject</a>
+                    <a href="{% url 'applications' app.id %}"  class="next">Job Details</a><br>
+                    <a href=""  onclick="accept({{ app.id }})" class="acc">Accept</a>
+                    <a href="" onclick="reject({{ app.id }})" class="rej">Reject</a>
                </div>
-              {% elif app.status == 'accepted' %}
+              {% elif app.status == 'Accepted' %}
                <div>
                       <p class="acc">Accepted</p>
                </div>
 
-              {% else %}
+              {% elif app.status == 'Rejected' %}
                <div>
                       <p class="rej">Rejected</p>
                </div>
@@ -436,16 +375,6 @@
 
     <script>
 
-        function newpage(applicationId) {
-            // Your JavaScript logic here, for example:
-            // Redirecting to a new page with the application ID
-            window.location.href = '{% url 'c_job' %}' + applicationId;
-        }
-
-
-
-
-
         function accept(id) {
             if (confirm('Are you sure you want to accept this candidate?')) {
                 // If user confirms, proceed with acceptance
@@ -454,7 +383,7 @@
                     url: '{% url "action" %}',
                     data: {
                         'id': id,
-                        'status': 'accepted',
+                        'status': 'Accepted',
                         'csrfmiddlewaretoken': '{{ csrf_token }}'
                     },
                     success: function () {
@@ -470,31 +399,36 @@
         }
 
         function reject(id) {
-            if (confirm('Are you sure you want to reject this candidate?')) {
-                // If user confirms, proceed with rejection
-                $.ajax({
-                    type: 'POST',
-                    url: '{% url "action" %}',
-                    data: {
-                        'id': id,
-                        'status': 'rejected',
-                        'csrfmiddlewaretoken': '{{ csrf_token }}'
-                    },
-                    success: function () {
-                        // Update UI or perform any additional actions after rejecting
-                        alert('Candidate Rejected Successfully');
-                    },
-                    error: function () {
-                        // Handle errors if any
-                        alert('Error occurred while rejecting the candidate');
-                    }
-                });
-            } else {
-                // If user cancels, redirect to some page
-                window.location.href = '{% url "action" %}';
-            }
-        }
+              if (confirm('Are you sure you want to reject this candidate?')) {
+                  // If user confirms, proceed with rejection
+                  $.ajax({
+                      type: 'POST',
+                      url: '{% url "action" %}',
+                      data: {
+                          'id': id,
+                          'status': 'Rejected',
+                          'csrfmiddlewaretoken': '{{ csrf_token }}'
+                      },
+                      success: function () {
+                          // Update UI or perform any additional actions after rejecting
+                          alert('Candidate Rejected Successfully');
+                      },
+                      error: function () {
+                          // Handle errors if any
+                          alert('Error occurred while rejecting the candidate');
+                      }
+                  });
+              } else {
+                  // If user cancels, redirect to some page
+                  window.location.href = '{% url "action" %}';
+              }
+          }
+
     </script>
+
+
+
+
 
 
 

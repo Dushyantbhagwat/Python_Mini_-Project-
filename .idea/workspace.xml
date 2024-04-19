@@ -4,10 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="admin design problem resolved">
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="job seeker problems resolved">
+      <change afterPath="$PROJECT_DIR$/job/Views/recruiter/applications_details.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/ad.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/menu@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/post.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/sort-down@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/images/test-account@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/recruiter/JobHistory.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/static/style/recruiter/JobHistoryGlobal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/user/5_7lKXXvN.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/user_resume/65_EXP06.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JobDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JobDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/admin/seeker_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/admin/seeker_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/recruiter/candidate_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/recruiter/candidate_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/recruiter/job_history.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/recruiter/job_history.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/images/company-logo@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/images/company-logo@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/images/home-page@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/images/home-page@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/images/logo@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/images/logo@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/images/rectangle-5@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/images/rectangle-5@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/images/tactics-image@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/images/tactics-image@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/u_update_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/u_update_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/Application.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/Application.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/ApplicationList.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/ApplicationList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/JobHistory.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/JobHistory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/u1.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/u1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,14 +60,12 @@
     &quot;assignee&quot;: &quot;NiranjanKumarYadav36&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="5a4264b0-9b05-44dd-abe0-96ec6af1fa69" />
-        <option name="url" value="https://github.com/NiranjanKumarYadav36/Python_Mini_-Project-.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NiranjanKumarYadav36/Python_Mini_-Project-.git&quot;,
+    &quot;accountId&quot;: &quot;5a4264b0-9b05-44dd-abe0-96ec6af1fa69&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -68,7 +90,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/acer/PycharmProjects/Python_Mini_-Project-/job/templates/job_seeker/style&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/static/images&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -82,11 +104,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\static\images" />
       <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker\style" />
       <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker" />
       <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\static\style" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL" />
-      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\static\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker" />
@@ -153,7 +175,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-09665e90c3a7-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.15026.15" />
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
       </set>
     </attachedChunks>
   </component>
@@ -169,7 +191,6 @@
       <workItem from="1713199257547" duration="5111000" />
       <workItem from="1713242386313" duration="3333000" />
       <workItem from="1713275657046" duration="3053000" />
-      <workItem from="1713447475624" duration="1265000" />
     </task>
     <task id="LOCAL-00004" summary="project started and home page is added">
       <option name="closed" value="true" />

@@ -9,11 +9,11 @@ from django.core.paginator import Paginator
 
 def registered_seeker_list(request):
     job_seekers = JobSeeker.objects.all()
-    paginator = Paginator(job_seekers, 5)
+    # paginator = Paginator(job_seekers, 5)
 
-    page_number = request.GET.get('page')
-    page_object = paginator.get_page(page_number)
-    return render(request, 'admin/job_seeker_list.html', {'job_seekers': job_seekers, 'page_object': page_object})
+    # page_number = request.GET.get('page')
+    # page_object = paginator.get_page(page_number)
+    return render(request, 'admin/job_seeker_list.html', {'job_seekers': job_seekers})
 
 
 def delete_job_seeker(request, user_id):

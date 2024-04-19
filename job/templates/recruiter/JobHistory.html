@@ -1,68 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curved Box with Navigation Bar</title>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-    }
+<html>
+  <head>
+      {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    .navbar {
-        background-color: #333;
-        color: #fff;
-        padding: 10px 20px;
-    }
+    <link rel="stylesheet" href="{% static 'style/recruiter/JobHistory.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/recruiter/JobHistoryGlobal.css' %}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    />
+  </head>
+  <body>
+    <div class="desktop-1">
+      <header class="nav-bar-parent">
+        <div class="nav-bar"></div>
+        <div class="logo-parent">
+          <img
+            class="logo-icon"
+            loading="lazy"
+            alt=""
+            src="{% static 'images/logo@2x.png' %}"
+          />
 
-    .curved-box {
-        position: absolute;
-        top: 250px; /* Adjust as per your navbar height */
-        left: 90px;
-        width: 300px;
-        height: 289px;
-        background-color: #f0f0f0;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        padding: 10px;
-    }
+          <div class="frame-wrapper">
+            <div class="frame-parent">
+               <a href="{% url 'r_landing_page' %}" style="text-decoration: none; color: inherit;"><div class="home-box-parent">
+                <div class="home-box"></div>
+                <img
+                  class="home-page-icon"
+                  loading="lazy"
+                  alt=""
+                  src="{% static 'images/home-page@2x.png' %}"
+                />
 
-    .job {
-        margin: 9px 0 60px; /* Adjust margin as needed */
-        padding: 0;
-        font-weight: bold;
-    }
+                <div class="home-wrapper">
+                  <div class="home">Home</div>
+                </div>
+               </div></a>
+               <div class="frame-group">
+                 <a href="{% url 'job_history' %}" style="text-decoration: none; color: inherit;"><div class="job-status-box-parent">
+                  <div class="job-status-box"></div>
 
-    .serial {
-        margin: 0;
-        padding: 0;
-        color: #888;
-    }
-</style>
-</head>
-<body>
+                  <div class="applications">Applications</div>
+                </div></a>
+                 <a href="{% url 'post_jobs' %}" style="text-decoration: none; color: inherit;"><div class="job-status-box-group">
+                  <div class="job-status-box1"></div>
+                  <div class="add-jobs">Add Jobs</div>
+                 </div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-container">
+          <div class="profile-parent">
+            <div class="profile"></div>
+            <div class="menu-wrapper">
+              <img
+                class="menu-icon"
+                loading="lazy"
+                alt=""
+                src="{% static 'images/menu@2x.png' %}"
+              />
+            </div>
+            <img
+              class="test-account-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'images/test-account@2x.png' %}"
+            />
+          </div>
+        </div>
+      </header>
+      <main class="rectangle-parent">
+         <div class="frame-child"></div>
+          {% for job in jobs %}
+        <a href="{% url 'candidate_list' job.id %}" style="text-decoration: none; color: inherit;" >
+          <section class="a-c-t-i-v-e-t-e-x-t">
+          <div class="a-c-t-i-v-e-t-e-x-t-inner">
+           <button class="rectangle-group">
+              <div class="frame-item"></div>
+              <div class="active">Active</div>
+              <div class="sort-down-wrapper">
 
-<div class="navbar">
-    <!-- Your navigation bar content here -->
-    <h1>Navigation Bar</h1>
-</div>
+              </div>
+            </button>
 
-<div class="curved-box">
-    <!-- Content for the curved box goes here -->
-    {% for job in jobs.all %}
-    <div class="job-details">
-        <p class="serial">01</p>
-        <h2 class="job">{{ job.title}}</h2>
-        <p>Total Application: {{ total_applications }}</p>
-        <p>Application pending: {{ total_pending }}</p>
-        <p>Accepted candidate: {{ total_accepted }}</p>
-        <p>Rejected candidate: {{ total_rejected }}</p>
+          </div>
+          <div class="rectangle-container">
+            <div class="frame-inner"></div>
+            <div class="frame-div">
+              <div class="frame-wrapper1">
+                <div class="machine-operator-parent">
+                  <div class="machine-operator">{{ job.id }}</div>
+                  <div class="nexsus-techno-solutions-wrapper">
+                    <div class="nexsus-techno-solutions"  style="white-space: nowrap;">
+                      {{ job.recruiter.company_name }}
+                    </div>
+                  </div>
+                  <div class="published-on-412024-wrapper"  style="white-space: nowrap;">
+                    <div class="published-on">Published on : {{ job.deadline }}</div>
+                  </div>
+                </div>
+              </div>
+              <img
+                class="rectangle-icon"
+                loading="lazy"
+                alt=""
+                src="{{ job.recruiter.image.url }}"
+              />
+            </div>
+            <div class="frame-wrapper2">
+              <div class="a-c-t-i-v-e-t-e-x-t-a-p-p-l-i-parent">
+                <div class="a-c-t-i-v-e-t-e-x-t-a-p-p-l-i">
+                  <div class="applications20">Applications:{{ total_applications }}</div>
+                  <div class="accepted5-wrapper">
+                    <div class="accepted5">Accepted: {{ total_accepted }}</div>
+                  </div>
+                  <div class="rejected5-wrapper">
+                    <div class="rejected5">Rejected: {{ total_rejected }}</div>
+                  </div>
+                  <div class="pending10">Pending: {{ total_pending }}</div>
+                </div>
+                {% if  job.deadline >= today %}
+                    <div class="active-wrapper">
+                        <div class="active1" style="color: blue;">ACTIVE</div>
+                    </div>
+                {% elif job.deadline < today %}
+                    <div class="active-wrapper">
+                        <div class="active1" style="">INACTIVE</div>
+                    </div>
+                {% endif %}
+            </div>
+            </div>
+          </div>
+        </section>
+         </a>
+          {% endfor %}
+<!--        <section class="frame-parent2">-->
+<!--          <div class="technician-box-parent">-->
+<!--            <div class="technician-box"></div>-->
+<!--            <div class="frame-wrapper4">-->
+<!--              <div class="frame-parent3">-->
+<!--                <div class="frame-parent4">-->
+<!--                  <div class="technician-parent">-->
+<!--                    <div class="technician">Technician</div>-->
+<!--                    <div class="tactics-management-wrapper">-->
+<!--                      <div class="tactics-management">Tactics Management</div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <div class="frame-wrapper5">-->
+<!--                    <div class="applications-parent">-->
+<!--                      <div class="applications1">Applications:</div>-->
+<!--                      <div class="accepted">Accepted:</div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div class="rejected-wrapper">-->
+<!--                  <div class="rejected">Rejected:</div>-->
+<!--                </div>-->
+<!--                <div class="pending-wrapper">-->
+<!--                  <div class="pending">Pending:</div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="tacticsimage-parent">-->
+<!--              <div class="tacticsimage">-->
+<!--                <img-->
+<!--                  class="tactics-image-icon"-->
+<!--                  loading="lazy"-->
+<!--                  alt=""-->
+<!--                  src="{% static 'images/tactics-image@2x.png' %}"-->
+<!--                />-->
+<!--              </div>-->
+<!--              <div class="inactive">INACTIVE</div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="previousnextbuttons-wrapper">-->
+<!--            <div class="previousnextbuttons">-->
+<!--              <button class="frame-button">-->
+<!--                <div class="frame-child1"></div>-->
+<!--                <div class="previous">Previous</div>-->
+<!--              </button>-->
+<!--              <button class="rectangle-parent1">-->
+<!--                <div class="frame-child2"></div>-->
+<!--                <div class="next">Next</div>-->
+<!--              </button>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </section>-->
+      </main>
     </div>
-    {% endfor %}
-</div>
 
-
-</body>
+  </body>
 </html>

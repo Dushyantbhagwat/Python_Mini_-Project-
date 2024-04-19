@@ -15,3 +15,66 @@ User
 
 </body>
 </html>
+
+
+<script>
+
+        function newpage(applicationId) {
+            // Your JavaScript logic here, for example:
+            // Redirecting to a new page with the application ID
+            window.location.href = '{% url 'c_list' job_id %}' + applicationId;
+        }
+
+
+
+
+
+        function accept(id) {
+            if (confirm('Are you sure you want to accept this candidate?')) {
+                // If user confirms, proceed with acceptance
+                $.ajax({
+                    type: 'POST',
+                    url: '{% url "action" %}',
+                    data: {
+                        'id': id,
+                        'status': 'accepted',
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    },
+                    success: function () {
+                        // Update UI or perform any additional actions after accepting
+                        alert('Candidate Accepted Successfully');
+                    },
+                    error: function () {
+                        // Handle errors if any
+                        alert('Error occurred while accepting the candidate');
+                    }
+                });
+            }
+        }
+
+        function reject(id) {
+            if (confirm('Are you sure you want to reject this candidate?')) {
+                // If user confirms, proceed with rejection
+                $.ajax({
+                    type: 'POST',
+                    url: '{% url "action" %}',
+                    data: {
+                        'id': id,
+                        'status': 'rejected',
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    },
+                    success: function () {
+                        // Update UI or perform any additional actions after rejecting
+                        alert('Candidate Rejected Successfully');
+                    },
+                    error: function () {
+                        // Handle errors if any
+                        alert('Error occurred while rejecting the candidate');
+                    }
+                });
+            } else {
+                // If user cancels, redirect to some page
+                window.location.href = '{% url "action" %}';
+            }
+        }
+    </script>

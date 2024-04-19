@@ -73,56 +73,36 @@
 <body>
 
 <div class="profile-container">
-    <h2>Recruiter Profile</h2>
+    <h2> Job Details</h2>
     <div class="profile-details">
-        <label for="name">Name:</label>
-        <p>{{ app.job.title }}</p>
-        <label for="email">Email:</label>
-        <p>{{ recruiter.email_id }}</p>
-        <label for="contact">Contact:</label>
-        <p>{{ recruiter.mobile }}</p>
-        <label for="company">Company Name:</label>
-        <p>{{ recruiter.company_name }}</p>
-        <label for="company-details">Company Details:</label>
-        <p>{{ recruiter.company_details }}</p>
-        <label for="logo">Logo:</label>
-        <p><img src="{{ recruiter.image.url }}" onclick="displayImageModal('{{ recruiter.image.url }}')" alt="Company Logo" style="max-width: 100px;"></p>
-        <label for="website">Website:</label>
-        <p><a href="https://www.example.com">{{ recruiter.website }}</a></p>
-        <label for="past-activity">Past Activity:</label>
-        <p>{{ recruiter.past_activity }}</p>
-        <label for="skills">Skills:</label>
-        <p>{{ recruiter.skills }}</p>
+        <label >Job Title</label>
+        <p>{{ job.title }}</p>
+
+        <label >Job Description</label>
+        <p>{{ job.description }}</p>
+
+        <label >Job Type</label>
+        <p>{{ job.job_type }}</p>
+
+        <label >Required Experience</label>
+        <p>{{ job.experience }}</p>
+
+        <label >Skills</label>
+        <p>{{ job.skills }}</p>
+
+        <label >Salary</label>
+        <p>{{ job.minimum_salary }}</p>
+
+        <label >Start Date</label>
+        <p>{{ job.start_date }}</p>
+
+        <label >End Date</label>
+        <p>{{ job.deadline }}</p>
+
+        <label>City</label>
+        <p>{{ job.location }}</p>
+
     </div>
-
-
-
-    <script>
-        function rejectConfirmation() {
-            return confirm("Are you sure you want to reject this recruiter?");
-        }
-
-        function acceptConfirmation() {
-            return confirm("Are you sure you want to accept this recruiter?");
-        }
-    </script>
-
-    <script>
-        // Function to display the image modal
-        function displayImageModal(imageUrl) {
-            var modal = document.getElementById('imageModal');
-            var modalImg = document.getElementById("modalImage");
-            modal.style.display = "block";
-            modalImg.src = imageUrl;
-        }
-
-        // Function to close the modal
-        function closeModal() {
-            var modal = document.getElementById('imageModal');
-            modal.style.display = "none";
-        }
-    </script>
-
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
