@@ -7,8 +7,9 @@
     <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="now recruiter can see the all the jobs he has posted.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JobDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JobDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/style/landing_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/landing_page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/AdminLandingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/AdminLandingPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/u_landing_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/u_landing_page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
