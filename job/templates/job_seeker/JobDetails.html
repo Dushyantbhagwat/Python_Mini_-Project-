@@ -1177,9 +1177,6 @@
         <p>{{ jobs.description }}</p>
 
         <label >City:</label>
-        <p>{{ jobs.city }}</p>
-
-        <label >Address:</label>
         <p>{{ jobs.location }}</p>
 
         <label >Start Date:</label>
@@ -1199,8 +1196,10 @@
 
         <label >Skills Required:</label>
         <p>{{ jobs.skills }}</p>
+
         <label>Company Website</label>
-        <p><a href="https://www.example.com">{{ jobs.recruiter.website }}</a></p>
+        <p><a href="{{ jobs.recruiter.website.url }}">{{ jobs.recruiter.company_name }}</a></p>
+
     </div>
 
 
