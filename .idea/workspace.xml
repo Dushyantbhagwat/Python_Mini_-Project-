@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="now recruiter can see the all the jobs he has posted.">
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="some restricton features added">
+      <change afterPath="$PROJECT_DIR$/job/migrations/0017_application_reason.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JobDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JobDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/admin/seeker_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/admin/seeker_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/recruiter/candidate_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/recruiter/candidate_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/style/recruiter/ApplicationList.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/recruiter/ApplicationList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/recruiter_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/recruiter_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/ApplicationList.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/ApplicationList.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,14 +173,6 @@
       <workItem from="1713199257547" duration="5111000" />
       <workItem from="1713242386313" duration="3333000" />
       <workItem from="1713275657046" duration="3053000" />
-    </task>
-    <task id="LOCAL-00005" summary="project started and home page is added">
-      <option name="closed" value="true" />
-      <created>1708699217933</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1708699217933</updated>
     </task>
     <task id="LOCAL-00006" summary="project started and home page is added">
       <option name="closed" value="true" />
@@ -561,7 +558,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713509722972</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="some restricton features added">
+      <option name="closed" value="true" />
+      <created>1713525326176</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1713525326178</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,6 +603,7 @@
     <MESSAGE value="login page dropdown resolved" />
     <MESSAGE value="job seeker problems resolved" />
     <MESSAGE value="now recruiter can see the all the jobs he has posted." />
-    <option name="LAST_COMMIT_MESSAGE" value="now recruiter can see the all the jobs he has posted." />
+    <MESSAGE value="some restricton features added" />
+    <option name="LAST_COMMIT_MESSAGE" value="some restricton features added" />
   </component>
 </project>

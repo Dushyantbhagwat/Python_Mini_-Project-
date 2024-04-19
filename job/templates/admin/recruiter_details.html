@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -1473,8 +1474,7 @@ background: transparent;
                 class="frame-child"
                 loading="lazy"
                 alt=""
-fix image
-                src="image not working"
+                src="{% static 'images/logo@2x.png' %}"
               />
 
               <div class="frame-wrapper">

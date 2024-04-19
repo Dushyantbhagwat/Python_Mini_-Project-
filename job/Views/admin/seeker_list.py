@@ -5,6 +5,7 @@ from job.models import JobSeeker
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator
+from django.core.mail import send_mail, EmailMessage
 
 
 def registered_seeker_list(request):
@@ -28,5 +29,6 @@ def delete_job_seeker(request, user_id):
     job_seeker.delete()
 
     return render(request, 'admin/job_seeker_list.html')
+
 
 

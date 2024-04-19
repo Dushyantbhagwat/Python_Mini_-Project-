@@ -1281,6 +1281,7 @@
         position: relative; /* Required for positioning */
         top: 10px; /* Adjust this value to move it up */
         left: -45px; /* Adjust this value to move it left */
+        cursor: pointer;
     }
 
     .rej {
@@ -1289,7 +1290,10 @@
         position: relative; /* Required for positioning */
         top: 10px; /* Adjust this value to move it up */
         left: -45px; /* Adjust this value to move it left */
+        cursor: pointer;
     }
+
+
 
     /* Optional: Hover styles */
     .acc:hover {
