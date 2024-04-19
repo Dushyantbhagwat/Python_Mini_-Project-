@@ -10,12 +10,14 @@ def action(request):
         # Handle AJAX request for accepting or rejecting a candidate
         app_id = request.POST.get('id')
         status = request.POST.get('status')
-        print(app_id, status)
+        reason = request.POST.get('reason')
+        print(app_id, status, reason)
 
         # Update status in the Application model
         try:
             application = Application.objects.get(id=app_id)
             application.status = status
+            application.reason = reason
             application.save()
             return JsonResponse({'success': True})
         except Application.DoesNotExist:

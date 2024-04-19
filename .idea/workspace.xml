@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="user job list prblm resolved">
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="now recruiter can see the all the jobs he has posted.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/static/style/landing_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/landing_page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/landing_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/landing_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JobDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JobDetails.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,14 +37,12 @@
     &quot;assignee&quot;: &quot;NiranjanKumarYadav36&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="5a4264b0-9b05-44dd-abe0-96ec6af1fa69" />
-        <option name="url" value="https://github.com/NiranjanKumarYadav36/Python_Mini_-Project-.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NiranjanKumarYadav36/Python_Mini_-Project-.git&quot;,
+    &quot;accountId&quot;: &quot;5a4264b0-9b05-44dd-abe0-96ec6af1fa69&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -69,7 +67,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/acer/PycharmProjects/Python_Mini_-Project-/job/templates/job_seeker/style&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/static/images&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -83,11 +81,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\static\images" />
       <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker\style" />
       <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker" />
       <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\static\style" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL" />
-      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\static\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker" />
@@ -154,7 +152,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-09665e90c3a7-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.15026.15" />
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
       </set>
     </attachedChunks>
   </component>
@@ -170,16 +168,6 @@
       <workItem from="1713199257547" duration="5111000" />
       <workItem from="1713242386313" duration="3333000" />
       <workItem from="1713275657046" duration="3053000" />
-      <workItem from="1713447475624" duration="1265000" />
-      <workItem from="1713547280193" duration="1051000" />
-    </task>
-    <task id="LOCAL-00004" summary="project started and home page is added">
-      <option name="closed" value="true" />
-      <created>1708694245067</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1708694245067</updated>
     </task>
     <task id="LOCAL-00005" summary="project started and home page is added">
       <option name="closed" value="true" />
@@ -565,7 +553,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713243130066</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="now recruiter can see the all the jobs he has posted.">
+      <option name="closed" value="true" />
+      <created>1713509722972</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1713509722972</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,6 +597,7 @@
     <MESSAGE value="job filter system added" />
     <MESSAGE value="login page dropdown resolved" />
     <MESSAGE value="job seeker problems resolved" />
-    <option name="LAST_COMMIT_MESSAGE" value="job seeker problems resolved" />
+    <MESSAGE value="now recruiter can see the all the jobs he has posted." />
+    <option name="LAST_COMMIT_MESSAGE" value="now recruiter can see the all the jobs he has posted." />
   </component>
 </project>
