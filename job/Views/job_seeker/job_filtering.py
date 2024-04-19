@@ -34,6 +34,7 @@ def filter_jobs(request):
             skill_options = Job.objects.order_by('skills').values_list('skills', flat=True).distinct()
             title_options = Job.objects.order_by('title').values_list('title', flat=True).distinct()
             print(options, skill_options, title_options)
+            print(experience_filter)
             context = {'jobs': jobs, 'options': options, 'skill_options': skill_options, 'title_options': title_options}
             return render(request, 'job_seeker/JList.html', context=context)
 
@@ -49,7 +50,7 @@ def filter_jobs(request):
             if salary_filter:
                 min_salary, max_salary = map(int, salary_filter.split('-'))
                 print(min_salary, max_salary)
-                filter_conditions.append(Q(minimum_salary__lte=max_salary, maximum_salary__gte=min_salary))
+                filter_conditions.append(Q(minimum_salary__lte=max_salary))
 
             if city_filter:
                 filter_conditions.append(('location', city_filter))

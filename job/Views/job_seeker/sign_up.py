@@ -186,8 +186,8 @@ def u_landing_page(request):
         return redirect('login')
 
 
-def u_filter_landing(request):
-    options = Job.objects.order_by('city').values_list('city', flat=True).distinct()
+def u_landing_filter(request):
+    options = Job.objects.order_by('location').values_list('location', flat=True).distinct()
     print(options)
     return render(request, 'job_seeker/u_landing_page.html', {'options': options})
 

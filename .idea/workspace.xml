@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="some restricton features added">
-      <change afterPath="$PROJECT_DIR$/job/migrations/0017_application_reason.py" afterDir="false" />
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="recruiter accepting or rejecting by providing reason for it">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/Views/admin/seeker_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/admin/seeker_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/Views/recruiter/candidate_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/recruiter/candidate_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/static/style/recruiter/ApplicationList.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/recruiter/ApplicationList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/recruiter_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/recruiter_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/ApplicationList.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/ApplicationList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/job_filtering.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/job_filtering.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/sign_up.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/sign_up.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JList.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,14 +170,6 @@
       <workItem from="1713199257547" duration="5111000" />
       <workItem from="1713242386313" duration="3333000" />
       <workItem from="1713275657046" duration="3053000" />
-    </task>
-    <task id="LOCAL-00006" summary="project started and home page is added">
-      <option name="closed" value="true" />
-      <created>1708754780143</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1708754780143</updated>
     </task>
     <task id="LOCAL-00007" summary="project started and home page is added">
       <option name="closed" value="true" />
@@ -566,7 +555,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713525326178</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="recruiter accepting or rejecting by providing reason for it">
+      <option name="closed" value="true" />
+      <created>1713534381725</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1713534381725</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,6 +601,7 @@
     <MESSAGE value="job seeker problems resolved" />
     <MESSAGE value="now recruiter can see the all the jobs he has posted." />
     <MESSAGE value="some restricton features added" />
-    <option name="LAST_COMMIT_MESSAGE" value="some restricton features added" />
+    <MESSAGE value="recruiter accepting or rejecting by providing reason for it" />
+    <option name="LAST_COMMIT_MESSAGE" value="recruiter accepting or rejecting by providing reason for it" />
   </component>
 </project>

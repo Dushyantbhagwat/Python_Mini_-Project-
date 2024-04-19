@@ -26,6 +26,7 @@ urlpatterns = [
     path('job_status/', job_list.job_status, name='job_status'),
     path('accepted_jobs', job_list.job_accepted, name='accepted_jobs'),
     path('rejected_jobs', job_list.job_rejected, name='rejected_jobs'),
+    path('basic_filtering/', sign_up.u_landing_filter, name='basic_filtering'),
 
 
     # path('u_filter_landing/', job_filtering.LandingFilter.as_view(), name='u_filter_landing'),
