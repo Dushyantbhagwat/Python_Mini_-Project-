@@ -16,6 +16,91 @@
 
 
     <style>
+
+
+.carousel {
+ top: 360px;
+    background-color: transparent;
+    position: relative;
+    width: 100%;
+    height: 365px;
+    overflow: hidden;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+
+.card {
+  top: 30px;
+  background-color: rgba(255, 255, 255, 0.942);
+  left: 160px;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-right: 150px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card img {
+  width: 100%;
+  height: 100%;
+     object-fit: inherit;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card-content p {
+  margin: 5px 0 0;
+  font-size: 14px;
+}
+
+#prevBtn, #nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+#prevBtn {
+  left: 10px;
+}
+
+#nextBtn {
+  right: 10px;
+}
+
+h1{
+      left: 645px;
+    /* align-items: center; */
+    /* align-content: center; */
+    top: 15px;
+    position: relative;
+    margin: 0px;
+}
+
+
+
+
+
+
+
+
         .fremp{
           height: 22px;
           width: 125px;
@@ -206,21 +291,61 @@
 
 
 
-  <p class="selected-candidates-QYf">Selected Candidates</p>
 
-  <div class="rectangle-14-vX1"></div>
-  <div class="rectangle-15-fUb"></div>
-  <div class="rectangle-16-CjR"></div>
-  <div class="rectangle-17-kF9"></div>
 
-  <img class="rectangle-18-tcF" src="{% static 'images/c1.jpg' %}"/>
+<!--  <p class="selected-candidates-QYf">Selected Candidates</p>-->
 
-  <img class="rectangle-19-1wm" src="{% static 'images/c2.jpg' %}" />
-  <img class="rectangle-20-iLP" src="{% static 'images/c3.jpg' %}"/>
+<!--  <div class="rectangle-14-vX1"></div>-->
+<!--  <div class="rectangle-15-fUb"></div>-->
+<!--  <div class="rectangle-16-CjR"></div>-->
+<!--  <div class="rectangle-17-kF9"></div>-->
 
-  <img class="rectangle-21-DY3" src="{% static 'images/c4.jpg' %}"/>
+<!--  <img class="rectangle-18-tcF" src="{% static 'images/c1.jpg' %}"/>-->
 
-  <div class="rectangle-22-wD9" id="contact-us-section"></div>
+<!--  <img class="rectangle-19-1wm" src="{% static 'images/c2.jpg' %}" />-->
+<!--  <img class="rectangle-20-iLP" src="{% static 'images/c3.jpg' %}"/>-->
+
+<!--  <img class="rectangle-21-DY3" src="{% static 'images/c4.jpg' %}"/>-->
+
+<!--  <div class="rectangle-22-wD9" id="contact-us-section"></div>-->
+
+
+ <div class="carousel">
+    <h1>LATEST PLACEMENT</h1>
+  <div class="carousel-slide">
+    <div class="card">
+      <img src="{% static 'images/placedstud.jpg' %}" alt="Student 1">
+      <div class="card-content">
+        <h3>Student 1</h3>
+        <p>Placed at Company X</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'images/placedstud.jpg' %}" alt="Student 2">
+      <div class="card-content">
+        <h3>Student 2</h3>
+        <p>Placed at Company Y</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'images/placedstud.jpg' %}" alt="Student 3">
+      <div class="card-content">
+        <h3>Student 3</h3>
+        <p>Placed at Company Z</p>
+      </div>
+    </div>
+  </div>
+  <!-- Add more carousel-slide divs for additional students -->
+
+
+
+<button id="prevBtn">Previous</button>
+<button id="nextBtn">Next</button>
+
+<script src="script.js"></script>
+
+</div>
+
 
     <!-- <footer class="footer" id="contact-us-section">
 hello
@@ -322,6 +447,71 @@ hello
         }
         {% endfor %}
       });
+
+
+
+
+        const carouselSlide = document.querySelector('.carousel-slide');
+let counter = 0;
+let size = carouselSlide.clientWidth;
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+  if (counter < carouselSlide.children.length - 1) {
+    counter++;
+    size = carouselSlide.clientWidth;
+    carouselSlide.style.transition = 'transform 0.5s ease-in-out';
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+  }
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+  if (counter > 0) {
+    counter--;
+    size = carouselSlide.clientWidth;
+    carouselSlide.style.transition = 'transform 0.5s ease-in-out';
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+  }
+});
+
+function addNextStudents() {
+  const newStudents = [
+    {
+      name: 'Student 4',
+      company: 'Company A',
+      image: 'placed stud.jpg'
+    },
+    {
+      name: 'Student 5',
+      company: 'Company B',
+      image: 'placed stud.jpg'
+    },
+    {
+      name: 'Student 6',
+      company: 'Company C',
+      image: 'placed stud.jpg'
+    }
+  ];
+
+  const newCards = newStudents.map(student => {
+    return `
+      <div class="card">
+        <img src="${student.image}" alt="${student.name}">
+        <div class="card-content">
+          <h3>${student.name}</h3>
+          <p>Placed at ${student.company}</p>
+        </div>
+      </div>
+    `;
+  });
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'carousel-slide';
+  wrapper.innerHTML = newCards.join('');
+  carouselSlide.appendChild(wrapper);
+}
+
+
+
     </script>
 
 

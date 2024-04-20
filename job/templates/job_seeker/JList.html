@@ -108,31 +108,28 @@
     <!-- Navbar content -->
     <header class="navbarframe">
       <div class="frame-parent">
-        <div class="logo-wrapper">
-          <a href=""><img
+        <a href="{% url 'job_list' %}" style="text-decoration: none; color: inherit;"><div class="logo-wrapper">
+          <img
             class="logo-icon"
             loading="lazy"
             alt=""
             src="{% static 'images/logo@2x.png' %}"
-          /></a>
-        </div>
-        <div class="home-button-wrapper">
-          <a href="{% url 'u_profile' %}" style="text-decoration: none">
-              <button class="home-button" style="border: 0px solid black;">
-
+          />
+        </div></a>
+        <a href="{% url 'u_landing_page' %}" style="text-decoration: none; color: inherit;"><div class="home-button-wrapper">
+            <button class="home-button" style="border: 0px solid black;">
             <img
               class="material-symbolshome-icon"
               loading="lazy"
               alt=""
               src="{% static 'images/materialsymbolshome@2x.png' %}"
             />
-
             <div class="home-wrapper">
                 <div class="home" style="color: #000; font-weight: bold;">Home</div>
             </div>
-          </button></a>
-        </div>
-        <div class="frame-button-wrapper">
+          </button>
+        </div></a>
+        <a href="{% url 'job_status' %}" style="text-decoration: none; color: inherit;"><div class="frame-button-wrapper">
           <button class="apllication-button-parent">
             <div class="apllication"></div>
             <img
@@ -146,8 +143,8 @@
               <div class="application">Status</div>
             </div>
           </button>
-        </div>
-        <div class="upload-button-wrapper">
+        </div></a>
+        <a href="{% url 'job_list' %}" style="text-decoration: none; color: inherit;"><div class="upload-button-wrapper">
           <a href="" style="text-decoration: none"><button class="upload-button">
             <div class="addjob"></div>
             <img
@@ -160,7 +157,7 @@
               <div class="add-job">Jobs</div>
             </div>
           </button></a>
-        </div>
+        </div></a>
 
         <div id="google_translate_element"></div>
 
@@ -217,22 +214,27 @@
                 <div class="filter-section">
                   <label for="jobTypeFilter">Job Type:</label>
                   <select name="jobTypeFilter" id="jobTypeFilter">
-                      <option value="" selected disabled>Select job type</option>
                       <option value="All">All</option>
+                      <option value="" selected disabled>Select job type</option>
                       <option value="Full-Time">Full Time</option>
                       <option value="Part-Time">Part Time</option>
+                      <option value="Permanent">Permanent</option>
+                      <option value="Internship">Internship</option>
+                      <option value="Temporary">Temporary</option>
+                      <option value="Freelance">Freelance</option>
+                      <option value="Volunteer">Volunteer</option>
                   </select>
                 </div>
 
                 <div class="filter-section">
                     <label for="experienceRangeFilter">Experience:</label>
                     <select name="experienceRangeFilter" id="experienceRangeFilter">
-                        <option value="" selected disabled>Select experience</option>
                         <option value="All">All</option>
-                        <option value="0-1 years">0-1 Years</option>
-                        <option value="1-3 years">1-3 Years</option>
-                        <option value="3-5 years">3-5 Years</option>
-                        <option value="5+ years"> 5+ Years</option>
+                        <option value="" selected disabled>Select Experience Filter</option>
+                        <option value="0-1 Years" >0-1 Years</option>
+                        <option value="1-3 Years">1-3 Years</option>
+                        <option value="3-5 Years">3-5 Years</option>
+                        <option value="5+ Years"> 5+ Years</option>
                         <!-- Add more options as needed -->
                     </select>
                 </div>
@@ -240,11 +242,11 @@
                 <div class="filter-section">
                     <label for="salaryRangeFilter">Salary Range:</label>
                     <select name="salaryRangeFilter" id="salaryRangeFilter">
-                        <option value="" selected disabled>Select salary range</option>
                         <option value="All">All</option>
-                        <option value="0-50000">₹0 - ₹50,000</option>
-                        <option value="50001-100000">₹50,001 - ₹100,000</option>
-                        <option value="100001-150000">₹100,001 - ₹150,000</option>
+                        <option value="" selected disabled>Select salary range</option>
+                        <option value="0 - 50000">₹0 - ₹50,000</option>
+                        <option value="50001 - 100000">₹50,001 - ₹100,000</option>
+                        <option value="100001 - 150000">₹100,001 - ₹150,000</option>
                         <!-- Add more options as needed -->
                     </select>
                 </div>
@@ -285,8 +287,8 @@
                 <div class="filter-section">
                     <label for="dateFilter">Deadline:</label>
                     <select name="dateFilter" id="dateFilter">
+                      <option value="All">Show All</option>
                         <option value="" selected disabled>Select deadline date</option>
-                      <option value="All">All</option>
                         <option value="today">Today</option>
                         <!-- Add more options as needed -->
                     </select>
@@ -343,6 +345,83 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        // Get the select elements
+        var jobTypeSelect = document.getElementById('jobTypeFilter');
+        var experienceSelect = document.getElementById('experienceRangeFilter');
+        var locationSelect = document.getElementById('locationFilter');
+        var skillsSelect = document.getElementById('skillsFilter');
+        var titleSelect = document.getElementById('titleFilter');
+        var dateSelect = document.getElementById('dateFilter');
+
+        // Function to handle changes in selection for all filters
+        function handleFilterChange(selectElement, storageKey) {
+            // Get the selected option value
+            var selectedOption = selectElement.value;
+
+            // Store the selected option in localStorage
+            localStorage.setItem(storageKey, selectedOption);
+        }
+
+        // Add event listeners to detect changes in selection for all filters
+        jobTypeSelect.addEventListener('change', function() {
+            handleFilterChange(jobTypeSelect, 'selectedJobType');
+        });
+
+        experienceSelect.addEventListener('change', function() {
+            handleFilterChange(experienceSelect, 'selectedExperience');
+        });
+
+        locationSelect.addEventListener('change', function() {
+            handleFilterChange(locationSelect, 'selectedLocation');
+        });
+
+        skillsSelect.addEventListener('change', function() {
+            handleFilterChange(skillsSelect, 'selectedSkills');
+        });
+
+        titleSelect.addEventListener('change', function() {
+            handleFilterChange(titleSelect, 'selectedTitle');
+        });
+
+        dateSelect.addEventListener('change', function() {
+            handleFilterChange(dateSelect, 'selectedDate');
+        });
+
+        // Retrieve the selected options from localStorage and set them as selected
+        var storedJobType = localStorage.getItem('selectedJobType');
+        if (storedJobType) {
+            jobTypeSelect.value = storedJobType;
+        }
+
+        var storedExperience = localStorage.getItem('selectedExperience');
+        if (storedExperience) {
+            experienceSelect.value = storedExperience;
+        }
+
+        var storedLocation = localStorage.getItem('selectedLocation');
+        if (storedLocation) {
+            locationSelect.value = storedLocation;
+        }
+
+        var storedSkills = localStorage.getItem('selectedSkills');
+        if (storedSkills) {
+            skillsSelect.value = storedSkills;
+        }
+
+        var storedTitle = localStorage.getItem('selectedTitle');
+        if (storedTitle) {
+            titleSelect.value = storedTitle;
+        }
+
+        var storedDate = localStorage.getItem('selectedDate');
+        if (storedDate) {
+            dateSelect.value = storedDate;
+        }
+    </script>
+
+
 
 
 

@@ -84,7 +84,7 @@
             <div class="frame-wrapper">
               <div class="frame-parent">
                 <div class="frame-group">
-                  <div class="rectangle-group">
+                  <a href="{% url 'r_landing_page' %}" style="text-decoration: none; color: inherit;"><div class="rectangle-group">
                     <button class="frame-item">
                       <img
                         class="material-symbolshome-icon"
@@ -94,9 +94,9 @@
                       />
                       <a href="{% url 'r_profile' %}"><div class="home">Home</div></a>
                     </button>
-                  </div>
+                  </div></a>
                 </div>
-                <div class="frame-container">
+                <a href="{% url 'job_history' %}" style="text-decoration: none; color: inherit;"><div class="frame-container">
                   <button class="applications-btn-parent">
                     <div class="applications-btn"></div>
                     <img 
@@ -105,10 +105,10 @@
                     alt=""
                     src="{% static 'images/mdinotes@2x.png' %}"
                     />
-                    <a href="{% url 'post_jobs' %}"><div class="applications">Applications</div></a>
+                    <div class="applications">Applications</div>
                   </button>
-                </div>
-                <a href="{% url 'post_jobs' %}"><button class="recruiter-btn">
+                </div></a>
+                <a href="{% url 'post_jobs' %}" style="text-decoration: none; color: inherit;"><button class="recruiter-btn">
                   <div class="recruiter-btn-child"></div>
                   <img 
                   class="addjobs-icon"

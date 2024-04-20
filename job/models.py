@@ -55,6 +55,7 @@ class Application(models.Model):
     date = models.DateField(auto_now_add=True)
     user = models.ForeignKey('JobSeeker', models.CASCADE)
     job = models.ForeignKey('Job', models.CASCADE)
-    status = models.CharField(max_length=20, default='request pending')
+    status = models.CharField(max_length=20, default='Pending')
+    reason = models.CharField(max_length=200, default='Not Provided')
 
 

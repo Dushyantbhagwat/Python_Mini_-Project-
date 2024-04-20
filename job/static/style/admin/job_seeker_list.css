@@ -279,11 +279,17 @@
   z-index: 1;
 }
 .excel {
-  bottom: 7px;
-  right: 2px;
-  position: relative;
-  display: inline-block;
-  min-width: 75px;
+   background: transparent;
+    width: 80px;
+    height: 45px;
+    position: relative;
+    font-size: smaller;
+    font-family: var(--font-inter);
+    color: var(--color-black);
+    text-align: left;
+    display: inline-block;
+    min-width: 62px;
+    z-index: 1;
 }
 .excel-wrapper,
 .rectangle-group {
@@ -300,10 +306,12 @@
 }
 
 .excel-wrapper {
-
-  border-radius: var(--br-6xl);
-  padding: var(--padding-xl);
-  z-index: 2;
+        bottom: 11px;
+    right: -34px;
+    position: relative;
+    border-radius: var(--br-6xl);
+    padding: var(--padding-xl);
+    z-index: 2;
 }
 .rectangle-group {
   position: relative;
@@ -317,14 +325,17 @@
   display: none;
 }
 .csv1 {
-  position: relative;
-  font-size: var(--font-size-5xl);
-  font-family: var(--font-inter);
-  color: var(--color-black);
-  text-align: left;
-  display: inline-block;
-  min-width: 49px;
-  z-index: 1;
+background: transparent;
+    width: 80px;
+    height: 45px;
+    position: relative;
+    font-size: smaller;
+    font-family: var(--font-inter);
+    color: var(--color-black);
+    text-align: left;
+    display: inline-block;
+    min-width: 62px;
+    z-index: 1;
 }
 .csv,
 .csv-wrapper {
@@ -349,9 +360,12 @@
   background-color: var(--color-gainsboro-100);
 }
 .csv-wrapper {
-  flex: 1;
-  flex-direction: column;
-  padding: var(--padding-5xs) 0 0;
+        left: 133px;
+    bottom: 84px;
+    position: relative;
+    flex: 1;
+    flex-direction: column;
+    padding: var(--padding-5xs) 0 0;
 }
 .pdf-child {
   height: 53px;
@@ -362,14 +376,17 @@
   display: none;
 }
 .pdf1 {
-  position: relative;
-  font-size: var(--font-size-5xl);
-  font-family: var(--font-inter);
-  color: var(--color-black);
-  text-align: left;
-  display: inline-block;
-  min-width: 47px;
-  z-index: 1;
+     background: transparent;
+    width: 80px;
+    height: 45px;
+    position: relative;
+    font-size: smaller;
+    font-family: var(--font-inter);
+    color: var(--color-black);
+    text-align: left;
+    display: inline-block;
+    min-width: 62px;
+    z-index: 1;
 }
 .pdf {
   cursor: pointer;
@@ -390,9 +407,12 @@
   justify-content: flex-start;
 }
 .pdf-wrapper {
-  flex: 1;
-  flex-direction: column;
-  padding: var(--padding-5xs) 0 0;
+       left: 211px;
+    bottom: 137px;
+    position: relative;
+    flex: 1;
+    flex-direction: column;
+    padding: var(--padding-5xs) 0 0;
 }
 .frame-parent1 {
   width: 434px;
@@ -451,9 +471,9 @@
   gap: var(--gap-28xl);
   z-index: 1;
   font-size: 14px; /* Set the desired font size */
-  left: 798px;
-  height: 55px;
-  top: 7px;
+    left: 1200px;
+    height: 55px;
+    bottom: 37px;
 }
 .frame-div,
 .frame-group,
@@ -1130,6 +1150,7 @@
   max-width: 100%;
 }
 .application-list {
+  height: 165px;
   width: 100%;
   position: relative;
   background-color: var(--color-white);

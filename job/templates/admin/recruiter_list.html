@@ -99,42 +99,52 @@
         </div>
         </div>
       </div>
-      <div class="frame-div">
-        <div class="frame-group">
-          <div class="frame-parent1">
-            <div class="rectangle-group">
-              <button class="frame-item">
-                <div class="excel-wrapper" onclick="window.location = {% url 'seeker_list_excel' %}">
-                <div class="excel">EXCEL</div>
-                </div>
-              </button>
-            </div>
-            <div class="pdf-wrapper">
-              <button class="pdf">
-                <div class="pdf-child" onclick="window.location = {% url 'seeker_list_excel' %}"></div>
-                <div class="pdf1">PDF</div>
-              </button>
-            </div>
 
-            <div class="csv-wrapper">
-              <a href="{% url 'accepted_recruiter_list' %}"><button class="csv">
-                <div class="csv-child"></div>
-                <div class="csv1">Accepted</div>
-              </button></a>
+     <div class="frame-div">
+    <div class="frame-group">
+        <div class="frame-parent1">
+            <div class="dropdown">
+                 <div class="dropdown-content">
+                    <div class="excel-wrapper" onclick="window.location='{% url 'seeker_list_excel' %}'">
+                        <button class="excel">EXCEL</button>
+                    </div>
+                    <div class="csv-wrapper">
+                        <div class="csv-child"></div>
+                        <button class="csv1">CSV</button>
+                    </div>
+                    <div class="pdf-wrapper" onclick="">
+                        <div class="pdf-child"></div>
+                        <button class="pdf1">PDF</button>
+                    </div>
+                </div>
+                <button class="dropbtn" >Download</button>
+
             </div>
-            <div class="pdf-wrapper">
-              <a href="{% url 'rejected_recruiter_list' %}"><button class="pdf0">
-                <div class="pdf-child"></div>
-                <div class="pdf1">Rejected</div>
-              </button></a>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
+
     </div>
 
         <div class="column-names-container">
           <div class="column-names-box">
+
+
+
+                <a class="accet" href="{% url 'accepted_recruiter_list' %}" >
+
+                </a>
+
+
+
+
+                <a class="reject" href="{% url 'rejected_recruiter_list' %}">
+
+                </a>
+
+
+
+
             <div class="column-name shifted">ID</div>
             <div class="column-name shifted2">Name</div>
             <div class="column-name shifted3">Contact</div>
@@ -187,6 +197,304 @@
         </div>
 
 <style>
+
+  .frame-item {
+  font-size: 24px;
+  height: 56px;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
+  width: 124px;
+  position: absolute;
+  margin: 0 !important;
+  top: 8px;
+  left: -6px;
+  border-radius: var(--br-6xl);
+  background-color: var(--color-gray-400);
+  z-index: 1;
+}
+.excel {
+   background: transparent;
+  left: 1px;
+  top: 10px;
+    width: 80px;
+    height: 45px;
+    position: relative;
+    font-size: smaller;
+    font-family: var(--font-inter);
+    color: var(--color-black);
+    text-align: left;
+    display: inline-block;
+    min-width: 62px;
+    z-index: 1;
+}
+.excel-wrapper,
+.rectangle-group {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.frame-item:hover{
+  cursor: pointer;
+  background-color: rgb(225, 225, 225);
+}
+
+.excel-wrapper {
+        bottom: 11px;
+    right: -34px;
+    position: relative;
+    border-radius: var(--br-6xl);
+    padding: var(--padding-xl);
+    z-index: 2;
+}
+.rectangle-group {
+  position: relative;
+}
+.csv-child {
+  height: 53px;
+  width: 124px;
+  position: relative;
+  border-radius: var(--br-6xl);
+  background-color: var(--color-gray-400);
+  display: none;
+}
+.csv1 {
+background: transparent;
+  top: 10px;
+    width: 80px;
+    height: 45px;
+    position: relative;
+    font-size: smaller;
+    font-family: var(--font-inter);
+    color: var(--color-black);
+    text-align: left;
+    display: inline-block;
+    min-width: 62px;
+    z-index: 1;
+}
+.csv,
+.csv-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.csv {
+  cursor: pointer;
+
+  padding: var(--padding-xs) var(--padding-18xl) var(--padding-xs)
+    var(--padding-19xl);
+  background-color: var(--color-gray-400);
+  align-self: stretch;
+  border-radius: var(--br-6xl);
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
+  flex-direction: row;
+  z-index: 1;
+}
+.csv:hover,
+.pdf:hover {
+  background-color: var(--color-gainsboro-100);
+}
+.csv-wrapper {
+        left: 133px;
+    bottom: 84px;
+    position: relative;
+    flex: 1;
+    flex-direction: column;
+    padding: var(--padding-5xs) 0 0;
+}
+.pdf-child {
+  height: 53px;
+  width: 124px;
+  position: relative;
+  border-radius: var(--br-6xl);
+  background-color: var(--color-gray-400);
+  display: none;
+}
+.pdf1 {
+  top: 10px;
+     background: transparent;
+    width: 80px;
+    height: 45px;
+    position: relative;
+    font-size: smaller;
+    font-family: var(--font-inter);
+    color: var(--color-black);
+    text-align: left;
+    display: inline-block;
+    min-width: 62px;
+    z-index: 1;
+}
+.pdf {
+  cursor: pointer;
+
+  padding: var(--padding-xs) var(--padding-19xl);
+  background-color: var(--color-gray-400);
+  align-self: stretch;
+  border-radius: var(--br-6xl);
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
+  flex-direction: row;
+  z-index: 1;
+}
+.frame-parent1,
+.pdf,
+.pdf-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.pdf-wrapper {
+       left: 211px;
+    bottom: 137px;
+    position: relative;
+    flex: 1;
+    flex-direction: column;
+    padding: var(--padding-5xs) 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .dropbtn{
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background: #f9f9f9;
+    position: relative;
+    z-index: 10;
+    border-radius: 0px;
+       font-size: smaller;
+    right: 10px;
+    width: 121px;
+    height: 45px;
+top: 10px;
+    }
+
+ /* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown button */
+.btn-random {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+     background-color: #f9f9f900;
+    min-width: 320px;
+  overflow: hidden;
+  white-space: nowrap; /* Prevent line breaks */
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content .item-wrapper {
+  display: inline-block; /* Display items horizontally */
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content .item-wrapper:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Position the dropdown menu to extend to the right */
+.dropdown-content {
+     top: -19%;
+    left: 55px;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .btn-random {
+  background-color: #3e8e41;
+}
+
+
+
+
+  
+
+
+
+
+   .accet:hover:after {
+        content: "Accepted";
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+      .reject:hover:after {
+        content: "Rejected";
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+
+  .accet{
+        background-color: #00f102;
+    top: 30px;
+    left: 1130px;
+    position: relative;
+    z-index: 50;
+    border: 1px black;
+    display: block;
+    border-radius: 20px;
+    width: 20px;
+    height: 18px;
+  }
+
+  .reject{
+       background-color: #ff3a3a;
+    top: 30px;
+    left: 1150px;
+    position: relative;
+    z-index: 50;
+    border: 1px black;
+    display: block;
+    border-radius: 20px;
+    width: 20px;
+    height: 18px;
+  }
+
 
   @button-colour: #009ED8;
   @button-text: #ffffff;
@@ -298,9 +606,10 @@
 
   .column-names-container,
   .job-seekers-container {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
   .column-names-box {
+    height: 65px;
     display: flex;
     justify-content: space-between;
     background-color: #f0f0f0;
@@ -315,32 +624,39 @@
   }
 
   .shifted {
+        top: 10px;
     position: relative;
-    left: 39px;
+       left: 16px;
   }
   .shifted2 {
+      top: 10px;
     position: relative;
-    left: -7px;
+    left: 17px;
   }
   .shifted3 {
+    top: 10px;
     position: relative;
-    left: 19px;
+    left: 30px;
   }
   .shifted4 {
+    top: 10px;
     position: relative;
-    left: 13px;
+    left: 40px;
   }
   .shifted5 {
+    top: 10px;
     position: relative;
-    left: 18px;
+    left: 53px;
   }
   .shifted6 {
+    top: 10px;
     position: relative;
-    left: 1px;
+    left: -8px;
   }
   .shifted7 {
+    top: 10px;
     position: relative;
-    left: 9px;
+    left: 20px;
   }
   /* Example individual styling */
   .column-name:nth-child(1) {

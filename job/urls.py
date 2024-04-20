@@ -2,7 +2,8 @@ from django.urls import path
 from . import views
 from job.Views.job_seeker import sign_up, user_profile, user_update_profile, job_list, job_filtering
 from job.Views.admin import seeker_list, recruiter_list, a_landing_page, seeker_list_download, recruiter_details
-from job.Views.recruiter import r_sign_up, r_profile, u_applied_list, recruiter_update_profile, post_jobs, candidate_list
+from job.Views.recruiter import (r_sign_up, r_profile, u_applied_list, recruiter_update_profile, post_jobs,
+                                 candidate_list, job_history, applications_details)
 
 
 urlpatterns = [
@@ -22,7 +23,10 @@ urlpatterns = [
     path('job_details/<int:job_id>/', job_list.job_details, name='job_details'),
     path('apply/', job_list.apply, name='apply'),
     path('filter-jobs/', job_filtering.filter_jobs, name='filter_jobs'),
-
+    path('job_status/', job_list.job_status, name='job_status'),
+    path('accepted_jobs', job_list.job_accepted, name='accepted_jobs'),
+    path('rejected_jobs', job_list.job_rejected, name='rejected_jobs'),
+    path('basic_filtering/', sign_up.u_landing_filter, name='basic_filtering'),
 
 
     # path('u_filter_landing/', job_filtering.LandingFilter.as_view(), name='u_filter_landing'),
@@ -36,12 +40,18 @@ urlpatterns = [
     # path('ap_list_r/', u_applied_list.applied_seeker, name='ap_list_r'),
     path('r_landing_page/', r_sign_up.u_landing_page, name='r_landing_page'),
     path('r_update_profile/', recruiter_update_profile.UpdateProfile.as_view(), name='r_update_profile'),
-    path('c_list/', candidate_list.c_list, name='c_list'),
     path('post_jobs/', post_jobs.post_jobs, name='post_jobs'),
+
+    path('job_history/', job_history.jobs_history, name='job_history'),
+    path('candidate_list/<int:job_id>/', candidate_list.candidate_applied, name='candidate_list'),
+    path('pending_candidate_list/<int:job_id>/', candidate_list.pending_candidate_list, name='pending_candidate_list'),
+    path('accepted_candidate_list/<int:job_id>/', candidate_list.accepted_candidate_list, name='accepted_candidate_list'),
+    path('rejected_candidate_list/<int:job_id>/', candidate_list.rejected_candidate_list, name='rejected_candidate_list'),
+    path('applications/<int:app_id>/', applications_details.application, name='applications'),
     path('action/', candidate_list.action, name='action'),
-    path('accepted_candidate/', candidate_list.accepted, name='accepted_candidate'),
-    path('rejected_candidate/', candidate_list.rejected, name='rejected_candidate'),
-    path('c_job/', candidate_list.candidate_applied_job, name='c_job'),
+
+
+
 
 
     path('admin_landing_page/', a_landing_page.ALandingPage.as_view(), name='admin_landing_page'),
