@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="recruiter accepting or rejecting by providing reason for it">
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="job filter system added">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Python_Mini_-Project-12.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/job_filtering.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/job_filtering.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JList.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JList.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +36,14 @@
     &quot;assignee&quot;: &quot;NiranjanKumarYadav36&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/NiranjanKumarYadav36/Python_Mini_-Project-.git&quot;,
-    &quot;accountId&quot;: &quot;5a4264b0-9b05-44dd-abe0-96ec6af1fa69&quot;
-  }
-}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="5a4264b0-9b05-44dd-abe0-96ec6af1fa69" />
+        <option name="url" value="https://github.com/NiranjanKumarYadav36/Python_Mini_-Project-.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -67,32 +68,24 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/static/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/templates/job_seeker/UserR.html&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python--&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/ANIL KUMAR YADAV/python app/JOB_PORTAL/job/templates/job_seeker/UserR.html&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\static\images" />
-      <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker\style" />
-      <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker" />
-      <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\static\style" />
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\static\style\recruiter" />
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates\job_seeker" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL" />
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker" />
-      <recent name="C:\Users\acer\PycharmProjects\Python_Mini_-Project-\job\templates\job_seeker\style" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\jobsite" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\Views\job_seeker" />
       <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL" />
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates\templatetags" />
+      <recent name="C:\Users\ANIL KUMAR YADAV\python app\JOB_PORTAL\job\templates\recruiter" />
     </key>
   </component>
   <component name="RunManager" selected="Python.re">
@@ -109,7 +102,6 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/re.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -132,7 +124,6 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/try.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -152,7 +143,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
       </set>
     </attachedChunks>
   </component>
@@ -164,10 +155,54 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708523728017</updated>
-      <workItem from="1713086351833" duration="4918000" />
-      <workItem from="1713199257547" duration="5111000" />
-      <workItem from="1713242386313" duration="3333000" />
-      <workItem from="1713275657046" duration="3053000" />
+    </task>
+    <task id="LOCAL-00001" summary="project started and home page is added">
+      <option name="closed" value="true" />
+      <created>1708528878937</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708528878937</updated>
+    </task>
+    <task id="LOCAL-00002" summary="project started and home page is added">
+      <option name="closed" value="true" />
+      <created>1708613540635</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708613540635</updated>
+    </task>
+    <task id="LOCAL-00003" summary="project started and home page is added">
+      <option name="closed" value="true" />
+      <created>1708693501077</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708693501077</updated>
+    </task>
+    <task id="LOCAL-00004" summary="project started and home page is added">
+      <option name="closed" value="true" />
+      <created>1708694245067</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708694245067</updated>
+    </task>
+    <task id="LOCAL-00005" summary="project started and home page is added">
+      <option name="closed" value="true" />
+      <created>1708699217933</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708699217933</updated>
+    </task>
+    <task id="LOCAL-00006" summary="project started and home page is added">
+      <option name="closed" value="true" />
+      <created>1708754780143</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708754780143</updated>
     </task>
     <task id="LOCAL-00007" summary="project started and home page is added">
       <option name="closed" value="true" />
@@ -505,67 +540,8 @@
       <option name="project" value="LOCAL" />
       <updated>1712947717352</updated>
     </task>
-    <task id="LOCAL-00049" summary="job filter system added">
-      <option name="closed" value="true" />
-      <created>1712956417189</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1712956417189</updated>
-    </task>
-    <task id="LOCAL-00050" summary="job filter system added">
-      <option name="closed" value="true" />
-      <created>1712979111408</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1712979111409</updated>
-    </task>
-    <task id="LOCAL-00051" summary="login page dropdown resolved">
-      <option name="closed" value="true" />
-      <created>1713086253787</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1713086253788</updated>
-    </task>
-    <task id="LOCAL-00052" summary="job seeker problems resolved">
-      <option name="closed" value="true" />
-      <created>1713243130065</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1713243130066</updated>
-    </task>
-    <task id="LOCAL-00053" summary="now recruiter can see the all the jobs he has posted.">
-      <option name="closed" value="true" />
-      <created>1713509722972</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1713509722972</updated>
-    </task>
-    <task id="LOCAL-00054" summary="some restricton features added">
-      <option name="closed" value="true" />
-      <created>1713525326176</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1713525326178</updated>
-    </task>
-    <task id="LOCAL-00055" summary="recruiter accepting or rejecting by providing reason for it">
-      <option name="closed" value="true" />
-      <created>1713534381725</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1713534381725</updated>
-    </task>
-    <option name="localTasksCounter" value="56" />
+    <option name="localTasksCounter" value="49" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -595,11 +571,6 @@
     <MESSAGE value="fixed" />
     <MESSAGE value="apllication preocess completed" />
     <MESSAGE value="job filter system added" />
-    <MESSAGE value="login page dropdown resolved" />
-    <MESSAGE value="job seeker problems resolved" />
-    <MESSAGE value="now recruiter can see the all the jobs he has posted." />
-    <MESSAGE value="some restricton features added" />
-    <MESSAGE value="recruiter accepting or rejecting by providing reason for it" />
-    <option name="LAST_COMMIT_MESSAGE" value="recruiter accepting or rejecting by providing reason for it" />
+    <option name="LAST_COMMIT_MESSAGE" value="job filter system added" />
   </component>
 </project>
