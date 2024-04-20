@@ -212,41 +212,31 @@
               <div class="modal-content">
                   <!-- Filter options -->
                 <div class="filter-section">
-                  <label for="jobTypeFilter">Job Type:</label>
-                  <select name="jobTypeFilter" id="jobTypeFilter">
-                      <option value="All">All</option>
-                      <option value="" selected disabled>Select job type</option>
-                      <option value="Full-Time">Full Time</option>
-                      <option value="Part-Time">Part Time</option>
-                      <option value="Permanent">Permanent</option>
-                      <option value="Internship">Internship</option>
-                      <option value="Temporary">Temporary</option>
-                      <option value="Freelance">Freelance</option>
-                      <option value="Volunteer">Volunteer</option>
-                  </select>
+                    <label for="jobTypeFilter">Job Type:</label>
+                    <select name="jobTypeFilter" id="jobTypeFilter">
+                        <option value="" selected disabled>Select job type</option>
+                        <option value="Full-Time">Full Time</option>
+                        <option value="Part-Time">Part Time</option>
+                        <option value="Permanent">Permanent</option>
+                        <option value="Internship">Internship</option>
+                        <option value="Temporary">Temporary</option>
+                        <option value="Freelance">Freelance</option>
+                        <option value="Volunteer">Volunteer</option>
+                        <option value="none">None</option> <!-- Added "None" option here -->
+                    </select>
                 </div>
 
                 <div class="filter-section">
                     <label for="experienceRangeFilter">Experience:</label>
                     <select name="experienceRangeFilter" id="experienceRangeFilter">
-                        <option value="All">All</option>
+                        <option value="none">All</option>
                         <option value="" selected disabled>Select Experience Filter</option>
                         <option value="0-1 Years" >0-1 Years</option>
                         <option value="1-3 Years">1-3 Years</option>
                         <option value="3-5 Years">3-5 Years</option>
                         <option value="5+ Years"> 5+ Years</option>
-                        <!-- Add more options as needed -->
-                    </select>
-                </div>
+                        <option value="none">None</option>
 
-                <div class="filter-section">
-                    <label for="salaryRangeFilter">Salary Range:</label>
-                    <select name="salaryRangeFilter" id="salaryRangeFilter">
-                        <option value="All">All</option>
-                        <option value="" selected disabled>Select salary range</option>
-                        <option value="0 - 50000">₹0 - ₹50,000</option>
-                        <option value="50001 - 100000">₹50,001 - ₹100,000</option>
-                        <option value="100001 - 150000">₹100,001 - ₹150,000</option>
                         <!-- Add more options as needed -->
                     </select>
                 </div>
@@ -254,42 +244,50 @@
                 <div class="filter-section">
                     <label for="locationFilter">Location:</label>
                     <select name="locationFilter" id="locationFilter">
-                      <option value="All">All</option>
+                      <option value="none">All</option>
                           <option value="" selected disabled>Select City</option>
                           {% for option in options %}
                               <option value="{{ option }}">{{ option }}</option>
                           {% endfor %}
+                        <option value="none">None</option>
+
                     </select>
                 </div>
 
                 <div class="filter-section">
                     <label for="skillsFilter">Skills:</label>
                     <select name="skillsFilter" id="skillsFilter">
-                      <option value="All">All</option>
+                      <option value="none">All</option>
                           <option value="" selected disabled>Select skills</option>
                           {% for option in skill_options %}
                               <option value="{{ option }}">{{ option }}</option>
                           {% endfor %}
+                        <option value="none">None</option>
+
                     </select>
                 </div>
 
                 <div class="filter-section">
                     <label for="titleFilter">Job Title:</label>
                     <select name="titleFilter" id="titleFilter">
-                      <option value="All">All</option>
+                      <option value="none">All</option>
                           <option value="" selected disabled>Select title</option>
                           {% for option in title_options %}
                               <option value="{{ option }}">{{ option }}</option>
                           {% endfor %}
+                        <option value="none">None</option>
+
                     </select>
                 </div>
 
                 <div class="filter-section">
                     <label for="dateFilter">Deadline:</label>
                     <select name="dateFilter" id="dateFilter">
-                      <option value="All">Show All</option>
+                      <option value="none">Show All</option>
                         <option value="" selected disabled>Select deadline date</option>
                         <option value="today">Today</option>
+                        <option value="none">None</option>
+
                         <!-- Add more options as needed -->
                     </select>
                 </div>
@@ -346,80 +344,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-    <script>
-        // Get the select elements
-        var jobTypeSelect = document.getElementById('jobTypeFilter');
-        var experienceSelect = document.getElementById('experienceRangeFilter');
-        var locationSelect = document.getElementById('locationFilter');
-        var skillsSelect = document.getElementById('skillsFilter');
-        var titleSelect = document.getElementById('titleFilter');
-        var dateSelect = document.getElementById('dateFilter');
 
-        // Function to handle changes in selection for all filters
-        function handleFilterChange(selectElement, storageKey) {
-            // Get the selected option value
-            var selectedOption = selectElement.value;
-
-            // Store the selected option in localStorage
-            localStorage.setItem(storageKey, selectedOption);
-        }
-
-        // Add event listeners to detect changes in selection for all filters
-        jobTypeSelect.addEventListener('change', function() {
-            handleFilterChange(jobTypeSelect, 'selectedJobType');
-        });
-
-        experienceSelect.addEventListener('change', function() {
-            handleFilterChange(experienceSelect, 'selectedExperience');
-        });
-
-        locationSelect.addEventListener('change', function() {
-            handleFilterChange(locationSelect, 'selectedLocation');
-        });
-
-        skillsSelect.addEventListener('change', function() {
-            handleFilterChange(skillsSelect, 'selectedSkills');
-        });
-
-        titleSelect.addEventListener('change', function() {
-            handleFilterChange(titleSelect, 'selectedTitle');
-        });
-
-        dateSelect.addEventListener('change', function() {
-            handleFilterChange(dateSelect, 'selectedDate');
-        });
-
-        // Retrieve the selected options from localStorage and set them as selected
-        var storedJobType = localStorage.getItem('selectedJobType');
-        if (storedJobType) {
-            jobTypeSelect.value = storedJobType;
-        }
-
-        var storedExperience = localStorage.getItem('selectedExperience');
-        if (storedExperience) {
-            experienceSelect.value = storedExperience;
-        }
-
-        var storedLocation = localStorage.getItem('selectedLocation');
-        if (storedLocation) {
-            locationSelect.value = storedLocation;
-        }
-
-        var storedSkills = localStorage.getItem('selectedSkills');
-        if (storedSkills) {
-            skillsSelect.value = storedSkills;
-        }
-
-        var storedTitle = localStorage.getItem('selectedTitle');
-        if (storedTitle) {
-            titleSelect.value = storedTitle;
-        }
-
-        var storedDate = localStorage.getItem('selectedDate');
-        if (storedDate) {
-            dateSelect.value = storedDate;
-        }
-    </script>
 
 
 

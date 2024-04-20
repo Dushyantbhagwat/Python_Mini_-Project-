@@ -78,3 +78,86 @@ User
             }
         }
     </script>
+
+
+
+
+
+
+
+
+<script>
+        // Get the select elements
+        var jobTypeSelect = document.getElementById('jobTypeFilter');
+        var experienceSelect = document.getElementById('experienceRangeFilter');
+        var locationSelect = document.getElementById('locationFilter');
+        var skillsSelect = document.getElementById('skillsFilter');
+        var titleSelect = document.getElementById('titleFilter');
+        var dateSelect = document.getElementById('dateFilter');
+
+        // Function to handle changes in selection for all filters
+        function handleFilterChange(selectElement, storageKey) {
+            // Get the selected option value
+            var selectedOption = selectElement.value;
+
+            // Store the selected option in localStorage
+            localStorage.setItem(storageKey, selectedOption);
+
+        }
+
+        // Add event listeners to detect changes in selection for all filters
+        jobTypeSelect.addEventListener('change', function() {
+            handleFilterChange(jobTypeSelect, 'selectedJobType');
+        });
+
+        experienceSelect.addEventListener('change', function() {
+            handleFilterChange(experienceSelect, 'selectedExperience');
+        });
+
+        locationSelect.addEventListener('change', function() {
+            handleFilterChange(locationSelect, 'selectedLocation');
+        });
+
+        skillsSelect.addEventListener('change', function() {
+            handleFilterChange(skillsSelect, 'selectedSkills');
+        });
+
+        titleSelect.addEventListener('change', function() {
+            handleFilterChange(titleSelect, 'selectedTitle');
+        });
+
+        dateSelect.addEventListener('change', function() {
+            handleFilterChange(dateSelect, 'selectedDate');
+        });
+
+        // Retrieve the selected options from localStorage and set them as selected
+        var storedJobType = localStorage.getItem('selectedJobType');
+        if (storedJobType) {
+            jobTypeSelect.value = storedJobType;
+        }
+
+        var storedExperience = localStorage.getItem('selectedExperience');
+        if (storedExperience) {
+            experienceSelect.value = storedExperience;
+        }
+
+        var storedLocation = localStorage.getItem('selectedLocation');
+        if (storedLocation) {
+            locationSelect.value = storedLocation;
+        }
+
+        var storedSkills = localStorage.getItem('selectedSkills');
+        if (storedSkills) {
+            skillsSelect.value = storedSkills;
+        }
+
+        var storedTitle = localStorage.getItem('selectedTitle');
+        if (storedTitle) {
+            titleSelect.value = storedTitle;
+        }
+
+        var storedDate = localStorage.getItem('selectedDate');
+        if (storedDate) {
+            dateSelect.value = storedDate;
+        }
+    </script>
