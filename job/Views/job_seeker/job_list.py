@@ -92,7 +92,6 @@ def apply(request):
             application = Application.objects.create(date=date, user=job_seeker, job=job)
             application.save()
             messages.success(request, "Job Application Process Successful!")
-            job_detail_email(job_seeker.email_id, job)
             return HttpResponseRedirect(reverse('job_list'))  # Redirect to a success page
         except JobSeeker.DoesNotExist:
             return render(request, 'landing_page.html', {'message': 'Job Seeker not found'}, status=404)

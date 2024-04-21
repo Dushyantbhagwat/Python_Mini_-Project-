@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="modify the filtering features">
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="modify the job appllications list">
+      <change afterPath="$PROJECT_DIR$/media/user_resume/65_EXP06_XB1dAcH.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/Views/recruiter/job_history.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/recruiter/job_history.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/static/style/recruiter/ApplicationList.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/recruiter/ApplicationList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/style/recruiter/AddJobs.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/recruiter/AddJobs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/style/recruiter/JobHistory.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/recruiter/JobHistory.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/recruiter/ApplicationList.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/ApplicationList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/recruiter/JobHistory.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/JobHistory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/PostJobs.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/PostJobs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/RUpdateProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/RUpdateProfile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,14 +174,6 @@
       <workItem from="1713199257547" duration="5111000" />
       <workItem from="1713242386313" duration="3333000" />
       <workItem from="1713275657046" duration="3053000" />
-    </task>
-    <task id="LOCAL-00005" summary="project started and home page is added">
-      <option name="closed" value="true" />
-      <created>1708699217933</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1708699217933</updated>
     </task>
     <task id="LOCAL-00006" summary="project started and home page is added">
       <option name="closed" value="true" />
@@ -564,7 +559,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713509722972</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="modify the job appllications list">
+      <option name="closed" value="true" />
+      <created>1713670508706</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1713670508706</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,6 +605,7 @@
     <MESSAGE value="job seeker problems resolved" />
     <MESSAGE value="now recruiter can see the all the jobs he has posted." />
     <MESSAGE value="Revert &quot;job seeker problems resolved&quot;&#10;&#10;This reverts commit 13586dbd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;job seeker problems resolved&quot;&#10;&#10;This reverts commit 13586dbd" />
+    <MESSAGE value="modify the job appllications list" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify the job appllications list" />
   </component>
 </project>

@@ -121,7 +121,7 @@
             </div>
           </div>
         </div>
-        <div class="nav-item">
+        <a href="{% url 'r_profile' %}" style="text-decoration: none; color: inherit;"><div class="nav-item">
           <img
           class="note-icon"
           src="{% static 'images/solarlistlinear@2x.png' %}"
@@ -132,7 +132,7 @@
           src="{% static 'images/ggprofile@2x.png' %}"
           alt=""
           />
-        </div>
+        </div></a>
       </header>
      <form action="{% url 'post_jobs' %}" method="post">
        {% csrf_token %}

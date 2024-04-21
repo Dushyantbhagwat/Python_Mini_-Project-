@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -552,12 +553,12 @@
     <div class="userprofile">
         <header class="navbarframe">
             <div class="frame-parent">
-                <a href="{% url 'r_profile' %}" style="text-decoration: none; color: inherit;"><div class="logo-wrapper">
+                <a href="{% url 'r_update_profile' %}" style="text-decoration: none; color: inherit;"><div class="logo-wrapper">
                 <img
                     class="logo-icon"
                     loading="lazy"
                     alt=""
-                    src=""
+                    src="{% static 'images/logo_1.png' %}"
                 />
             </div></a>
             <a href="{% url 'r_landing_page' %}" style="text-decoration: none; color: inherit;"><div class="home-button-wrapper">
@@ -566,7 +567,7 @@
                     class="material-symbolshome-icon"
                     loading="lazy"
                     alt=""
-                    src=""
+                    src="{% static 'images/materialsymbolshome@2x.png' %}"
                 />
 
                 <div class="home-wrapper">
@@ -581,7 +582,7 @@
                     class="mdinotes-icon"
                     loading="lazy"
                     alt=""
-                    src=""
+                    src="{% static 'images/briefcase@2x.png' %}"
                 />
 
                 <div class="application-wrapper">
@@ -596,7 +597,7 @@
                     class="ggadd-icon"
                     loading="lazy"
                     alt=""
-                    src=""
+                    src="{% static 'images/ad.jpg' %}"
                 />
                 <div class="add-job-wrapper">
                     <div class="add-job">Add Job</div>
@@ -615,8 +616,8 @@
             <div class="profilepic-button-wrapper">
                 <div class="dropdown">
                     <button class="profilepic-button">
-                        <img class="solarlist-linear-icon" loading="lazy" alt="" src=""/>
-                        <img class="ggprofile-icon" loading="lazy" alt="" src=""/>
+                        <img class="solarlist-linear-icon" loading="lazy" alt="" src="{% static 'images/solarlistlinear@2x.png' %}"/>
+                        <img class="ggprofile-icon" loading="lazy" alt="" src="{% static 'images/ggprofile@2x.png' %}"/>
                     </button>
                     <div class="dropdown-content">
                         <!-- Dropdown content goes here -->

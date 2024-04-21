@@ -87,6 +87,7 @@
   justify-content: flex-start;
   padding: var(--padding-4xs) 15px var(--padding-3xs) 37px;
   z-index: 1;
+  width: 114px;
 }
 .job-status-box1 {
   height: 38px;
@@ -112,6 +113,8 @@
   padding: var(--padding-4xs) var(--padding-xl) var(--padding-3xs);
   white-space: nowrap;
   z-index: 1;
+  width: 100px;
+  margin-left: 29px;
 }
 .frame-group {
   flex: 1;
@@ -202,6 +205,7 @@
   align-items: flex-start;
   justify-content: flex-end;
   padding: 0 0 var(--padding-8xs);
+  cursor: pointer;
 }
 .nav-bar-parent {
   align-self: stretch;
@@ -992,4 +996,29 @@
   .inactive {
     font-size: var(--font-size-base);
   }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  padding: 12px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 55px;
+  left: 1410px;
+  height: 60px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
 }
