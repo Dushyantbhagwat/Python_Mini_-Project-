@@ -44,17 +44,20 @@
   height: 42px;
 }
 .home {
-  top: 12px;
+  top: 10px;
   left: 47px;
   display: inline-block;
   width: 30px;
   height: 20px;
   z-index: 1;
   text-align: center;
+  font-size: 16px;
+  color: black;
 }
 
 .frame-group {
   height: 42px;
+  width: 112px;
   flex: 1;
   position: relative;
 }
@@ -76,7 +79,7 @@
   overflow: hidden;
   z-index: 1;
   top: 25px;
-  left: 380px;
+  left: 385px;
 }
 
 .applications {
@@ -84,7 +87,6 @@
   display: inline-block;
   min-width: 79px;
   z-index: 2;
-  padding-left: 19px;
   text-align: center;
   bottom: 3px;
 }
@@ -102,12 +104,12 @@
   padding: var(--padding-sm) var(--padding-sm) var(--padding-4xs) var(--padding-4xl);
   z-index: 1;
   height: 42px;
-  width: 140px;
+  width: 150px;
   text-align: center;
+  font-size: 16px;
 }
 .frame-container {
   flex-direction: column;
-  padding: 0 var(--padding-8xs) 0 0;
 }
 .recruiter-btn-child {
   height: 42px;
@@ -124,8 +126,9 @@
   display: inline-block;
   min-width: 72px;
   z-index: 1;
-  padding-left: 10px;
-  bottom: 3px;
+  padding-left: 15px;
+  bottom: 5px;
+  font-size: 16px;
 }
 .addjobs-icon{
   position: absolute;
@@ -134,7 +137,7 @@
   overflow: hidden;
   z-index: 1;
   top: 25.5px;
-  left: 530px;
+  left: 580px;
 }
 .recruiter-btn {
   cursor: pointer;
@@ -166,7 +169,7 @@
   align-self: stretch;
   flex-direction: row;
   justify-content: flex-start;
-  gap: 9px;
+  gap: 39px;
 }
 .frame-wrapper {
   flex: 1;
@@ -174,7 +177,7 @@
   justify-content: flex-end;
   padding: 0 0 10.300000000000011px;
   box-sizing: border-box;
-  max-width: 100%;
+  width: 500px;
 }
 .rectangle-parent,
 .value-link {
@@ -186,7 +189,7 @@
   align-self: stretch;
   flex-direction: row;
   align-items: flex-end;
-  gap: 58.5px;
+  gap: 39px;
 }
 .value-link {
   width: 662px;
@@ -202,14 +205,13 @@
 }
 .nav-item {
   left: -34px;
-  height: 30px;
-  width: 72px;
+  height: 32px;
+  width: 75px;
   position: relative;
   border-radius: 50px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 1;
-  top: 24px;
-  border-color: #1f1f1f;
+  top: 20px;
+  border: 1px solid black;
 }
 .note-icon{
   height: 24px;
