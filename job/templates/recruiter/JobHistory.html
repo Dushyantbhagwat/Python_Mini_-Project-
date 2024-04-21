@@ -73,8 +73,7 @@
       </header>
       <main class="rectangle-parent">
          <div class="frame-child"></div>
-          {% for job in jobs %}
-        <a href="{% url 'candidate_list' job.id %}" style="text-decoration: none; color: inherit;" >
+
           <section class="a-c-t-i-v-e-t-e-x-t">
           <div class="a-c-t-i-v-e-t-e-x-t-inner">
            <button class="rectangle-group">
@@ -86,56 +85,56 @@
             </button>
 
           </div>
-          <div class="rectangle-container">
-            <div class="frame-inner"></div>
-            <div class="frame-div">
-              <div class="frame-wrapper1">
+          {% for job in jobs %}
+<a href="{% url 'candidate_list' job.id %}" style="text-decoration: none; color: inherit;">
+    <div class="rectangle-container">
+        <!-- Job details -->
+        <div class="frame-inner"></div>
+        <div class="frame-div">
+            <div class="frame-wrapper1">
                 <div class="machine-operator-parent">
-                  <div class="machine-operator">{{ job.id }}</div>
-                  <div class="nexsus-techno-solutions-wrapper">
-                    <div class="nexsus-techno-solutions"  style="white-space: nowrap;">
-                      {{ job.recruiter.company_name }}
+                    <div class="machine-operator" style="white-space: nowrap;">{{ job.title }}</div>
+                    <div class="nexsus-techno-solutions-wrapper">
+                        <div class="nexsus-techno-solutions" style="white-space: nowrap;">
+                            {{ job.recruiter.company_name }}
+                        </div>
                     </div>
-                  </div>
-                  <div class="published-on-412024-wrapper"  style="white-space: nowrap;">
-                    <div class="published-on">Published on : {{ job.deadline }}</div>
-                  </div>
+                    <div class="published-on-412024-wrapper" style="white-space: nowrap;">
+                        <div class="published-on">Published on : {{ job.deadline }}</div>
+                    </div>
                 </div>
-              </div>
-              <img
-                class="rectangle-icon"
-                loading="lazy"
-                alt=""
-                src="{{ job.recruiter.image.url }}"
-              />
             </div>
-            <div class="frame-wrapper2">
-              <div class="a-c-t-i-v-e-t-e-x-t-a-p-p-l-i-parent">
+            <img class="rectangle-icon" loading="lazy" alt="" src="{{ job.recruiter.image.url }}" />
+        </div>
+        <div class="frame-wrapper2">
+            <!-- Application details -->
+            <div class="a-c-t-i-v-e-t-e-x-t-a-p-p-l-i-parent">
                 <div class="a-c-t-i-v-e-t-e-x-t-a-p-p-l-i">
-                  <div class="applications20">Applications:{{ total_applications }}</div>
-                  <div class="accepted5-wrapper">
-                    <div class="accepted5">Accepted: {{ total_accepted }}</div>
-                  </div>
-                  <div class="rejected5-wrapper">
-                    <div class="rejected5">Rejected: {{ total_rejected }}</div>
-                  </div>
-                  <div class="pending10">Pending: {{ total_pending }}</div>
+                    <div class="applications20">Applications:{{ job.total_applications }}</div>
+                    <div class="accepted5-wrapper">
+                        <div class="accepted5">Accepted: {{ job.total_accepted }}</div>
+                    </div>
+                    <div class="rejected5-wrapper">
+                        <div class="rejected5">Rejected: {{ job.total_rejected }}</div>
+                    </div>
+                    <div class="pending10">Pending: {{ job.total_pending }}</div>
                 </div>
-                {% if  job.deadline >= today %}
-                    <div class="active-wrapper">
-                        <div class="active1" style="color: blue;">ACTIVE</div>
-                    </div>
+                {% if job.deadline >= today %}
+                <div class="active-wrapper">
+                    <div class="active1" style="color: blue;">ACTIVE</div>
+                </div>
                 {% elif job.deadline < today %}
-                    <div class="active-wrapper">
-                        <div class="active1" style="">INACTIVE</div>
-                    </div>
+                <div class="active-wrapper">
+                    <div class="active1" style="">INACTIVE</div>
+                </div>
                 {% endif %}
             </div>
-            </div>
-          </div>
-        </section>
-         </a>
-          {% endfor %}
+        </div>
+    </div>
+</a>
+{% endfor %}
+
+
 <!--        <section class="frame-parent2">-->
 <!--          <div class="technician-box-parent">-->
 <!--            <div class="technician-box"></div>-->

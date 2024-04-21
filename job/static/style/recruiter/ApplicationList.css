@@ -270,7 +270,7 @@
   z-index: 1;
 }
 .excel {
-  bottom: 7px;
+  bottom: 14px;
   right: -18px;
   position: relative;
   display: inline-block;
@@ -403,12 +403,14 @@
   max-width: 100%;
 }
 .search-fill0-wght400-grad0-ops-icon {
-  top: 11px;
-  width: 42px;
+  top: 19px;
+  width: 16px;
   height: 31px;
   position: relative;
   object-fit: cover;
-  z-index: 1;
+  z-index: 1000;
+  left: 650px;
+
 }
 .search-fill0-wght400-grad0-ops-wrapper {
   display: flex;
@@ -430,7 +432,7 @@
 }
 .search {
   position: relative;
-  left: 385px;
+  left: 320px;
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-9xl);
@@ -442,6 +444,10 @@
   box-sizing: border-box;
   gap: var(--gap-28xl);
   z-index: 1;
+  font-size: 14px; /* Set the desired font size */
+    left: 700px;
+    height: 55px;
+    bottom: -5px;
 }
 .frame-div,
 .frame-group,
@@ -449,10 +455,10 @@
 .search-wrapper {
   display: flex;
   align-items: flex-start;
-  max-width: 100%;
+  width: 200px;
 }
 .search-wrapper {
-  width: 363px;
+  width: 200px;
   flex-direction: column;
   justify-content: flex-start;
   padding: var(--padding-7xs) 0 0;
