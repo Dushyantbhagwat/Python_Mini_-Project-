@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="modify some features">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JobStatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JobStatus.html" afterDir="false" />
-    </list>
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="now job_seeker can see the reason its acceptance or rejection" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -168,14 +163,6 @@
       <workItem from="1713199257547" duration="5111000" />
       <workItem from="1713242386313" duration="3333000" />
       <workItem from="1713275657046" duration="3053000" />
-    </task>
-    <task id="LOCAL-00008" summary="project started and home page is added">
-      <option name="closed" value="true" />
-      <created>1708773064591</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1708773064591</updated>
     </task>
     <task id="LOCAL-00009" summary="project started and home page is added">
       <option name="closed" value="true" />
@@ -561,7 +548,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713769826178</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="now job_seeker can see the reason its acceptance or rejection">
+      <option name="closed" value="true" />
+      <created>1713787787020</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1713787787022</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,6 +596,7 @@
     <MESSAGE value="Revert &quot;job seeker problems resolved&quot;&#10;&#10;This reverts commit 13586dbd" />
     <MESSAGE value="modify the job appllications list" />
     <MESSAGE value="modify some features" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify some features" />
+    <MESSAGE value="now job_seeker can see the reason its acceptance or rejection" />
+    <option name="LAST_COMMIT_MESSAGE" value="now job_seeker can see the reason its acceptance or rejection" />
   </component>
 </project>
