@@ -95,7 +95,7 @@ def apply(request):
             return HttpResponseRedirect(reverse('job_list'))  # Redirect to a success page
         except JobSeeker.DoesNotExist:
             messages.warning(request, "Please Login to the Portal")
-            return render(request, 'landing_page.html', {'message': 'Job Seeker not found'}, status=404)
+            return render(request, 'u_landing_page.html', {'message': 'Job Seeker not found'}, status=404)
 
     else:
         return HttpResponseNotAllowed(['POST'])  # Return method not allowed response for non-POST requests
@@ -116,7 +116,8 @@ def job_status(request):
         job = application.job
         status = application.status  # Assuming status is a field in your Application model
         date = application.date
-        jobs.append((job, status, date))
+        reason = application.reason
+        jobs.append((job, status, date, reason))
 
     # Now, 'jobs' contains tuples of (job, status) applied to by the job_seeker
     print(jobs)
@@ -140,7 +141,8 @@ def job_accepted(request):
             job = application.job
             status = application.status  # Assuming status is a field in your Application model
             date = application.date
-            jobs.append((job, status, date))
+            reason = application.reason
+            jobs.append((job, status, date, reason))
 
     # Now, 'jobs' contains tuples of (job, status) applied to by the job_seeker
     print(jobs)
@@ -164,7 +166,8 @@ def job_rejected(request):
             job = application.job
             status = application.status  # Assuming status is a field in your Application model
             date = application.date
-            jobs.append((job, status, date))
+            reason = application.reason
+            jobs.append((job, status, date, reason))
 
     # Now, 'jobs' contains tuples of (job, status) applied to by the job_seeker
     print(jobs)
