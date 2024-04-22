@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 import json
-
+from django.contrib.auth.decorators import login_required
 from job.models import Recruiter
 from django.http import JsonResponse
 

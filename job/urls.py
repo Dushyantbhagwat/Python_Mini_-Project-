@@ -10,6 +10,7 @@ urlpatterns = [
     path('', views.LandingPage.as_view(), name='landing_page'),
     path('login/', views.LoginView.as_view(), name='login'),
     path('logout/', views.logout, name='logout'),
+    path('b_filter/', views.basic_filter, name='b_filter'),
 
     # path('u1/', views.u1, name='u1'),
     path('j1/', views.job, name='j1'),
@@ -26,8 +27,7 @@ urlpatterns = [
     path('job_status/', job_list.job_status, name='job_status'),
     path('accepted_jobs', job_list.job_accepted, name='accepted_jobs'),
     path('rejected_jobs', job_list.job_rejected, name='rejected_jobs'),
-    path('basic_filtering/', sign_up.u_landing_filter, name='basic_filtering'),
-
+    # path('basic_filtering/', sign_up.u_landing_filter, name='basic_filtering'),
 
     # path('u_filter_landing/', job_filtering.LandingFilter.as_view(), name='u_filter_landing'),
     # path('job_filter/', job_filtering.filter_job, name='job_filter'),

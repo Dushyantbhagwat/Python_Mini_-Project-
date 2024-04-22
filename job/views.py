@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.hashers import make_password, check_password
+from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.views import generic, View
 from .models import JobSeeker, Recruiter, Job
@@ -18,7 +19,7 @@ class LandingPage(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # Retrieve data from the database
-        options = Job.objects.order_by('city').values_list('city', flat=True).distinct()
+        options = Job.objects.order_by('location').values_list('location', flat=True).distinct()
         print(f"{options}")
         context['options'] = options
         print(context)
@@ -144,3 +145,44 @@ def logout(request):
     del request.session['logged_in_user_id']
     messages.success(request, 'Logged out successfully')
     return render(request, 'Login.html')
+
+
+def basic_filter(request):
+    if request.method == 'POST':
+        # Retrieve filter options from the request
+        job_type_filter = request.POST.get('jobTypeFilter')
+        experience_filter = request.POST.get('experienceRangeFilter')
+        city_filter = request.POST.get('locationFilter')
+
+        # Initialize an empty dictionary to store filter conditions
+        filter_conditions = {}
+
+        # Check if each condition is provided and not set to 'none', then add it to the filter_conditions dictionary
+        if job_type_filter and job_type_filter != 'none':
+            filter_conditions['job_type'] = job_type_filter
+
+        if experience_filter and experience_filter != 'none':
+            filter_conditions['experience'] = experience_filter
+
+        if city_filter and city_filter != 'none':
+            filter_conditions['location'] = city_filter
+
+        # Start with all jobs
+        jobs = Job.objects.all()
+
+        # Filter jobs based on provided conditions
+        if filter_conditions:
+            filter_query = Q(**filter_conditions)
+            jobs = jobs.filter(filter_query)
+
+        # Get options for location, skills, and title
+        options = Job.objects.order_by('location').values_list('location', flat=True).distinct()
+
+        context = {'jobs': jobs, 'options': options}
+
+        # Render a new page with the filtered jobs
+        return render(request, 'job_seeker/JList.html', context=context)
+    else:
+        # Handle invalid requests
+        print('error')
+        return render(request, 'job_seeker/JList.html')

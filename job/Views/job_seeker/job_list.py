@@ -39,6 +39,7 @@ def job_details(request, job_id):
             job_seeker = JobSeeker.objects.get(id=logged_in_user_id)
             print(job_seeker.id)
         except JobSeeker.DoesNotExist:
+            messages.warning(request, "Please Login to the Portal")
             return render(request, 'landing_page.html', {'error': 'JobSeeker instance not found'})
     else:
         return redirect('login')
@@ -87,13 +88,13 @@ def apply(request):
         job = get_object_or_404(Job, id=job_id)  # Fetch the Job instance corresponding to job_id
         print(job.id)
 
-
         try:
             application = Application.objects.create(date=date, user=job_seeker, job=job)
             application.save()
             messages.success(request, "Job Application Process Successful!")
             return HttpResponseRedirect(reverse('job_list'))  # Redirect to a success page
         except JobSeeker.DoesNotExist:
+            messages.warning(request, "Please Login to the Portal")
             return render(request, 'landing_page.html', {'message': 'Job Seeker not found'}, status=404)
 
     else:
