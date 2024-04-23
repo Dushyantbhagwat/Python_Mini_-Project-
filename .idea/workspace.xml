@@ -5,19 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="now job_seeker can see the reason its acceptance or rejection">
-      <change afterPath="$PROJECT_DIR$/job/migrations/0018_alter_recruiter_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/recruiter/AnyDesk.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/user/5_MIh9q4T.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/user/9_34lbmlv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/Logo-Samples2-04-min_PRs1l7S.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/JOB_PORTAL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JOB_PORTAL.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/Views/recruiter/recruiter_update_profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/recruiter/recruiter_update_profile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/recruiter_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/recruiter_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/UserR.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/UserR.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/u_update_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/u_update_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/landing_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/landing_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/RecruiterProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/RecruiterProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/admin/seeker_list_download.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/admin/seeker_list_download.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,14 +172,6 @@
       <workItem from="1713199257547" duration="5111000" />
       <workItem from="1713242386313" duration="3333000" />
       <workItem from="1713275657046" duration="3053000" />
-    </task>
-    <task id="LOCAL-00011" summary="project started and home page is added">
-      <option name="closed" value="true" />
-      <created>1708855562147</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1708855562147</updated>
     </task>
     <task id="LOCAL-00012" summary="project started and home page is added">
       <option name="closed" value="true" />
@@ -570,7 +557,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713875913996</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="now job_seeker can see the reason its acceptance or rejection">
+      <option name="closed" value="true" />
+      <created>1713879350258</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1713879350258</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

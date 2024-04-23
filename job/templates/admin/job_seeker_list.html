@@ -113,16 +113,16 @@
         <div class="frame-parent1">
             <div class="dropdown">
                  <div class="dropdown-content">
-                    <div class="excel-wrapper" onclick="window.location='{% url 'seeker_list_excel' %}'">
-                        <button class="excel">EXCEL</button>
+                    <div class="excel-wrapper" >
+                        <button onclick="window.location='{% url 'seeker_list_excel' %}'" class="excel">EXCEL</button>
                     </div>
                     <div class="csv-wrapper">
                         <div class="csv-child"></div>
                         <button class="csv1">CSV</button>
                     </div>
-                    <div class="pdf-wrapper" onclick="">
-                        <div class="pdf-child"></div>
-                        <button class="pdf1">PDF</button>
+                    <div class="pdf-wrapper" >
+                        <div  class="pdf-child"></div>
+                        <a download="{% url 'seeker_list_pdf' %}"><button class="pdf1">PDF</button></a>
                     </div>
                 </div>
                 <button class="dropbtn" >Download</button>

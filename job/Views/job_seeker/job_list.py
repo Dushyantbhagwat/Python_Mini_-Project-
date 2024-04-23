@@ -63,7 +63,7 @@ def apply(request):
         logged_in_user_id = request.session.get('logged_in_user_id')
 
         # Check if the user has already applied for more than 5 jobs
-        if Application.objects.filter(user_id=logged_in_user_id).count() > 4:
+        if Application.objects.filter(user_id=logged_in_user_id, status__in=['Pending']).count() > 4:
             messages.warning(request, "You have already applied for more than 5 jobs.")
             return redirect('job_list')
 
