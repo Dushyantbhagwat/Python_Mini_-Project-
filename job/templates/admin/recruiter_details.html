@@ -1548,7 +1548,13 @@ background: transparent;
         <label for="company-details">Company Details:</label>
         <p>{{ recruiter.company_details }}</p>
         <label for="logo">Logo:</label>
-        <p><img src="{{ recruiter.image.url }}" onclick="displayImageModal('{{ recruiter.image.url }}')" alt="Company Logo" style="max-width: 100px;"></p>
+        <p>
+            {% if recruiter.image.url %}
+                <img src="{{ recruiter.image.url }}" onclick="displayImageModal('{{ recruiter.image.url }}')" alt="Company Logo" style="max-width: 100px;">
+            {% else %}
+                <img src="{{ static 'images/recruiter.jpg' }}" alt="Default Logo" style="max-width: 100px;">
+            {% endif %}
+        </p>
         <label for="website">Website:</label>
         <p><a href="https://www.example.com">{{ recruiter.website }}</a></p>
         <label for="past-activity">Past Activity:</label>
