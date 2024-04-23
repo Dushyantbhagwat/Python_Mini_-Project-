@@ -16,6 +16,15 @@
     />
 
     <style>
+
+      .image-icon {
+        position: absolute; /* Position the icon independently */
+        top: 240px; /* Adjust the top position */
+        right: 440px; /* Adjust the right position */
+        margin-top: 10px; /* Adjust the margin from the top */
+        margin-right: 10px; /* Adjust the margin from the right */
+      }
+
       /* Add your CSS styles here */
           .registeredinfo {
               text-align: center;
@@ -234,18 +243,17 @@
             <div class="mdicompany-image">
               <div class="name-parent">
                 <div class="name">
-                  <h3 class="neha-raichand">{{ recruiter.full_name }}</h3>
+                  <h3 class="neha-raichand" style="white-space: nowrap;">{{ recruiter.full_name }}</h3>
+                </div>
+                <div class="image-icon">
                   <button class="primepencil-wrapper">
-                    <a href="{% url 'r_update_profile' %}"><img
-                      class="primepencil-icon"
-                      loading="lazy"
-                      alt=""
-                      src="{% static 'images/primepencil@2x.png' %}"
-                    /></a>
+                    <a href="{% url 'r_update_profile' %}">
+                      <img class="primepencil-icon" loading="lazy" alt="" src="{% static 'images/primepencil@2x.png' %}">
+                    </a>
                   </button>
                 </div>
-                
               </div>
+
               <div class="contactinfo">
                 <div class="frame5">
                   <div class="companynameinfo">

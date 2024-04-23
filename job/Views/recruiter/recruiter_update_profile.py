@@ -39,6 +39,7 @@ class UpdateProfile(View):
             recruiter.skills = skills
             recruiter.company_name = company
             if photo:  # Check if photo is uploaded
+                print("yes")
                 recruiter.image = photo
             recruiter.save()
 

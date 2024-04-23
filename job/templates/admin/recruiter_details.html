@@ -1549,10 +1549,10 @@ background: transparent;
         <p>{{ recruiter.company_details }}</p>
         <label for="logo">Logo:</label>
         <p>
-            {% if recruiter.image.url %}
+            {% if recruiter.image %}
                 <img src="{{ recruiter.image.url }}" onclick="displayImageModal('{{ recruiter.image.url }}')" alt="Company Logo" style="max-width: 100px;">
             {% else %}
-                <img src="{{ static 'images/recruiter.jpg' }}" alt="Default Logo" style="max-width: 100px;">
+                <img src="{% static 'images/recruiter.jpg' %}" alt="Default Logo" style="max-width: 100px;">
             {% endif %}
         </p>
         <label for="website">Website:</label>

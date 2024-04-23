@@ -16,7 +16,7 @@ class Recruiter(models.Model):
     company_details = models.CharField(max_length=200, blank=True, null=True)
     status = models.CharField(max_length=45, blank=True, null=True, default='request pending')
     type = models.CharField(max_length=45, blank=True, null=True, default='recruiter')
-    image = models.ImageField(upload_to='recruiter', null=True)
+    image = models.ImageField(upload_to='recruiter', null=True, blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
 

@@ -154,7 +154,7 @@
             </div>
             <div class="frame-wrapper1">
               <div class="password-parent">
-                <div class="password">Password <span>*</span></div>
+                <div class="password" onclick="togglePasswordRules()">Password <span>*</span></div>
                 <div class="frame-wrapper2">
                   <div class="password-box-parent">
                     <div class="password-box"></div>
@@ -168,10 +168,11 @@
                     />
                   </div>
 
+
                 </div>
                 <div class="enter-city-label">
                   <div class="minimum-six-characters">
-                    Minimum six characters required
+                    Minimum eight characters required
                   </div>
                 </div>
                     <div id="password-strength"></div>
@@ -226,7 +227,7 @@
                 </div>
                 <div class="frame-group">
                   <div class="location-wrapper">
-                    <div class="location">Location <span>*</span></div>
+                    <div class="location">Address <span>*</span></div>
                   </div>
                   <div class="email-box-stroke-group">
                     <img
@@ -237,7 +238,7 @@
 
                     <input
                       class="enter-your-location"
-                      placeholder="Enter your location"
+                      placeholder="Enter your residential address"
                       type="text"
                       id="location"
                       name="location" required
