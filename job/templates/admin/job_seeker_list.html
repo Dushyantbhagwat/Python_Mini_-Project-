@@ -68,7 +68,8 @@
                     <div class="recruiters-list">
 
 
-                      <a href="{% url 'admin_landing_page' %}"><button  class="recruiters-list-child">
+                      <a href="{% url 'admin_landing_page' %}" style="text-decoration: none; color: inherit;"><button  class="recruiters-list-child">
+                          <img style="max-width: 30px; height: 30px; left: 8px; top: 3px;" class="material-symbolshome-icon" loading="lazy" alt="" src="{% static 'images/materialsymbolshome@2x.png' %}"/>
                         <div class="home">Home</div>
 
                       </button></a>
@@ -77,12 +78,14 @@
                   </div>
                   <div class="frame-container">
                     <a href="{% url 'seeker_list_admin' %}"><button class="applications-btn-parent">
+                        <img style="max-width: 28px; height: 27px; left: 438px; top: 33px;" class="material-symbolshome-icon" loading="lazy" alt="" src="{% static 'images/test-account@2x.png' %}"/>
                       <div class="applications-btn"></div>
                       <div hr class="applications">Applications</div>
                     </button></a>
                   </div>
                   <div class="frame-container">
-                  <a href="{% url 'recruiter_list' %}"><button class="recruiter-btn">
+                  <a href="{% url 'recruiter_list' %}" ><button class="recruiter-btn">
+                      <img style="max-width: 28px; height: 27px; left: 591px; top: 33px;" class="material-symbolshome-icon" loading="lazy" alt="" src="{% static 'images/architect@2x.png' %}"/>
                     <div class="recruiter-btn-child"></div>
                     <div class="recruiters">Recruiters</div>
                   </button></a>

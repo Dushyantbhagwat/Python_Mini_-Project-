@@ -4,15 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="now job_seeker can see the reason its acceptance or rejection">
-      <change afterPath="$PROJECT_DIR$/media/recruiter/Logo-Samples2-04-min_PRs1l7S.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/JOB_PORTAL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JOB_PORTAL.iml" afterDir="false" />
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="pdf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/Views/admin/seeker_list_download.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/admin/seeker_list_download.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/job_seeker/job_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/style/admin/job_seeker_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/admin/job_seeker_list.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/app_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/auth/user/add_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/date_hierarchy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/delete_confirmation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/invalid_setup.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/pagination.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/popup_response.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/widgets/clearable_file_input.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,14 +178,6 @@
       <workItem from="1713199257547" duration="5111000" />
       <workItem from="1713242386313" duration="3333000" />
       <workItem from="1713275657046" duration="3053000" />
-    </task>
-    <task id="LOCAL-00012" summary="project started and home page is added">
-      <option name="closed" value="true" />
-      <created>1709114730181</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1709114730181</updated>
     </task>
     <task id="LOCAL-00013" summary="project started and home page is added">
       <option name="closed" value="true" />
@@ -565,7 +563,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713879350258</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="pdf">
+      <option name="closed" value="true" />
+      <created>1713888276241</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1713888276241</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,6 +612,7 @@
     <MESSAGE value="modify the job appllications list" />
     <MESSAGE value="modify some features" />
     <MESSAGE value="now job_seeker can see the reason its acceptance or rejection" />
-    <option name="LAST_COMMIT_MESSAGE" value="now job_seeker can see the reason its acceptance or rejection" />
+    <MESSAGE value="pdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="pdf" />
   </component>
 </project>
