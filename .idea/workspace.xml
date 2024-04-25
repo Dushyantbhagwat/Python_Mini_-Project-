@@ -7,18 +7,8 @@
     <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="pdf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/static/style/admin/job_seeker_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/admin/job_seeker_list.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/app_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/auth/user/add_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/date_hierarchy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/delete_confirmation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/invalid_setup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/pagination.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/popup_response.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/widgets/clearable_file_input.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/static/style/admin/recruiter_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/admin/recruiter_list.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/recruiter_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/recruiter_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,14 +168,6 @@
       <workItem from="1713199257547" duration="5111000" />
       <workItem from="1713242386313" duration="3333000" />
       <workItem from="1713275657046" duration="3053000" />
-    </task>
-    <task id="LOCAL-00013" summary="project started and home page is added">
-      <option name="closed" value="true" />
-      <created>1709380867334</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1709380867334</updated>
     </task>
     <task id="LOCAL-00014" summary="project started and home page is added">
       <option name="closed" value="true" />
@@ -571,7 +553,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713888276241</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="pdf">
+      <option name="closed" value="true" />
+      <created>1714018403717</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1714018403717</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
