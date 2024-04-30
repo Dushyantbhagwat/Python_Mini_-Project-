@@ -647,10 +647,15 @@
         <div class="form-group">
             <label for="company">Company Details:</label>
             <textarea id="company" name="company" rows="2" >{{ recruiter.company_details }}</textarea>
-
+        </div>
         <div class="form-group">
             <label for="photo">Company Logo:</label>
-            <input type="file" id="photo" name="photo" accept="imae/*" >
+            <input type="file" id="photo" name="photo" accept="image/*" >
+        </div>
+
+        <div class="form-group">
+            <label for="location">Company Location:</label>
+            <input id="location" name="location" value="{{ recruiter.location }}">
         </div>
 
         <div class="form-group">

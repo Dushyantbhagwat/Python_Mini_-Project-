@@ -31,13 +31,17 @@ class UpdateProfile(View):
             skills = request.POST.get('skills')
             company = request.POST.get('company')
             photo = request.FILES.get('photo')  # Use get() to avoid KeyError
+            website = request.POST.get('website')
+            location = request.POST.get('location')
 
             activity = activity.title()
 
             recruiter = Recruiter.objects.get(id=request.session.get('logged_in_user_id'))
             recruiter.past_activity = activity
             recruiter.skills = skills
-            recruiter.company_name = company
+            recruiter.company_details = company
+            recruiter.website = website
+            recruiter.location = location
             if photo:  # Check if photo is uploaded
                 print("yes")
                 recruiter.image = photo

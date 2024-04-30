@@ -210,6 +210,7 @@ from django.db.models import Q
 #     # If request method is not POST or if there are fewer than three filtering criteria provided, render the default page
 #     return render(request, 'job_seeker/JList.html')
 
+
 def filter_jobs(request):
     if request.method == 'POST':
         # Retrieve filter options from the request

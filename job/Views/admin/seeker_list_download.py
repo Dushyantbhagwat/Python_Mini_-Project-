@@ -5,8 +5,44 @@ from django.views import View
 from job.models import JobSeeker
 from django.template.loader import get_template
 # from xhtml2pdf import pisa
-from fpdf import FPDF
-from io import BytesIO
+# from fpdf import FPDF
+# from io import BytesIO
+
+from django.http import FileResponse
+import io
+from reportlab.pdfgen import canvas
+from reportlab.lib.units import inch
+from reportlab.lib.pagesizes import letter
+
+
+##
+def venue_pdf(request):
+    buf = io.BytesIO()
+
+    c = canvas.Canvas(buf, pagesize=letter, bottomup=0)
+
+    textob = c.beginText()
+    textob.setTextOrigin(inch, inch)
+    textob.setFont("Helvetica", 14)
+
+    lines = [
+        "This is line1",
+        "This is line2",
+        "This is line3"
+    ]
+
+    for line in lines:
+        textob.textLine(line)
+
+    c.drawText(textob)
+    c.showPage()
+    c.save()
+    buf.seek(0)
+
+    return FileResponse(buf, as_attachment=True, filename="venue.pdf")
+
+
+
 
 
 class DownloadExcelView(View):
@@ -37,39 +73,43 @@ class DownloadCSVView(View):
         return response
 
 
-class DownloadPDFView(View):
+# class DownloadPDFView(View):
+#
+#     @staticmethod
+#     def get(request):
+#         # Create a buffer to store the PDF data
+#         buffer = BytesIO()
+#
+#         # Create a new PDF object
+#         pdf = FPDF()
+#         pdf.add_page()
+#
+#         # Define the data to be included in the PDF
+#         data = [['Name', 'Gender', 'Contact', 'Email Id', 'City']]
+#
+#         # Fetch data from JobSeeker model
+#         for person in JobSeeker.objects.all():
+#             data.append([person.full_name, person.gender, person.mobile_no, person.email_id, person.city])
+#
+#         # Set font for the table
+#         pdf.set_font("Arial", size=12)
+#
+#         # Add the table content
+#         for row in data:
+#             for item in row:
+#                 pdf.cell(40, 10, txt=item, border=1)  # Adjust cell width and add border if needed
+#             pdf.ln()  # Move to the next line after completing a row
+#
+#         # Write PDF content to the buffer
+#         pdf_output = buffer.getvalue()
+#         buffer.close()
+#
+#         # Create an HTTP response with PDF attachment
+#         response = HttpResponse(pdf_output, content_type='application/pdf')
+#         response['Content-Disposition'] = 'attachment; filename="JobSeeker.pdf"'
+#
+#         return response
 
-    def get(self, request):
 
-        # Create a buffer to store the PDF data
-        buffer = BytesIO()
 
-        # Create a new PDF object
-        pdf = FPDF()
-        pdf.add_page()
 
-        # Define the data to be included in the PDF
-        data = [['Name', 'Gender', 'Contact', 'Email Id', 'City']]
-
-        # Fetch data from JobSeeker model
-        for person in JobSeeker.objects.all():
-            data.append([person.full_name, person.gender, person.mobile_no, person.email_id, person.city])
-
-        # Set font for the table
-        pdf.set_font("Arial", size=12)
-
-        # Add the table header
-        for row in data:
-            for item in row:
-                pdf.cell(40, 10, txt=item, ln=True)
-
-        # Write the PDF to the buffer
-        pdf_output = buffer.getvalue()
-        buffer.close()
-
-        # Create an HTTP response with PDF attachment
-        response = HttpResponse(content_type='application/pdf')
-        response['Content-Disposition'] = 'attachment; filename="JobSeeker.pdf"'
-        response.write(pdf_output)
-
-        return response

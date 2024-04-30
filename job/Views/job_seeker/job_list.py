@@ -42,6 +42,7 @@ def job_details(request, job_id):
             messages.warning(request, "Please Login to the Portal")
             return render(request, 'landing_page.html', {'error': 'JobSeeker instance not found'})
     else:
+        messages.warning(request, "Please Login to the Portal first!")
         return redirect('login')
 
     return render(request, 'job_seeker/JobDetails.html', {'jobs': jobs, 'job_seeker': job_seeker})

@@ -18,7 +18,7 @@ class Recruiter(models.Model):
     type = models.CharField(max_length=45, blank=True, null=True, default='recruiter')
     image = models.ImageField(upload_to='recruiter', null=True, blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-
+    location = models.CharField(max_length=100, blank=True, null=True, default='not updated')
 
 class JobSeeker(models.Model):
     id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')

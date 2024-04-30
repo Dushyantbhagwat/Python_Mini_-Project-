@@ -149,7 +149,7 @@ class RecruiterSignupView(View):
 
             # Check if the mobile number matches the pattern
             if not re.match(pattern, contact) or len(contact) != 10:
-                messages.error(request, "Mobile number should contain only digits and be 13 digits long.")
+                messages.error(request, "Mobile number should contain only digits and be 10 digits long.")
                 return render(request, self.template_name)
 
             if User.objects.filter(username=email).exists():

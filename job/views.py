@@ -108,10 +108,10 @@ class LoginView(View):
                     return render(request, 'recruiter/RLandingPage.html', {'recruiter': recruiter})
 
             except Recruiter.DoesNotExist:
-                messages.warning(request, "Your request is still is in process!")
+                messages.warning(request, "You are not authorized to access the page.")
                 pass  # No Recruiter found for this user
 
-            messages.warning(request, "You are not authorized to access the page.")
+            messages.warning(request, "Your request is still is in process!")
 
         else:
             print("Authentication failed.")  # Debug statement

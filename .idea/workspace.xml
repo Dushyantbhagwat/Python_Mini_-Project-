@@ -5,10 +5,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="pdf">
+      <change afterPath="$PROJECT_DIR$/job/migrations/0019_recruiter_location.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/Accen_nov20_0JrRlm8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/Accen_nov20_UTQTpeY.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/Accen_nov20_zY0vkML.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/oracle_nov13_M5jAodd.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/recruiter/oracle_nov13_mrUjnRb.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/fonts/DarkGardenMK.pfb" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/fonts/DarkGardenMK.pfb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/fonts/VeraBI.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/fonts/VeraBI.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/fonts/callig15.afm" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/fonts/callig15.afm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/fonts/zx______.pfb" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/fonts/zx______.pfb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/barcode/usps4s.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/barcode/usps4s.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/renderPDF.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/renderPDF.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/clustered_bar.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/clustered_bar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/exploded_pie.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/exploded_pie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/filled_radar.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/filled_radar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/line_chart.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/line_chart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/linechart_with_markers.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/linechart_with_markers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/runall.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/runall.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/stacked_bar.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/stacked_bar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/svgpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/svgpath.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/testshapes.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/testshapes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/widgets/signsandsymbols.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/widgets/signsandsymbols.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/geomutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/geomutils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/normalDate.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/normalDate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/rl_safe_eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/rl_safe_eval.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/textsplit.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/textsplit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/units.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/units.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/_fontdata_enc_standard.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/_fontdata_enc_standard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/_fontdata_widths_courier.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/_fontdata_widths_courier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/_fontdata_widths_helveticaoblique.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/_fontdata_widths_helveticaoblique.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/_glyphlist.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/_glyphlist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/pdfdoc.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/pdfdoc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/pdfmetrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/pdfmetrics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfgen/textobject.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfgen/textobject.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/platypus/figures.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/platypus/figures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/platypus/flowables.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/platypus/flowables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/static/style/admin/recruiter_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/job/static/style/admin/recruiter_list.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/admin/recruiter_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/recruiter_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/admin/seeker_list_download.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/admin/seeker_list_download.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/recruiter/r_sign_up.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/recruiter/r_sign_up.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/recruiter/recruiter_update_profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/recruiter/recruiter_update_profile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/admin/job_seeker_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JList.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/job_seeker/JobDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/job_seeker/JobDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/RUpdateProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/RUpdateProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/RecruiterProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/RecruiterProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobsite/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,14 +217,6 @@
       <workItem from="1713199257547" duration="5111000" />
       <workItem from="1713242386313" duration="3333000" />
       <workItem from="1713275657046" duration="3053000" />
-    </task>
-    <task id="LOCAL-00014" summary="project started and home page is added">
-      <option name="closed" value="true" />
-      <created>1709458986660</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1709458986660</updated>
     </task>
     <task id="LOCAL-00015" summary="project started and home page is added">
       <option name="closed" value="true" />
@@ -561,7 +602,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714018403717</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="pdf">
+      <option name="closed" value="true" />
+      <created>1714025970962</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1714025970966</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
