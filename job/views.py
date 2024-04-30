@@ -142,9 +142,16 @@ def job(request):
 
 
 def logout(request):
-    del request.session['logged_in_user_id']
-    messages.success(request, 'Logged out successfully')
-    return render(request, 'Login.html')
+    logged_in_user_id = request.session.get('logged_in_user_id')
+    print(logged_in_user_id)
+
+    if logged_in_user_id:
+        del request.session['logged_in_user_id']
+        messages.success(request, 'Logged out successfully')
+        return render(request, 'Login.html')
+    else:
+        messages.warning(request, "Please Login to the Portal first!")
+        return redirect('login')
 
 
 def basic_filter(request):
