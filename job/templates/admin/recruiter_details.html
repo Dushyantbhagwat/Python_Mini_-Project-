@@ -1470,12 +1470,12 @@ background: transparent;
           <div class="nav-child"></div>
           <div class="nav-bar">
             <div class="rectangle-parent">
-              <img
+              <a href="" ><img
                 class="frame-child"
                 loading="lazy"
                 alt=""
-                src="{% static 'images/logo@2x.png' %}"
-              />
+                src="{% static 'images/logo_1.png' %}"
+              /></a>
 
               <div class="frame-wrapper">
                 <div class="frame-parent">
@@ -1572,8 +1572,8 @@ background: transparent;
     <form id="status-form" method="post" action="{% url 'recruiter_status_update' %}">
     {% csrf_token %}
     <input type="hidden" name="recruiter_id" id="recruiter-id" value="{{ recruiter.id }}">
-    <button type="submit" name="status" value="accepted"  onclick="return rejectConfirmation()" class="accept-button">Accept</button>
-    <button type="submit" name="status" value="rejected" onclick="return acceptConfirmation()" class="reject-button">Reject</button>
+    <button type="submit" name="status" value="accepted"  onclick="return acceptConfirmation()" class="accept-button">Accept</button>
+    <button type="submit" name="status" value="rejected" onclick="return rejectConfirmation()" class="reject-button">Reject</button>
     </form>
     </div>
 

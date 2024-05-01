@@ -48,11 +48,12 @@ def job_details(request, job_id):
     return render(request, 'job_seeker/JobDetails.html', {'jobs': jobs, 'job_seeker': job_seeker})
 
 
-def job_detail_email(email_id, job):
-    subject = f"Job Application Details for {job.title}"
-    message_body = f"Company Name: {job.recruiter.company_name}\n"
-    message_body += f"Job Description: {job.description}\n"
-    message_body += f"Location: {job.location}\n"
+def job_detail_email(email_id, title, company, description, location, website):
+    subject = f"Job Application Details for {title}"
+    message_body = f"Company Name: {company}\n"
+    message_body += f"Job Description: {description}\n"
+    message_body += f"Location: {location}\n"
+    message_body += f"Website: {website}\n"
     # Add more job details as needed
 
     email_message = EmailMessage(subject, message_body, to=[email_id])
@@ -89,10 +90,17 @@ def apply(request):
         job = get_object_or_404(Job, id=job_id)  # Fetch the Job instance corresponding to job_id
         print(job.id)
 
+        title = job.title
+        company = job.recruiter.company_name
+        description = job.description
+        location = job.location
+        website = job.recruiter.website
+
         try:
             application = Application.objects.create(date=date, user=job_seeker, job=job)
             application.save()
             messages.success(request, "Job Application Process Successful!")
+            job_detail_email(job_seeker.email_id, title, company, description, location, website)
             return HttpResponseRedirect(reverse('job_list'))  # Redirect to a success page
         except JobSeeker.DoesNotExist:
             messages.warning(request, "Please Login to the Portal")
@@ -104,26 +112,29 @@ def apply(request):
 
 def job_status(request):
     logged_in_user_id = request.session.get('logged_in_user_id')
+    if logged_in_user_id:
+        # Assuming JobSeeker is your model for job_seekers
+        job_seeker = JobSeeker.objects.get(id=logged_in_user_id)
 
-    # Assuming JobSeeker is your model for job_seekers
-    job_seeker = JobSeeker.objects.get(id=logged_in_user_id)
+        # Fetch all applications associated with the job_seeker
+        applications = Application.objects.filter(user=job_seeker)
 
-    # Fetch all applications associated with the job_seeker
-    applications = Application.objects.filter(user=job_seeker)
+        # Now, let's iterate over each application and extract the associated job and status
+        jobs = []
+        for application in applications:
+            job = application.job
+            status = application.status  # Assuming status is a field in your Application model
+            date = application.date
+            reason = application.reason
+            jobs.append((job, status, date, reason))
 
-    # Now, let's iterate over each application and extract the associated job and status
-    jobs = []
-    for application in applications:
-        job = application.job
-        status = application.status  # Assuming status is a field in your Application model
-        date = application.date
-        reason = application.reason
-        jobs.append((job, status, date, reason))
+        # Now, 'jobs' contains tuples of (job, status) applied to by the job_seeker
+        print(jobs)
 
-    # Now, 'jobs' contains tuples of (job, status) applied to by the job_seeker
-    print(jobs)
-
-    return render(request, 'job_seeker/JobStatus.html', {'jobs': jobs})
+        return render(request, 'job_seeker/JobStatus.html', {'jobs': jobs})
+    else:
+        messages.warning(request, "Please Login to the Portal first!")
+        return redirect('login')
 
 
 def job_accepted(request):
