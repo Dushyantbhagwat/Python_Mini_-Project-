@@ -203,17 +203,17 @@
                 />
 
                 {% if status == 'Pending' %}
-                <button class="pending-box-parent" onclick="showReasonPrompt('{{ reason }}')"> <!-- Change here -->
+                <button class="pending-box-parent" > <!-- Change here -->
                   <div class="pending-box"></div>
                   <div class="pending">{{ status }}</div>
                 </button>
                 {% elif status == 'Rejected' %}
-                <button class="rej-box-parent" onclick="showReasonPrompt('{{ reason }}')"> <!-- Change here -->
+                <button class="rej-box-parent" onclick="showRReasonPrompt('{{ reason }}')"> <!-- Change here -->
                   <div class="rej-box"></div>
                   <div class="rejected">{{ status }}</div>
                 </button>
                 {% else %}
-                <button class="frame-button" onclick="showReasonPrompt('{{ reason }}')"> <!-- Change here -->
+                <button class="frame-button" onclick="showAReasonPrompt('{{ reason }}')"> <!-- Change here -->
                   <div class="rectangle-div"></div>
                   <div class="accepted">{{ status }}</div>
                 </button>
@@ -230,7 +230,7 @@
               var span = document.getElementsByClassName("close")[0];
 
               // When the user clicks the button, open the modal
-              function showReasonPrompt(reason) {
+              function showRReasonPrompt(reason) {
                 var reasonText = document.getElementById("reasonText");
                 if (reason) {
                   reasonText.textContent = 'Reason for rejection:\n' + reason;
@@ -239,6 +239,16 @@
                 }
                 modal.style.display = "block";
               }
+              function showAReasonPrompt(reason) {
+                var reasonText = document.getElementById("reasonText");
+                if (reason) {
+                  reasonText.textContent = 'Reason for Acceptance:\n' + reason;
+                } else {
+                  reasonText.textContent = 'Reason was not provided for acceptance.';
+                }
+                modal.style.display = "block";
+              }
+
 
               // When the user clicks on <span> (x), close the modal
               span.onclick = function() {
@@ -253,7 +263,7 @@
               }
             </script>
             <script>
-                function showReasonPrompt(reason) {
+                function showRReasonPrompt(reason) {
                   var reasonPrompt = document.getElementById("reasonPrompt");
                   var reasonMessage = document.getElementById("reasonMessage");
                   if (reason !== "Not Provided") {
@@ -261,6 +271,26 @@
                     reasonMessage.style.color = 'green'; // Change color if reason is provided
                   } else {
                     reasonMessage.textContent = 'Reason was not provided for rejection.';
+                    reasonMessage.style.color = 'red'; // Change color if reason is not provided
+                  }
+                  reasonPrompt.style.display = "block";
+
+                  // Add event listener to close the prompt when clicking outside of it
+                  window.addEventListener('click', function(event) {
+                    if (event.target == reasonPrompt) {
+                      reasonPrompt.style.display = "none";
+                    }
+                  });
+                }
+
+                function showAReasonPrompt(reason) {
+                  var reasonPrompt = document.getElementById("reasonPrompt");
+                  var reasonMessage = document.getElementById("reasonMessage");
+                  if (reason !== "Not Provided") {
+                    reasonMessage.textContent = 'Reason for acceptance: ' + reason;
+                    reasonMessage.style.color = 'green'; // Change color if reason is provided
+                  } else {
+                    reasonMessage.textContent = 'Reason was not provided for acceptance.';
                     reasonMessage.style.color = 'red'; // Change color if reason is not provided
                   }
                   reasonPrompt.style.display = "block";
