@@ -6,158 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="job status message">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/Faker-24.3.0.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/Faker-24.3.0.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/Faker-24.3.0.dist-info/zip-safe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/cli.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/decode/codes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/address/az_AZ/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/address/es_CO/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/address/es_ES/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/address/ja_JP/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/address/pl_PL/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/address/pt_BR/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/address/ro_RO/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/address/ru_RU/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/address/sv_SE/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/address/ta_IN/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/automotive/bn_BD/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/automotive/el_GR/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/automotive/es_AR/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/automotive/et_EE/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/automotive/fi_FI/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/automotive/id_ID/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/automotive/sk_SK/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/automotive/th_TH/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/bank/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/bank/el_GR/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/bank/es_AR/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/bank/fi_FI/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/bank/tl_PH/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/barcode/en_CA/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/color/az_AZ/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/color/bg_BG/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/color/color.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/color/hu_HU/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/color/hy_AM/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/company/az_AZ/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/company/bg_BG/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/company/cs_CZ/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/company/en_PH/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/company/fil_PH/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/company/hu_HU/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/company/hy_AM/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/company/it_IT/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/company/ko_KR/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/company/ro_RO/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/company/ru_RU/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/company/sv_SE/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/company/tr_TR/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/company/zh_CN/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/credit_card/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/credit_card/pt_PT/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/currency/fr_CA/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/currency/it_IT/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/currency/nl_NL/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/date_time/en_US/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/date_time/es_ES/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/date_time/fil_PH/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/date_time/fr_FR/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/date_time/ja_JP/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/date_time/no_NO/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/date_time/pl_PL/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/date_time/ro_RO/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/date_time/ru_RU/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/emoji/en_US/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/internet/es_AR/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/internet/es_CL/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/internet/fi_FI/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/internet/fil_PH/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/internet/hr_HR/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/internet/sk_SK/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/job/es_AR/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/job/es_CL/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/job/hr_HR/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/lorem/el_GR/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/misc/en_PH/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/misc/en_US/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/person/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/person/en_TH/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/person/en_US/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/person/es_MX/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/person/pl_PL/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/person/ta_IN/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/phone_number/ar_AE/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/phone_number/en_US/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/phone_number/es_CL/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/phone_number/es_ES/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/phone_number/es_MX/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/phone_number/fa_IR/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/phone_number/he_IL/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/phone_number/hi_IN/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/phone_number/no_NO/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/phone_number/pl_PL/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/phone_number/ro_RO/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/phone_number/ru_RU/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/phone_number/sv_SE/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/phone_number/ta_IN/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/profile/en_US/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/sbn/rules.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/ssn/de_DE/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/ssn/et_EE/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/ssn/fil_PH/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/ssn/lv_LV/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/ssn/nl_NL/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/ssn/pt_PT/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/ssn/tl_PH/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/ssn/uk_UA/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/providers/ssn/zh_TW/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/proxy.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/py.typed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/sphinx/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/faker/utils/text.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pypdf-4.1.0.dist-info/REQUESTED" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pypdf/_crypt_providers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pypdf/_text_extraction/_layout_mode/_font.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pypdf/annotations/_non_markup_annotations.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pypdf/generic/_fit.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/fonts/DarkGardenMK.pfb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/fonts/VeraBI.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/fonts/callig15.afm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/fonts/zx______.pfb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/barcode/usps4s.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/renderPDF.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/clustered_bar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/exploded_pie.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/filled_radar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/line_chart.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/linechart_with_markers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/runall.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/samples/stacked_bar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/svgpath.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/testshapes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/graphics/widgets/signsandsymbols.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/enums.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/geomutils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/normalDate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/rl_safe_eval.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/textsplit.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/lib/units.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/_fontdata_enc_standard.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/_fontdata_widths_courier.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/_fontdata_widths_helveticaoblique.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/_glyphlist.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/pdfdoc.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfbase/pdfmetrics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/pdfgen/textobject.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/platypus/figures.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/reportlab/platypus/flowables.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/Views/admin/seeker_list_download.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/admin/seeker_list_download.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/MySQLdb/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/MySQLdb/_mysql.cp311-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/MySQLdb/constants/FIELD_TYPE.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/PyMySQL-1.1.0.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/PyMySQL-1.1.0.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/mysqlclient-2.2.4.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pymysql/constants/CLIENT.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Lib/site-packages/pymysql/err.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobsite/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,22 +174,6 @@
       <workItem from="1713199257547" duration="5111000" />
       <workItem from="1713242386313" duration="3333000" />
       <workItem from="1713275657046" duration="3053000" />
-    </task>
-    <task id="LOCAL-00019" summary="stored the login_user session">
-      <option name="closed" value="true" />
-      <created>1709660662867</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1709660662867</updated>
-    </task>
-    <task id="LOCAL-00020" summary="image file">
-      <option name="closed" value="true" />
-      <created>1710571839862</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1710571839862</updated>
     </task>
     <task id="LOCAL-00021" summary="image file">
       <option name="closed" value="true" />
@@ -710,7 +551,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714549894598</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="job status message">
+      <option name="closed" value="true" />
+      <created>1714572042254</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1714572042254</updated>
+    </task>
+    <task id="LOCAL-00069" summary="job status message">
+      <option name="closed" value="true" />
+      <created>1714572223200</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1714572223200</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
