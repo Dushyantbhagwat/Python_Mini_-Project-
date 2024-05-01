@@ -70,17 +70,18 @@
   max-width: 100%;
 }
 .frame-child {
-  height: 63.3px;
+  height: 60.3px;
   width: 183.5px;
   position: relative;
   object-fit: cover;
   z-index: 1;
+  left: 40px;
 }
 .recruiters-list-child {
-position: absolute;
-    top: 0;
-    left: 135px;
-    border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 135px;
+  border-radius: 20px;
   background-color: var(--color-white);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 100%;
@@ -101,7 +102,7 @@ position: absolute;
   position: absolute;
   top: 0;
   left: 0;
-  width: 130px;
+  width: 120px;
   height: 42px;
 }
 
@@ -112,7 +113,7 @@ position: absolute;
 
 .home {
   font-size: 16px;
-  top: 12px;
+  top: 10px;
   left: 20px;
   display: inline-block;
   width: 90px;
@@ -135,8 +136,8 @@ position: absolute;
   display: none;
 }
 .applications {
-    top: 11px;
-    left: 21px;
+  top: 11px;
+  left: 35px;
   position: relative;
   font-size: 16px;
   font-family: var(--font-inter);
@@ -158,10 +159,10 @@ position: absolute;
   justify-content: flex-start;
 }
 .applications-btn-parent {
-     position: relative;
+    position: relative;
     left: 60px;
     height: 42px;
-    width: 130px;
+    width: 139px;
     cursor: pointer;
     padding: var(--padding-sm) var(--padding-sm) var(--padding-4xs) var(--padding-4xl);
     background-color: white;
@@ -191,8 +192,8 @@ position: absolute;
   display: none;
 }
 .recruiters {
-      left: 25px;
-    top: 11px;
+  left: 34px;
+  top: 11px;
   font-size: 16px;
   position: relative;
   display: inline-block;
@@ -209,7 +210,7 @@ position: absolute;
     left: 70px;
     position: relative;
     height: 42px;
-    width: 130px;
+    width: 135px;
     border-radius: 20px;
     background-color: var(--color-white);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -1483,21 +1484,23 @@ background: transparent;
                     <div class="recruiters-list">
 
 
-                      <a href="{% url 'admin_landing_page' %}"><button  class="recruiters-list-child">
+                      <a href="{% url 'admin_landing_page' %}" style="text-decoration: none; color: inherit;"><button  class="recruiters-list-child">
+                          <img style="max-width: 30px; height: 30px; left: 8px; top: 3px;" class="material-symbolshome-icon" loading="lazy" alt="" src="{% static 'images/materialsymbolshome@2x.png' %}"/>
                         <div class="home">Home</div>
-
                       </button></a>
 
                     </div>
                   </div>
                   <div class="frame-container">
                     <a href="{% url 'seeker_list_admin' %}"><button class="applications-btn-parent">
-                      <div class="applications-btn"></div>
+                        <img style="max-width: 28px; height: 27px; left: 2.4px; top: 6px;" class="material-symbolshome-icon" loading="lazy" alt="" src="{% static 'images/test-account@2x.png' %}"/>
+                        <div class="applications-btn"></div>
                       <div hr class="applications">Applications</div>
                     </button></a>
                   </div>
                   <div class="frame-container">
                   <a href="{% url 'recruiter_list' %}"><button class="recruiter-btn">
+                      <img style="max-width: 28px; height: 25px; left: 4px; top: 7px;" class="material-symbolshome-icon" loading="lazy" alt="" src="{% static 'images/architect@2x.png' %}"/>
                     <div class="recruiter-btn-child"></div>
                     <div class="recruiters">Recruiters</div>
                   </button></a>
