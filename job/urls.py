@@ -67,6 +67,6 @@ urlpatterns = [
     path('rejected_recruiter_list/', recruiter_list.rejected_recruiter_list, name='rejected_recruiter_list'),
     path('delete_job_seeker/<int:user_id>/', seeker_list.delete_job_seeker, name='delete_job_seeker'),
     path('seeker_list_excel/', seeker_list_download.DownloadExcelView.as_view(), name='seeker_list_excel'),
-    path('seeker_list_pdf/', seeker_list_download.venue_pdf, name='seeker_list_pdf'),
+    # path('seeker_list_pdf/', seeker_list_download.venue_pdf, name='seeker_list_pdf'),
 
 ]

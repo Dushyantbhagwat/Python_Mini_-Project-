@@ -4,42 +4,35 @@ from django.http import HttpResponse
 from django.views import View
 from job.models import JobSeeker
 from django.template.loader import get_template
-# from xhtml2pdf import pisa
-# from fpdf import FPDF
-# from io import BytesIO
 
 from django.http import FileResponse
-import io
-from reportlab.pdfgen import canvas
-from reportlab.lib.units import inch
-from reportlab.lib.pagesizes import letter
 
 
 ##
-def venue_pdf(request):
-    buf = io.BytesIO()
-
-    c = canvas.Canvas(buf, pagesize=letter, bottomup=0)
-
-    textob = c.beginText()
-    textob.setTextOrigin(inch, inch)
-    textob.setFont("Helvetica", 14)
-
-    lines = [
-        "This is line1",
-        "This is line2",
-        "This is line3"
-    ]
-
-    for line in lines:
-        textob.textLine(line)
-
-    c.drawText(textob)
-    c.showPage()
-    c.save()
-    buf.seek(0)
-
-    return FileResponse(buf, as_attachment=True, filename="venue.pdf")
+# def venue_pdf(request):
+#     buf = io.BytesIO()
+#
+#     c = canvas.Canvas(buf, pagesize=letter, bottomup=0)
+#
+#     textob = c.beginText()
+#     textob.setTextOrigin(inch, inch)
+#     textob.setFont("Helvetica", 14)
+#
+#     lines = [
+#         "This is line1",
+#         "This is line2",
+#         "This is line3"
+#     ]
+#
+#     for line in lines:
+#         textob.textLine(line)
+#
+#     c.drawText(textob)
+#     c.showPage()
+#     c.save()
+#     buf.seek(0)
+#
+#     return FileResponse(buf, as_attachment=True, filename="venue.pdf")
 
 
 
