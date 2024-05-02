@@ -92,7 +92,7 @@
                         <div class="dropdown-content" id="dropdownContent">
                             <!-- Dropdown content goes here -->
                             <a href="{% url 'r_profile' %}">Profile</a>
-                            <a href="% url 'logout' %}">Log out</a>
+                            <a href="%{% url 'logout' %}">Log out</a>
                         </div>
                 </div>
           </div>
@@ -135,7 +135,10 @@
                         </div>
                     </div>
                     <div class="published-on-412024-wrapper" style="white-space: nowrap;">
-                        <div class="published-on">Published on : {{ job.deadline }}</div>
+                        <div class="published-on">Published on : {{ job.start_date }}</div>
+                    </div>
+                    <div class="published-on-412024-wrapper" style="white-space: nowrap;">
+                        <div class="published-on">Deadline : {{ job.deadline }}</div>
                     </div>
                 </div>
             </div>

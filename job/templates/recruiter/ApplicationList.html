@@ -43,7 +43,7 @@
       .dropdown-menu {
           display: none;
           position: absolute;
-          right: -475px; /* Aligns the right edge of the dropdown with the right edge of the button */
+          right: -425px; /* Aligns the right edge of the dropdown with the right edge of the button */
           top: 10px; /* Aligns the top edge of the dropdown with the top edge of the button */
       }
 
@@ -479,7 +479,7 @@
 
 
         function reject(id) {
-              var reason = prompt('Please provide a reason for accepting (optional):');
+              var reason = prompt('Please provide a reason for rejecting (optional):');
               if (confirm('Are you sure you want to reject this candidate?')) {
                   // If user confirms, proceed with rejection
                   $.ajax({
