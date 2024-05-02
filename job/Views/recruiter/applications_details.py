@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from job.models import Job, Application
+from job.models import Job, Application, JobSeeker
 
 
 def application(request, app_id):
@@ -32,3 +32,28 @@ def application(request, app_id):
 
     return render(request, 'recruiter/Application.html', {'job': job})
 
+
+# views.py
+
+from django.http import JsonResponse
+
+def search_resumes(request):
+    if request.method == 'GET' and request.is_ajax():
+        search_text = request.GET.get('search_text', '')
+
+        # Filter applications based on resume content
+        matching_applications = Application.objects.filter(
+            user__resume_content__icontains=search_text
+        )
+
+        # Serialize the matching applications to JSON
+        matching_applications_data = [{
+            'id': app.id,
+            'full_name': app.user.full_name,
+            # Add other fields you want to include in the response
+        } for app in matching_applications]
+
+        return JsonResponse({'matching_applications': matching_applications_data})
+
+    # Return empty response if request method is not GET or not AJAX
+    return JsonResponse({})

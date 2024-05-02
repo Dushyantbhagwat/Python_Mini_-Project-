@@ -240,6 +240,7 @@ def u_landing_page(request):
             return render(request, 'landing_page.html', {'error': 'Recruiter instance not found'})
     else:
         # User is not logged in, handle accordingly
+        messages.warning(request, "Please Login to the Portal first!")
         return redirect('login')
 
 

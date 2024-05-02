@@ -401,7 +401,6 @@
             <div>{{ app.user.email_id }}</div>
             <div>{{ app.user.gender }}</div>
             <div><a href="{{ app.user.resume.url }}" download>Resume</a></div>
-            </a>
             <div>
               {% if app.user.image %}
               <img class="ellipse-icon" loading="lazy" alt="" src="{{ app.user.image.url }}" />
@@ -543,14 +542,6 @@
             });
         });
     </script>
-
-
-
-
-
-
-
-
 
 
 

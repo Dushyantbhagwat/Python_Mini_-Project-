@@ -28,6 +28,7 @@ urlpatterns = [
     path('accepted_jobs', job_list.job_accepted, name='accepted_jobs'),
     path('rejected_jobs', job_list.job_rejected, name='rejected_jobs'),
     # path('basic_filtering/', sign_up.u_landing_filter, name='basic_filtering'),
+    path('resume', applications_details.search_resumes, name='resume'),
 
     # path('u_filter_landing/', job_filtering.LandingFilter.as_view(), name='u_filter_landing'),
     # path('job_filter/', job_filtering.filter_job, name='job_filter'),

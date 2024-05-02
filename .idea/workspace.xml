@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="job status message">
+    <list default="true" id="42e7593e-8c03-4645-a466-2f71b4b0e24e" name="Changes" comment="fixed some minor issues">
+      <change afterPath="$PROJECT_DIR$/job/static/style/ForgotPassword.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/templates/ForgotPassword.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/recruiter/applications_details.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/recruiter/applications_details.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/Views/recruiter/r_sign_up.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/Views/recruiter/r_sign_up.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/templates/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/Login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/templates/recruiter/ApplicationList.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/ApplicationList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/templates/recruiter/JobHistory.html" beforeDir="false" afterPath="$PROJECT_DIR$/job/templates/recruiter/JobHistory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -168,14 +174,6 @@
       <workItem from="1713199257547" duration="5111000" />
       <workItem from="1713242386313" duration="3333000" />
       <workItem from="1713275657046" duration="3053000" />
-    </task>
-    <task id="LOCAL-00022" summary="job seeker and recruiter registration feature added">
-      <option name="closed" value="true" />
-      <created>1710690437869</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1710690437869</updated>
     </task>
     <task id="LOCAL-00023" summary="user and recruiter registration and login featured completed">
       <option name="closed" value="true" />
@@ -561,7 +559,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714576051855</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="fixed some minor issues">
+      <option name="closed" value="true" />
+      <created>1714613641976</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1714613641976</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +586,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="project started and home page is added" />
     <MESSAGE value="stored the login_user session" />
     <MESSAGE value="image file" />
     <MESSAGE value="job seeker and recruiter registration feature added" />
@@ -605,6 +610,7 @@
     <MESSAGE value="pdf" />
     <MESSAGE value="corrected some functions" />
     <MESSAGE value="job status message" />
-    <option name="LAST_COMMIT_MESSAGE" value="job status message" />
+    <MESSAGE value="fixed some minor issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some minor issues" />
   </component>
 </project>

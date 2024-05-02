@@ -3,12 +3,20 @@ from django.contrib.auth.hashers import make_password, check_password
 from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.views import generic, View
-from .models import JobSeeker, Recruiter, Job
+from .models import JobSeeker, Recruiter, Job, User
 from .utils import *
 from django.contrib import messages
 from django.core.exceptions import ValidationError
 from django.http import JsonResponse
 import random
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.http import urlsafe_base64_encode
+from django.utils.encoding import force_bytes
+from django.contrib.auth.models import User
+from django.core.mail import send_mail, EmailMessage
+from django.shortcuts import render
+from django.utils.crypto import get_random_string
+
 
 # Create your Views here.
 
@@ -193,3 +201,5 @@ def basic_filter(request):
         # Handle invalid requests
         print('error')
         return render(request, 'job_seeker/JList.html')
+
+
