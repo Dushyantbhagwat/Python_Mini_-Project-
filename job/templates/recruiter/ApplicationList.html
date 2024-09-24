@@ -43,7 +43,7 @@
       .dropdown-menu {
           display: none;
           position: absolute;
-          right: -425px; /* Aligns the right edge of the dropdown with the right edge of the button */
+          right: -475px; /* Aligns the right edge of the dropdown with the right edge of the button */
           top: 10px; /* Aligns the top edge of the dropdown with the top edge of the button */
       }
 
@@ -412,12 +412,13 @@
               {% if app.status == 'Pending' %}
                <div>
                     <a href="{% url 'applications' app.id %}"  class="next">Job Details</a><br>
+                    <a href="" class="next">Chat</a>
                     <a href=""  onclick="accept({{ app.id }})" class="acc">Accept</a>
                     <a href="" onclick="reject({{ app.id }})" class="rej">Reject</a>
                </div>
               {% elif app.status == 'Accepted' %}
                <div>
-                 <a class="reason" onclick="showReasonPrompt('{{ app.reason }}')">
+                 <a class="reason" onclick="showReasonPrompt1('{{ app.reason }}')">
                       <p class="acc">Accepted</p>
                  </a>
                </div>
@@ -440,13 +441,20 @@
 
     <script>
           function showReasonPrompt(reason) {
-        if (reason) {
-            alert('Reason for rejection:\n' + reason);
-        } else {
-            alert('Reason was not provided for rejection.');
-        }
-    }
+                if (reason) {
+                    alert('Reason for rejection:\n' + reason);
+                } else {
+                    alert('Reason was not provided for rejection.');
+                }
+          }
 
+          function showReasonPrompt1(reason) {
+                if (reason) {
+                    alert('Reason for acception:\n' + reason);
+                } else {
+                      alert('Reason was not provided for acception.');
+                        }
+          }
     </script>
 
     <script>
