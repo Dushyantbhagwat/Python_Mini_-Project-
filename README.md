@@ -21,49 +21,110 @@ By empowering job seekers to find meaningful employment that supports their well
 9. **Administrative Oversight:** Admin has the authority to delete job seeker accounts if any discrepancies are found.
 10. **Recruiter Approval Process:** Only admin can accept or reject recruiters, determining their access to the portal.
 
-## 3. User Interface
+## 3. Project Setup and Running Instructions
 
-### JOBSEEKERS
-### 3.1 Landing Page
+Follow the steps below to set up and run this project on your local machine.
 
-![2 Portal Landing Page](https://github.com/user-attachments/assets/540525db-ab82-49fa-aebf-c8609e083b4b)
+### Prerequisites
 
-### 3.2 Job Seeker Registration Page
-![1 Job Seeker Registration Page](https://github.com/user-attachments/assets/040b67d7-c3e8-4c35-8c0c-069316f4f9f5)
+- Python 3.x installed
+- `pip` package manager installed
+- Django installed (included in `requirements.txt`)
 
-### 3.3 Job seeker profile
-![3 Profile](https://github.com/user-attachments/assets/a670e8d1-5a1a-40cb-b345-540482642c4d)
+## 4. Steps to Run the Project
 
-### 3.4 Job List
-![6 Job List](https://github.com/user-attachments/assets/32bcb683-a9c7-4fb7-9463-268cd68159b6)
+### Step 1: Clone the Repository
 
-### 3.5 Job Details
-![7  Job Filterings](https://github.com/user-attachments/assets/c4e3772e-ef39-4a3a-b38f-998c246b2fec)
+First, clone the project repository (or ensure you have the project files on your machine).
 
-### 3.6 Applied Jobs list
-![5 Appleid Jobs Status](https://github.com/user-attachments/assets/641ab709-11f3-4ee6-b059-c51b120baed8)
+```bash
+git clone <repository-url>
+cd /path/to/project
+```
+
+### Step 2: Create a Virtual Environment
+To avoid conflicts between global and project-specific dependencies, create a virtual environment.
+
+```bash
+python -m venv .venv
+```
+
+### Step 3: Activate the Virtual Environment
+On Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+On macOS/Linux:
+``` bash
+source venv/bin/activate
+```
+
+### Step 4: Install Dependencies
+Install all the necessary dependencies listed in the requirements.txt file.
+```bash
+pip install -r requirements.txt
+```
+
+### Step 5: Configure the Database
+Before applying migrations, ensure that the database settings in settings.py are configured correctly. By default, this project uses SQLite, but you can configure any other database by updating the DATABASES section in settings.py.
 
 
-### RECRUITERS
-### 3.7 Recruiter Registration page
-![1  Recruiter Registration](https://github.com/user-attachments/assets/cc062c18-2e9b-4963-a155-6fd102b64f3d)
+### Step 6: Run Migrations
+Once the database is configured, apply the migrations to set up your database schema.
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
 
-### 3.8 Posted Jobs List
-![5  Posted Jobs List](https://github.com/user-attachments/assets/f5e5f3b0-1ae6-4b6c-bc40-bc7b45b7a136)
+### Step 7: Create a Superuser (Optional)
+```bash
+To access the Django admin panel, create a superuser:
+```
+Follow the on-screen instructions to enter a username, email, and password.
 
-### 3.9 Applied Candidate list:
-![6  Applied Candidate List](https://github.com/user-attachments/assets/74dea113-5d59-44f0-aca7-a6e62f5bf9ba)
+### Step 8: Run the Server
+Start the Django development server using the following command:
 
-### ADMIN
-### 3.10 Job Seekers List
-![2   Job Seekers List](https://github.com/user-attachments/assets/f4367324-e221-4fb5-80f9-7c45ea5c6446)
+```bash
+python manage.py runserver
+```
 
-### 3.11  Recruiter List
-![3  Recruiter List](https://github.com/user-attachments/assets/fe30ea8a-a78b-484a-acf9-e265dbf91ce2)
+This will start the server, and you can now access the portal in your browser at http://127.0.0.1:8000/.
 
-### 3.12 Recruiters Details
-![4  Recruiters Details](https://github.com/user-attachments/assets/d2600d33-9864-4d67-b747-5f7c25214699)
-
+### Step 9: Access the Admin Panel
+If you created a superuser, you can access the Django admin panel at http://127.0.0.1:8000/admin/ to manage users, recruiters, and job listings.
 
 
+# Credentials
+Use these credentials for testing the project.
+### Recruiter
+```markdown
+Email Id -> 322niranjan0023@dbit.in
+Password -> Jobs123!
+```
+### Job Seeker
+```markdown
+Email Id -> aakhya@313.gmail.com
+Password -> Jobs123!
+```
+### Admin
+```markdown
+Email Id -> admin@dbit.com
+Password -> Dbit123!
+```
+
+## Email Service
+To send email notifications (e.g., password resets or job application status), configure the email service in the settings.py file with the following settings by creating your gmail account app password:
+```markdown
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+```
+
+Make sure to set the correct password for EMAIL_HOST_PASSWORD in your local environment or use environment variables to keep it secure.
 
