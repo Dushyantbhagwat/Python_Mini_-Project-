@@ -8,6 +8,10 @@ To bridge these gaps, a dedicated job portal is essential. It should provide acc
 
 By empowering job seekers to find meaningful employment that supports their well-being and that of their families, the portal aims to contribute to socio-economic advancement.
 
+
+---
+
+
 ## 2. Features
 
 1. **Multilingual Support:** Access the portal in multiple languages to cater to diverse users.
@@ -21,7 +25,53 @@ By empowering job seekers to find meaningful employment that supports their well
 9. **Administrative Oversight:** Admin has the authority to delete job seeker accounts if any discrepancies are found.
 10. **Recruiter Approval Process:** Only admin can accept or reject recruiters, determining their access to the portal.
 
-## 3. Project Setup and Running Instructions
+---
+
+
+## 3. Technologies Used
+
+### 1. HTML (HyperText Markup Language)
+HTML is the standard language used to create web pages. It structures the content on a webpage using elements such as headings, paragraphs, images, links, and forms.
+
+In this project, HTML is used to define the structure of various pages on the job portal, including:
+- **Job Listings:** Display the list of available job opportunities.
+- **Job Application Forms:** Allow job seekers to apply for jobs.
+- **User Dashboard:** Structure the recruiter and admin dashboards.
+
+### 2. CSS (Cascading Style Sheets)
+CSS is used to control the visual appearance and layout of HTML elements. It is responsible for making the web pages aesthetically pleasing, responsive, and user-friendly.
+
+In this project, CSS is applied to:
+- **Job Portal Theme:** Create a clean and professional look for the job portal.
+- **Responsive Design:** Ensure the job portal is accessible on different devices, including desktops, tablets, and mobile phones.
+- **Custom Styling:** Enhance the user experience with styled buttons, forms, and navigation bars.
+
+### 3. Django (Backend Framework)
+Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. It is used to manage the backend functionality of the job portal.
+
+Key Django functionalities in this project include:
+- **User Authentication:** Handle login, registration, and session management for job seekers, recruiters, and admins.
+- **Database Management:** Use Django ORM to interact with the database, store job listings, user profiles, and application data.
+- **Email Notifications:** Send application status updates and recruiter verification via email.
+- **Admin Interface:** Provide an intuitive admin interface for managing users, job postings, and recruiters.
+
+### 4. JavaScript (Interactive Features)
+JavaScript is a dynamic programming language used to add interactivity to web pages. It enhances user experience by enabling real-time updates, form validation, and dynamic content rendering without refreshing the page.
+
+In this project, JavaScript is used for:
+- **Form Validation:** Ensure job applications and user registration forms are correctly filled before submission.
+- **Asynchronous Requests (AJAX):** Load job listings, update application statuses, and submit forms without page reload.
+
+
+
+These technologies work together to build a robust and interactive job portal, ensuring a smooth user experience for job seekers, recruiters, and administrators.
+
+---
+
+
+
+
+## 4. Project Setup and Running Instructions
 
 Follow the steps below to set up and run this project on your local machine.
 
@@ -31,7 +81,9 @@ Follow the steps below to set up and run this project on your local machine.
 - `pip` package manager installed
 - Django installed (included in `requirements.txt`)
 
-## 4. Steps to Run the Project
+--- 
+
+## 5. Steps to Run the Project
 
 ### Step 1: Clone the Repository
 
@@ -96,8 +148,10 @@ This will start the server, and you can now access the portal in your browser at
 ### Step 9: Access the Admin Panel
 If you created a superuser, you can access the Django admin panel at http://127.0.0.1:8000/admin/ to manage users, recruiters, and job listings.
 
+---
 
-# Credentials
+
+## 6. Credentials
 Use these credentials for testing the project.
 ### Recruiter
 ```markdown
